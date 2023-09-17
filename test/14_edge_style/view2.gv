@@ -1,0 +1,5 @@
+digraph view2 {
+	graph [compound=true]
+	test2 [label="Test 2"]
+	test2 -> test2 [label=test1 color=red dir=both]
+}

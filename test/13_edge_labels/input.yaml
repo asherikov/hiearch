@@ -1,0 +1,17 @@
+nodes:
+    - id: ["Test 1", test1]
+    - id: ["Test 2", test2]
+
+edges:
+    - link: [test1, test1]
+      label: 'test1_edge'
+
+    - link: [test2, test2]
+      label: ['tail', 'middle', 'head']
+
+views:
+    - id: view1
+      nodes: [test1]
+
+    - id: view2
+      nodes: [test2]

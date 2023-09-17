@@ -1,0 +1,12 @@
+nodes:
+    - id: ["Test 1", test1]
+    - id: ["Test 2", test2]
+      tags: ["test2_tag"]
+edges:
+    - link: [test1, test1]
+    - link: [test2, test2]
+views:
+    - id: view1
+      tags: ["test2_tag"]
+    - id: view2
+      tags: ["default"]

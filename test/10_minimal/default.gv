@@ -1,0 +1,4 @@
+digraph default {
+	graph [compound=true]
+	test1 [label="Test 1"]
+}

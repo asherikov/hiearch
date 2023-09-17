@@ -1,0 +1,30 @@
+nodes:
+    - id: ["Test 1", test1]
+      # https://www.svgrepo.com/svg/479843/duck-toy-illustration-3
+      # https://www.svgrepo.com/svg/479405/casa-pictogram-5
+      graphviz:
+        node_label_format: '<<table><tr><td><img src="icon_{id}.svg"/></td><td>{label}</td></tr></table>>'
+        scope_label_format: '<<table><tr><td><img src="icon_{id}.svg"/></td><td>Scope: {label}</td></tr></table>>'
+    - id: ["Test 2", test2]
+      scope: test1
+    - id: ["Test 3", test3]
+      tags: []
+      substitutions:
+        suffix: '!'  # substitute `{suffix}` for `!` in labels
+      graphviz:
+        node_label_format: '<<table><tr><td><img src="icon_{style}.svg"/></td><td>{label}{suffix}</td></tr></table>>'
+    - id: ["Test 4", test4]
+      style: test3
+edges:
+    - link: [test4, test4]
+      substitutions:
+        tilde: '~'
+      graphviz:
+        label_format: ['', '', '{tilde}{node_in}{tilde}']
+views:
+    - id: view1
+      nodes: [test1]
+    - id: view2
+      nodes: [test1, test2]
+    - id: view3
+      nodes: [test4]

@@ -1,0 +1,25 @@
+nodes:
+    - id: ["Test 1", test1]
+
+edges:
+    - link: [test1, test1]
+
+views:
+    - id: style
+      nodes: []
+      graphviz:
+          graph:
+              style: filled
+              bgcolor: coral
+          node:
+              fontsize: "24"
+              fontname: times
+          edge:
+              dir: both
+
+    - id: styled
+      nodes: [test1]
+      style: style
+
+    - id: plain
+      nodes: [test1]

@@ -1,0 +1,10 @@
+digraph default {
+	graph [compound=true]
+	subgraph test2 {
+		graph [cluster=true label="Test 2"]
+		"test2.test3" [label="Test 3"]
+	}
+	test1 [label="Test 1"]
+	test1 -> "test2.test3" [headclip=false lhead=test2]
+	test1 -> "test2.test3"
+}

@@ -1,0 +1,3 @@
+edges:
+    - link: [test1, test2]
+    - link: [test1, test3]

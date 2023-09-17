@@ -1,0 +1,5 @@
+digraph view1 {
+	graph [compound=true]
+	test1 [label="Test 1"]
+	test1 -> test1 [label=test1_edge]
+}

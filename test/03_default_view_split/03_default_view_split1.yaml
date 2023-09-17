@@ -1,0 +1,9 @@
+nodes:
+    - id: ["Test 1", test1]
+
+    - id: ["Test 2", test2]
+      style: test1
+
+    - id: ["Test 3", test3]
+      style: test1
+      scope: test2

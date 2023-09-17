@@ -1,0 +1,4 @@
+digraph view1 {
+	graph [compound=true]
+	test1 [label=<<table><tr><td><img src="icon_test1.svg"/></td><td>Test 1</td></tr></table>>]
+}

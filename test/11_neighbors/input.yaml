@@ -1,0 +1,28 @@
+nodes:
+    - id: ["Test 1", test1]
+    - id: ["Test 2", test2]
+    - id: ["Test 3", test3]
+      scope: test2
+
+edges:
+    - link: [test1, test3]
+
+views:
+    - id: view1
+      nodes: [test1]
+      # nodes must be specified explicitly
+      # neighbours: explicit
+
+    - id: view2
+      nodes: [test1]
+      # add connected nodes
+      neighbours: direct
+
+    - id: view3
+      nodes: [test1]
+      # add top most parents of connected nodes
+      neighbours: parent
+
+    - id: view4
+      # all three together
+      tags: ["default"]

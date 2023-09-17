@@ -1,0 +1,5 @@
+digraph view3 {
+	graph [compound=true]
+	test1 [label="Test 1"]
+	test2 [label="Test 2" fillcolor=aqua style=filled]
+}

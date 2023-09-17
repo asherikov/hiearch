@@ -1,0 +1,5 @@
+digraph plain {
+	graph [compound=true]
+	test1 [label="Test 1"]
+	test1 -> test1
+}

@@ -1,0 +1,40 @@
+nodes:
+    - id: ["Test 1", test1]
+
+    - id: ["Test 2", test2]
+      style: test1
+
+    - id: ["Test 3", test3]
+      style: test1
+      scope: test2
+
+edges:
+    - link: [test1, test2]
+    - link: [test1, test3]
+
+views:
+    - id: style
+      nodes: []
+      graphviz:
+          graph:
+              rankdir: LR
+              compound: "true"
+          node:
+              fontsize: "18"
+              fontname: times
+          edge:
+              decorate: "true"
+              fontsize: "14"
+
+    - id: explicit
+      nodes: [test1]
+      neighbours: explicit
+
+    - id: direct
+      nodes: [test1]
+      neighbours: direct
+      style: style
+
+    - id: parent
+      nodes: [test1]
+      neighbours: parent

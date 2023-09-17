@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hiearch"
+version = "0.0.1"
+dependencies = [
+    "graphviz",
+    "pyyaml"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+hiearch = "hiearch.hiearch:main"
+

@@ -1,0 +1,9 @@
+nodes:
+    - id: ["Test 1", test1]
+
+edges:
+    - link: [test1, test1]
+
+views:
+    - id: view1
+      nodes: [test1]

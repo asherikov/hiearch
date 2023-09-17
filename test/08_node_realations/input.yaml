@@ -1,0 +1,18 @@
+nodes:
+    - id: ["Test 1", test1]
+    - id: ["Test 2", test2]
+      graphviz:
+        fillcolor: aqua
+        style: filled
+    - id: ["Test 3", test3]
+      scope: test1
+      style: test2
+edges:
+    - link: [test3, test3]
+views:
+    - id: view1
+      nodes: [test2, test3]
+    - id: view2
+      nodes: [test1, test3]
+    - id: view3
+      nodes: [test1, test2]

@@ -1,0 +1,8 @@
+digraph styled {
+	graph [compound=true]
+	graph [bgcolor=coral style=filled]
+	node [fontname=times fontsize=24]
+	edge [dir=both]
+	test1 [label="Test 1"]
+	test1 -> test1
+}
