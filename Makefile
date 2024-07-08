@@ -39,6 +39,7 @@ test:
 clean:
 	rm -Rf .pytest_cache
 	rm -Rf ${BUILD_DIR}
+	rm -Rf dist
 	find ./ -name "__pycache__" | xargs rm -Rf
 
 builddir:
@@ -54,7 +55,22 @@ install_edit:
 
 install_deps: builddir
 	pip-compile --verbose --output-file ./${BUILD_DIR}/requirements.txt pyproject.toml
-	pip3 install -r ./${BUILD_DIR}/requirements.txt
+	pip install -r ./${BUILD_DIR}/requirements.txt
+
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/
+install_release_deps:
+	pip install --upgrade build
+	pip install --upgrade twine
+
+upload_testpypi:
+	rm -Rf dist
+	python3.11 -m build
+	python3.11 -m twine upload --verbose --repository testpypi dist/*
+
+upload_pypi:
+	rm -Rf dist
+	python3.11 -m build
+	python3.11 -m twine upload --verbose dist/*
 
 uninstall: clean
 	pip uninstall -y ${PROJECT_NAME}

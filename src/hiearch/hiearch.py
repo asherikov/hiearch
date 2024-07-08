@@ -50,7 +50,7 @@ def main():
     parser = argparse.ArgumentParser(prog='hiearch', description='Generates diagrams')
 
     parser.add_argument('inputs', metavar='<filename>', type=str, nargs='+', help='Input files')
-    parser.add_argument('-o', '--output', required=False, default='hiearch', help='Output directory [hiearch]')
+    parser.add_argument('-o', '--output', required=True, default='hiearch', help='Output directory [hiearch]')
     parser.add_argument('-f', '--format', required=False, default='svg', help='Output format [SVG]')
 
     args = parser.parse_args()

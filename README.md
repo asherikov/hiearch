@@ -27,7 +27,7 @@ Features
 
 - `hiearch` does not use a DSL, but rather parses a set of input `yaml` files
   in arbitrary order. The file contents get composed into a single description,
-  which in turn gets decomposed into views.
+  which, in turn, gets decomposed into views.
 
 - Description files have flat structure without nesting or inclusion and
   contain lists of the following objects: nodes, edges, and views. Hierarchical
@@ -95,7 +95,7 @@ views:
             </pre>
         </td>
         <td align="center">
-            <img src="test/07_trivial/view1.svg" alt="view1" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/07_trivial/view1.svg" alt="view1" />
             <br />
             view1
         </td>
@@ -132,21 +132,21 @@ views:
             </pre>
         </td>
         <td align="center">
-            <img src="test/08_node_realations/view1.svg" alt="view1" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view1.svg" alt="view1" />
             <br />
             view1
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/08_node_realations/view2.svg" alt="view2" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view2.svg" alt="view2" />
             <br />
             view2
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/08_node_realations/view3.svg" alt="view3" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view3.svg" alt="view3" />
             <br />
             view3
         </td>
@@ -178,14 +178,14 @@ views:
             </pre>
         </td>
         <td align="center">
-            <img src="test/09_tags/view1.svg" alt="view1" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view1.svg" alt="view1" />
             <br />
             view1
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/09_tags/view2.svg" alt="view2" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view2.svg" alt="view2" />
             <br />
             view2
         </td>
@@ -204,7 +204,7 @@ nodes:
             </pre>
         </td>
         <td align="center">
-            <img src="test/10_minimal/default.svg" alt="default" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/10_minimal/default.svg" alt="default" />
             <br />
             default
         </td>
@@ -247,28 +247,28 @@ views:
             </pre>
         </td>
         <td align="center">
-            <img src="test/11_neighbors/view1.svg" alt="view1" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view1.svg" alt="view1" />
             <br />
             view1
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/11_neighbors/view2.svg" alt="view2" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view2.svg" alt="view2" />
             <br />
             view2
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/11_neighbors/view3.svg" alt="view3" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view3.svg" alt="view3" />
             <br />
             view3
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/11_neighbors/view4.svg" alt="view4" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view4.svg" alt="view4" />
             <br />
             view4
         </td>
@@ -310,14 +310,14 @@ views:
             </pre>
         </td>
         <td align="center">
-            <img src="test/12_view_style/styled.svg" alt="styled" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/styled.svg" alt="styled" />
             <br />
             styled
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/12_view_style/plain.svg" alt="plain" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/plain.svg" alt="plain" />
             <br />
             plain
         </td>
@@ -350,14 +350,14 @@ views:
             </pre>
         </td>
         <td align="center">
-            <img src="test/13_edge_labels/view1.svg" alt="view1" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view1.svg" alt="view1" />
             <br />
             view1
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/13_edge_labels/view2.svg" alt="view2" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view2.svg" alt="view2" />
             <br />
             view2
         </td>
@@ -404,21 +404,21 @@ views:
             </pre>
         </td>
         <td align="center">
-            <img src="test/14_edge_style/view1.svg" alt="view1" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view1.svg" alt="view1" />
             <br />
             view1
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/14_edge_style/view2.svg" alt="view2" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view2.svg" alt="view2" />
             <br />
             view2
         </td>
     </tr>
     <tr>
         <td align="center">
-            <img src="test/14_edge_style/view3.svg" alt="view3" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view3.svg" alt="view3" />
             <br />
             view3
         </td>
@@ -436,8 +436,8 @@ nodes:
       # https://www.svgrepo.com/svg/479843/duck-toy-illustration-3
       # https://www.svgrepo.com/svg/479405/casa-pictogram-5
       graphviz:
-        node_label_format: '<<table><tr><td><img src="icon_{id}.svg"/></td><td>{label}</td></tr></table>>'
-        scope_label_format: '<<table><tr><td><img src="icon_{id}.svg"/></td><td>Scope: {label}</td></tr></table>>'
+        node_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{id}.svg"/></td><td>{label}</td></tr></table>>'
+        scope_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{id}.svg"/></td><td>Scope: {label}</td></tr></table>>'
     - id: ["Test 2", test2]
       scope: test1
     - id: ["Test 3", test3]
@@ -445,7 +445,7 @@ nodes:
       substitutions:
         suffix: '!'
       graphviz:
-        node_label_format: '<<table><tr><td><img src="icon_{style}.svg"/></td><td>{label}{suffix}</td></tr></table>>'
+        node_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{style}.svg"/></td><td>{label}{suffix}</td></tr></table>>'
     - id: ["Test 4", test4]
       style: test3
 views:
@@ -466,17 +466,17 @@ the included images must be present in the output directory.
 <table>
     <tr>
         <td align="center">
-            <img src="test/15_formatted_labels/view1.png" alt="view1" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view1.png" alt="view1" />
             <br />
             view1
         </td>
         <td align="center">
-            <img src="test/15_formatted_labels/view2.png" alt="view2" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view2.png" alt="view2" />
             <br />
             view2
         </td>
         <td align="center">
-            <img src="test/15_formatted_labels/view3.png" alt="view3" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view3.png" alt="view3" />
             <br />
             view3
         </td>
@@ -513,7 +513,7 @@ nodes:
             </pre>
         </td>
         <td align="center">
-            <img src="test/06_multiscope/default.svg" alt="default" />
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/default.svg" alt="default" />
             <br />
             default
         </td>

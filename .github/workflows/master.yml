@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-22.04
 
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - run: make install_deps_apt
             - run: make install
             - run: make test
@@ -19,11 +19,11 @@ jobs:
 
         steps:
             - name: main
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                 path: "hiearch"
             - name: ccws
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                 repository: "asherikov/ccws"
                 path: "ccws"

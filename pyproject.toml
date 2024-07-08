@@ -4,16 +4,35 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hiearch"
-version = "0.0.1"
+version = "0.1.0"
+
+authors = [
+    { name="Alexander Sherikov", email="asherikov@yandex.com" },
+]
+
+description = "Generates multi-view diagrams from textual descriptions"
+
+readme = "README.md"
+
+# https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+
+requires-python = ">=3.8"
+
 dependencies = [
     "graphviz",
     "pyyaml"
 ]
 
-classifiers = [
-    "Programming Language :: Python :: 3",
-]
-
 [project.scripts]
 hiearch = "hiearch.hiearch:main"
 
+[project.urls]
+Homepage = "https://github.com/asherikov/hiearch"
+Issues = "https://github.com/asherikov/hiearch/issues"
