@@ -4,7 +4,7 @@ Introduction
 `hiearch` is a CLI utility that generates diagrams from textual descriptions,
 a.k.a., "diagrams as code". Unlike many other generators like `graphviz` it is
 designed to support hierarchical decomposition and multiple views, in which
-sense it is similar to <https://structurizr.com>. In other words, `graphviz`
+sense it is similar to <https://structurizr.com>. In other words, `hiearch`
 generates multiple diagrams (views) from a single description, where each node
 is a hierarchy of nodes, that is automatically expanded, collapsed, or hidden,
 depending on configuration of each particular view. Currently, `hiearch` uses
