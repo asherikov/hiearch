@@ -2,23 +2,31 @@ nodes:
     - id: ["Test 1", test1]
     - id: ["Test 2", test2]
     - id: ["Test 3", test3]
-
+    # helper node to define "invisible" edges used purely
+    # as style templates
+    - id: ["StyleNode", stylenode]
+      # invisible unless this tag is requested in a view
+      tags: ["mystyle"]
 edges:
-    - link: [test1, test1]
-      label: 'test1'
+    # "pure" style link
+    - link: [stylenode, stylenode, stylelink]
       graphviz:
         color: red
-
+    - link: [test1, test1]
+      label: 'test1'
+      style: stylelink
+    # optional third link parameter introduces an explicit
+    # id, which must be unique
     - link: [test2, test2, edge2]
+      # style can be referenced by link attribute
       style: [test1, test1]
       graphviz:
         dir: both
-
     - link: [test3, test3]
+      # style can also be an explicit id
       style: edge2
       graphviz:
         color: blue
-
 views:
     - id: view1
       nodes: [test1]
@@ -26,3 +34,4 @@ views:
       nodes: [test2]
     - id: view3
       nodes: [test3]
+

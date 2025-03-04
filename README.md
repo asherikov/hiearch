@@ -328,7 +328,6 @@ views:
 </table>
 
 
-
 Edge labels
 -----------
 
@@ -380,11 +379,19 @@ nodes:
     - id: ["Test 1", test1]
     - id: ["Test 2", test2]
     - id: ["Test 3", test3]
+    # helper node to define "invisible" edges used purely
+    # as style templates
+    - id: ["StyleNode", stylenode]
+      # invisible unless this tag is requested in a view
+      tags: ["mystyle"]
 edges:
-    - link: [test1, test1]
-      label: 'test1'
+    # "pure" style link
+    - link: [stylenode, stylenode, stylelink]
       graphviz:
         color: red
+    - link: [test1, test1]
+      label: 'test1'
+      style: stylelink
     # optional third link parameter introduces an explicit
     # id, which must be unique
     - link: [test2, test2, edge2]
