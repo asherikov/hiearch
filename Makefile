@@ -61,6 +61,7 @@ install_deps: builddir
 install_release_deps:
 	pip install --upgrade build
 	pip install --upgrade twine
+	pip install --upgrade packaging
 
 upload_testpypi:
 	rm -Rf dist
