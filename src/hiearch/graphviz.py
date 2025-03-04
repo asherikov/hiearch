@@ -15,6 +15,16 @@ def get_node_attributes(node):
     return attrs
 
 
+def get_scope_attributes(node):
+    attrs = copy.deepcopy(node['graphviz'])
+
+    attrs['label'] = hh_node.get_formatted_scope_label(node)
+    attrs['cluster'] = 'true'
+    attrs.pop('node_label_format')
+    attrs.pop('scope_label_format')
+    return attrs
+
+
 def get_edge_attributes(edge):
     attrs = copy.deepcopy(edge['graphviz'])
 
@@ -49,7 +59,7 @@ def generate_tree(graph, tree, nodes):
             else:
                 with graph.subgraph(
                         name=node_tuple['key_path'],
-                        graph_attr={'label': hh_node.get_formatted_scope_label(node), 'cluster': 'true'}) as subgraph:
+                        graph_attr=get_scope_attributes(node)) as subgraph:
                     generate_tree(subgraph, node_tuple['subtree'], nodes)
 
 

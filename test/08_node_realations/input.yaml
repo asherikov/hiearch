@@ -1,18 +1,21 @@
 nodes:
     - id: ["Test 1", test1]
+      graphviz:  # set graphviz attributes directly
+        fillcolor: grey
+        style: filled
     - id: ["Test 2", test2]
-      graphviz:
+      graphviz:  # set graphviz attributes directly
         fillcolor: aqua
         style: filled
     - id: ["Test 3", test3]
-      scope: test1
-      style: test2
+      scope: test1  # test3 is contained in test1
+      style: test2  # test3 inherits all test2 attributes
 edges:
     - link: [test3, test3]
 views:
     - id: view1
       nodes: [test2, test3]
-    - id: view2
+    - id: view2  # test1 is shown as subgraph
       nodes: [test1, test3]
     - id: view3
       nodes: [test1, test2]

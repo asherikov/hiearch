@@ -1,7 +1,7 @@
 digraph view2 {
 	graph [compound=true]
 	subgraph test1 {
-		graph [cluster=true label="Test 1"]
+		graph [cluster=true fillcolor=grey label="Test 1" style=filled]
 		"test1.test3" [label="Test 3" fillcolor=aqua style=filled]
 	}
 	"test1.test3" -> "test1.test3"

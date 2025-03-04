@@ -113,6 +113,9 @@ Node relations
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
+      graphviz:  # set graphviz attributes directly
+        fillcolor: grey
+        style: filled
     - id: ["Test 2", test2]
       graphviz:  # set graphviz attributes directly
         fillcolor: aqua
