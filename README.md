@@ -383,6 +383,7 @@ nodes:
     # as style templates
     - id: ["StyleNode", stylenode]
       # invisible unless this tag is requested in a view
+      # note that tags are inherited too
       tags: ["mystyle"]
 edges:
     # "pure" style link
