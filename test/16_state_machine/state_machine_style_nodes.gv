@@ -1,0 +1,11 @@
+digraph state_machine_style_nodes {
+	graph [compound=true]
+	graph [fillcolor="#fafafa" rankdir=TB style="rounded, filled"]
+	node [fontname=Helvetica fontsize=12 margin=0.1]
+	edge [arrowsize=0.8 fontname=Helvetica fontsize=10]
+	hh_state_machine_final [label="" color=black fillcolor=black fixedsize=true fontcolor=black height=0.2 shape=doublecircle style=filled width=0.2]
+	hh_state_machine_choice [label="" fillcolor=black height=0.3 shape=diamond style=filled width=0.3]
+	hh_state_machine_initial [label="" fillcolor=black fixedsize=true height=0.3 shape=circle style=filled width=0.3]
+	hh_state_machine_regular [label="" fillcolor="#f0f8ff" peripheries=1 shape=rectangle style="rounded,filled"]
+	hh_state_machine_junction [label="" fillcolor=black fixedsize=true height=0.05 shape=rectangle style=filled width=1.0]
+}

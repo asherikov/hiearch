@@ -1,0 +1,32 @@
+digraph state_machine_example {
+	graph [compound=true]
+	graph [fillcolor="#fafafa" rankdir=TB style="rounded, filled"]
+	node [fontname=Helvetica fontsize=12 margin=0.1]
+	edge [arrowsize=0.8 fontname=Helvetica fontsize=10]
+	state1 [label=state1 fillcolor="#f0f8ff" peripheries=1 shape=rectangle style="rounded,filled"]
+	fork1 [label="" fillcolor=black fixedsize=true height=0.05 shape=rectangle style=filled width=1.0]
+	state2 [label=state2 fillcolor="#f0f8ff" peripheries=1 shape=rectangle style="rounded,filled"]
+	start [label="" fillcolor=black fixedsize=true height=0.3 shape=circle style=filled width=0.3]
+	end1 [label="" color=black fillcolor=black fixedsize=true fontcolor=black height=0.2 shape=doublecircle style=filled width=0.2]
+	choice1 [label="" fillcolor=black height=0.3 shape=diamond style=filled width=0.3]
+	join2 [label="" fillcolor=black fixedsize=true height=0.05 shape=rectangle style=filled width=1.0]
+	end2 [label="" color=black fillcolor=black fixedsize=true fontcolor=black height=0.2 shape=doublecircle style=filled width=0.2]
+	fork1 -> state1 [label="from fork
+to state"]
+	state1 -> end1 [label="from state
+to end"]
+	choice1 -> fork1 [label="from choice
+to fork"]
+	fork1 -> state2 [label="from fork
+to state"]
+	state2 -> join2 [label="from state
+to join"]
+	start -> choice1 [label="from start
+to choice"]
+	join2 -> end1 [label="from join
+to end"]
+	choice1 -> join2 [label="from choice
+to join"]
+	choice1 -> end2 [label="from choice
+to end"]
+}

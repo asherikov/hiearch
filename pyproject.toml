@@ -27,7 +27,8 @@ requires-python = ">=3.8"
 
 dependencies = [
     "graphviz",
-    "pyyaml"
+    "pyyaml",
+    "importlib",
 ]
 
 [project.scripts]
@@ -36,3 +37,11 @@ hiearch = "hiearch.hiearch:main"
 [project.urls]
 Homepage = "https://github.com/asherikov/hiearch"
 Issues = "https://github.com/asherikov/hiearch/issues"
+
+[tool.hatch.build.targets.wheel.sources]
+"src/hiearch" = "hiearch"
+
+[tool.hatch.build]
+include = [
+    "hiearch",
+]

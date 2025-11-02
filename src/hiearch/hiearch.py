@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+import importlib.resources
 import argparse
 import yaml
+import sys
 
 from . import hh_node
 from . import hh_edge
@@ -55,12 +57,17 @@ def main():
 
     args = parser.parse_args()
 
+    # Automatically include installed style files
+    for style_file in ['state_machine.yaml']:
+        style_path = importlib.resources.files('hiearch.data.styles') / style_file
+        if style_path.exists():
+            args.inputs.append(str(style_path))
+
     nodes, views = parse(args.inputs)
 
     for view in views.values():
         if len(view['nodes']) > 0:
             graphviz.generate(args.output, args.format, view, nodes)
-
 
 
 if __name__ == "__main__":

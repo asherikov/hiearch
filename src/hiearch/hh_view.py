@@ -88,10 +88,7 @@ def postprocess(views, nodes, edges):
     util.apply_styles(views.styled, views.entities)
 
 
-    if 0 == len(views.entities):
-        views.entities['default'] = default
-        views.entities['default']['tags'] = ['default']
-
+    # resolve nodes
     empty_views_counter = 0
     for view in views.entities.values():
         if view['nodes'] is None:
@@ -109,6 +106,17 @@ def postprocess(views, nodes, edges):
             empty_views_counter += 1
             continue
 
+    if empty_views_counter == len(views.entities):
+        views.entities['default'] = default
+        views.entities['default']['tags'] = ['default']
+        views.entities['default']['nodes'] = hh_node.get_nodes_by_tag(nodes, 'default')
+        if 0 == len(views.entities['default']['nodes']):
+            raise RuntimeError(f'All views are empty: {views.entities.keys()}')
+
+    # add neighbour nodes and build trees
+    for view in views.entities.values():
+        if 0 == len(view['nodes']):
+            continue
 
         view['edges'] = {}
         view['custom_edges'] = {}
@@ -132,9 +140,6 @@ def postprocess(views, nodes, edges):
 
         view['tree'], view['node_key_paths'], view['scopes'] = hh_node.build_tree(nodes, view['nodes'])
 
-
-    if empty_views_counter == len(views.entities):
-        raise RuntimeError(f'All views are empty: {views.entities.keys()}')
 
 
 def parse(yaml_views, views, must_exist_nodes):
