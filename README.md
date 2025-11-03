@@ -576,28 +576,28 @@ nodes:
       style: hh_state_machine_final
       tags: ["state_machine_example"]
 edges:
-  - link: [start, choice1]
-    label: "from start\nto choice"
-  - link: [choice1, fork1]
-    label: "from choice\nto fork"
-  - link: [choice1, join2]
-    label: "from choice\nto join"
-  - link: [choice1, end2]
-    label: "from choice\nto end"
-  - link: [fork1, state1]
-    label: "from fork\nto state"
-  - link: [fork1, state2]
-    label: "from fork\nto state"
-  - link: [state2, join2]
-    label: "from state\nto join"
-  - link: [state1, end1]
-    label: "from state\nto end"
-  - link: [join2, end1]
-    label: "from join\nto end"
+    - link: [start, choice1]
+      label: "from start\nto choice"
+    - link: [choice1, fork1]
+      label: "from choice\nto fork"
+    - link: [choice1, join2]
+      label: "from choice\nto join"
+    - link: [choice1, end2]
+      label: "from choice\nto end"
+    - link: [fork1, state1]
+      label: "from fork\nto state"
+    - link: [fork1, state2]
+      label: "from fork\nto state"
+    - link: [state2, join2]
+      label: "from state\nto join"
+    - link: [state1, end1]
+      label: "from state\nto end"
+    - link: [join2, end1]
+      label: "from join\nto end"
 views:
-  - id: state_machine_example
-    tags: ["state_machine_example"]
-    style: hh_state_machine_view
+    - id: state_machine_example
+      tags: ["state_machine_example"]
+      style: hh_state_machine_view
             </pre>
         </td>
         <td align="center">
