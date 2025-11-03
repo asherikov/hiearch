@@ -2,23 +2,23 @@ Introduction
 ============
 
 `hiearch` is a CLI utility that generates diagrams from textual descriptions,
-a.k.a., "diagrams as code". Unlike many other generators like `graphviz` it is
-designed to support hierarchical decomposition and multiple views, in which
-sense it is similar to <https://structurizr.com>. In other words, `hiearch`
-generates multiple diagrams (views) from a single description, where each node
-is a hierarchy of nodes, that is automatically expanded, collapsed, or hidden,
-depending on configuration of each particular view. Currently, `hiearch` uses
-`graphviz` to generate individual diagrams corresponding to views, but other
-backends may be added in the future.
+a.k.a., "diagrams as code". Unlike many other generators such as `graphviz` it
+is designed to support hierarchical decomposition of nodes and multiple views,
+in which sense it is similar to <https://structurizr.com>. In other words,
+`hiearch` generates multiple diagrams (views) from a single description, where
+each node is a hierarchy of nodes, that is automatically expanded, collapsed,
+or hidden, depending on configuration of a particular view. Currently,
+`hiearch` uses `graphviz` to generate diagrams, but other backends may be added
+in the future.
 
 The main purpose of `hiearch` is graphical representation of complex systems,
 but it is meant to be generic and may find other applications.
 
-Why would anyone need another system diagram generator when there is a
-multitude of tools that support UML, C4, etc? I believe that the most important
-aspects of the system are its decomposition into components and connections
-between them, `hiearch` provides just that, nothing more, so that you can focus
-on documenting your system rather than fitting it into a specific design
+Why would anyone need another diagram generator when there is a multitude of
+tools that support UML, C4, etc? I believe that the most important aspects of
+the system are its decomposition into components and connections between them,
+`hiearch` provides just that, nothing more, so that you can focus on
+documenting your system rather than fitting it into a specific design
 framework.
 
 
@@ -504,7 +504,7 @@ Multiscoping
 ------------
 <table>
     <tr>
-        <td>
+        <td rowspan=2>
             <pre>
 -----------------------------------------------------------
 nodes:
@@ -525,8 +525,20 @@ nodes:
       scope: test2
     - id: ["Test 5", test5]
       scope: [test1]
+views:
+    - id: default
+      tags: ["default"]
+    - id: autoranking
+      nodes: [test1, test2, test3]
             </pre>
         </td>
+        <td align="center">
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/autoranking.svg" alt="autoranking" />
+            <br />
+            autoranking
+        </td>
+    </tr>
+    <tr>
         <td align="center">
             <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/default.svg" alt="default" />
             <br />
@@ -553,6 +565,8 @@ State machine
 nodes:
     - id: ["", choice1]
       style: hh_state_machine_choice
+      # in general it is necessary to override tags
+      # inherited from style nodes
       tags: ["state_machine_example"]
     - id: [state1, state1]
       style: hh_state_machine_regular
@@ -603,7 +617,7 @@ views:
         <td align="center">
             <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/16_state_machine/state_machine_example.svg" alt="state_machine_example" />
             <br />
-            `state_machine_example`
+            state machine example
         </td>
     </tr>
 </table>

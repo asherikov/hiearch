@@ -7,4 +7,8 @@ nodes:
       scope: [test2]
     - id: ["Test 5", test5]
       scope: [test1]
-
+views:
+    - id: default
+      tags: ["default"]
+    - id: autoranking
+      nodes: [test1, test2, test3]
