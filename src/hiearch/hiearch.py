@@ -3,7 +3,6 @@
 import importlib.resources
 import argparse
 import yaml
-import sys
 
 from . import hh_node
 from . import hh_edge

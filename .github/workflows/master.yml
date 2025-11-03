@@ -3,19 +3,27 @@ on: [push, pull_request]
 env:
     APT_INSTALL: sudo apt install -y --no-install-recommends
 
-
 jobs:
     jammy_test:
         runs-on: ubuntu-22.04
 
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v5
             - run: make install_deps_apt
             - run: make install
             - run: make test
 
-    jammy_static:
-        runs-on: ubuntu-22.04
+    noble_test:
+        runs-on: ubuntu-24.04
+
+        steps:
+            - uses: actions/checkout@v5
+            - run: make install_deps_apt
+            - run: make install
+            - run: make test
+
+    static_checks:
+        runs-on: ubuntu-24.04
 
         steps:
             - name: main
@@ -29,6 +37,7 @@ jobs:
                 path: "ccws"
             - run: mkdir -p ccws/src
             - run: mv hiearch ccws/src
-            - run: cd ccws; make bp_common_install_build BUILD_PROFILE=static_checks
+            - run: ${APT_INSTALL} python3-typeshed
+            - run: cd ccws; make bp_install_build BUILD_PROFILE=static_checks
             - run: cd ccws; make bp_static_checks_install_build_python BUILD_PROFILE=static_checks
             - run: cd ccws; make bp_static_checks_build_python BUILD_PROFILE=static_checks
