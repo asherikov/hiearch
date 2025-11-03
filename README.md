@@ -1,15 +1,32 @@
+- [Introduction](#introduction)
+- [Features](#features)
+- [Examples](#examples)
+  - [Command line options](#command-line-options)
+  - [Trivial](#trivial)
+  - [Node relations](#node-relations)
+  - [Node selection using tags](#node-selection-using-tags)
+  - [Neighbour node selection](#neighbour-node-selection)
+  - [View styles](#view-styles)
+  - [Edge labels](#edge-labels)
+  - [Edge styles](#edge-styles)
+  - [Formatted labels](#formatted-labels)
+  - [Multiscoping](#multiscoping)
+- [Predefined styles](#predefined-styles)
+  - [State machine](#state-machine)
+  - [Use Case](#use-case)
+
 Introduction
 ============
 
 `hiearch` is a CLI utility that generates diagrams from textual descriptions,
-a.k.a., "diagrams as code". Unlike many other generators such as `graphviz` it
+a.k.a., “diagrams as code”. Unlike many other generators such as `graphviz` it
 is designed to support hierarchical decomposition of nodes and multiple views,
 in which sense it is similar to <https://structurizr.com>. In other words,
 `hiearch` generates multiple diagrams (views) from a single description, where
-each node is a hierarchy of nodes, that is automatically expanded, collapsed,
-or hidden, depending on configuration of a particular view. Currently,
-`hiearch` uses `graphviz` to generate diagrams, but other backends may be added
-in the future.
+each node is a hierarchy of nodes, that is automatically expanded, collapsed, or
+hidden, depending on configuration of a particular view. Currently, `hiearch`
+uses `graphviz` to generate diagrams, but other backends may be added in the
+future.
 
 The main purpose of `hiearch` is graphical representation of complex systems,
 but it is meant to be generic and may find other applications.
@@ -17,20 +34,18 @@ but it is meant to be generic and may find other applications.
 Why would anyone need another diagram generator when there is a multitude of
 tools that support UML, C4, etc? I believe that the most important aspects of
 the system are its decomposition into components and connections between them,
-`hiearch` provides just that, nothing more, so that you can focus on
-documenting your system rather than fitting it into a specific design
-framework.
-
+`hiearch` provides just that, nothing more, so that you can focus on documenting
+your system rather than fitting it into a specific design framework.
 
 Features
 ========
 
-- `hiearch` does not use a DSL, but rather parses a set of input `yaml` files
-  in arbitrary order. The file contents get composed into a single description,
+- `hiearch` does not use a DSL, but rather parses a set of input `yaml` files in
+  arbitrary order. The file contents get composed into a single description,
   which, in turn, gets decomposed into views.
 
-- Description files have flat structure without nesting or inclusion and
-  contain lists of the following objects: nodes, edges, and views. Hierarchical
+- Description files have flat structure without nesting or inclusion and contain
+  lists of the following objects: nodes, edges, and views. Hierarchical
   relations between nodes are specified using node parameters.
 
 - Unlike `graphviz`, `hiearch` does not have a concept of subgraphs: each node
@@ -44,9 +59,9 @@ Features
   layer and simply makes some of them invisible, which results in awkward
   spacing.
 
-- `hiearch` allows nodes to have multiple parent nodes, which is referenced
-  here as 'multiscoping'. The idea is, of course, to show parents in different
-  views, for example, to outline system from logical or hardware point of view.
+- `hiearch` allows nodes to have multiple parent nodes, which is referenced here
+  as ‘multiscoping’. The idea is, of course, to show parents in different views,
+  for example, to outline system from logical or hardware point of view.
   However, it is possible to visualize all parents in the same diagram, which
   may be a bit kinky.
 
@@ -56,38 +71,33 @@ Features
 - There are a few predefined styles distributed with the utility, e.g., for
   generation of state machine graphs.
 
-
-
 Examples
 ========
 
 Command line options
 --------------------
 
-```
-usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] <filename> [<filename> ...]
+    usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] <filename> [<filename> ...]
 
-Generates diagrams
+    Generates diagrams
 
-positional arguments:
-  <filename>            Input files
+    positional arguments:
+      <filename>            Input files
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -o OUTPUT, --output OUTPUT
-                        Output directory [hiearch]
-  -f FORMAT, --format FORMAT
-                        Output format [SVG]
-```
-
+    optional arguments:
+      -h, --help            show this help message and exit
+      -o OUTPUT, --output OUTPUT
+                            Output directory [hiearch]
+      -f FORMAT, --format FORMAT
+                            Output format [SVG]
 
 Trivial
 -------
 
 <table>
-    <tr>
-        <td>
-            <pre>
+<tr>
+<td>
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]  # [label, unique id]
@@ -96,24 +106,22 @@ edges:
 views:
     - id: view1              # unique id / output filename
       nodes: [test1]         # nodes to include
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/07_trivial/view1.svg" alt="view1" />
-            <br />
-            view1
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/07_trivial/view1.svg" alt="view1" />
+<br /> view1
+</td>
+</tr>
 </table>
-
 
 Node relations
 --------------
 
 <table>
-    <tr>
-        <td rowspan="3">
-            <pre>
+<tr>
+<td rowspan="3">
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
@@ -136,38 +144,34 @@ views:
       nodes: [test1, test3]
     - id: view3
       nodes: [test1, test2]
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view1.svg" alt="view1" />
-            <br />
-            view1
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view2.svg" alt="view2" />
-            <br />
-            view2
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view3.svg" alt="view3" />
-            <br />
-            view3
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view1.svg" alt="view1" />
+<br /> view1
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view2.svg" alt="view2" />
+<br /> view2
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view3.svg" alt="view3" />
+<br /> view3
+</td>
+</tr>
 </table>
-
 
 Node selection using tags
 -------------------------
 
 <table>
-    <tr>
-        <td rowspan="2">
-            <pre>
+<tr>
+<td rowspan="2">
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
@@ -182,51 +186,45 @@ views:
       tags: ["test2_tag"]
     - id: view2
       tags: ["default"]
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view1.svg" alt="view1" />
-            <br />
-            view1
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view2.svg" alt="view2" />
-            <br />
-            view2
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view1.svg" alt="view1" />
+<br /> view1
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view2.svg" alt="view2" />
+<br /> view2
+</td>
+</tr>
 </table>
-
 <table>
-    <tr>
-        <td>
-            <pre>
+<tr>
+<td>
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
 # if no views are specified explicitly, a default one is
 # added with 'tags: ["default"]'
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/10_minimal/default.svg" alt="default" />
-            <br />
-            default
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/10_minimal/default.svg" alt="default" />
+<br /> default
+</td>
+</tr>
 </table>
-
-
 
 Neighbour node selection
 ------------------------
 
 <table>
-    <tr>
-        <td rowspan="4">
-            <pre>
+<tr>
+<td rowspan="4">
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
@@ -251,46 +249,40 @@ views:
     - id: view4
       # all three together
       tags: ["default"]
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view1.svg" alt="view1" />
-            <br />
-            view1
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view2.svg" alt="view2" />
-            <br />
-            view2
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view3.svg" alt="view3" />
-            <br />
-            view3
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view4.svg" alt="view4" />
-            <br />
-            view4
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view1.svg" alt="view1" />
+<br /> view1
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view2.svg" alt="view2" />
+<br /> view2
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view3.svg" alt="view3" />
+<br /> view3
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view4.svg" alt="view4" />
+<br /> view4
+</td>
+</tr>
 </table>
-
-
 
 View styles
 -----------
 
 <table>
-    <tr>
-        <td rowspan="2">
-            <pre>
+<tr>
+<td rowspan="2">
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
@@ -314,31 +306,28 @@ views:
       style: style  # inherit style from another view
     - id: plain
       nodes: [test1]
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/styled.svg" alt="styled" />
-            <br />
-            styled
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/plain.svg" alt="plain" />
-            <br />
-            plain
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/styled.svg" alt="styled" />
+<br /> styled
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/plain.svg" alt="plain" />
+<br /> plain
+</td>
+</tr>
 </table>
-
 
 Edge labels
 -----------
 
 <table>
-    <tr>
-        <td rowspan="2">
-            <pre>
+<tr>
+<td rowspan="2">
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
@@ -353,31 +342,28 @@ views:
       nodes: [test1]
     - id: view2
       nodes: [test2]
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view1.svg" alt="view1" />
-            <br />
-            view1
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view2.svg" alt="view2" />
-            <br />
-            view2
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view1.svg" alt="view1" />
+<br /> view1
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view2.svg" alt="view2" />
+<br /> view2
+</td>
+</tr>
 </table>
-
 
 Edge styles
 -----------
 
 <table>
-    <tr>
-        <td rowspan="3">
-            <pre>
+<tr>
+<td rowspan="3">
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["Test 1", test1]
@@ -416,96 +402,86 @@ views:
       nodes: [test2]
     - id: view3
       nodes: [test3]
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view1.svg" alt="view1" />
-            <br />
-            view1
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view2.svg" alt="view2" />
-            <br />
-            view2
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view3.svg" alt="view3" />
-            <br />
-            view3
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view1.svg" alt="view1" />
+<br /> view1
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view2.svg" alt="view2" />
+<br /> view2
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view3.svg" alt="view3" />
+<br /> view3
+</td>
+</tr>
 </table>
-
-
 
 Formatted labels
 ----------------
 
-```
-nodes:
-    - id: ["Test 1", test1]
-      # https://www.svgrepo.com/svg/479843/duck-toy-illustration-3
-      # https://www.svgrepo.com/svg/479405/casa-pictogram-5
-      graphviz:
-        node_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{id}.svg"/></td><td>{label}</td></tr></table>>'
-        scope_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{id}.svg"/></td><td>Scope: {label}</td></tr></table>>'
-    - id: ["Test 2", test2]
-      scope: test1
-    - id: ["Test 3", test3]
-      tags: []
-      substitutions:
-        suffix: '!'
-      graphviz:
-        node_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{style}.svg"/></td><td>{label}{suffix}</td></tr></table>>'
-    - id: ["Test 4", test4]
-      style: test3
-views:
-    - id: view1
-      nodes: [test1]
-    - id: view2
-      nodes: [test1, test2]
-    - id: view3
-      nodes: [test4]
-```
+    nodes:
+        - id: ["Test 1", test1]
+          # https://www.svgrepo.com/svg/479843/duck-toy-illustration-3
+          # https://www.svgrepo.com/svg/479405/casa-pictogram-5
+          graphviz:
+            node_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{id}.svg"/></td><td>{label}</td></tr></table>>'
+            scope_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{id}.svg"/></td><td>Scope: {label}</td></tr></table>>'
+        - id: ["Test 2", test2]
+          scope: test1
+        - id: ["Test 3", test3]
+          tags: []
+          substitutions:
+            suffix: '!'
+          graphviz:
+            node_label_format: '<<table><tr><td><img src="https://raw.githubusercontent.com/asherikov/hiearch/master/icon_{style}.svg"/></td><td>{label}{suffix}</td></tr></table>>'
+        - id: ["Test 4", test4]
+          style: test3
+    views:
+        - id: view1
+          nodes: [test1]
+        - id: view2
+          nodes: [test1, test2]
+        - id: view3
+          nodes: [test4]
 
 Note that SVG with other embedded SVG is not always rendered properly, and
-embedded pictures may get lost during conversion to other formats. The PNG
-files below were generated with `rsvg-convert view1.svg --format=png
---output=view1.png`, exporting directly to PNG using graphviz won't work. Also,
-the included images must be present in the output directory.
+embedded pictures may get lost during conversion to other formats. The PNG files
+below were generated with
+`rsvg-convert view1.svg --format=png --output=view1.png`, exporting directly to
+PNG using graphviz won’t work. Also, the included images must be present in the
+output directory.
 
 <table>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view1.png" alt="view1" />
-            <br />
-            view1
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view2.png" alt="view2" />
-            <br />
-            view2
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view3.png" alt="view3" />
-            <br />
-            view3
-        </td>
-    </tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view1.png" alt="view1" />
+<br /> view1
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view2.png" alt="view2" />
+<br /> view2
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view3.png" alt="view3" />
+<br /> view3
+</td>
+</tr>
 </table>
-
-
 
 Multiscoping
 ------------
+
 <table>
-    <tr>
-        <td rowspan=2>
-            <pre>
+<tr>
+<td rowspan="2">
+<pre>
 -----------------------------------------------------------
 nodes:
     # root nodes
@@ -530,23 +506,20 @@ views:
       tags: ["default"]
     - id: autoranking
       nodes: [test1, test2, test3]
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/autoranking.svg" alt="autoranking" />
-            <br />
-            autoranking
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/default.svg" alt="default" />
-            <br />
-            default
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/autoranking.svg" alt="autoranking" />
+<br /> autoranking
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/default.svg" alt="default" />
+<br /> default
+</td>
+</tr>
 </table>
-
 
 Predefined styles
 =================
@@ -555,13 +528,13 @@ Predefined styles
   `hiearch`.
 - Generally it is necessary to override tags inherited from style nodes.
 
-
 State machine
 -------------
+
 <table>
-    <tr>
-        <td>
-            <pre>
+<tr>
+<td>
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["", choice1]
@@ -611,23 +584,22 @@ views:
     - id: state_machine_example
       tags: ["state_machine_example"]
       style: hh_state_machine_view
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/16_state_machine/state_machine_example.svg" alt="state_machine_example" />
-            <br />
-            state machine example
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/16_state_machine/state_machine_example.svg" alt="state_machine_example" />
+<br /> state machine example
+</td>
+</tr>
 </table>
-
 
 Use Case
 --------
+
 <table>
-    <tr>
-        <td>
-            <pre>
+<tr>
+<td>
+<pre>
 -----------------------------------------------------------
 nodes:
     - id: ["User", user]
@@ -682,12 +654,11 @@ views:
     - id: use_case_example
       tags: ["use_case_example"]
       style: hh_use_case_view
-            </pre>
-        </td>
-        <td align="center">
-            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/17_use_case/use_case_example.svg" alt="use_case_example" />
-            <br />
-            use case example
-        </td>
-    </tr>
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/17_use_case/use_case_example.svg" alt="use_case_example" />
+<br /> use case example
+</td>
+</tr>
 </table>
