@@ -551,8 +551,9 @@ views:
 Predefined styles
 =================
 
-All predefined styles are automatically added to input files on invocation of
-`hiearch`.
+- All predefined styles are automatically added to input files on invocation of
+  `hiearch`.
+- Generally it is necessary to override tags inherited from style nodes.
 
 
 State machine
@@ -565,8 +566,6 @@ State machine
 nodes:
     - id: ["", choice1]
       style: hh_state_machine_choice
-      # in general it is necessary to override tags
-      # inherited from style nodes
       tags: ["state_machine_example"]
     - id: [state1, state1]
       style: hh_state_machine_regular
@@ -618,6 +617,77 @@ views:
             <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/16_state_machine/state_machine_example.svg" alt="state_machine_example" />
             <br />
             state machine example
+        </td>
+    </tr>
+</table>
+
+
+Use Case
+--------
+<table>
+    <tr>
+        <td>
+            <pre>
+-----------------------------------------------------------
+nodes:
+    - id: ["User", user]
+      style: hh_use_case_actor
+      tags: ["use_case_example"]
+    - id: ["Admin", admin]
+      style: hh_use_case_actor
+      tags: ["use_case_example"]
+    - id: ["Login System", system_boundary]
+      style: hh_use_case_system_boundary
+      tags: ["use_case_example"]
+    - id: ["Login", login]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+    - id: ["Logout", logout]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+    - id: ["Reset Password", reset_password]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+    - id: ["Register", register]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+    - id: ["Validate Credentials", validate_credentials]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+    - id: ["2FA Authentication", two_factor_auth]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+edges:
+    - link: [user, login]
+      style: hh_use_case_association
+    - link: [user, logout]
+      style: hh_use_case_association
+    - link: [user, reset_password]
+      style: hh_use_case_association
+    - link: [user, register]
+      style: hh_use_case_association
+    - link: [admin, reset_password]
+      style: hh_use_case_association
+    - link: [login, validate_credentials]
+      style: hh_use_case_include
+    - link: [two_factor_auth, login]
+      style: hh_use_case_extend
+views:
+    - id: use_case_example
+      tags: ["use_case_example"]
+      style: hh_use_case_view
+            </pre>
+        </td>
+        <td align="center">
+            <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/17_use_case/use_case_example.svg" alt="use_case_example" />
+            <br />
+            use case example
         </td>
     </tr>
 </table>

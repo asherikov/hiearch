@@ -57,7 +57,7 @@ def main():
     args = parser.parse_args()
 
     # Automatically include installed style files
-    for style_file in ['state_machine.yaml']:
+    for style_file in ['state_machine.yaml', 'use_case.yaml']:
         style_path = importlib.resources.files('hiearch.data.styles') / style_file
         if style_path.exists():
             args.inputs.append(str(style_path))

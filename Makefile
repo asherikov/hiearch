@@ -36,7 +36,7 @@ test:
 		01_basic 02_default_view 03_default_view_split 06_multiscope \
 		07_trivial 08_node_realations 09_tags 10_minimal \
 		11_neighbors 12_view_style 13_edge_labels 14_edge_style \
-		15_formatted_labels 16_state_machine || (echo "Failure!" && false)
+		15_formatted_labels 16_state_machine 17_use_case || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle || (echo "Failure!" && false)
 	@echo "Success!"
 

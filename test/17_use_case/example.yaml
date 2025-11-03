@@ -1,0 +1,80 @@
+nodes:
+    # Actors
+    - id: ["User", user]
+      style: hh_use_case_actor
+      tags: ["use_case_example"]
+
+    - id: ["Admin", admin]
+      style: hh_use_case_actor
+      tags: ["use_case_example"]
+
+    # System boundary
+    - id: ["Login System", system_boundary]
+      style: hh_use_case_system_boundary
+      tags: ["use_case_example"]
+
+    # Use cases
+    - id: ["Login", login]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+
+    - id: ["Logout", logout]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+
+    - id: ["Reset Password", reset_password]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+
+    - id: ["Register", register]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+
+    - id: ["Validate Credentials", validate_credentials]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+
+    # Additional use case for extend example
+    - id: ["2FA Authentication", two_factor_auth]
+      style: hh_use_case_case
+      scope: system_boundary
+      tags: ["use_case_example"]
+
+edges:
+    # Actor associations with use cases
+    - link: [user, login]
+      style: hh_use_case_association
+    - link: [user, logout]
+      style: hh_use_case_association
+    - link: [user, reset_password]
+      style: hh_use_case_association
+    - link: [user, register]
+      style: hh_use_case_association
+
+    # Admin associations
+    - link: [admin, reset_password]
+      style: hh_use_case_association
+
+    # Include relationships
+    - link: [login, validate_credentials]
+      style: hh_use_case_include
+
+    # Extend relationships
+    - link: [two_factor_auth, login]
+      style: hh_use_case_extend
+
+views:
+    # Main use case diagram
+    - id: use_case_example
+      tags: ["use_case_example"]
+      style: hh_use_case_view
+
+    # Show all use case style nodes
+    - id: use_case_style_nodes
+      tags: ["hh_use_case"]
+      style: hh_use_case_view

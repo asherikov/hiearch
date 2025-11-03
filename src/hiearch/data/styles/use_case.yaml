@@ -1,0 +1,98 @@
+# UML Use Case Diagram Styles for hiearch
+
+# Define nodes for different UML use case diagram elements
+nodes:
+    # Actor: represented as star shape with invisible borders
+    - id: ["", hh_use_case_actor]
+      tags: ["hh_use_case"]
+      graphviz:
+        shape: star
+        style: "filled"
+        fillcolor: "#e6f3ff"
+        peripheries: "0"
+        width: "0.8"
+        height: "0.8"
+        fixedsize: "true"
+    # Use Case: represented as oval
+    - id: ["", hh_use_case_case]
+      tags: ["hh_use_case"]
+      graphviz:
+        shape: ellipse
+        style: "filled,rounded"
+        fillcolor: "#f0f8ff"
+        peripheries: "1"
+        width: "1.8"
+        height: "0.9"
+        fixedsize: "false"
+    # System Boundary: rectangular box that contains use cases
+    - id: ["", hh_use_case_system_boundary]
+      tags: ["hh_use_case"]
+      scope: [] # This will be used as a container
+      graphviz:
+        shape: rectangle
+        style: "rounded,filled"
+        fillcolor: "#fafafa"
+        peripheries: "1"
+        width: "3.0"
+        height: "2.0"
+    - id: ["", hh_use_case_relationship_helper]
+      tags: ["hh_use_case"]
+      graphviz:
+        shape: plaintext
+        label: ""
+        style: invis
+# Define edge styles for different relationships
+edges:
+    # Association: connecting actors to use cases (solid line)
+    - link: [hh_use_case_relationship_helper, hh_use_case_relationship_helper, hh_use_case_association]
+      tags: ["hh_use_case"]
+      graphviz:
+        style: solid
+        color: black
+        dir: none
+    # Include relationship (dashed line with <<include>> label and open arrowhead)
+    - link: [hh_use_case_relationship_helper, hh_use_case_relationship_helper, hh_use_case_include]
+      tags: ["hh_use_case"]
+      graphviz:
+        style: dashed
+        color: black
+        dir: forward
+        arrowhead: open
+        label: "«include»"
+    # Extend relationship (dashed line with <<extend>> label and open arrowhead)
+    - link: [hh_use_case_relationship_helper, hh_use_case_relationship_helper, hh_use_case_extend]
+      tags: ["hh_use_case"]
+      graphviz:
+        style: dashed
+        color: black
+        dir: forward
+        arrowhead: open
+        label: "«extend»"
+    # Generalization relationship (solid line with empty arrowhead)
+    - link: [hh_use_case_relationship_helper, hh_use_case_relationship_helper, hh_use_case_generalization]
+      tags: ["hh_use_case"]
+      graphviz:
+        style: solid
+        color: black
+        dir: forward
+        arrowhead: empty
+# Define view styles
+views:
+    # Default view style for use case diagrams
+    - id: hh_use_case_view
+      nodes: []
+      graphviz:
+        graph:
+            rankdir: TB
+            style: "rounded, filled"
+            fillcolor: "#fafafa"
+        node:
+            fontsize: "12"
+            fontname: "Helvetica"
+            margin: "0.1"
+        edge:
+            fontsize: "10"
+            fontname: "Helvetica"
+            arrowsize: "0.8"
+            labelfontsize: "9"
+            labelfontname: "Helvetica"
