@@ -53,6 +53,10 @@ Features
 - `hiearch` supports label templates, which facilitates automatic generation of
   URLs, tables, icon inclusions, etc.
 
+- There are a few predefined styles distributed with the utility, e.g., for
+  generation of state machine graphs.
+
+
 
 Examples
 ========
@@ -532,15 +536,15 @@ nodes:
 </table>
 
 
-Styles
-======
+Predefined styles
+=================
 
-There are a few predefined styles distributed with the utility for convenience
--- they are automatically included on invocation.
+All predefined styles are automatically added to input files on invocation of
+`hiearch`.
 
 
-Multiscoping
-------------
+State machine
+-------------
 <table>
     <tr>
         <td>
@@ -550,35 +554,27 @@ nodes:
     - id: ["", choice1]
       style: hh_state_machine_choice
       tags: ["state_machine_example"]
-
     - id: [state1, state1]
       style: hh_state_machine_regular
       tags: ["state_machine_example"]
-
     - id: [state2, state2]
       style: hh_state_machine_regular
       tags: ["state_machine_example"]
-
     - id: ["", fork1]
       style: hh_state_machine_junction
       tags: ["state_machine_example"]
-
     - id: ["", join2]
       style: hh_state_machine_junction
       tags: ["state_machine_example"]
-
     - id: ["", start]
       style: hh_state_machine_initial
       tags: ["state_machine_example"]
-
     - id: ["", end1]
       style: hh_state_machine_final
       tags: ["state_machine_example"]
-
     - id: ["", end2]
       style: hh_state_machine_final
       tags: ["state_machine_example"]
-
 edges:
   - link: [start, choice1]
     label: "from start\nto choice"
@@ -598,7 +594,6 @@ edges:
     label: "from state\nto end"
   - link: [join2, end1]
     label: "from join\nto end"
-
 views:
   - id: state_machine_example
     tags: ["state_machine_example"]
