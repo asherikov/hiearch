@@ -1,7 +1,7 @@
 import copy
 
 
-def merge_styles(secondary, primary):
+def merge_styles(secondary, primary, with_tags=True):
     if 'graphviz' in secondary:
         if 'substitutions' in secondary:
             if 'substitutions' in primary:
@@ -14,7 +14,13 @@ def merge_styles(secondary, primary):
         else:
             primary['graphviz'] = secondary['graphviz']
 
-    return secondary | primary
+    result = secondary | primary
+
+    if not with_tags and 'tags' not in primary:
+        # do not inherit tags and tags are not explicitly overriden -- reset to default
+        result['tags'] = ['default']
+
+    return result
 
 
 def apply_styles(styled_entities, entities):
@@ -25,11 +31,19 @@ def apply_styles(styled_entities, entities):
         index = 0
         size_copy = copy.deepcopy(size)
         while index < size:
-            father_entity = entities[styled_entities[index]['style']]
+            with_tags = True
+            if 'style' in styled_entities[index]:
+                father_entity = entities[styled_entities[index]['style']]
+            else:
+                father_entity = entities[styled_entities[index]['style_notag']]
+                with_tags = False
 
-            if father_entity['style'] is None or father_entity['id'] in nodes_style_applied:
+            is_style_root = ('style' not in father_entity or father_entity['style'] is None) \
+                and ('style_notag' not in father_entity or father_entity['style_notag'] is None)
+
+            if is_style_root or father_entity['id'] in nodes_style_applied:
                 key = styled_entities[index]['id']
-                entities[key] = merge_styles(father_entity, styled_entities[index])
+                entities[key] = merge_styles(father_entity, styled_entities[index], with_tags)
                 nodes_style_applied.add(key)
                 styled_entities[index], styled_entities[size - 1] = styled_entities[size - 1], styled_entities[index]
                 size -= 1

@@ -1,0 +1,16 @@
+nodes:
+    - id: ["Node A", node_a]
+      tags: ["custom_tag"]
+      graphviz:
+        fillcolor: grey
+        style: filled
+    - id: ["Node B", node_b]
+      style: node_a
+    - id: ["Node C", node_c]
+      style_notag: node_a
+views:
+    # includes node C
+    - id: view_default
+    # includes nodes A and B
+    - id: view_custom
+      tags: ["custom_tag"]

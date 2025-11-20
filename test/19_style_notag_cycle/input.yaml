@@ -1,0 +1,6 @@
+nodes:
+    - id: ["Node B", node_b]
+      style_notag: node_c
+
+    - id: ["Node C", node_c]
+      style_notag: node_b

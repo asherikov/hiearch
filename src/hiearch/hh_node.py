@@ -132,6 +132,7 @@ def parse(yaml_nodes, nodes):
         'id': ['', ''],
         'scope': None,
         'style': None,
+        'style_notag': None,
         'graphviz': {
             'node_label_format': '{label}',
             'scope_label_format': '{label}',
@@ -154,7 +155,14 @@ def parse(yaml_nodes, nodes):
             raise RuntimeError(f'Duplicate node id: {key}')
 
         gather('scope', node, nodes.must_exist)
-        if gather('style', node, nodes.must_exist):
+
+        has_style = gather('style', node, nodes.must_exist)
+        has_style_notag = gather('style_notag', node, nodes.must_exist)
+
+        if has_style and has_style_notag:
+            raise RuntimeError(f'Node {key} cannot have both style and style_notag attributes')
+
+        if has_style or has_style_notag:
             nodes.styled.append(node)
             nodes.entities[key] = node
         else:

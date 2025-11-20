@@ -23,21 +23,10 @@ jobs:
             - run: make test
 
     static_checks:
-        runs-on: ubuntu-24.04
-
-        steps:
-            - name: main
-              uses: actions/checkout@v4
-              with:
-                path: "hiearch"
-            - name: ccws
-              uses: actions/checkout@v4
-              with:
-                repository: "asherikov/ccws"
-                path: "ccws"
-            - run: mkdir -p ccws/src
-            - run: mv hiearch ccws/src
-            - run: ${APT_INSTALL} python3-typeshed
-            - run: cd ccws; make bp_install_build BUILD_PROFILE=static_checks
-            - run: cd ccws; make bp_static_checks_install_build_python BUILD_PROFILE=static_checks
-            - run: cd ccws; make bp_static_checks_build_python BUILD_PROFILE=static_checks
+        uses: asherikov/ccws/.github/workflows/reusable_test.yaml@master
+        with:
+            distro: noble
+            workspace_version: ""
+            package_github_repo: ${{ github.repository }}
+            package_version: ${{ github.sha }}
+            profiles: '["static_checks"]'

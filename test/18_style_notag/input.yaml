@@ -1,0 +1,15 @@
+nodes:
+    - id: ["style1", style1]
+      tags: ["style1_tag"]
+    - id: ["style2", style2]
+      tags: ["style2_tag"]
+    - id: ["child_with_notag", child_with_notag]
+      style_notag: style2
+    - id: ["child_with_tags", child_with_tags]
+      style: style1
+views:
+    - id: view_with_notag # child_with_notag
+    - id: view_with_style1 # child_with_tags + style1
+      tags: ["style1_tag"]
+    - id: view_with_style2 # style2
+      tags: ["style2_tag"]

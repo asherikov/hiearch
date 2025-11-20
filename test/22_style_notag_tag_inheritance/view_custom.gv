@@ -1,0 +1,5 @@
+digraph view_custom {
+	graph [compound=true]
+	node_a [label="Node A" fillcolor=grey style=filled]
+	node_b [label="Node B" fillcolor=grey style=filled]
+}

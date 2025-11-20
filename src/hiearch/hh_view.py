@@ -93,6 +93,8 @@ def postprocess(views, nodes, edges):
     for view in views.entities.values():
         if view['nodes'] is None:
             view['nodes'] = set()
+            if 0 == len(view['tags']):
+                view['tags'] = ['default']
         else:
             num_nodes = len(view['nodes'])
             view['nodes'] = set(view['nodes'])  # set converted to list by | operator in apply_styles()

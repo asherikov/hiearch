@@ -5,6 +5,7 @@
   - [Trivial](#trivial)
   - [Node relations](#node-relations)
   - [Node selection using tags](#node-selection-using-tags)
+  - [Style inheritance without tags](#style-inheritance-without-tags)
   - [Neighbour node selection](#neighbour-node-selection)
   - [View styles](#view-styles)
   - [Edge labels](#edge-labels)
@@ -217,6 +218,46 @@ nodes:
 </td>
 </tr>
 </table>
+
+Style inheritance without tags
+------------------------------
+
+<table>
+<tr>
+<td rowspan="2">
+<pre>
+-----------------------------------------------------------
+nodes:
+    - id: ["Node A", node_a]
+      tags: ["custom_tag"]
+      graphviz:
+        fillcolor: grey
+        style: filled
+    - id: ["Node B", node_b]
+      style: node_a
+    - id: ["Node C", node_c]
+      # no need to explicitly override inherited tags,
+      # which is useful for dealing with pure style nodes.
+      style_notag: node_a
+views:
+    - id: view_default          # includes node C
+    - id: view_custom           # includes nodes A and B
+      tags: ["custom_tag"]
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/22_style_notag_tag_inheritance/view_default.svg" alt="view_default" />
+<br /> view_default
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/22_style_notag_tag_inheritance/view_custom.svg" alt="view_custom" />
+<br /> view_custom
+</td>
+</tr>
+</table>
+
 
 Neighbour node selection
 ------------------------
@@ -538,29 +579,21 @@ State machine
 -----------------------------------------------------------
 nodes:
     - id: ["", choice1]
-      style: hh_state_machine_choice
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_choice
     - id: [state1, state1]
-      style: hh_state_machine_regular
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_regular
     - id: [state2, state2]
-      style: hh_state_machine_regular
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_regular
     - id: ["", fork1]
-      style: hh_state_machine_junction
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_junction
     - id: ["", join2]
-      style: hh_state_machine_junction
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_junction
     - id: ["", start]
-      style: hh_state_machine_initial
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_initial
     - id: ["", end1]
-      style: hh_state_machine_final
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_final
     - id: ["", end2]
-      style: hh_state_machine_final
-      tags: ["state_machine_example"]
+      style_notag: hh_state_machine_final
 edges:
     - link: [start, choice1]
       label: "from start\nto choice"
@@ -581,8 +614,8 @@ edges:
     - link: [join2, end1]
       label: "from join\nto end"
 views:
+    # Example
     - id: state_machine_example
-      tags: ["state_machine_example"]
       style: hh_state_machine_view
 </pre>
 </td>
@@ -603,38 +636,29 @@ Use Case
 -----------------------------------------------------------
 nodes:
     - id: ["User", user]
-      style: hh_use_case_actor
-      tags: ["use_case_example"]
+      style_notag: hh_use_case_actor
     - id: ["Admin", admin]
-      style: hh_use_case_actor
-      tags: ["use_case_example"]
+      style_notag: hh_use_case_actor
     - id: ["Login System", system_boundary]
-      style: hh_use_case_system_boundary
-      tags: ["use_case_example"]
+      style_notag: hh_use_case_system_boundary
     - id: ["Login", login]
-      style: hh_use_case_case
+      style_notag: hh_use_case_case
       scope: system_boundary
-      tags: ["use_case_example"]
     - id: ["Logout", logout]
-      style: hh_use_case_case
+      style_notag: hh_use_case_case
       scope: system_boundary
-      tags: ["use_case_example"]
     - id: ["Reset Password", reset_password]
-      style: hh_use_case_case
+      style_notag: hh_use_case_case
       scope: system_boundary
-      tags: ["use_case_example"]
     - id: ["Register", register]
-      style: hh_use_case_case
+      style_notag: hh_use_case_case
       scope: system_boundary
-      tags: ["use_case_example"]
     - id: ["Validate Credentials", validate_credentials]
-      style: hh_use_case_case
+      style_notag: hh_use_case_case
       scope: system_boundary
-      tags: ["use_case_example"]
     - id: ["2FA Authentication", two_factor_auth]
-      style: hh_use_case_case
+      style_notag: hh_use_case_case
       scope: system_boundary
-      tags: ["use_case_example"]
 edges:
     - link: [user, login]
       style: hh_use_case_association
@@ -652,7 +676,6 @@ edges:
       style: hh_use_case_extend
 views:
     - id: use_case_example
-      tags: ["use_case_example"]
       style: hh_use_case_view
 </pre>
 </td>

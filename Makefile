@@ -17,8 +17,8 @@ FORMAT=svg
 	cp ${TEST_DIR}/$@/icon*.svg ${BUILD_DIR}/$@/ || true
 	cd ${TEST_DIR}/$@/; ${TEST_NOT} hiearch -f ${FORMAT} -o ${BUILD_DIR}/$@ *.yaml
 	# TODO awkward and fragile
-	find ${BUILD_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum > ${BUILD_DIR}/$@/checksum.build"
-	find ${TEST_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum > ${BUILD_DIR}/$@/checksum.test"
+	find ${BUILD_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum > ${BUILD_DIR}/$@/checksum.build && basename '{}' >> ${BUILD_DIR}/$@/checksum.build"
+	find ${TEST_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum > ${BUILD_DIR}/$@/checksum.test && basename '{}' >> ${BUILD_DIR}/$@/checksum.test"
 	${TEST_NOT} cmp ${BUILD_DIR}/$@/checksum.build ${BUILD_DIR}/$@/checksum.test
 
 venv: builddir
@@ -36,8 +36,10 @@ test:
 		01_basic 02_default_view 03_default_view_split 06_multiscope \
 		07_trivial 08_node_realations 09_tags 10_minimal \
 		11_neighbors 12_view_style 13_edge_labels 14_edge_style \
-		15_formatted_labels 16_state_machine 17_use_case || (echo "Failure!" && false)
-	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle || (echo "Failure!" && false)
+		15_formatted_labels 16_state_machine 17_use_case 18_style_notag \
+		22_style_notag_tag_inheritance || (echo "Failure!" && false)
+	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
+		20_mixed_style_cycle || (echo "Failure!" && false)
 	@echo "Success!"
 
 clean:
