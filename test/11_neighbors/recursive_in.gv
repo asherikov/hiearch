@@ -1,0 +1,11 @@
+digraph recursive_in {
+	graph [compound=true]
+	node_d [label="Node D"]
+	subgraph node_b {
+		graph [cluster=true label="Node B"]
+		"node_b.node_c" [label="Node C"]
+	}
+	node_a [label="Node A"]
+	"node_b.node_c" -> node_d
+	node_a -> "node_b.node_c"
+}

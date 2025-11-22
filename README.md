@@ -258,61 +258,85 @@ views:
 </tr>
 </table>
 
-
 Neighbour node selection
 ------------------------
 
 <table>
 <tr>
-<td rowspan="4">
+<td rowspan="6">
 <pre>
 -----------------------------------------------------------
 nodes:
-    - id: ["Test 1", test1]
-    - id: ["Test 2", test2]
-    - id: ["Test 3", test3]
-      scope: test2
+    - id: ["Node A", node_a]
+    - id: ["Node B", node_b]
+    - id: ["Node C", node_c]
+      scope: [node_b]
+    - id: ["Node D", node_d]
 edges:
-    - link: [test1, test3]
+    - link: [node_a, node_c]
+    - link: [node_c, node_d]
 views:
-    - id: view1
-      nodes: [test1]
-      # nodes must be specified explicitly
-      # neighbours: explicit
-    - id: view2
-      nodes: [test1]
-      # add connected nodes
+    - id: explicit
+      nodes: [node_a]
+      # only node_a
+      #neighbours: explicit
+    - id: direct
+      nodes: [node_a]
+      # node_a and node_c (directly connected)
       neighbours: direct
-    - id: view3
-      nodes: [test1]
-      # add top most parents of connected nodes
+    - id: parent
+      nodes: [node_a]
+      # node_a and node_b (parent of connected node C)
       neighbours: parent
-    - id: view4
-      # all three together
-      tags: ["default"]
+    - id: recursive_out
+      nodes: [node_a]
+      # node_a, node_c, node_d (all connected)
+      # + node_b -- parent of c
+      neighbours: recursive_out
+    - id: recursive_in
+      nodes: [node_d]
+      # node_a, node_c, node_d (all connected)
+      # + node_b -- parent of c
+      neighbours: recursive_in
+    - id: recursive_in_c
+      nodes: [node_c]
+      # node_a, node_c
+      neighbours: recursive_in
 </pre>
 </td>
 <td align="center">
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view1.svg" alt="view1" />
-<br /> view1
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/explicit.svg" alt="explicit" />
+<br /> explicit
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view2.svg" alt="view2" />
-<br /> view2
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/direct.svg" alt="direct" />
+<br /> direct
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view3.svg" alt="view3" />
-<br /> view3
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/parent.svg" alt="parent" />
+<br /> parent
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/view4.svg" alt="view4" />
-<br /> view4
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_in.svg" alt="recursive_in" />
+<br /> recursive_in
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_out.svg" alt="recursive_out" />
+<br /> recursive_out
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_out_c.svg" alt="recursive_out" />
+<br /> recursive_out_c
 </td>
 </tr>
 </table>

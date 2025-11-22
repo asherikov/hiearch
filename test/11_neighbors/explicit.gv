@@ -1,0 +1,4 @@
+digraph explicit {
+	graph [compound=true]
+	node_a [label="Node A"]
+}

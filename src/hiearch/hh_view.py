@@ -9,8 +9,10 @@ class Neighbours():
     DIRECT = 'direct'
     EXPLICIT = 'explicit'
     PARENT = 'parent'
+    RECURSIVE_IN = 'recursive_in'
+    RECURSIVE_OUT = 'recursive_out'
 
-    types = [DIRECT, EXPLICIT, PARENT]
+    types = [DIRECT, EXPLICIT, PARENT, RECURSIVE_IN, RECURSIVE_OUT]
 
 
 
@@ -21,7 +23,6 @@ default: dict = {
     'graphviz': {},
     'style': None,
     'tags': [],
-    # overriden
     'edges': [],
     'custom_edges': [],
     'tree': {},
@@ -83,6 +84,42 @@ def select_parent(view, nodes, edges, add_nodes):
                         view['custom_edges'][new_edge['id']] = new_edge
 
 
+def select_recursive(view, nodes, edges, add_nodes, direction):
+    # Select connected nodes
+    add_nodes.union(view['nodes'])
+    add_nodes_list = list(view['nodes'])
+    index = 0
+    original_size = len(add_nodes_list)
+
+    while index < len(add_nodes_list):
+        edge_keys = nodes[add_nodes_list[index]][direction]
+        for edge_key in edge_keys:
+            if direction == 'in':
+                connected_node = edges[edge_key]['out']
+            else:
+                connected_node = edges[edge_key]['in']
+            # Check if connected node is not already selected
+            if connected_node not in add_nodes:
+                view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
+                add_nodes_list.append(connected_node)
+                add_nodes.add(connected_node)
+        index += 1
+
+    # Process parents of the newly selected nodes (excluding the original view nodes)
+    index = original_size
+    while index < len(add_nodes_list):
+        node = nodes[add_nodes_list[index]]
+        while node['scope'] is not None:
+            for node_id in node['scope']:
+                node = nodes[node_id]
+                if node_id not in add_nodes:
+                    add_nodes_list.append(node_id)
+                    add_nodes.add(node_id)
+        index += 1
+
+    add_nodes.difference(view['nodes'])
+
+
 def postprocess(views, nodes, edges):
     util.check_key_existence(views.must_exist, views.entities, 'view')
     util.apply_styles(views.styled, views.entities)
@@ -132,6 +169,12 @@ def postprocess(views, nodes, edges):
 
         elif Neighbours.PARENT == view['neighbours']:
             select_parent(view, nodes, edges, add_nodes)
+
+        elif Neighbours.RECURSIVE_IN == view['neighbours']:
+            select_recursive(view, nodes, edges, add_nodes, 'in')
+
+        elif Neighbours.RECURSIVE_OUT == view['neighbours']:
+            select_recursive(view, nodes, edges, add_nodes, 'out')
 
         else:
             raise RuntimeError(f'Unsupported neighbours type: {view["neighbours"]}, must be one of [{Neighbours.types}].')

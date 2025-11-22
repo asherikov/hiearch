@@ -1,6 +1,0 @@
-digraph view3 {
-	graph [compound=true]
-	test2 [label="Test 2"]
-	test1 [label="Test 1"]
-	test1 -> test2
-}
