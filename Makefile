@@ -68,9 +68,9 @@ install_release_deps:
 	#pip install --upgrade build
 	#pip install --upgrade twine
 	#pip install --upgrade packaging
-	pipx install twine
+	sudo apt install pipx python3-build python3-packaging
 	# apt twine does not work https://github.com/pypi/warehouse/issues/15611
-	sudo apt install python3-build python3-packaging
+	pipx install twine
 
 upload_testpypi:
 	rm -Rf dist
