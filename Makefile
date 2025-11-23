@@ -37,7 +37,7 @@ test:
 		07_trivial 08_node_realations 09_tags 10_minimal \
 		11_neighbors 12_view_style 13_edge_labels 14_edge_style \
 		15_formatted_labels 16_state_machine 17_use_case 18_style_notag \
-		22_style_notag_tag_inheritance || (echo "Failure!" && false)
+		21_dinit_service_style 22_style_notag_tag_inheritance || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle || (echo "Failure!" && false)
 	@echo "Success!"

@@ -15,6 +15,7 @@
 - [Predefined styles](#predefined-styles)
   - [State machine](#state-machine)
   - [Use Case](#use-case)
+  - [Dinit service graph](#dinit-service-graph)
 
 Introduction
 ============
@@ -96,8 +97,11 @@ Trivial
 -------
 
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -108,20 +112,28 @@ views:
     - id: view1              # unique id / output filename
       nodes: [test1]         # nodes to include
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/07_trivial/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 </table>
 
 Node relations
 --------------
 
 <table>
+
 <tr>
+
 <td rowspan="3">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -146,32 +158,48 @@ views:
     - id: view3
       nodes: [test1, test2]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view3.svg" alt="view3" />
 <br /> view3
 </td>
+
 </tr>
+
 </table>
 
 Node selection using tags
 -------------------------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -188,22 +216,35 @@ views:
     - id: view2
       tags: ["default"]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 </table>
+
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -211,20 +252,28 @@ nodes:
 # if no views are specified explicitly, a default one is
 # added with 'tags: ["default"]'
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/10_minimal/default.svg" alt="default" />
 <br /> default
 </td>
+
 </tr>
+
 </table>
 
 Style inheritance without tags
 ------------------------------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -244,26 +293,38 @@ views:
     - id: view_custom           # includes nodes A and B
       tags: ["custom_tag"]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/22_style_notag_tag_inheritance/view_default.svg" alt="view_default" />
 <br /> view_default
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/22_style_notag_tag_inheritance/view_custom.svg" alt="view_custom" />
 <br /> view_custom
 </td>
+
 </tr>
+
 </table>
 
 Neighbour node selection
 ------------------------
 
 <table>
+
 <tr>
+
 <td rowspan="6">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -303,50 +364,78 @@ views:
       # node_a, node_c
       neighbours: recursive_in
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/explicit.svg" alt="explicit" />
 <br /> explicit
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/direct.svg" alt="direct" />
 <br /> direct
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/parent.svg" alt="parent" />
 <br /> parent
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_in.svg" alt="recursive_in" />
 <br /> recursive_in
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_out.svg" alt="recursive_out" />
 <br /> recursive_out
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_out_c.svg" alt="recursive_out" />
 <br /> recursive_out_c
 </td>
+
 </tr>
+
 </table>
 
 View styles
 -----------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -372,26 +461,38 @@ views:
     - id: plain
       nodes: [test1]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/styled.svg" alt="styled" />
 <br /> styled
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/plain.svg" alt="plain" />
 <br /> plain
 </td>
+
 </tr>
+
 </table>
 
 Edge labels
 -----------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -408,26 +509,38 @@ views:
     - id: view2
       nodes: [test2]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 </table>
 
 Edge styles
 -----------
 
 <table>
+
 <tr>
+
 <td rowspan="3">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -468,24 +581,37 @@ views:
     - id: view3
       nodes: [test3]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view3.svg" alt="view3" />
 <br /> view3
 </td>
+
 </tr>
+
 </table>
 
 Formatted labels
@@ -524,28 +650,40 @@ PNG using graphviz won’t work. Also, the included images must be present in th
 output directory.
 
 <table>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view1.png" alt="view1" />
 <br /> view1
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view2.png" alt="view2" />
 <br /> view2
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view3.png" alt="view3" />
 <br /> view3
 </td>
+
 </tr>
+
 </table>
 
 Multiscoping
 ------------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -572,18 +710,27 @@ views:
     - id: autoranking
       nodes: [test1, test2, test3]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/autoranking.svg" alt="autoranking" />
 <br /> autoranking
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/default.svg" alt="default" />
 <br /> default
 </td>
+
 </tr>
+
 </table>
 
 Predefined styles
@@ -597,8 +744,11 @@ State machine
 -------------
 
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -642,20 +792,28 @@ views:
     - id: state_machine_example
       style: hh_state_machine_view
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/16_state_machine/state_machine_example.svg" alt="state_machine_example" />
 <br /> state machine example
 </td>
+
 </tr>
+
 </table>
 
 Use Case
 --------
 
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -702,10 +860,118 @@ views:
     - id: use_case_example
       style: hh_use_case_view
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/17_use_case/use_case_example.svg" alt="use_case_example" />
 <br /> use case example
 </td>
+
 </tr>
+
+</table>
+
+Dinit service graph
+-------------------
+
+<table>
+
+<tr>
+
+<td>
+
+<pre>
+-----------------------------------------------------------
+nodes:
+    - id: ["cdinit_log", cdinit_log]
+      style_notag: hh_dinit_process
+    - id: ["cdinit_sessionsync", cdinit_sessionsync]
+      style_notag: hh_dinit_process
+    - id: ["cdinit_ros2_bag", cdinit_ros2_bag]
+      style_notag: hh_dinit_process
+    - id: ["px4_offboard_demo_py_node",
+            px4_offboard_demo_py_node]
+      style_notag: hh_dinit_process
+    - id: ["px4sitl_dds_agent", px4sitl_dds_agent]
+      style_notag: hh_dinit_process
+    - id: ["px4sitl_gz_clock", px4sitl_gz_clock]
+      style_notag: hh_dinit_process
+    - id: ["px4sitl_gz_headless", px4sitl_gz_headless]
+      style_notag: hh_dinit_process
+    - id: ["px4sitl_gz_gui", px4sitl_gz_gui]
+      style_notag: hh_dinit_process
+    - id: ["px4sitl_gz_wait", px4sitl_gz_wait]
+      style_notag: hh_dinit_scripted
+    - id: ["px4sitl_px4", px4sitl_px4]
+      style_notag: hh_dinit_process
+    - id: ["px4sitl_qgroundcontrol",
+            px4sitl_qgroundcontrol]
+      style_notag: hh_dinit_process
+    - id: ["px4sitl_ros", px4sitl_ros]
+      style_notag: hh_dinit_internal
+edges:
+    - link: [px4_offboard_demo_py_node, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4_offboard_demo_py_node, cdinit_ros2_bag]
+      style: hh_dinit_depends_ms
+    - link: [px4_offboard_demo_py_node, px4sitl_px4]
+      style: hh_dinit_depends_on
+    - link: [cdinit_ros2_bag, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [cdinit_ros2_bag, cdinit_sessionsync]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_dds_agent, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_gz_clock, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_gz_clock, px4sitl_gz_headless]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_gz_gui, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_gz_gui, px4sitl_gz_wait]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_gz_gui, px4sitl_ros]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_gz_headless, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_gz_wait, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_gz_wait, px4sitl_gz_headless]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_px4, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_px4, px4sitl_gz_wait]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_qgroundcontrol, cdinit_log]
+      style: hh_dinit_depends_ms
+    - link: [px4sitl_qgroundcontrol, px4sitl_px4]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_ros, px4sitl_dds_agent]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_ros, px4sitl_gz_clock]
+      style: hh_dinit_depends_on
+    - link: [px4sitl_ros, px4sitl_gz_headless]
+      style: hh_dinit_depends_on
+    - link: [cdinit_log, cdinit_sessionsync]
+      style: hh_dinit_depends_ms
+&#10;views:
+    - id: dinit_service_example
+      nodes: [px4sitl_gz_gui, px4sitl_qgroundcontrol,
+              px4_offboard_demo_py_node]
+      neighbours: recursive_out
+      style: hh_dinit_service_view
+</pre>
+
+</td>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/21_dinit_service_style/dinit_service_example.svg" alt="dinit_service_example" />
+<br /> dinit service example
+</td>
+
+</tr>
+
 </table>
