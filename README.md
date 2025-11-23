@@ -342,8 +342,8 @@ views:
 </tr>
 <tr>
 <td align="center">
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_out_c.svg" alt="recursive_out" />
-<br /> recursive_out_c
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_in_c.svg" alt="recursive_out" />
+<br /> recursive_in_c
 </td>
 </tr>
 </table>
