@@ -98,9 +98,10 @@ def select_recursive(view, nodes, edges, add_nodes, direction):
                 connected_node = edges[edge_key]['out']
             else:
                 connected_node = edges[edge_key]['in']
+            view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
+
             # Check if connected node is not already selected
             if connected_node not in add_nodes:
-                view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
                 add_nodes_list.append(connected_node)
                 add_nodes.add(connected_node)
         index += 1
