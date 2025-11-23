@@ -65,19 +65,22 @@ install_deps: builddir
 
 # https://packaging.python.org/en/latest/tutorials/packaging-projects/
 install_release_deps:
-	pip install --upgrade build
-	pip install --upgrade twine
-	pip install --upgrade packaging
+	#pip install --upgrade build
+	#pip install --upgrade twine
+	#pip install --upgrade packaging
+	pipx install twine
+	# apt twine does not work https://github.com/pypi/warehouse/issues/15611
+	sudo apt install python3-build python3-packaging
 
 upload_testpypi:
 	rm -Rf dist
-	python3.11 -m build
-	python3.11 -m twine upload --verbose --repository testpypi dist/*
+	python3 -m build
+	twine upload --verbose --repository testpypi dist/*
 
 upload_pypi:
 	rm -Rf dist
-	python3.11 -m build
-	python3.11 -m twine upload --verbose dist/*
+	python3 -m build
+	twine upload --verbose dist/*
 
 uninstall: clean
 	pip uninstall -y ${PROJECT_NAME}
