@@ -1,0 +1,6 @@
+digraph tag_based_recursive_out_node_a_expand_recursive_out {
+	graph [compound=true]
+	node_b [label="Node B"]
+	node_a [label="Node A"]
+	node_a -> node_b
+}

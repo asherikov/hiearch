@@ -8,6 +8,7 @@
   - [Node selection using tags](#node-selection-using-tags)
   - [Style inheritance without tags](#style-inheritance-without-tags)
   - [Neighbour node selection](#neighbour-node-selection)
+  - [View expansion](#view-expansion)
   - [View styles](#view-styles)
   - [Edge labels](#edge-labels)
   - [Edge styles](#edge-styles)
@@ -347,6 +348,68 @@ views:
 </td>
 </tr>
 </table>
+
+View expansion
+--------------
+
+<table>
+<tr>
+<td rowspan="3">
+<pre>
+-----------------------------------------------------------
+nodes:
+    - id: ["Node A", node_a]
+      tags: [group1]
+    - id: ["Node B", node_b]
+      tags: [group1]
+    - id: ["Node C", node_c]
+      scope: [node_b]
+    - id: ["Node D", node_d]
+    - id: ["Node E", node_e]
+    - id: ["Node F", node_f]
+    - id: ["Node H", node_h]
+edges:
+    - link: [node_a, node_c]
+    - link: [node_c, node_d]
+    - link: [node_d, node_e]
+    - link: [node_e, node_f]
+    - link: [node_f, node_h]
+    - link: [node_a, node_b]
+
+views:
+    - id: tag_based_recursive_out
+      tags: [group1]
+      # create additional views based on the current one:
+      #  - for each node selected in the current view
+      #    add a view, where this node is present as well
+      #    as its relations specified in expand array;
+      #  - note that only nodes present in the original
+      #    view are shown in new views;
+      #  - original view is preserved;
+      #  - expanded views inherit properties of the
+      #    original.
+      expand: [recursive_out]
+</pre>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out.svg" alt="tag_based_recursive_out" />
+<br /> tag_based_recursive_out
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_a_expand_recursive_out.svg" alt="tag_based_recursive_out_node_a_expand_recursive_out" />
+<br /> tag_based_recursive_out_node_a_expand_recursive_out
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_b_expand_recursive_out.svg" alt="tag_based_recursive_out_node_b_expand_recursive_out" />
+<br /> tag_based_recursive_out_node_b_expand_recursive_out
+</td>
+</tr>
+</table>
+
 
 View styles
 -----------

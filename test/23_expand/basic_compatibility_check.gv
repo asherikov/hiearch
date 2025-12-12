@@ -1,0 +1,4 @@
+digraph basic_compatibility_check {
+	graph [compound=true]
+	node_a [label="Node A"]
+}

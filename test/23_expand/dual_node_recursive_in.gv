@@ -1,0 +1,6 @@
+digraph dual_node_recursive_in {
+	graph [compound=true]
+	node_h [label="Node H"]
+	node_f [label="Node F"]
+	node_f -> node_h
+}

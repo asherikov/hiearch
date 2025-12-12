@@ -1,0 +1,8 @@
+digraph neighbour_implicit_selection_with_expand {
+	graph [compound=true]
+	node_a [label="Node A"]
+	node_c [label="Node C"]
+	node_d [label="Node D"]
+	node_a -> node_c
+	node_c -> node_d
+}

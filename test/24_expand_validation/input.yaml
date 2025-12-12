@@ -1,0 +1,15 @@
+nodes:
+    - id: ["Node A", node_a]
+    - id: ["Node B", node_b]
+
+edges:
+    - link: [node_a, node_b]
+
+views:
+    - id: valid_expand_recursive_out
+      nodes: [node_a]
+      expand: [recursive_out]
+
+    - id: invalid_expand_unsupported_type
+      nodes: [node_a]
+      expand: [invalid_type]

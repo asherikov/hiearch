@@ -1,0 +1,4 @@
+digraph dual_node_recursive_in_node_f_expand_recursive_in {
+	graph [compound=true]
+	node_f [label="Node F"]
+}

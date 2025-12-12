@@ -26,6 +26,8 @@ default: dict = {
     'edges': [],
     'custom_edges': [],
     'tree': {},
+    'expand': [],
+    'nodes_subset': {},
 }
 
 
@@ -46,8 +48,10 @@ def select_explicit(view, nodes, edges):
 def select_direct(view, nodes, edges, add_nodes):
     for node_key in view['nodes']:
         for dir_key in ['in', 'out']:
+            opp_dir_key = opposite[dir_key]
             for edge_key in nodes[node_key][dir_key]:
-                view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
+                if edges[edge_key][opp_dir_key] in nodes:
+                    view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
 
     for edge_key in view['edges']:
         for dir_key in ['in', 'out']:
@@ -63,6 +67,8 @@ def select_parent(view, nodes, edges, add_nodes):
 
                 while len(nodes_to_explore) > 0:
                     scope_node_key = nodes_to_explore.pop()
+                    if scope_node_key not in nodes:
+                        continue
 
                     # go up the tree until reached an explicitly requested or a root node
                     while scope_node_key not in view['nodes'] and nodes[scope_node_key]['scope'] is not None:
@@ -86,7 +92,7 @@ def select_parent(view, nodes, edges, add_nodes):
 
 def select_recursive(view, nodes, edges, add_nodes, direction):
     # Select connected nodes
-    add_nodes.union(view['nodes'])
+    add_nodes.update(view['nodes'])
     add_nodes_list = list(view['nodes'])
     index = 0
     original_size = len(add_nodes_list)
@@ -98,6 +104,10 @@ def select_recursive(view, nodes, edges, add_nodes, direction):
                 connected_node = edges[edge_key]['out']
             else:
                 connected_node = edges[edge_key]['in']
+
+            if connected_node not in nodes:
+                continue
+
             view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
 
             # Check if connected node is not already selected
@@ -110,21 +120,63 @@ def select_recursive(view, nodes, edges, add_nodes, direction):
     index = original_size
     while index < len(add_nodes_list):
         node = nodes[add_nodes_list[index]]
-        while node['scope'] is not None:
+        skip = False
+        while node['scope'] is not None and not skip:
             for node_id in node['scope']:
+                if node_id not in nodes:
+                    skip = True
+                    continue
+
                 node = nodes[node_id]
                 if node_id not in add_nodes:
                     add_nodes_list.append(node_id)
                     add_nodes.add(node_id)
         index += 1
 
-    add_nodes.difference(view['nodes'])
+    add_nodes.difference_update(view['nodes'])
+
+
+def select_neighbours_for_view(view, nodes, edges):
+    """Apply neighbour selection logic to a single view"""
+    if 0 == len(view['nodes']):
+        return
+
+    view['edges'] = {}
+    view['custom_edges'] = {}
+    add_nodes = set()
+
+    if 0 == len(view['nodes_subset']):
+        nodes_subset = nodes
+    else:
+        nodes_subset = view['nodes_subset']
+
+    if Neighbours.EXPLICIT == view['neighbours']:
+        select_explicit(view, nodes_subset, edges)
+
+    elif Neighbours.DIRECT == view['neighbours']:
+        select_direct(view, nodes_subset, edges, add_nodes)
+
+    elif Neighbours.PARENT == view['neighbours']:
+        select_parent(view, nodes_subset, edges, add_nodes)
+
+    elif Neighbours.RECURSIVE_IN == view['neighbours']:
+        select_recursive(view, nodes_subset, edges, add_nodes, 'in')
+
+    elif Neighbours.RECURSIVE_OUT == view['neighbours']:
+        select_recursive(view, nodes_subset, edges, add_nodes, 'out')
+
+    else:
+        raise RuntimeError(f'Unsupported neighbours type: {view["neighbours"]}, must be one of {Neighbours.types}.')
+
+    if len(add_nodes) > 0:
+        view['nodes'] = view['nodes'].union(add_nodes)
+
+    view['tree'], view['node_key_paths'], view['scopes'] = hh_node.build_tree(nodes, view['nodes'])
 
 
 def postprocess(views, nodes, edges):
     util.check_key_existence(views.must_exist, views.entities, 'view')
     util.apply_styles(views.styled, views.entities)
-
 
     # resolve nodes
     empty_views_counter = 0
@@ -153,39 +205,50 @@ def postprocess(views, nodes, edges):
         if 0 == len(views.entities['default']['nodes']):
             raise RuntimeError(f'All views are empty: {views.entities.keys()}')
 
-    # add neighbour nodes and build trees
+    # select neighbours
     for view in views.entities.values():
-        if 0 == len(view['nodes']):
-            continue
-
-        view['edges'] = {}
-        view['custom_edges'] = {}
-        add_nodes = set()
-
-        if Neighbours.EXPLICIT == view['neighbours']:
-            select_explicit(view, nodes, edges)
-
-        elif Neighbours.DIRECT == view['neighbours']:
-            select_direct(view, nodes, edges, add_nodes)
-
-        elif Neighbours.PARENT == view['neighbours']:
-            select_parent(view, nodes, edges, add_nodes)
-
-        elif Neighbours.RECURSIVE_IN == view['neighbours']:
-            select_recursive(view, nodes, edges, add_nodes, 'in')
-
-        elif Neighbours.RECURSIVE_OUT == view['neighbours']:
-            select_recursive(view, nodes, edges, add_nodes, 'out')
-
-        else:
-            raise RuntimeError(f'Unsupported neighbours type: {view["neighbours"]}, must be one of [{Neighbours.types}].')
-
-        if len(add_nodes) > 0:
-            view['nodes'] = view['nodes'].union(add_nodes)
+        select_neighbours_for_view(view, nodes, edges)
 
 
-        view['tree'], view['node_key_paths'], view['scopes'] = hh_node.build_tree(nodes, view['nodes'])
+    # Process views and create expanded views if needed (before neighbour processing)
+    additional_views = {}
 
+    for view_id, view in views.entities.items():
+        # Check if expand field is properly initialized
+        if not isinstance(view['expand'], list):
+            raise RuntimeError(f'Expand field in view "{view_id}" must be an array.')
+
+        # Process expand parameter if not empty
+        if len(view['expand']) > 0:
+            expand_types = view['expand']
+
+            original_copy = copy.deepcopy(view)
+            original_copy['expand'] = []
+            for node in original_copy['nodes']:
+                original_copy['nodes_subset'][node] = nodes[node]
+            view['expand'] = []
+
+            for expand_type in expand_types:
+                if expand_type not in ['recursive_in', 'recursive_out']:
+                    raise RuntimeError(f'Unsupported expand type: "{expand_type}" in view "{view_id}".')
+
+                for node_id in original_copy['nodes']:
+                    # Create a new view with just this single node, expanded
+                    new_view_id = f"{view_id}_{node_id}_expand_{expand_type}"
+                    new_view = copy.deepcopy(original_copy)
+                    new_view['id'] = new_view_id
+                    # Use only this single node as the starting point
+                    new_view['nodes'] = set([node_id])
+                    # Convert parameter to corresponding Neighbours constant
+                    new_view['neighbours'] = getattr(Neighbours, expand_type.upper())
+
+                    select_neighbours_for_view(new_view, nodes, edges)
+
+                    additional_views[new_view_id] = new_view
+
+
+    # Add all the generated expanded views to the main views dictionary
+    views.entities.update(additional_views)
 
 
 def parse(yaml_views, views, must_exist_nodes):

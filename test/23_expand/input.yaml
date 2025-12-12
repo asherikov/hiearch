@@ -1,0 +1,67 @@
+nodes:
+    - id: ["Node A", node_a]
+      tags: [group1]
+    - id: ["Node B", node_b]
+      tags: [group1]
+    - id: ["Node C", node_c]
+      scope: [node_b]
+    - id: ["Node D", node_d]
+      tags: [group2]
+    - id: ["Node E", node_e]
+      tags: [group2]
+    - id: ["Node F", node_f]
+    - id: ["Node H", node_h]
+
+edges:
+    - link: [node_a, node_c]
+    - link: [node_c, node_d]
+    - link: [node_d, node_e]
+    - link: [node_e, node_f]
+    - link: [node_f, node_h]
+    - link: [node_a, node_b]
+
+views:
+    - id: basic_compatibility_check
+      nodes: [node_a]
+      # Basic view without expand for compatibility testing
+
+    - id: dual_node_recursive_out
+      nodes: [node_a, node_b]
+      expand: [recursive_out]
+      # This should generate:
+      # 1. dual_node_recursive_out: explicit neighbors (as if neighbours: explicit or default)
+      # 2. dual_node_recursive_out_expand_recursive_out: recursive out neighbors with node_a, node_b and all connected downstream nodes
+
+    - id: dual_node_recursive_both
+      nodes: [node_d, node_e]
+      expand: [recursive_in, recursive_out]
+      # This should generate:
+      # 1. dual_node_recursive_both: explicit neighbors (as if neighbours: explicit or default)
+      # 2. dual_node_recursive_both_expand_recursive_in: recursive in neighbors with upstream nodes of node_d and node_e
+      # 3. dual_node_recursive_both_expand_recursive_out: recursive out neighbors with downstream nodes of node_d and node_e
+
+    - id: dual_node_recursive_in
+      nodes: [node_f, node_h]
+      expand: [recursive_in]
+      # This should generate:
+      # 1. dual_node_recursive_in: explicit neighbors (as if neighbours: explicit or default)
+      # 2. dual_node_recursive_in_expand_recursive_in: recursive in neighbors with upstream nodes of node_f and node_h
+
+    - id: tag_based_recursive_out
+      tags: [group1]
+      expand: [recursive_out]
+      # This should select all nodes with tag 'group1' (node_a, node_b) and then create expanded views for each
+      # 1. tag_based_recursive_out: explicit neighbors of nodes with tag group1
+      # 2. tag_based_recursive_out_node_a_expand_recursive_out: recursive out neighbors from node_a
+      # 3. tag_based_recursive_out_node_b_expand_recursive_out: recursive out neighbors from node_b
+
+    - id: neighbour_implicit_selection_with_expand
+      nodes: [node_c]
+      neighbours: direct
+      expand: [recursive_out]
+      # This should select node_c and its direct neighbors (node_a, node_c, node_d based on edges),
+      # then create expanded views for each of these nodes with recursive_out
+      # 1. neighbour_implicit_selection_with_expand: node_c with direct neighbors
+      # 2. neighbour_implicit_selection_with_expand_node_c_expand_recursive_out: recursive out expansion from node_c
+      # 3. neighbour_implicit_selection_with_expand_node_a_expand_recursive_out: recursive out expansion from node_a
+      # 4. neighbour_implicit_selection_with_expand_node_d_expand_recursive_out: recursive out expansion from node_d
