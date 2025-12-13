@@ -648,6 +648,8 @@ views:
     # Example
     - id: state_machine_example
       style: hh_state_machine_view
+      # override empty selection inherited from style view
+      tags: ["default"]
 </pre>
 </td>
 <td align="center">
@@ -708,6 +710,8 @@ edges:
 views:
     - id: use_case_example
       style: hh_use_case_view
+      # override empty selection inherited from style view
+      tags: ["default"]
 </pre>
 </td>
 <td align="center">

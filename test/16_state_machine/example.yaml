@@ -38,6 +38,7 @@ views:
     # Example
     - id: state_machine_example
       style: hh_state_machine_view
+      tags: ["default"]
     # Node list
     - id: state_machine_style_nodes
       tags: ["hh_state_machine"]

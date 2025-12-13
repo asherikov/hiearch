@@ -50,6 +50,7 @@ views:
     # Main use case diagram
     - id: use_case_example
       style: hh_use_case_view
+      tags: ["default"]
     # Show all use case style nodes
     - id: use_case_style_nodes
       tags: ["hh_use_case"]
