@@ -1,0 +1,48 @@
+digraph graphname {
+  subgraph cluster_0 {
+    label = "intrometry";
+    "intrometry_tests";
+    "intrometry_frontend";
+    "intrometry_pjmsg_mcap";
+    "intrometry_pjmsg_topic";
+  }
+  "thread_supervisor";
+  "graphite_to_mcap";
+  "pjmsg_mcap_wrapper";
+  subgraph cluster_2 {
+    label = "cdinit";
+    "cdinit";
+    "cdinit_ros2";
+  }
+  subgraph cluster_3 {
+    label = "ariles";
+    "ariles2_namevalue2_ws";
+    "ariles2_octave_ws";
+    "ariles2_ros2param_ws";
+    "ariles2_graphviz_ws";
+    "ariles2_core_ws";
+    "ariles2_yamlcpp_ws";
+    "ariles2_rapidjson_ws";
+    "ariles2_pugixml_ws";
+  }
+  "intrometry_tests" -> "intrometry_pjmsg_mcap" [color="#0000ff:#ff0000"];
+  "intrometry_tests" -> "intrometry_pjmsg_topic" [color="#0000ff:#ff0000"];
+  "intrometry_tests" -> "thread_supervisor" [color="#0000ff:#ff0000"];
+  "intrometry_pjmsg_topic" -> "thread_supervisor" [color="#0000ff"];
+  "intrometry_pjmsg_topic" -> "ariles2_namevalue2_ws" [color="#0000ff:#ff0000"];
+  "intrometry_pjmsg_topic" -> "intrometry_frontend" [color="#0000ff:#ff0000"];
+  "intrometry_pjmsg_mcap" -> "pjmsg_mcap_wrapper" [color="#0000ff:#ff0000"];
+  "intrometry_pjmsg_mcap" -> "intrometry_frontend" [color="#0000ff:#ff0000"];
+  "intrometry_pjmsg_mcap" -> "ariles2_namevalue2_ws" [color="#0000ff:#ff0000"];
+  "intrometry_pjmsg_mcap" -> "thread_supervisor" [color="#0000ff"];
+  "intrometry_frontend" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+  "graphite_to_mcap" -> "pjmsg_mcap_wrapper" [color="#0000ff:#ff0000"];
+  "cdinit_ros2" -> "cdinit" [color="#ff0000"];
+  "ariles2_yamlcpp_ws" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+  "ariles2_ros2param_ws" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+  "ariles2_rapidjson_ws" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+  "ariles2_pugixml_ws" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+  "ariles2_octave_ws" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+  "ariles2_namevalue2_ws" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+  "ariles2_graphviz_ws" -> "ariles2_core_ws" [color="#0000ff:#ff0000"];
+}

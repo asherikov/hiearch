@@ -1,7 +1,10 @@
+"""Utility functions for hiearch package."""
+
 import copy
 
 
 def merge_styles(secondary, primary, with_tags=True):
+    """Merge style attributes from secondary into primary."""
     if 'graphviz' in secondary:
         if 'substitutions' in secondary:
             if 'substitutions' in primary:
@@ -24,6 +27,7 @@ def merge_styles(secondary, primary, with_tags=True):
 
 
 def apply_styles(styled_entities, entities):
+    """Apply styles from styled entities to the main entities."""
     size = len(styled_entities)
     nodes_style_applied = set()
 
@@ -54,6 +58,7 @@ def apply_styles(styled_entities, entities):
 
 
 def check_key_existence(keys, dictionary, data_type):
+    """Check if all keys exist in the dictionary, raising an error if not."""
     for key in keys:
         if key not in dictionary.keys():
             raise RuntimeError(f'Missing {data_type} id: {key}')

@@ -1,3 +1,5 @@
+"""Module for handling hiearch nodes and their processing."""
+
 import copy
 from collections import defaultdict
 
@@ -5,6 +7,7 @@ from . import util
 
 
 def gather(prop, node, must_exist_nodes):
+    """Gather nodes that must exist based on property references."""
     if prop in node.keys() and node[prop] is not None:
         if isinstance(node[prop], list):
             must_exist_nodes = must_exist_nodes.union(set(node[prop]))
@@ -15,6 +18,7 @@ def gather(prop, node, must_exist_nodes):
 
 
 def postprocess(nodes, edges):
+    """Post-process nodes after parsing."""
     util.check_key_existence(nodes.must_exist, nodes.entities, 'node')
     util.apply_styles(nodes.styled, nodes.entities)
 
@@ -40,6 +44,7 @@ def postprocess(nodes, edges):
 
 
 def add_branch_to_tree(branch, tree, node_key_paths, scopes, index=0):
+    """Add a branch to the tree structure recursively."""
     if index != len(branch):
         node_key = branch[index]
         if index + 1 < len(branch):
@@ -65,6 +70,7 @@ def add_branch_to_tree(branch, tree, node_key_paths, scopes, index=0):
 
 
 def build_tree(nodes, nodes_view):
+    """Build the tree structure from nodes and view information."""
     rank = defaultdict(lambda: 0)
 
     branches = defaultdict(lambda: [])
@@ -128,6 +134,7 @@ def build_tree(nodes, nodes_view):
 
 
 def parse(yaml_nodes, nodes):
+    """Parse YAML node definitions and populate the nodes structure."""
     default = {
         'id': ['', ''],
         'scope': None,
@@ -170,6 +177,7 @@ def parse(yaml_nodes, nodes):
 
 
 def get_substitutions(node):
+    """Get substitution values for formatting node labels."""
     substitutions = node['substitutions'] | {
         'label': node['label'],
         'id': node['id'],
@@ -180,10 +188,12 @@ def get_substitutions(node):
 
 
 def get_formatted_scope_label(node):
+    """Get the formatted label for a scope node."""
     return node['graphviz']['scope_label_format'].format(**get_substitutions(node))
 
 
 def get_nodes_by_tag(nodes, tag):
+    """Get all nodes that have a specific tag."""
     selection = []
     for node in nodes.values():
         if tag in node['tags']:

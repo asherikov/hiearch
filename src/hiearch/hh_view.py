@@ -1,11 +1,14 @@
+"""Module for handling hiearch views and their processing."""
+
 import copy
 
-from . import hh_node
 from . import hh_edge
+from . import hh_node
 from . import util
 
 
 class Neighbours():
+    """Class defining the different types of neighbor selection for views."""
     DIRECT = 'direct'
     EXPLICIT = 'explicit'
     PARENT = 'parent'
@@ -38,6 +41,7 @@ opposite = {
 
 
 def select_explicit(view, nodes, edges):
+    """Select edges that connect explicitly requested nodes."""
     for node_key in view['nodes']:
         for dir_key in ['in', 'out']:
             for edge_key in nodes[node_key][dir_key]:
@@ -46,6 +50,7 @@ def select_explicit(view, nodes, edges):
 
 
 def select_direct(view, nodes, edges, add_nodes):
+    """Select edges that connect directly to requested nodes."""
     for node_key in view['nodes']:
         for dir_key in ['in', 'out']:
             opp_dir_key = opposite[dir_key]
@@ -59,6 +64,7 @@ def select_direct(view, nodes, edges, add_nodes):
 
 
 def select_parent(view, nodes, edges, add_nodes):
+    """Select parent nodes and edges that connect to them."""
     for node_key in view['nodes']:
         for dir_key in ['in', 'out']:
             opp_dir_key = opposite[dir_key]
@@ -91,6 +97,7 @@ def select_parent(view, nodes, edges, add_nodes):
 
 
 def select_recursive(view, nodes, edges, add_nodes, direction):
+    """Recursively select nodes in a specific direction (in or out)."""
     # Select connected nodes
     add_nodes.update(view['nodes'])
     add_nodes_list = list(view['nodes'])
@@ -175,6 +182,7 @@ def select_neighbours_for_view(view, nodes, edges):
 
 
 def postprocess(views, nodes, edges):
+    """Post-process views after parsing."""
     util.check_key_existence(views.must_exist, views.entities, 'view')
     util.apply_styles(views.styled, views.entities)
 
@@ -252,6 +260,7 @@ def postprocess(views, nodes, edges):
 
 
 def parse(yaml_views, views, must_exist_nodes):
+    """Parse YAML view definitions and populate the views structure."""
     for view in yaml_views:
         key = view['id']
 

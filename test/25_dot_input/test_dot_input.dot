@@ -1,0 +1,33 @@
+digraph test_dot_input {
+    label = "Root";
+    graph [rankdir=LR, fontsize=20];
+    node [shape=box, fillcolor=lightgray, fontsize=10];
+    edge [color=black, fontname="Arial"];
+
+    node1 [label="Node 1", shape=circle, fillcolor=red];
+    node2 [label="Node 2", shape=box];
+    node3 [label="Node 3"];
+
+    node1 -> node2 [label="Edge 1-2", color=blue];
+    node2 -> node3 [color=green];
+
+    subgraph cluster_scope {
+        label = "Outer Scope";
+        graph [style=filled, fillcolor=green];
+        node [shape=ellipse, fillcolor=yellow];
+        node4 [label="Node 4"];
+        node5 [label="Node 5", fillcolor=blue];
+
+        // Add a nested subgraph inside cluster_scope
+        subgraph cluster_inner {
+            label = "Inner Cluster";
+            graph [style=filled, fillcolor=lightblue, fontsize=14];
+            node [shape=box, fillcolor=lightgreen];
+            inner_node1 [label="Inner 1"];
+            inner_node2 [label="Inner 2"];
+        }
+    }
+
+    node1 -> node4 [label="To Outer Scope", color=red];
+    node3 -> inner_node1 [label="To Inner", color=purple];
+}

@@ -1,0 +1,33 @@
+digraph test_dot_input {
+label="Root";
+rankdir=LR;
+fontsize=20;
+compound=true;
+node1 [shape=circle, fillcolor=red, fontsize=10, label="Node 1"];
+subgraph cluster_scope {
+rankdir=LR;
+fontsize=20;
+label="Outer Scope";
+style=filled;
+fillcolor=green;
+cluster=true;
+subgraph "cluster_scope.cluster_inner" {
+rankdir=LR;
+fontsize=14;
+style=filled;
+fillcolor=lightblue;
+label="Inner Cluster";
+cluster=true;
+"cluster_scope.cluster_inner.inner_node2" [shape=box, fillcolor=lightgreen, fontsize=10, label="Inner 2"];
+"cluster_scope.cluster_inner.inner_node1" [shape=box, fillcolor=lightgreen, fontsize=10, label="Inner 1"];
+}
+"cluster_scope.node4" [shape=ellipse, fillcolor=yellow, fontsize=10, label="Node 4"];
+"cluster_scope.node5" [shape=ellipse, fillcolor=blue, fontsize=10, label="Node 5"];
+}
+node2 [shape=box, fillcolor=lightgray, fontsize=10, label="Node 2"];
+node3 [shape=box, fillcolor=lightgray, fontsize=10, label="Node 3"];
+node1 -> "cluster_scope.node4" [color=red, fontname="Arial", label="To Outer Scope"];
+node1 -> node2 [color=blue, fontname="Arial", label="Edge 1-2"];
+node2 -> node3 [color=green, fontname="Arial"];
+node3 -> "cluster_scope.cluster_inner.inner_node1" [color=purple, fontname="Arial", label="To Inner"];
+}

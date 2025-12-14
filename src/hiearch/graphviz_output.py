@@ -1,12 +1,16 @@
+"""Module for generating graphviz diagrams using pydot."""
+
 import copy
 import os
 import subprocess
+
 import pydot
 
 from . import hh_node
 
 
 def get_node_attributes(node):
+    """Extract and format attributes for a graphviz node."""
     attrs = copy.deepcopy(node['graphviz'])
 
     attrs['label'] = node['graphviz']['node_label_format'].format(**hh_node.get_substitutions(node))
@@ -16,6 +20,7 @@ def get_node_attributes(node):
 
 
 def get_scope_attributes(node):
+    """Extract and format attributes for a graphviz scope (cluster)."""
     attrs = copy.deepcopy(node['graphviz'])
 
     attrs['label'] = hh_node.get_formatted_scope_label(node)
@@ -26,6 +31,7 @@ def get_scope_attributes(node):
 
 
 def get_edge_attributes(edge):
+    """Extract and format attributes for a graphviz edge."""
     attrs = copy.deepcopy(edge['graphviz'])
 
     for attr, label, fmt in zip(['taillabel', 'label', 'headlabel'], edge['label'], attrs['label_format']):
@@ -50,6 +56,7 @@ def get_edge_attributes(edge):
 
 
 def generate_tree(graph, tree, nodes):
+    """Recursively generate the tree structure using pydot nodes and subgraphs."""
     if len(tree) > 0:
         for node_key, node_tuple in tree.items():
             node = nodes[node_key]
@@ -65,6 +72,14 @@ def generate_tree(graph, tree, nodes):
 
 
 def generate(directory, fmt, view, nodes):
+    """Generate a diagram in the specified format from the view data.
+
+    Args:
+        directory: Output directory path
+        fmt: Output format (e.g., svg, png)
+        view: View data structure
+        nodes: Nodes data structure
+    """
     graph = pydot.Dot(graph_name=view['id'], graph_type='digraph')
 
     if 'graph' in view['graphviz']:
@@ -119,7 +134,7 @@ def generate(directory, fmt, view, nodes):
 
     # Write the DOT file
     dot_file_path = f'{directory}/{view["id"]}.gv'
-    graph.write_raw(dot_file_path)
+    graph.write(dot_file_path)
 
     # Call dot directly (pydot uses temporary dirs that dont play nice with inclusions)
     output_file_path = f'{directory}/{view["id"]}.{fmt}'
