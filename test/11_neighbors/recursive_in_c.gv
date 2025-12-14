@@ -1,6 +1,6 @@
 digraph recursive_in_c {
-	graph [compound=true]
-	node_c [label="Node C"]
-	node_a [label="Node A"]
-	node_a -> node_c
+compound=true;
+node_a [label="Node A"];
+node_c [label="Node C"];
+node_a -> node_c;
 }

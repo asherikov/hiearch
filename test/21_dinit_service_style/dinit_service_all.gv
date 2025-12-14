@@ -1,13 +1,13 @@
 digraph dinit_service_all {
-	graph [compound=true]
-	hh_dinit_bgprocess [label="" fillcolor=lightgreen peripheries=1 shape=box style="rounded,filled"]
-	hh_dinit_internal [label="" fillcolor=lightgray peripheries=1 shape=box style="rounded,filled"]
-	hh_dinit_triggered [label="" fillcolor=lightpink peripheries=1 shape=box style="rounded,filled"]
-	hh_dinit_unknown [label="" fillcolor=white peripheries=1 shape=box style="rounded,filled"]
-	hh_dinit_scripted [label="" fillcolor=lightyellow peripheries=1 shape=box style="rounded,filled"]
-	hh_dinit_process [label="" fillcolor=lightblue peripheries=1 shape=box style="rounded,filled"]
-	hh_dinit_unknown -> hh_dinit_unknown [arrowhead=tee color=black style=solid]
-	hh_dinit_unknown -> hh_dinit_unknown [arrowhead=dot color=black style=solid]
-	hh_dinit_unknown -> hh_dinit_unknown [arrowhead=diamond color=black style=solid]
-	hh_dinit_unknown -> hh_dinit_unknown [arrowhead=normal color=black style=solid]
+compound=true;
+hh_dinit_scripted [shape=box, style="rounded,filled", fillcolor=lightyellow, peripheries=1, label=""];
+hh_dinit_unknown [shape=box, style="rounded,filled", fillcolor=white, peripheries=1, label=""];
+hh_dinit_triggered [shape=box, style="rounded,filled", fillcolor=lightpink, peripheries=1, label=""];
+hh_dinit_bgprocess [shape=box, style="rounded,filled", fillcolor=lightgreen, peripheries=1, label=""];
+hh_dinit_process [shape=box, style="rounded,filled", fillcolor=lightblue, peripheries=1, label=""];
+hh_dinit_internal [shape=box, style="rounded,filled", fillcolor=lightgray, peripheries=1, label=""];
+hh_dinit_unknown -> hh_dinit_unknown [arrowhead=dot, style=solid, color=black];
+hh_dinit_unknown -> hh_dinit_unknown [arrowhead=tee, style=solid, color=black];
+hh_dinit_unknown -> hh_dinit_unknown [arrowhead=diamond, style=solid, color=black];
+hh_dinit_unknown -> hh_dinit_unknown [arrowhead=normal, style=solid, color=black];
 }

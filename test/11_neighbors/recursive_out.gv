@@ -1,11 +1,12 @@
 digraph recursive_out {
-	graph [compound=true]
-	node_d [label="Node D"]
-	subgraph node_b {
-		graph [cluster=true label="Node B"]
-		"node_b.node_c" [label="Node C"]
-	}
-	node_a [label="Node A"]
-	node_a -> "node_b.node_c"
-	"node_b.node_c" -> node_d
+compound=true;
+node_a [label="Node A"];
+subgraph node_b {
+label="Node B";
+cluster=true;
+"node_b.node_c" [label="Node C"];
+}
+node_d [label="Node D"];
+node_a -> "node_b.node_c";
+"node_b.node_c" -> node_d;
 }

@@ -1,11 +1,13 @@
 digraph state_machine_style_nodes {
-	graph [compound=true]
-	graph [fillcolor="#fafafa" rankdir=TB style="rounded, filled"]
-	node [fontname=Helvetica fontsize=12 margin=0.1]
-	edge [arrowsize=0.8 fontname=Helvetica fontsize=10]
-	hh_state_machine_final [label="" color=black fillcolor=black fixedsize=true fontcolor=black height=0.2 shape=doublecircle style=filled width=0.2]
-	hh_state_machine_choice [label="" fillcolor=black height=0.3 shape=diamond style=filled width=0.3]
-	hh_state_machine_initial [label="" fillcolor=black fixedsize=true height=0.3 shape=circle style=filled width=0.3]
-	hh_state_machine_regular [label="" fillcolor="#f0f8ff" peripheries=1 shape=rectangle style="rounded,filled"]
-	hh_state_machine_junction [label="" fillcolor=black fixedsize=true height=0.05 shape=rectangle style=filled width=1.0]
+compound=true;
+rankdir=TB;
+style="rounded, filled";
+fillcolor="#fafafa";
+hh_state_machine_choice [shape=diamond, style=filled, fillcolor=black, width=0.3, height=0.3, label=""];
+hh_state_machine_junction [shape=rectangle, style=filled, fillcolor=black, width=1.0, height=0.05, fixedsize=true, label=""];
+hh_state_machine_initial [shape=circle, style=filled, fillcolor=black, width=0.3, height=0.3, fixedsize=true, label=""];
+hh_state_machine_final [shape=doublecircle, style=filled, fillcolor=black, color=black, fontcolor=black, width=0.2, height=0.2, fixedsize=true, label=""];
+hh_state_machine_regular [shape=rectangle, style="rounded,filled", fillcolor="#f0f8ff", peripheries=1, label=""];
+node [fontsize=12, fontname=Helvetica, margin=0.1];
+edge [fontsize=10, fontname=Helvetica, arrowsize=0.8];
 }

@@ -1,24 +1,33 @@
 digraph use_case_example {
-	graph [compound=true]
-	graph [fillcolor="#fafafa" rankdir=TB style="rounded, filled"]
-	node [fontname=Helvetica fontsize=12 margin=0.1]
-	edge [arrowsize=0.8 fontname=Helvetica fontsize=10 labelfontname=Helvetica labelfontsize=9]
-	subgraph system_boundary {
-		graph [cluster=true fillcolor="#fafafa" height=2.0 label="Login System" peripheries=1 shape=rectangle style="rounded,filled" width=3.0]
-		"system_boundary.logout" [label=Logout fillcolor="#f0f8ff" fixedsize=false height=0.9 peripheries=1 shape=ellipse style="filled,rounded" width=1.8]
-		"system_boundary.reset_password" [label="Reset Password" fillcolor="#f0f8ff" fixedsize=false height=0.9 peripheries=1 shape=ellipse style="filled,rounded" width=1.8]
-		"system_boundary.two_factor_auth" [label="2FA Authentication" fillcolor="#f0f8ff" fixedsize=false height=0.9 peripheries=1 shape=ellipse style="filled,rounded" width=1.8]
-		"system_boundary.register" [label=Register fillcolor="#f0f8ff" fixedsize=false height=0.9 peripheries=1 shape=ellipse style="filled,rounded" width=1.8]
-		"system_boundary.validate_credentials" [label="Validate Credentials" fillcolor="#f0f8ff" fixedsize=false height=0.9 peripheries=1 shape=ellipse style="filled,rounded" width=1.8]
-		"system_boundary.login" [label=Login fillcolor="#f0f8ff" fixedsize=false height=0.9 peripheries=1 shape=ellipse style="filled,rounded" width=1.8]
-	}
-	admin [label=Admin fillcolor="#e6f3ff" fixedsize=true height=0.8 peripheries=0 shape=star style=filled width=0.8]
-	user [label=User fillcolor="#e6f3ff" fixedsize=true height=0.8 peripheries=0 shape=star style=filled width=0.8]
-	user -> "system_boundary.logout" [color=black dir=none style=solid]
-	admin -> "system_boundary.reset_password" [color=black dir=none style=solid]
-	user -> "system_boundary.reset_password" [color=black dir=none style=solid]
-	"system_boundary.two_factor_auth" -> "system_boundary.login" [label="«extend»" arrowhead=open color=black dir=forward style=dashed]
-	user -> "system_boundary.register" [color=black dir=none style=solid]
-	"system_boundary.login" -> "system_boundary.validate_credentials" [label="«include»" arrowhead=open color=black dir=forward style=dashed]
-	user -> "system_boundary.login" [color=black dir=none style=solid]
+compound=true;
+rankdir=TB;
+style="rounded, filled";
+fillcolor="#fafafa";
+user [shape=star, style=filled, fillcolor="#e6f3ff", peripheries=0, width=0.8, height=0.8, fixedsize=true, label=User];
+admin [shape=star, style=filled, fillcolor="#e6f3ff", peripheries=0, width=0.8, height=0.8, fixedsize=true, label=Admin];
+subgraph system_boundary {
+shape=rectangle;
+style="rounded,filled";
+fillcolor="#fafafa";
+peripheries=1;
+width=3.0;
+height=2.0;
+label="Login System";
+cluster=true;
+"system_boundary.two_factor_auth" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="2FA Authentication"];
+"system_boundary.logout" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Logout];
+"system_boundary.register" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Register];
+"system_boundary.reset_password" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="Reset Password"];
+"system_boundary.login" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Login];
+"system_boundary.validate_credentials" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="Validate Credentials"];
+}
+node [fontsize=12, fontname=Helvetica, margin=0.1];
+edge [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica];
+user -> "system_boundary.logout" [style=solid, color=black, dir=none];
+user -> "system_boundary.register" [style=solid, color=black, dir=none];
+user -> "system_boundary.reset_password" [style=solid, color=black, dir=none];
+user -> "system_boundary.login" [style=solid, color=black, dir=none];
+admin -> "system_boundary.reset_password" [style=solid, color=black, dir=none];
+"system_boundary.two_factor_auth" -> "system_boundary.login" [style=dashed, color=black, dir=forward, arrowhead=open, label="«extend»"];
+"system_boundary.login" -> "system_boundary.validate_credentials" [style=dashed, color=black, dir=forward, arrowhead=open, label="«include»"];
 }

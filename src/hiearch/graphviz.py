@@ -1,7 +1,7 @@
 import copy
 import os
-# https://graphviz.readthedocs.io/en/stable/api.html
-import graphviz
+import subprocess
+import pydot
 
 from . import hh_node
 
@@ -55,25 +55,27 @@ def generate_tree(graph, tree, nodes):
             node = nodes[node_key]
 
             if 0 == len(node_tuple['subtree']):
-                graph.node(name=node_tuple['key_path'], **get_node_attributes(node))
+                graph.add_node(pydot.Node(node_tuple['key_path'], **get_node_attributes(node)))
             else:
-                with graph.subgraph(
-                        name=node_tuple['key_path'],
-                        graph_attr=get_scope_attributes(node)) as subgraph:
-                    generate_tree(subgraph, node_tuple['subtree'], nodes)
-
+                subgraph = pydot.Subgraph(
+                        graph_name=node_tuple['key_path'],
+                        **get_scope_attributes(node))
+                generate_tree(subgraph, node_tuple['subtree'], nodes)
+                graph.add_subgraph(subgraph)
 
 
 def generate(directory, fmt, view, nodes):
-    graph = graphviz.Digraph(name=view['id'], directory=directory)
+    graph = pydot.Dot(graph_name=view['id'], graph_type='digraph')
 
-    for attr_group in ['graph', 'node', 'edge']:
-        # https://graphviz.org/docs/nodes/
-        # https://graphviz.org/docs/edges/
-        # https://graphviz.org/docs/graph/
-        if attr_group in view['graphviz']:
-            graph.attr(attr_group, **view['graphviz'][attr_group])
-    graph.graph_attr['compound'] = 'true'
+    if 'graph' in view['graphviz']:
+        for key, value in view['graphviz']['graph'].items():
+            graph.set(key, value)
+    if 'node' in view['graphviz']:
+        graph.set_node_defaults(**view['graphviz']['node'])
+    if 'edge' in view['graphviz']:
+        graph.set_edge_defaults(**view['graphviz']['edge'])
+
+    graph.set('compound', 'true')
 
     generate_tree(graph, view['tree'], nodes)
 
@@ -113,9 +115,15 @@ def generate(directory, fmt, view, nodes):
                         head = head_candidate
                         best_match = current_match
 
-            graph.edge(tail_name=tail, head_name=head, **get_edge_attributes(edge))
+            graph.add_edge(pydot.Edge(tail, head, **get_edge_attributes(edge)))
 
-    graph.render(format=fmt)
-    os.rename(f'{directory}/{view["id"]}.gv.{fmt}', f'{directory}/{view["id"]}.{fmt}')  # should not be needed in newer versions
+    # Write the DOT file
+    dot_file_path = f'{directory}/{view["id"]}.gv'
+    graph.write_raw(dot_file_path)
 
+    # Call dot directly (pydot uses temporary dirs that dont play nice with inclusions)
+    output_file_path = f'{directory}/{view["id"]}.{fmt}'
+
+    cmd = ['dot', '-T' + fmt, '-o', output_file_path, dot_file_path]
+    subprocess.run(cmd, check=True, capture_output=True)
 

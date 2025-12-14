@@ -1,13 +1,14 @@
 digraph direct {
-	graph [compound=true]
-	subgraph test2 {
-		graph [cluster=true label="Test 2"]
-		"test2.test3" [label="Test 3"]
-	}
-	test1 [label="Test 1"]
-	test1 -> "test2.test3" [headclip=false lhead=test2]
-	test1 -> "test2.test3"
-	graph [compound=true rankdir=LR]
-	node [fontname=times fontsize=18]
-	edge [decorate=true fontsize=14]
+rankdir=LR;
+compound=true;
+node [fontsize=18, fontname=times];
+edge [decorate=true, fontsize=14];
+test1 [label="Test 1"];
+subgraph test2 {
+label="Test 2";
+cluster=true;
+"test2.test3" [label="Test 3"];
+}
+test1 -> "test2.test3" [lhead=test2, headclip=false];
+test1 -> "test2.test3";
 }

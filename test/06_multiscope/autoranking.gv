@@ -1,10 +1,12 @@
 digraph autoranking {
-	graph [compound=true]
-	subgraph test2 {
-		graph [cluster=true label="Test 2"]
-		subgraph "test2.test1" {
-			graph [cluster=true label="Test 1"]
-			"test2.test1.test3" [label="Test 3"]
-		}
-	}
+compound=true;
+subgraph test2 {
+label="Test 2";
+cluster=true;
+subgraph "test2.test1" {
+label="Test 1";
+cluster=true;
+"test2.test1.test3" [label="Test 3"];
+}
+}
 }

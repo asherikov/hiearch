@@ -1,8 +1,11 @@
 digraph view2 {
-	graph [compound=true]
-	subgraph test1 {
-		graph [cluster=true fillcolor=grey label="Test 1" style=filled]
-		"test1.test3" [label="Test 3" fillcolor=aqua style=filled]
-	}
-	"test1.test3" -> "test1.test3"
+compound=true;
+subgraph test1 {
+fillcolor=grey;
+style=filled;
+label="Test 1";
+cluster=true;
+"test1.test3" [fillcolor=aqua, style=filled, label="Test 3"];
+}
+"test1.test3" -> "test1.test3";
 }

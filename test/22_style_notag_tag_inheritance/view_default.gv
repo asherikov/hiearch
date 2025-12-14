@@ -1,4 +1,4 @@
 digraph view_default {
-	graph [compound=true]
-	node_c [label="Node C" fillcolor=grey style=filled]
+compound=true;
+node_c [fillcolor=grey, style=filled, label="Node C"];
 }

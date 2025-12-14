@@ -1,4 +1,4 @@
 digraph dual_node_recursive_both_node_e_expand_recursive_out {
-	graph [compound=true]
-	node_e [label="Node E"]
+compound=true;
+node_e [label="Node E"];
 }

@@ -1,4 +1,4 @@
 digraph view_with_style2 {
-	graph [compound=true]
-	style2 [label=style2]
+compound=true;
+style2 [label=style2];
 }

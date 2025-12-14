@@ -1,5 +1,5 @@
 digraph view_with_style1 {
-	graph [compound=true]
-	style1 [label=style1]
-	child_with_tags [label=child_with_tags]
+compound=true;
+child_with_tags [label="child_with_tags"];
+style1 [label=style1];
 }

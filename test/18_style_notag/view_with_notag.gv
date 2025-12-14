@@ -1,4 +1,4 @@
 digraph view_with_notag {
-	graph [compound=true]
-	child_with_notag [label=child_with_notag]
+compound=true;
+child_with_notag [label="child_with_notag"];
 }

@@ -1,7 +1,8 @@
 digraph view2 {
-	graph [compound=true]
-	subgraph test1 {
-		graph [cluster=true label=<<table><tr><td><img src="icon_test1.svg"/></td><td>Scope: Test 1</td></tr></table>>]
-		"test1.test2" [label="Test 2"]
-	}
+compound=true;
+subgraph test1 {
+label=<<table><tr><td><img src="icon_test1.svg"/></td><td>Scope: Test 1</td></tr></table>>;
+cluster=true;
+"test1.test2" [label="Test 2"];
+}
 }

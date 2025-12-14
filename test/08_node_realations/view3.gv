@@ -1,5 +1,5 @@
 digraph view3 {
-	graph [compound=true]
-	test1 [label="Test 1" fillcolor=grey style=filled]
-	test2 [label="Test 2" fillcolor=aqua style=filled]
+compound=true;
+test2 [fillcolor=aqua, style=filled, label="Test 2"];
+test1 [fillcolor=grey, style=filled, label="Test 1"];
 }

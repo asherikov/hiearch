@@ -1,6 +1,6 @@
 digraph parent {
-	graph [compound=true]
-	node_b [label="Node B"]
-	node_a [label="Node A"]
-	node_a -> node_b
+compound=true;
+node_a [label="Node A"];
+node_b [label="Node B"];
+node_a -> node_b;
 }
