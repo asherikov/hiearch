@@ -1,0 +1,16 @@
+nodes:
+    - id: ["Test 1", test1]
+
+    - id: ["Test 2", test2]
+      style: test1
+
+    - id: ["Test 3", test3]
+      style: test1
+      scope: test2
+
+views:
+    - id: default
+      graphviz:
+          node:
+              node_label_format: '<<table href="{id}.html" border="0" cellspacing="0" cellpadding="0" title="{id}"><tr><td>{label}</td></tr></table>>'
+              scope_label_format: '<<table href="{id}.html" border="0" cellspacing="0" cellpadding="0" title="{id}"><tr><td>{label}</td></tr></table>>'

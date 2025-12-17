@@ -20,7 +20,7 @@ FORMAT=svg
 	find ${BUILD_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.build
 	find ${TEST_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.test
 	${TEST_NOT} test -s "${BUILD_DIR}/$@/checksum.build" && cmp ${BUILD_DIR}/$@/checksum.build ${BUILD_DIR}/$@/checksum.test
-	${TEST_NOT} (cd ${BUILD_DIR}/$@/ && ls *.${FORMAT} && ls '*.gv' | sed 's/\.gv//' | xargs --no-run-if-empty -I {} test -f {}.${FORMAT})
+	${TEST_NOT} (cd ${BUILD_DIR}/$@/ && ls *.${FORMAT} && ls *.gv | sed 's/\.gv//' | xargs --no-run-if-empty -I {} test -f {}.${FORMAT})
 
 venv: builddir
 	python3 -m venv ${BUILD_DIR}/venv
@@ -42,7 +42,7 @@ test:
 		11_neighbors 12_view_style 13_edge_labels 14_edge_style \
 		15_formatted_labels 16_state_machine 17_use_case 18_style_notag \
 		21_dinit_service_style 22_style_notag_tag_inheritance 23_expand \
-		25_dot_input 26_colcon || (echo "Failure!" && false)
+		25_dot_input 26_colcon 27_formatted_labels_view || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
 	@echo "Success!"

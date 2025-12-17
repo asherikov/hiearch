@@ -9,29 +9,23 @@ import pydot
 from . import hh_node
 
 
-def get_node_attributes(node):
-    """Extract and format attributes for a graphviz node."""
-    attrs = copy.deepcopy(node['graphviz'])
+def get_attributes(node, extended_attrs, label_format_key):
+    attrs = extended_attrs | copy.deepcopy(node['graphviz'])
 
-    attrs['label'] = node['graphviz']['node_label_format'].format(**hh_node.get_substitutions(node))
-    attrs.pop('node_label_format')
-    attrs.pop('scope_label_format')
+    attrs['label'] = attrs[label_format_key].format(**hh_node.get_substitutions(node))
+    for attr in extended_attrs.keys():
+        attrs.pop(attr, None)
+
     return attrs
 
 
-def get_scope_attributes(node):
-    """Extract and format attributes for a graphviz scope (cluster)."""
-    attrs = copy.deepcopy(node['graphviz'])
-
-    attrs['label'] = hh_node.get_formatted_scope_label(node)
+def get_scope_attributes(node, extended_attrs):
+    attrs = get_attributes(node, extended_attrs, 'scope_label_format')
     attrs['cluster'] = 'true'
-    attrs.pop('node_label_format')
-    attrs.pop('scope_label_format')
     return attrs
 
 
 def get_edge_attributes(edge):
-    """Extract and format attributes for a graphviz edge."""
     attrs = copy.deepcopy(edge['graphviz'])
 
     for attr, label, fmt in zip(['taillabel', 'label', 'headlabel'], edge['label'], attrs['label_format']):
@@ -55,44 +49,44 @@ def get_edge_attributes(edge):
     return attrs
 
 
-def generate_tree(graph, tree, nodes):
-    """Recursively generate the tree structure using pydot nodes and subgraphs."""
+def generate_tree(graph, tree, nodes, extended_attrs):
     if len(tree) > 0:
         for node_key, node_tuple in tree.items():
             node = nodes[node_key]
 
             if 0 == len(node_tuple['subtree']):
-                graph.add_node(pydot.Node(node_tuple['key_path'], **get_node_attributes(node)))
+                graph.add_node(
+                        pydot.Node(node_tuple['key_path'],
+                                   **get_attributes(node, extended_attrs, 'node_label_format')))
             else:
                 subgraph = pydot.Subgraph(
                         graph_name=node_tuple['key_path'],
-                        **get_scope_attributes(node))
-                generate_tree(subgraph, node_tuple['subtree'], nodes)
+                        **get_scope_attributes(node, extended_attrs))
+                generate_tree(subgraph, node_tuple['subtree'], nodes, extended_attrs)
                 graph.add_subgraph(subgraph)
 
 
 def generate(directory, fmt, view, nodes):
-    """Generate a diagram in the specified format from the view data.
-
-    Args:
-        directory: Output directory path
-        fmt: Output format (e.g., svg, png)
-        view: View data structure
-        nodes: Nodes data structure
-    """
     graph = pydot.Dot(graph_name=view['id'], graph_type='digraph')
+
+    extended_attrs = {
+        'node_label_format': '{label}',
+        'scope_label_format': '{label}',
+    }
 
     if 'graph' in view['graphviz']:
         for key, value in view['graphviz']['graph'].items():
             graph.set(key, value)
     if 'node' in view['graphviz']:
+        for key, value in extended_attrs.items():
+            extended_attrs[key] = view['graphviz']['node'].pop(key, value)
         graph.set_node_defaults(**view['graphviz']['node'])
     if 'edge' in view['graphviz']:
         graph.set_edge_defaults(**view['graphviz']['edge'])
 
     graph.set('compound', 'true')
 
-    generate_tree(graph, view['tree'], nodes)
+    generate_tree(graph, view['tree'], nodes, extended_attrs)
 
     for edge_set in ['edges', 'custom_edges']:
         for edge in view[edge_set].values():

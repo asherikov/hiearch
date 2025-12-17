@@ -1,0 +1,10 @@
+digraph default {
+compound=true;
+
+test1 [label=<<table href="test1.html" border="0" cellspacing="0" cellpadding="0" title="test1"><tr><td>Test 1</td></tr></table>>];
+subgraph test2 {
+label=<<table href="test2.html" border="0" cellspacing="0" cellpadding="0" title="test2"><tr><td>Test 2</td></tr></table>>;
+cluster=true;
+"test2.test3" [label=<<table href="test3.html" border="0" cellspacing="0" cellpadding="0" title="test3"><tr><td>Test 3</td></tr></table>>];
+}
+}

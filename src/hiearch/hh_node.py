@@ -140,10 +140,7 @@ def parse(yaml_nodes, nodes):
         'scope': None,
         'style': None,
         'style_notag': None,
-        'graphviz': {
-            'node_label_format': '{label}',
-            'scope_label_format': '{label}',
-        },
+        'graphviz': {},
         'tags': ['default'],
         'substitutions': {},
         # overriden
@@ -185,11 +182,6 @@ def get_substitutions(node):
         'style': node['style']
     }
     return substitutions
-
-
-def get_formatted_scope_label(node):
-    """Get the formatted label for a scope node."""
-    return node['graphviz']['scope_label_format'].format(**get_substitutions(node))
 
 
 def get_nodes_by_tag(nodes, tag):
