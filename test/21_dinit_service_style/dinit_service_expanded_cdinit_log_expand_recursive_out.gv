@@ -1,0 +1,7 @@
+digraph dinit_service_expanded_cdinit_log_expand_recursive_out {
+compound=true;
+
+cdinit_log [shape=box, style="rounded,filled", fillcolor=lightblue, peripheries=1, label=<<table border="0" cellspacing="1" cellpadding="0" title="cdinit_log"><tr><td colspan="3">cdinit_log</td></tr><tr><td href="dinit_service_expanded_cdinit_log_expand_recursive_in.svg"><font point-size="8">in</font></td><td href="dinit_service_expanded.svg"><font point-size="8">top</font></td><td href="dinit_service_expanded_cdinit_log_expand_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+cdinit_sessionsync [shape=box, style="rounded,filled", fillcolor=lightblue, peripheries=1, label=<<table border="0" cellspacing="1" cellpadding="0" title="cdinit_sessionsync"><tr><td colspan="3">cdinit_sessionsync</td></tr><tr><td href="dinit_service_expanded_cdinit_sessionsync_expand_recursive_in.svg"><font point-size="8">in</font></td><td href="dinit_service_expanded.svg"><font point-size="8">top</font></td><td href="dinit_service_expanded_cdinit_sessionsync_expand_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+cdinit_log -> cdinit_sessionsync [arrowhead=dot, style=solid, color=black];
+}

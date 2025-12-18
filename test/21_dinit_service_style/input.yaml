@@ -79,3 +79,8 @@ views:
     - id: dinit_service_all
       tags: [hh_dinit_service]
       style: hh_dinit_service_view
+
+    - id: dinit_service_expanded
+      nodes: [px4sitl_gz_gui, px4sitl_qgroundcontrol, px4_offboard_demo_py_node]
+      neighbours: recursive_out
+      style: hh_dinit_service_expanded_view

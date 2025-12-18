@@ -12,7 +12,13 @@ from . import hh_node
 def get_attributes(node, extended_attrs, label_format_key):
     attrs = extended_attrs | copy.deepcopy(node['graphviz'])
 
-    attrs['label'] = attrs[label_format_key].format(**hh_node.get_substitutions(node))
+    substitutions = hh_node.get_substitutions(node)
+    if extended_attrs['expanded_from'] is not None:
+        substitutions.update({'expanded_from': extended_attrs['expanded_from']})
+    print(substitutions)
+    print(attrs[label_format_key])
+    attrs['label'] = attrs[label_format_key].format(**substitutions)
+    print(attrs['label'])
     for attr in extended_attrs.keys():
         attrs.pop(attr, None)
 
@@ -72,6 +78,7 @@ def generate(directory, fmt, view, nodes):
     extended_attrs = {
         'node_label_format': '{label}',
         'scope_label_format': '{label}',
+        'expanded_from': view['expanded_from'],
     }
 
     if 'graph' in view['graphviz']:

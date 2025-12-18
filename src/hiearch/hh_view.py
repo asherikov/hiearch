@@ -31,6 +31,7 @@ default: dict = {
     'tree': {},
     'expand': [],
     'nodes_subset': {},
+    'expanded_from': {},
 }
 
 
@@ -229,6 +230,7 @@ def postprocess(views, nodes, edges):
         # Process expand parameter if not empty
         if len(view['expand']) > 0:
             expand_types = view['expand']
+            view['expanded_from'] = view_id
 
             original_copy = copy.deepcopy(view)
             original_copy['expand'] = []
@@ -245,6 +247,7 @@ def postprocess(views, nodes, edges):
                     new_view_id = f"{view_id}_{node_id}_expand_{expand_type}"
                     new_view = copy.deepcopy(original_copy)
                     new_view['id'] = new_view_id
+                    new_view['expanded_from'] = view_id
                     # Use only this single node as the starting point
                     new_view['nodes'] = set([node_id])
                     # Convert parameter to corresponding Neighbours constant

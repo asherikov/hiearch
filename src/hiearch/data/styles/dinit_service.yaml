@@ -87,3 +87,10 @@ views:
     # Default view style for dinit service diagrams
     - id: hh_dinit_service_view
       nodes: []
+
+    - id: hh_dinit_service_expanded_view
+      nodes: []
+      expand: [recursive_in, recursive_out]
+      graphviz:
+          node:
+              node_label_format: '<<table border="0" cellspacing="1" cellpadding="0" title="{id}"><tr><td colspan="3">{label}</td></tr><tr><td href="{expanded_from}_{id}_expand_recursive_in.svg"><font point-size="8">in</font></td><td href="{expanded_from}.svg"><font point-size="8">top</font></td><td href="{expanded_from}_{id}_expand_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>'
