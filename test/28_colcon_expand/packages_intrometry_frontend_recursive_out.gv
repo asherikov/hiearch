@@ -1,0 +1,11 @@
+digraph packages_intrometry_frontend_recursive_out {
+compound=true;
+
+intrometry_frontend [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_frontend"><tr><td colspan="3">intrometry_frontend</td></tr><tr><td href="packages_intrometry_frontend_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_frontend_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+subgraph cluster_3 {
+label="ariles";
+cluster=true;
+"cluster_3.ariles2_core_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_core_ws"><tr><td colspan="3">ariles2_core_ws</td></tr><tr><td href="packages_ariles2_core_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_core_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+intrometry_frontend -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+}

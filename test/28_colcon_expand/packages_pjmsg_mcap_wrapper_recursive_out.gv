@@ -1,0 +1,5 @@
+digraph packages_pjmsg_mcap_wrapper_recursive_out {
+compound=true;
+
+pjmsg_mcap_wrapper [label=<<table border="0" cellspacing="1" cellpadding="0" title="pjmsg_mcap_wrapper"><tr><td colspan="3">pjmsg_mcap_wrapper</td></tr><tr><td href="packages_pjmsg_mcap_wrapper_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_pjmsg_mcap_wrapper_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}

@@ -1,0 +1,11 @@
+digraph packages_cdinit_ros2_recursive_out {
+compound=true;
+
+subgraph cluster_2 {
+label="cdinit";
+cluster=true;
+"cluster_2.cdinit_ros2" [label=<<table border="0" cellspacing="1" cellpadding="0" title="cdinit_ros2"><tr><td colspan="3">cdinit_ros2</td></tr><tr><td href="packages_cdinit_ros2_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_cdinit_ros2_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_2.cdinit" [label=<<table border="0" cellspacing="1" cellpadding="0" title="cdinit"><tr><td colspan="3">cdinit</td></tr><tr><td href="packages_cdinit_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_cdinit_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+"cluster_2.cdinit_ros2" -> "cluster_2.cdinit" [color="#ff0000"];
+}

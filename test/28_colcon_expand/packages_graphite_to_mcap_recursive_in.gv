@@ -1,0 +1,5 @@
+digraph packages_graphite_to_mcap_recursive_in {
+compound=true;
+
+graphite_to_mcap [label=<<table border="0" cellspacing="1" cellpadding="0" title="graphite_to_mcap"><tr><td colspan="3">graphite_to_mcap</td></tr><tr><td href="packages_graphite_to_mcap_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_graphite_to_mcap_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}

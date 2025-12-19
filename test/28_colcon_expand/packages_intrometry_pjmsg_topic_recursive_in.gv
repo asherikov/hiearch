@@ -1,0 +1,11 @@
+digraph packages_intrometry_pjmsg_topic_recursive_in {
+compound=true;
+
+subgraph cluster_0 {
+label="intrometry";
+cluster=true;
+"cluster_0.intrometry_pjmsg_topic" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_pjmsg_topic"><tr><td colspan="3">intrometry_pjmsg_topic</td></tr><tr><td href="packages_intrometry_pjmsg_topic_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_pjmsg_topic_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_tests" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_tests"><tr><td colspan="3">intrometry_tests</td></tr><tr><td href="packages_intrometry_tests_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_tests_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+"cluster_0.intrometry_tests" -> "cluster_0.intrometry_pjmsg_topic" [color="#0000ff:#ff0000"];
+}

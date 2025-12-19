@@ -1,0 +1,24 @@
+digraph packages_intrometry_pjmsg_mcap_recursive_out {
+compound=true;
+
+pjmsg_mcap_wrapper [label=<<table border="0" cellspacing="1" cellpadding="0" title="pjmsg_mcap_wrapper"><tr><td colspan="3">pjmsg_mcap_wrapper</td></tr><tr><td href="packages_pjmsg_mcap_wrapper_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_pjmsg_mcap_wrapper_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+subgraph cluster_0 {
+label="intrometry";
+cluster=true;
+"cluster_0.intrometry_frontend" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_frontend"><tr><td colspan="3">intrometry_frontend</td></tr><tr><td href="packages_intrometry_frontend_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_frontend_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_pjmsg_mcap" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_pjmsg_mcap"><tr><td colspan="3">intrometry_pjmsg_mcap</td></tr><tr><td href="packages_intrometry_pjmsg_mcap_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_pjmsg_mcap_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+subgraph cluster_3 {
+label="ariles";
+cluster=true;
+"cluster_3.ariles2_namevalue2_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_namevalue2_ws"><tr><td colspan="3">ariles2_namevalue2_ws</td></tr><tr><td href="packages_ariles2_namevalue2_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_namevalue2_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_core_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_core_ws"><tr><td colspan="3">ariles2_core_ws</td></tr><tr><td href="packages_ariles2_core_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_core_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+thread_supervisor [label=<<table border="0" cellspacing="1" cellpadding="0" title="thread_supervisor"><tr><td colspan="3">thread_supervisor</td></tr><tr><td href="packages_thread_supervisor_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_thread_supervisor_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_pjmsg_mcap" -> pjmsg_mcap_wrapper [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> thread_supervisor [color="#0000ff"];
+"cluster_0.intrometry_pjmsg_mcap" -> "cluster_3.ariles2_namevalue2_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> "cluster_0.intrometry_frontend" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_namevalue2_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_frontend" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+}

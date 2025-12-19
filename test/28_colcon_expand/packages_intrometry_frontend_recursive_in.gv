@@ -1,0 +1,16 @@
+digraph packages_intrometry_frontend_recursive_in {
+compound=true;
+
+subgraph cluster_0 {
+label="intrometry";
+cluster=true;
+"cluster_0.intrometry_pjmsg_topic" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_pjmsg_topic"><tr><td colspan="3">intrometry_pjmsg_topic</td></tr><tr><td href="packages_intrometry_pjmsg_topic_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_pjmsg_topic_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_frontend" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_frontend"><tr><td colspan="3">intrometry_frontend</td></tr><tr><td href="packages_intrometry_frontend_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_frontend_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_tests" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_tests"><tr><td colspan="3">intrometry_tests</td></tr><tr><td href="packages_intrometry_tests_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_tests_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_pjmsg_mcap" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_pjmsg_mcap"><tr><td colspan="3">intrometry_pjmsg_mcap</td></tr><tr><td href="packages_intrometry_pjmsg_mcap_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_pjmsg_mcap_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+"cluster_0.intrometry_pjmsg_topic" -> "cluster_0.intrometry_frontend" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> "cluster_0.intrometry_frontend" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_tests" -> "cluster_0.intrometry_pjmsg_topic" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_tests" -> "cluster_0.intrometry_pjmsg_mcap" [color="#0000ff:#ff0000"];
+}

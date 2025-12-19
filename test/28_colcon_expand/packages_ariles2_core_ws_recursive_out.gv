@@ -1,0 +1,5 @@
+digraph packages_ariles2_core_ws_recursive_out {
+compound=true;
+
+ariles2_core_ws [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_core_ws"><tr><td colspan="3">ariles2_core_ws</td></tr><tr><td href="packages_ariles2_core_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_core_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}

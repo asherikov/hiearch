@@ -1,0 +1,53 @@
+digraph packages {
+compound=true;
+
+subgraph cluster_3 {
+label="ariles";
+cluster=true;
+"cluster_3.ariles2_rapidjson_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_rapidjson_ws"><tr><td colspan="3">ariles2_rapidjson_ws</td></tr><tr><td href="packages_ariles2_rapidjson_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_rapidjson_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_yamlcpp_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_yamlcpp_ws"><tr><td colspan="3">ariles2_yamlcpp_ws</td></tr><tr><td href="packages_ariles2_yamlcpp_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_yamlcpp_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_octave_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_octave_ws"><tr><td colspan="3">ariles2_octave_ws</td></tr><tr><td href="packages_ariles2_octave_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_octave_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_ros2param_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_ros2param_ws"><tr><td colspan="3">ariles2_ros2param_ws</td></tr><tr><td href="packages_ariles2_ros2param_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_ros2param_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_namevalue2_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_namevalue2_ws"><tr><td colspan="3">ariles2_namevalue2_ws</td></tr><tr><td href="packages_ariles2_namevalue2_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_namevalue2_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_core_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_core_ws"><tr><td colspan="3">ariles2_core_ws</td></tr><tr><td href="packages_ariles2_core_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_core_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_graphviz_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_graphviz_ws"><tr><td colspan="3">ariles2_graphviz_ws</td></tr><tr><td href="packages_ariles2_graphviz_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_graphviz_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_3.ariles2_pugixml_ws" [label=<<table border="0" cellspacing="1" cellpadding="0" title="ariles2_pugixml_ws"><tr><td colspan="3">ariles2_pugixml_ws</td></tr><tr><td href="packages_ariles2_pugixml_ws_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_ariles2_pugixml_ws_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+pjmsg_mcap_wrapper [label=<<table border="0" cellspacing="1" cellpadding="0" title="pjmsg_mcap_wrapper"><tr><td colspan="3">pjmsg_mcap_wrapper</td></tr><tr><td href="packages_pjmsg_mcap_wrapper_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_pjmsg_mcap_wrapper_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+graphite_to_mcap [label=<<table border="0" cellspacing="1" cellpadding="0" title="graphite_to_mcap"><tr><td colspan="3">graphite_to_mcap</td></tr><tr><td href="packages_graphite_to_mcap_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_graphite_to_mcap_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+subgraph cluster_0 {
+label="intrometry";
+cluster=true;
+"cluster_0.intrometry_pjmsg_topic" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_pjmsg_topic"><tr><td colspan="3">intrometry_pjmsg_topic</td></tr><tr><td href="packages_intrometry_pjmsg_topic_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_pjmsg_topic_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_frontend" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_frontend"><tr><td colspan="3">intrometry_frontend</td></tr><tr><td href="packages_intrometry_frontend_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_frontend_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_tests" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_tests"><tr><td colspan="3">intrometry_tests</td></tr><tr><td href="packages_intrometry_tests_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_tests_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_0.intrometry_pjmsg_mcap" [label=<<table border="0" cellspacing="1" cellpadding="0" title="intrometry_pjmsg_mcap"><tr><td colspan="3">intrometry_pjmsg_mcap</td></tr><tr><td href="packages_intrometry_pjmsg_mcap_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_intrometry_pjmsg_mcap_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+thread_supervisor [label=<<table border="0" cellspacing="1" cellpadding="0" title="thread_supervisor"><tr><td colspan="3">thread_supervisor</td></tr><tr><td href="packages_thread_supervisor_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_thread_supervisor_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+subgraph cluster_2 {
+label="cdinit";
+cluster=true;
+"cluster_2.cdinit" [label=<<table border="0" cellspacing="1" cellpadding="0" title="cdinit"><tr><td colspan="3">cdinit</td></tr><tr><td href="packages_cdinit_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_cdinit_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+"cluster_2.cdinit_ros2" [label=<<table border="0" cellspacing="1" cellpadding="0" title="cdinit_ros2"><tr><td colspan="3">cdinit_ros2</td></tr><tr><td href="packages_cdinit_ros2_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_cdinit_ros2_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
+"cluster_3.ariles2_rapidjson_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> pjmsg_mcap_wrapper [color="#0000ff:#ff0000"];
+graphite_to_mcap -> pjmsg_mcap_wrapper [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_yamlcpp_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_tests" -> "cluster_0.intrometry_pjmsg_topic" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_topic" -> "cluster_3.ariles2_namevalue2_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_topic" -> thread_supervisor [color="#0000ff"];
+"cluster_0.intrometry_pjmsg_topic" -> "cluster_0.intrometry_frontend" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> "cluster_0.intrometry_frontend" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_frontend" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> thread_supervisor [color="#0000ff"];
+"cluster_0.intrometry_tests" -> thread_supervisor [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_tests" -> "cluster_0.intrometry_pjmsg_mcap" [color="#0000ff:#ff0000"];
+"cluster_2.cdinit_ros2" -> "cluster_2.cdinit" [color="#ff0000"];
+"cluster_3.ariles2_octave_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_ros2param_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> "cluster_3.ariles2_namevalue2_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_namevalue2_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_pugixml_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_graphviz_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+}

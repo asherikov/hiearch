@@ -1,0 +1,5 @@
+digraph packages_cluster_0_recursive_in {
+compound=true;
+
+cluster_0 [label=<<table border="0" cellspacing="1" cellpadding="0" title="cluster_0"><tr><td colspan="3">"intrometry"</td></tr><tr><td href="packages_cluster_0_recursive_in.svg"><font point-size="8">in</font></td><td href="packages.svg"><font point-size="8">top</font></td><td href="packages_cluster_0_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}

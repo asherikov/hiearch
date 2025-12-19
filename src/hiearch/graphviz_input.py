@@ -81,12 +81,12 @@ def _process_contents(graph, hiearch_data, graph_status, parent_attr_container, 
 
     for node in graph.get_nodes():
         final_attrs = attr_container.node_attrs | node.get_attributes()
-        node_name = node.get_name()
+        node_name = node.get_name().strip('"')
         if node_name not in ['node', 'edge', 'graph']:
             graph_status.add_node(node_name, hiearch_data, final_attrs, scope_id)
 
     for edge in graph.get_edges():
-        edge_nodes = [edge.get_source(), edge.get_destination()]
+        edge_nodes = [edge.get_source().strip('"'), edge.get_destination().strip('"')]
         for node in edge_nodes:
             if node not in graph_status.nodes:
                 graph_status.add_node(node, hiearch_data, attr_container.node_attrs, scope_id)
@@ -101,7 +101,7 @@ def _process_contents(graph, hiearch_data, graph_status, parent_attr_container, 
 
 def _process_subgraph_recursive(subgraph, hiearch_data, graph_status, attr_container, parent_scope_id):
     """Recursively process a subgraph and its contents."""
-    node_id = subgraph.get_name()
+    node_id = subgraph.get_name().strip('"')
     subgraph_attrs = (attr_container.graph_attrs
                       | subgraph.get_attributes()
                       | _extract_default_attributes(subgraph.get_node("graph")))

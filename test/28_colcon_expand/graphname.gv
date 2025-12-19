@@ -1,0 +1,52 @@
+digraph graphname {
+compound=true;
+subgraph cluster_3 {
+label="ariles";
+cluster=true;
+"cluster_3.ariles2_rapidjson_ws" [label="ariles2_rapidjson_ws"];
+"cluster_3.ariles2_yamlcpp_ws" [label="ariles2_yamlcpp_ws"];
+"cluster_3.ariles2_octave_ws" [label="ariles2_octave_ws"];
+"cluster_3.ariles2_ros2param_ws" [label="ariles2_ros2param_ws"];
+"cluster_3.ariles2_namevalue2_ws" [label="ariles2_namevalue2_ws"];
+"cluster_3.ariles2_core_ws" [label="ariles2_core_ws"];
+"cluster_3.ariles2_graphviz_ws" [label="ariles2_graphviz_ws"];
+"cluster_3.ariles2_pugixml_ws" [label="ariles2_pugixml_ws"];
+}
+pjmsg_mcap_wrapper [label="pjmsg_mcap_wrapper"];
+graphite_to_mcap [label="graphite_to_mcap"];
+subgraph cluster_0 {
+label="intrometry";
+cluster=true;
+"cluster_0.intrometry_pjmsg_topic" [label="intrometry_pjmsg_topic"];
+"cluster_0.intrometry_frontend" [label="intrometry_frontend"];
+"cluster_0.intrometry_tests" [label="intrometry_tests"];
+"cluster_0.intrometry_pjmsg_mcap" [label="intrometry_pjmsg_mcap"];
+}
+thread_supervisor [label="thread_supervisor"];
+subgraph cluster_2 {
+label="cdinit";
+cluster=true;
+"cluster_2.cdinit" [label=cdinit];
+"cluster_2.cdinit_ros2" [label="cdinit_ros2"];
+}
+"cluster_3.ariles2_rapidjson_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> pjmsg_mcap_wrapper [color="#0000ff:#ff0000"];
+graphite_to_mcap -> pjmsg_mcap_wrapper [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_yamlcpp_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_tests" -> "cluster_0.intrometry_pjmsg_topic" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_topic" -> "cluster_3.ariles2_namevalue2_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_topic" -> thread_supervisor [color="#0000ff"];
+"cluster_0.intrometry_pjmsg_topic" -> "cluster_0.intrometry_frontend" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> "cluster_0.intrometry_frontend" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_frontend" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> thread_supervisor [color="#0000ff"];
+"cluster_0.intrometry_tests" -> thread_supervisor [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_tests" -> "cluster_0.intrometry_pjmsg_mcap" [color="#0000ff:#ff0000"];
+"cluster_2.cdinit_ros2" -> "cluster_2.cdinit" [color="#ff0000"];
+"cluster_3.ariles2_octave_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_ros2param_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_0.intrometry_pjmsg_mcap" -> "cluster_3.ariles2_namevalue2_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_namevalue2_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_pugixml_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+"cluster_3.ariles2_graphviz_ws" -> "cluster_3.ariles2_core_ws" [color="#0000ff:#ff0000"];
+}
