@@ -244,7 +244,7 @@ def postprocess(views, nodes, edges):
 
                 for node_id in original_copy['nodes']:
                     # Create a new view with just this single node, expanded
-                    new_view_id = f"{view_id}_{node_id}_expand_{expand_type}"
+                    new_view_id = f"{view_id}_{node_id}_{expand_type}"
                     new_view = copy.deepcopy(original_copy)
                     new_view['id'] = new_view_id
                     new_view['expanded_from'] = view_id

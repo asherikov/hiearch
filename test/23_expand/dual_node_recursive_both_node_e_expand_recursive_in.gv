@@ -1,6 +1,0 @@
-digraph dual_node_recursive_both_node_e_expand_recursive_in {
-compound=true;
-node_d [label="Node D"];
-node_e [label="Node E"];
-node_d -> node_e;
-}

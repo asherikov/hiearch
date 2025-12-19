@@ -401,13 +401,13 @@ views:
 </tr>
 <tr>
 <td align="center">
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_a_expand_recursive_out.svg" alt="tag_based_recursive_out_node_a_expand_recursive_out" />
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_a_recursive_out.svg" alt="tag_based_recursive_out_node_a_recursive_out" />
 <br /> node A expansion
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_b_expand_recursive_out.svg" alt="tag_based_recursive_out_node_b_expand_recursive_out" />
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_b_recursive_out.svg" alt="tag_based_recursive_out_node_b_recursive_out" />
 <br /> node B expansion
 </td>
 </tr>

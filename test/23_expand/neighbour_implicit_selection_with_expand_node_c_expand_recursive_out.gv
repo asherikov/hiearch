@@ -1,6 +1,0 @@
-digraph neighbour_implicit_selection_with_expand_node_c_expand_recursive_out {
-compound=true;
-node_c [label="Node C"];
-node_d [label="Node D"];
-node_c -> node_d;
-}

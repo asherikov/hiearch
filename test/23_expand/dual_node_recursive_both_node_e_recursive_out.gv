@@ -1,0 +1,4 @@
+digraph dual_node_recursive_both_node_e_recursive_out {
+compound=true;
+node_e [label="Node E"];
+}

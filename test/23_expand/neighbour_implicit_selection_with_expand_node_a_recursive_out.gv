@@ -1,4 +1,4 @@
-digraph neighbour_implicit_selection_with_expand {
+digraph neighbour_implicit_selection_with_expand_node_a_recursive_out {
 compound=true;
 node_d [label="Node D"];
 node_a [label="Node A"];

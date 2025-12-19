@@ -1,0 +1,4 @@
+digraph tag_based_recursive_out_node_b_recursive_out {
+compound=true;
+node_b [label="Node B"];
+}

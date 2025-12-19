@@ -1,4 +1,0 @@
-digraph dual_node_recursive_out_node_b_expand_recursive_out {
-compound=true;
-node_b [label="Node B"];
-}

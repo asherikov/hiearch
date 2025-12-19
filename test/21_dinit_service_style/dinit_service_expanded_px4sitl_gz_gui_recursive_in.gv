@@ -1,0 +1,5 @@
+digraph dinit_service_expanded_px4sitl_gz_gui_recursive_in {
+compound=true;
+
+px4sitl_gz_gui [shape=box, style="rounded,filled", fillcolor=lightblue, peripheries=1, label=<<table border="0" cellspacing="1" cellpadding="0" title="px4sitl_gz_gui"><tr><td colspan="3">px4sitl_gz_gui</td></tr><tr><td href="dinit_service_expanded_px4sitl_gz_gui_recursive_in.svg"><font point-size="8">in</font></td><td href="dinit_service_expanded.svg"><font point-size="8">top</font></td><td href="dinit_service_expanded_px4sitl_gz_gui_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
+}
