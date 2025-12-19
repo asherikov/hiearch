@@ -42,7 +42,8 @@ test:
 		11_neighbors 12_view_style 13_edge_labels 14_edge_style \
 		15_formatted_labels 16_state_machine 17_use_case 18_style_notag \
 		21_dinit_service_style 22_style_notag_tag_inheritance 23_expand \
-		25_dot_input 26_colcon 27_formatted_labels_view 28_colcon_expand || (echo "Failure!" && false)
+		25_dot_input 26_colcon 27_formatted_labels_view 28_colcon_expand \
+		29_recursive_all 30_expand_recursive_all || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
 	@echo "Success!"

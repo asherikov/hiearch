@@ -1,0 +1,16 @@
+nodes:
+    - id: ["Node A", node_a]
+    - id: ["Node B", node_b]
+    - id: ["Node C", node_c]
+    - id: ["Node D", node_d]
+    - id: ["Node E", node_e]
+
+edges:
+    - link: [node_a, node_b]  # A -> B
+    - link: [node_b, node_c]  # B -> C
+    - link: [node_d, node_b]  # D -> B
+    - link: [node_b, node_e]  # B -> E
+
+views:
+    - id: expand_recursive_all
+      expand: [recursive_all]

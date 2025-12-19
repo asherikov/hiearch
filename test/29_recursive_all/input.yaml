@@ -1,0 +1,17 @@
+nodes:
+    - id: ["Node A", node_a]
+    - id: ["Node B", node_b]
+    - id: ["Node C", node_c]
+      scope: [node_b]
+    - id: ["Node D", node_d]
+    - id: ["Node E", node_e]
+
+edges:
+    - link: [node_a, node_c]  # A -> C
+    - link: [node_c, node_d]  # C -> D
+    - link: [node_e, node_c]  # E -> C
+
+views:
+    - id: recursive_all
+      nodes: [node_c]
+      neighbours: recursive_all

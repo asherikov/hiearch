@@ -14,8 +14,9 @@ class Neighbours():
     PARENT = 'parent'
     RECURSIVE_IN = 'recursive_in'
     RECURSIVE_OUT = 'recursive_out'
+    RECURSIVE_ALL = 'recursive_all'
 
-    types = [DIRECT, EXPLICIT, PARENT, RECURSIVE_IN, RECURSIVE_OUT]
+    types = [DIRECT, EXPLICIT, PARENT, RECURSIVE_IN, RECURSIVE_OUT, RECURSIVE_ALL]
 
 
 
@@ -173,6 +174,10 @@ def select_neighbours_for_view(view, nodes, edges):
     elif Neighbours.RECURSIVE_OUT == view['neighbours']:
         select_recursive(view, nodes_subset, edges, add_nodes, 'out')
 
+    elif Neighbours.RECURSIVE_ALL == view['neighbours']:
+        select_recursive(view, nodes_subset, edges, add_nodes, 'out')
+        select_recursive(view, nodes_subset, edges, add_nodes, 'in')
+
     else:
         raise RuntimeError(f'Unsupported neighbours type: {view["neighbours"]}, must be one of {Neighbours.types}.')
 
@@ -239,7 +244,7 @@ def postprocess(views, nodes, edges):
             view['expand'] = []
 
             for expand_type in expand_types:
-                if expand_type not in ['recursive_in', 'recursive_out']:
+                if expand_type not in ['recursive_in', 'recursive_out', 'recursive_all']:
                     raise RuntimeError(f'Unsupported expand type: "{expand_type}" in view "{view_id}".')
 
                 for node_id in original_copy['nodes']:

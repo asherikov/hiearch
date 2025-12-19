@@ -1,0 +1,10 @@
+digraph expand_recursive_all_node_a_recursive_all {
+compound=true;
+node_b [label="Node B"];
+node_a [label="Node A"];
+node_c [label="Node C"];
+node_e [label="Node E"];
+node_a -> node_b;
+node_b -> node_e;
+node_b -> node_c;
+}
