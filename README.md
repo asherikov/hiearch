@@ -272,6 +272,14 @@ views:
 Neighbour node selection
 ------------------------
 
+There are several types on automated node selection:
+- `explicit` -- only explicitly specified nodes are selected;
+- `direct` -- explicitly specified and their direct connections;
+- `parent` -- similar to `direct`, but instead of directly connected nodes
+  their top-most parents (scopes) are selected;
+- `recursive_in`, `recursive_out`, `recursive_all` -- recursively expand
+  connections of explicitly selected nodes.
+
 <table>
 <tr>
 <td rowspan="6">
