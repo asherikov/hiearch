@@ -9,17 +9,17 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
 <title>tag_based_recursive_out_node_a_recursive_out</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-112 100.1,-112 100.1,4 -4,4"/>
-<!-- node_a -->
-<g id="node1" class="node">
-<title>node_a</title>
-<ellipse fill="none" stroke="black" cx="48.05" cy="-90" rx="47.53" ry="18"/>
-<text text-anchor="middle" x="48.05" y="-85.33" font-family="Times,serif" font-size="14.00">Node A</text>
-</g>
 <!-- node_b -->
-<g id="node2" class="node">
+<g id="node1" class="node">
 <title>node_b</title>
 <ellipse fill="none" stroke="black" cx="48.05" cy="-18" rx="48.05" ry="18"/>
 <text text-anchor="middle" x="48.05" y="-13.32" font-family="Times,serif" font-size="14.00">Node B</text>
+</g>
+<!-- node_a -->
+<g id="node2" class="node">
+<title>node_a</title>
+<ellipse fill="none" stroke="black" cx="48.05" cy="-90" rx="47.53" ry="18"/>
+<text text-anchor="middle" x="48.05" y="-85.33" font-family="Times,serif" font-size="14.00">Node A</text>
 </g>
 <!-- node_a&#45;&gt;node_b -->
 <g id="edge1" class="edge">
