@@ -89,7 +89,7 @@ Examples
 Command line options
 --------------------
 
-    usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] <filename> [<filename> ...]
+    usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] [-t TEMP_DIR] <filename> [<filename> ...]
 
     Generates diagrams
 
@@ -99,9 +99,11 @@ Command line options
     optional arguments:
       -h, --help            show this help message and exit
       -o OUTPUT, --output OUTPUT
-                            Output directory [hiearch]
+                            Output directory [./]
       -f FORMAT, --format FORMAT
                             Output format [SVG]
+      -t TEMP_DIR, --temp-dir TEMP_DIR
+                            Temporary files output directory (defaults to output directory)
 
 Trivial
 -------

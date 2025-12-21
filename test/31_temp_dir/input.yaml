@@ -1,0 +1,10 @@
+nodes:
+  - id: ["Node A", A]
+  - id: ["Node B", B]
+
+edges:
+  - link: [A, B]
+
+views:
+  - id: simple_view
+    nodes: [A, B]

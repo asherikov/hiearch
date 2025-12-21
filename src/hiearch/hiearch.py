@@ -22,16 +22,7 @@ class ParsedEntities:
         self.styled = []
 
 
-def parse(directory, filenames):
-    """Parse input files and return nodes and views.
-
-    Args:
-        directory: Output directory path
-        filenames: List of input filenames to process
-
-    Returns:
-        Tuple of (nodes.entities, views.entities)
-    """
+def parse(temp_dir, filenames):
     nodes = ParsedEntities()
     edges = ParsedEntities()
     views = ParsedEntities()
@@ -44,7 +35,9 @@ def parse(directory, filenames):
                 content = file.read()
             data = graphviz_input.dot_to_hiearch(os.path.basename(filename), content)
 
-            with open(f'{directory}/{os.path.basename(filename)}.yaml', 'w', encoding='utf-8') as file:
+            # Store the generated YAML in the temporary directory
+            temp_yaml_path = f'{temp_dir}/{os.path.basename(filename)}.yaml'
+            with open(temp_yaml_path, 'w', encoding='utf-8') as file:
                 yaml.dump(data, file, default_flow_style=False, allow_unicode=True)
         else:
             # Process YAML files as usual
@@ -72,8 +65,9 @@ def main():
     parser = argparse.ArgumentParser(prog='hiearch', description='Generates diagrams')
 
     parser.add_argument('inputs', metavar='<filename>', type=str, nargs='+', help='Input files')
-    parser.add_argument('-o', '--output', required=True, default='hiearch', help='Output directory [hiearch]')
+    parser.add_argument('-o', '--output', required=False, default='./', help='Output directory [./]')
     parser.add_argument('-f', '--format', required=False, default='svg', help='Output format [SVG]')
+    parser.add_argument('-t', '--temp-dir', required=False, default=None, help='Temporary files output directory (defaults to output directory)')
 
     args = parser.parse_args()
 
@@ -83,11 +77,14 @@ def main():
         if style_path.exists():
             args.inputs.append(str(style_path))
 
-    nodes, views = parse(args.output, args.inputs)
+    # Use temporary directory if specified, otherwise use output directory
+    temp_dir = args.temp_dir if args.temp_dir is not None else args.output
+
+    nodes, views = parse(temp_dir, args.inputs)
 
     for view in views.values():
         if len(view['nodes']) > 0:
-            graphviz_output.generate(args.output, args.format, view, nodes)
+            graphviz_output.generate(args.output, temp_dir, args.format, view, nodes)
 
 
 if __name__ == "__main__":

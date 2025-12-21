@@ -69,7 +69,7 @@ def generate_tree(graph, tree, nodes, extended_attrs):
                 graph.add_subgraph(subgraph)
 
 
-def generate(directory, fmt, view, nodes):
+def generate(output_dir, temp_dir, fmt, view, nodes):
     graph = pydot.Dot(graph_name=view['id'], graph_type='digraph')
 
     extended_attrs = {
@@ -130,12 +130,12 @@ def generate(directory, fmt, view, nodes):
 
             graph.add_edge(pydot.Edge(tail, head, **get_edge_attributes(edge)))
 
-    # Write the DOT file
-    dot_file_path = f'{directory}/{view["id"]}.gv'
+    # Write the DOT file to the temporary directory
+    dot_file_path = f'{temp_dir}/{view["id"]}.gv'
     graph.write(dot_file_path)
 
     # Call dot directly (pydot uses temporary dirs that dont play nice with inclusions)
-    output_file_path = f'{directory}/{view["id"]}.{fmt}'
+    output_file_path = f'{output_dir}/{view["id"]}.{fmt}'
 
     cmd = ['dot', '-T' + fmt, '-o', output_file_path, dot_file_path]
     subprocess.run(cmd, check=True, capture_output=True)
