@@ -108,6 +108,9 @@ spell:
 install_deps_apt:
 	${APT_INSTALL} graphviz
 
+install_deps_apt_focal:
+	${APT_INSTALL} python3 python3-venv python3-pip
+
 svg2png:
 	find ${DIR} -iname "*.svg" | sed -e "s/\.svg$$//" | xargs -I {} sh -c "rsvg-convert {}.svg --format=png --output={}.png"
 

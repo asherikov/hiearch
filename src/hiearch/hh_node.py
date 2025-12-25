@@ -175,12 +175,13 @@ def parse(yaml_nodes, nodes):
 
 def get_substitutions(node):
     """Get substitution values for formatting node labels."""
-    substitutions = node['substitutions'] | {
+    substitutions = dict(node['substitutions'])
+    substitutions.update({
         'label': node['label'],
         'id': node['id'],
         'scope': node['scope'],
         'style': node['style']
-    }
+    })
     return substitutions
 
 

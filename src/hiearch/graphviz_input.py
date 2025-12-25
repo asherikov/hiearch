@@ -26,9 +26,14 @@ class AttributeContainer:
 
         # Merge with higher-level defaults
         if attr_container:
-            self.graph_attrs = attr_container.graph_attrs | self.graph_attrs
-            self.node_attrs = attr_container.node_attrs | self.node_attrs
-            self.edge_attrs = attr_container.edge_attrs | self.edge_attrs
+            self.graph_attrs = self._attr_merge(attr_container.graph_attrs, self.graph_attrs)
+            self.node_attrs = self._attr_merge(attr_container.node_attrs, self.node_attrs)
+            self.edge_attrs = self._attr_merge(attr_container.edge_attrs, self.edge_attrs)
+
+    def _attr_merge(self, first, second):
+        tmp = dict(first)
+        tmp.update(second)
+        return tmp
 
 
 class GraphStatus:
@@ -80,7 +85,8 @@ def _process_contents(graph, hiearch_data, graph_status, parent_attr_container, 
         _process_subgraph_recursive(subgraph, hiearch_data, graph_status, attr_container, scope_id)
 
     for node in graph.get_nodes():
-        final_attrs = attr_container.node_attrs | node.get_attributes()
+        final_attrs = dict(attr_container.node_attrs)
+        final_attrs.update(node.get_attributes())
         node_name = node.get_name().strip('"')
         if node_name not in ['node', 'edge', 'graph']:
             graph_status.add_node(node_name, hiearch_data, final_attrs, scope_id)
@@ -93,8 +99,9 @@ def _process_contents(graph, hiearch_data, graph_status, parent_attr_container, 
 
         edge_info = {
             'link': [edge_nodes[0], edge_nodes[1]],
-            'graphviz': attr_container.edge_attrs | edge.get_attributes()
+            'graphviz': dict(attr_container.edge_attrs)
         }
+        edge_info['graphviz'].update(edge.get_attributes())
 
         hiearch_data['edges'].append(edge_info)
 
@@ -102,9 +109,9 @@ def _process_contents(graph, hiearch_data, graph_status, parent_attr_container, 
 def _process_subgraph_recursive(subgraph, hiearch_data, graph_status, attr_container, parent_scope_id):
     """Recursively process a subgraph and its contents."""
     node_id = subgraph.get_name().strip('"')
-    subgraph_attrs = (attr_container.graph_attrs
-                      | subgraph.get_attributes()
-                      | _extract_default_attributes(subgraph.get_node("graph")))
+    subgraph_attrs = dict(attr_container.graph_attrs)
+    subgraph_attrs.update(subgraph.get_attributes())
+    subgraph_attrs.update(_extract_default_attributes(subgraph.get_node("graph")))
 
     graph_status.add_node(node_id, hiearch_data, subgraph_attrs, parent_scope_id)
 
@@ -141,10 +148,10 @@ def dot_to_hiearch(file_id, dot_content):
             'id': graph_status.view_id,
             'tags': [graph_status.view_id],
             'graphviz': {
-                'graph': (graph.get_attributes()
-                          | _extract_default_attributes(graph.get_node("graph")))
+                'graph': dict(graph.get_attributes())
             }
         }
+        style_view['graphviz']['graph'].update(_extract_default_attributes(graph.get_node("graph")))
         hiearch_data['views'].append(style_view)
 
         _process_contents(graph, hiearch_data, graph_status, AttributeContainer(graph, None), None)

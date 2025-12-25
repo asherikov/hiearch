@@ -10,7 +10,8 @@ from . import hh_node
 
 
 def get_attributes(node, extended_attrs, label_format_key):
-    attrs = extended_attrs | copy.deepcopy(node['graphviz'])
+    attrs = dict(extended_attrs)
+    attrs.update(copy.deepcopy(node['graphviz']))
 
     substitutions = hh_node.get_substitutions(node)
     if extended_attrs['expanded_from'] is not None:
@@ -32,7 +33,8 @@ def get_edge_attributes(edge):
     attrs = copy.deepcopy(edge['graphviz'])
 
     for attr, label, fmt in zip(['taillabel', 'label', 'headlabel'], edge['label'], attrs['label_format']):
-        substitutions = edge['substitutions'] | {
+        substitutions = dict(edge['substitutions'])
+        substitutions.update({
             'label': label,
             'id': edge['id'],
             'node_in': edge['in'],
@@ -40,7 +42,7 @@ def get_edge_attributes(edge):
             'scope_in': edge['scope_in'],
             'scope_out': edge['scope_out'],
             'style': edge['style']
-        }
+        })
 
         formatted_label = fmt.format(**substitutions)
         if len(formatted_label) > 0:

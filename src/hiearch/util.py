@@ -8,16 +8,21 @@ def merge_styles(secondary, primary, with_tags=True):
     if 'graphviz' in secondary:
         if 'substitutions' in secondary:
             if 'substitutions' in primary:
-                primary['substitutions'] = secondary['substitutions'] | primary['substitutions']
+                tmp = dict(secondary['substitutions'])
+                tmp.update(primary['substitutions'])
+                primary['substitutions'] = tmp
             else:
                 primary['substitutions'] = secondary['substitutions']
 
         if 'graphviz' in primary:
-            primary['graphviz'] = secondary['graphviz'] | primary['graphviz']
+            tmp = dict(secondary['graphviz'])
+            tmp.update(primary['graphviz'])
+            primary['graphviz'] = tmp
         else:
             primary['graphviz'] = secondary['graphviz']
 
-    result = secondary | primary
+    result = dict(secondary)
+    result.update(primary)
 
     if not with_tags and 'tags' not in primary:
         # do not inherit tags and tags are not explicitly overriden -- reset to default
