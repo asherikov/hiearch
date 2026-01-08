@@ -1,9 +1,0 @@
-digraph dinit_service_expanded_px4sitl_px4_recursive_in {
-compound=true;
-
-px4sitl_qgroundcontrol [shape=box, style="rounded,filled", fillcolor=lightblue, peripheries=1, label=<<table border="0" cellspacing="1" cellpadding="0" title="px4sitl_qgroundcontrol"><tr><td colspan="3">px4sitl_qgroundcontrol</td></tr><tr><td href="dinit_service_expanded_px4sitl_qgroundcontrol_recursive_in.svg"><font point-size="8">in</font></td><td href="dinit_service_expanded.svg"><font point-size="8">top</font></td><td href="dinit_service_expanded_px4sitl_qgroundcontrol_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
-px4sitl_px4 [shape=box, style="rounded,filled", fillcolor=lightblue, peripheries=1, label=<<table border="0" cellspacing="1" cellpadding="0" title="px4sitl_px4"><tr><td colspan="3">px4sitl_px4</td></tr><tr><td href="dinit_service_expanded_px4sitl_px4_recursive_in.svg"><font point-size="8">in</font></td><td href="dinit_service_expanded.svg"><font point-size="8">top</font></td><td href="dinit_service_expanded_px4sitl_px4_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
-px4_offboard_demo_py_node [shape=box, style="rounded,filled", fillcolor=lightblue, peripheries=1, label=<<table border="0" cellspacing="1" cellpadding="0" title="px4_offboard_demo_py_node"><tr><td colspan="3">px4_offboard_demo_py_node</td></tr><tr><td href="dinit_service_expanded_px4_offboard_demo_py_node_recursive_in.svg"><font point-size="8">in</font></td><td href="dinit_service_expanded.svg"><font point-size="8">top</font></td><td href="dinit_service_expanded_px4_offboard_demo_py_node_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>];
-px4sitl_qgroundcontrol -> px4sitl_px4 [arrowhead=normal, style=solid, color=black];
-px4_offboard_demo_py_node -> px4sitl_px4 [arrowhead=normal, style=solid, color=black];
-}

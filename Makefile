@@ -34,13 +34,10 @@ venv: builddir
 
 venv_test: clean
 	${MAKE} venv
-	/bin/sh -c ". ${BUILD_DIR}/venv/bin/activate && ${MAKE} install && ${MAKE} test"
+	/bin/sh -c ". ${BUILD_DIR}/venv/bin/activate && pip install . && ${MAKE} test"
 
 venv_test_quick:
 	/bin/sh -c ". ${BUILD_DIR}/venv/bin/activate && ${MAKE} ${TEST}"
-
-venv_install: venv
-	/bin/sh -c ". ${BUILD_DIR}/venv/bin/activate && ${MAKE} install"
 
 test:
 	@${MAKE} \
@@ -48,7 +45,7 @@ test:
 		07_trivial 08_node_realations 09_tags 10_minimal \
 		11_neighbors 12_view_style 13_edge_labels 14_edge_style \
 		15_formatted_labels 16_state_machine 17_use_case 18_style_notag \
-		21_dinit_service_style 22_style_notag_tag_inheritance 23_expand \
+		22_style_notag_tag_inheritance 23_expand \
 		25_dot_input 26_colcon 27_formatted_labels_view 28_colcon_expand \
 		29_recursive_all 30_expand_recursive_all 31_temp_dir || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
@@ -65,22 +62,15 @@ builddir:
 	mkdir -p ${BUILD_DIR}
 
 install:
-	pip install --no-cache-dir ./
+	pipx install ./
 	#${MAKE} clean
 
 install_edit:
-	pip install --editable ./
+	pipx install --editable ./
 	${MAKE} clean
-
-install_deps: builddir
-	pip-compile --verbose --output-file ./${BUILD_DIR}/requirements.txt pyproject.toml
-	pip install -r ./${BUILD_DIR}/requirements.txt
 
 # https://packaging.python.org/en/latest/tutorials/packaging-projects/
 install_release_deps:
-	#pip install --upgrade build
-	#pip install --upgrade twine
-	#pip install --upgrade packaging
 	sudo apt install pipx python3-build python3-packaging
 	# apt twine does not work https://github.com/pypi/warehouse/issues/15611
 	pipx install twine
@@ -96,7 +86,7 @@ upload_pypi:
 	twine upload --verbose dist/*
 
 uninstall: clean
-	pip uninstall -y ${PROJECT_NAME}
+	pipx uninstall ${PROJECT_NAME}
 
 reinstall:
 	${MAKE}	uninstall

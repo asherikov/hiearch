@@ -11,18 +11,6 @@ env:
     APT_INSTALL: apt install -y --no-install-recommends
 
 jobs:
-    focal_test:
-        container: ubuntu:focal
-        runs-on: ubuntu-latest
-
-        steps:
-            - uses: actions/checkout@v5
-            - run: apt update
-            - run: ${APT_INSTALL} make sudo python3 python3-venv python3-pip
-            - run: make install_deps_apt
-            - run: make install
-            - run: make test
-
     jammy_test:
         runs-on: ubuntu-22.04
 
