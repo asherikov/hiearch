@@ -1,8 +1,15 @@
 digraph neighbour_implicit_selection_with_expand_node_a_recursive_out {
 compound=true;
 node_d [label="Node D"];
-node_a [label="Node A"];
 node_c [label="Node C"];
-node_a -> node_c;
+subgraph neighbour_implicit_selection_with_expand_node_a_recursive_out_highlight_scope {
+shape=rectangle;
+color=red;
+penwidth=2;
+label="";
+cluster=true;
+"neighbour_implicit_selection_with_expand_node_a_recursive_out_highlight_scope.node_a" [label="Node A"];
+}
 node_c -> node_d;
+"neighbour_implicit_selection_with_expand_node_a_recursive_out_highlight_scope.node_a" -> node_c;
 }

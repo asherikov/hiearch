@@ -1,10 +1,17 @@
 digraph expand_recursive_all_node_d_recursive_all {
 compound=true;
-node_b [label="Node B"];
-node_d [label="Node D"];
-node_c [label="Node C"];
+subgraph expand_recursive_all_node_d_recursive_all_highlight_scope {
+shape=rectangle;
+color=red;
+penwidth=2;
+label="";
+cluster=true;
+"expand_recursive_all_node_d_recursive_all_highlight_scope.node_d" [label="Node D"];
+}
 node_e [label="Node E"];
-node_d -> node_b;
-node_b -> node_e;
+node_b [label="Node B"];
+node_c [label="Node C"];
+"expand_recursive_all_node_d_recursive_all_highlight_scope.node_d" -> node_b;
 node_b -> node_c;
+node_b -> node_e;
 }

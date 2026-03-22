@@ -1,4 +1,11 @@
 digraph dual_node_recursive_out_node_b_recursive_out {
 compound=true;
-node_b [label="Node B"];
+subgraph dual_node_recursive_out_node_b_recursive_out_highlight_scope {
+shape=rectangle;
+color=red;
+penwidth=2;
+label="";
+cluster=true;
+"dual_node_recursive_out_node_b_recursive_out_highlight_scope.node_b" [label="Node B"];
+}
 }

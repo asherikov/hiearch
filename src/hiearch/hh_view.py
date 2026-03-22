@@ -154,29 +154,24 @@ def select_neighbours_for_view(view, nodes, edges):
     view['custom_edges'] = {}
     add_nodes = set()
 
-    if 0 == len(view['nodes_subset']):
-        nodes_subset = nodes
-    else:
-        nodes_subset = view['nodes_subset']
-
     if Neighbours.EXPLICIT == view['neighbours']:
-        select_explicit(view, nodes_subset, edges)
+        select_explicit(view, nodes, edges)
 
     elif Neighbours.DIRECT == view['neighbours']:
-        select_direct(view, nodes_subset, edges, add_nodes)
+        select_direct(view, nodes, edges, add_nodes)
 
     elif Neighbours.PARENT == view['neighbours']:
-        select_parent(view, nodes_subset, edges, add_nodes)
+        select_parent(view, nodes, edges, add_nodes)
 
     elif Neighbours.RECURSIVE_IN == view['neighbours']:
-        select_recursive(view, nodes_subset, edges, add_nodes, 'in')
+        select_recursive(view, nodes, edges, add_nodes, 'in')
 
     elif Neighbours.RECURSIVE_OUT == view['neighbours']:
-        select_recursive(view, nodes_subset, edges, add_nodes, 'out')
+        select_recursive(view, nodes, edges, add_nodes, 'out')
 
     elif Neighbours.RECURSIVE_ALL == view['neighbours']:
-        select_recursive(view, nodes_subset, edges, add_nodes, 'out')
-        select_recursive(view, nodes_subset, edges, add_nodes, 'in')
+        select_recursive(view, nodes, edges, add_nodes, 'out')
+        select_recursive(view, nodes, edges, add_nodes, 'in')
 
     else:
         raise RuntimeError(f'Unsupported neighbours type: {view["neighbours"]}, must be one of {Neighbours.types}.')
@@ -184,6 +179,8 @@ def select_neighbours_for_view(view, nodes, edges):
     if len(add_nodes) > 0:
         view['nodes'] = view['nodes'].union(add_nodes)
 
+
+def build_tree(view, nodes):
     view['tree'], view['node_key_paths'], view['scopes'] = hh_node.build_tree(nodes, view['nodes'])
 
 
@@ -222,45 +219,67 @@ def postprocess(views, nodes, edges):
     # select neighbours
     for view in views.entities.values():
         select_neighbours_for_view(view, nodes, edges)
+        build_tree(view, nodes)
 
 
     # Process views and create expanded views if needed (before neighbour processing)
     additional_views = {}
 
     for view_id, view in views.entities.items():
-        # Check if expand field is properly initialized
         if not isinstance(view['expand'], list):
             raise RuntimeError(f'Expand field in view "{view_id}" must be an array.')
 
-        # Process expand parameter if not empty
-        if len(view['expand']) > 0:
-            expand_types = view['expand']
-            view['expanded_from'] = view_id
+        if len(view['expand']) == 0:
+            continue
 
-            original_copy = copy.deepcopy(view)
-            original_copy['expand'] = []
-            for node in original_copy['nodes']:
-                original_copy['nodes_subset'][node] = nodes[node]
-            view['expand'] = []
+        view['expanded_from'] = view_id
 
-            for expand_type in expand_types:
-                if expand_type not in ['recursive_in', 'recursive_out', 'recursive_all']:
-                    raise RuntimeError(f'Unsupported expand type: "{expand_type}" in view "{view_id}".')
+        nodes_subset = {}
+        for node_id in view['nodes']:
+            nodes_subset[node_id] = nodes[node_id]
 
-                for node_id in original_copy['nodes']:
-                    # Create a new view with just this single node, expanded
-                    new_view_id = f"{view_id}_{node_id}_{expand_type}"
-                    new_view = copy.deepcopy(original_copy)
-                    new_view['id'] = new_view_id
-                    new_view['expanded_from'] = view_id
-                    # Use only this single node as the starting point
-                    new_view['nodes'] = set([node_id])
-                    # Convert parameter to corresponding Neighbours constant
-                    new_view['neighbours'] = getattr(Neighbours, expand_type.upper())
+        for expand_type in view['expand']:
+            if expand_type not in ['recursive_in', 'recursive_out', 'recursive_all']:
+                raise RuntimeError(f'Unsupported expand type: "{expand_type}" in view "{view_id}".')
 
-                    select_neighbours_for_view(new_view, nodes, edges)
+            for node_id in view['nodes']:
+                new_view_id = f"{view_id}_{node_id}_{expand_type}"
+                highlight_scope_id = f"{new_view_id}_highlight_scope"
 
-                    additional_views[new_view_id] = new_view
+                # inject highlight scope node in the global node list, it has
+                # to stay there for visualization
+                nodes[highlight_scope_id] = util.merge_styles(
+                        hh_node.default,
+                        {
+                            'id': highlight_scope_id,
+                            'label': '',
+                            'graphviz': {
+                                'shape': 'rectangle',
+                                'color': 'red',
+                                'penwidth': '2',
+                                'label': '',
+                            },
+                            'in': set(),
+                            'out': set(),
+                            'child_in': set(),
+                            'child_out': set(),
+                            'scope': nodes[node_id]['scope']
+                        })
+                nodes_subset[highlight_scope_id] = nodes[highlight_scope_id]
+
+                new_view = copy.deepcopy(view)
+                new_view['id'] = new_view_id
+                new_view['nodes'] = set([node_id, highlight_scope_id])
+                new_view['neighbours'] = getattr(Neighbours, expand_type.upper())
+
+                # temporarily modify node scope to generate tree with injected highlight scope
+                original_scope = nodes[node_id]['scope']
+                nodes[node_id]['scope'] = set([highlight_scope_id])
+                select_neighbours_for_view(new_view, nodes_subset, edges)
+                build_tree(new_view, nodes)
+                nodes[node_id]['scope'] = original_scope
+
+                additional_views[new_view_id] = new_view
 
 
     # Add all the generated expanded views to the main views dictionary

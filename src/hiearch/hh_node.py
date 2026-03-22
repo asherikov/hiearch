@@ -6,6 +6,23 @@ from collections import defaultdict
 from . import util
 
 
+default: dict = {
+    'id': ['', ''],
+    'scope': None,
+    'style': None,
+    'style_notag': None,
+    'graphviz': {},
+    'tags': ['default'],
+    'substitutions': {},
+    # overriden
+    'label': '',
+    'in': [],
+    'out': [],
+    'child_in': [],
+    'child_out': [],
+}
+
+
 def gather(prop, node, must_exist_nodes):
     """Gather nodes that must exist based on property references."""
     if prop in node.keys() and node[prop] is not None:
@@ -135,22 +152,6 @@ def build_tree(nodes, nodes_view):
 
 def parse(yaml_nodes, nodes):
     """Parse YAML node definitions and populate the nodes structure."""
-    default = {
-        'id': ['', ''],
-        'scope': None,
-        'style': None,
-        'style_notag': None,
-        'graphviz': {},
-        'tags': ['default'],
-        'substitutions': {},
-        # overriden
-        'label': '',
-        'in': [],
-        'out': [],
-        'child_in': [],
-        'child_out': [],
-    }
-
     for node in yaml_nodes:
         node['label'] = node['id'][0]
         node['id'] = node['id'][1]

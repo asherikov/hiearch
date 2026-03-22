@@ -1,6 +1,13 @@
 digraph dual_node_recursive_in_node_h_recursive_in {
 compound=true;
+subgraph dual_node_recursive_in_node_h_recursive_in_highlight_scope {
+shape=rectangle;
+color=red;
+penwidth=2;
+label="";
+cluster=true;
+"dual_node_recursive_in_node_h_recursive_in_highlight_scope.node_h" [label="Node H"];
+}
 node_f [label="Node F"];
-node_h [label="Node H"];
-node_f -> node_h;
+node_f -> "dual_node_recursive_in_node_h_recursive_in_highlight_scope.node_h";
 }
