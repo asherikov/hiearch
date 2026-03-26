@@ -47,7 +47,7 @@ test:
 		15_formatted_labels 16_state_machine 17_use_case 18_style_notag \
 		22_style_notag_tag_inheritance 23_expand \
 		25_dot_input 26_colcon 27_formatted_labels_view 28_colcon_expand \
-		29_recursive_all 30_expand_recursive_all 31_temp_dir || (echo "Failure!" && false)
+		29_recursive_all 30_expand_recursive_all 31_temp_dir 32_subgraph_edge || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
 	@echo "Success!"

@@ -1,0 +1,19 @@
+digraph default {
+compound=true;
+F [label=F];
+subgraph A {
+label=A;
+cluster=true;
+subgraph "A.C" {
+label=C;
+cluster=true;
+"A.C.E" [label=E];
+}
+subgraph "A.B" {
+label=B;
+cluster=true;
+"A.B.D" [label=D];
+}
+}
+"A.B.D" -> F [ltail=A, tailclip=false];
+}

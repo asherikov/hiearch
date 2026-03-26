@@ -1,0 +1,14 @@
+nodes:
+    - id: ["A", A]
+    - id: ["B", B]
+      scope: A
+    - id: ["C", C]
+      scope: A
+    - id: ["D", D]
+      scope: B
+    - id: ["E", E]
+      scope: C
+    - id: ["F", F]
+
+edges:
+    - link: [A, F]

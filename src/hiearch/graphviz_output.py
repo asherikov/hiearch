@@ -96,26 +96,25 @@ def generate(output_dir, temp_dir, fmt, view, nodes):
 
     for edge_set in ['edges', 'custom_edges']:
         for edge in view[edge_set].values():
-            # adjust edges that connect scopes
-            if edge['out'] in view['scopes']:
-                scope = edge['out']
-                for edge_out in view['scopes'][scope]:
-                    # https://stackoverflow.com/questions/59825/how-to-retrieve-an-element-from-a-set-without-removing-it
-                    break
-                edge['graphviz']['ltail'] = scope
+            # adjust edges that connect scopes: pick one non-scope child as the edge start/end
+            # perform sorting of scoped nodes to avoid random placing
+            edge_out = edge['out']
+            while edge_out in view['scopes']:
+                sorted_childs = list(view['scopes'][edge_out])
+                sorted_childs.sort()
+                edge_out = sorted_childs[0]
+            if edge['out'] != edge_out:
+                edge['graphviz']['ltail'] = edge['out']
                 edge['graphviz']['tailclip'] = 'false'  # workaround for bad angle of the arrow head
-            else:
-                edge_out = edge['out']
 
-            if edge['in'] in view['scopes']:
-                scope = edge['in']
-                for edge_in in view['scopes'][scope]:
-                    # https://stackoverflow.com/questions/59825/how-to-retrieve-an-element-from-a-set-without-removing-it
-                    break
-                edge['graphviz']['lhead'] = scope
+            edge_in = edge['in']
+            while edge_in in view['scopes']:
+                sorted_childs = list(view['scopes'][edge_in])
+                sorted_childs.sort()
+                edge_in = sorted_childs[0]
+            if edge['in'] != edge_in:
+                edge['graphviz']['lhead'] = edge['in']
                 edge['graphviz']['headclip'] = 'false'  # workaround for bad angle of the arrow head
-            else:
-                edge_in = edge['in']
 
 
             tail = ''
