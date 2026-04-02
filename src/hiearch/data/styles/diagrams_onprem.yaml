@@ -1,0 +1,763 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for ONPREM
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # ONPREM.AGGREGATOR
+    - id: ["", hh_diagrams_onprem_aggregator_fluentd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/aggregator/fluentd.png"
+    - id: ["", hh_diagrams_onprem_aggregator_vector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/aggregator/vector.png"
+
+    # ONPREM.ANALYTICS
+    - id: ["", hh_diagrams_onprem_analytics_beam]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/beam.png"
+    - id: ["", hh_diagrams_onprem_analytics_databricks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/databricks.png"
+    - id: ["", hh_diagrams_onprem_analytics_dbt]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/dbt.png"
+    - id: ["", hh_diagrams_onprem_analytics_dremio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/dremio.png"
+    - id: ["", hh_diagrams_onprem_analytics_flink]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/flink.png"
+    - id: ["", hh_diagrams_onprem_analytics_hadoop]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/hadoop.png"
+    - id: ["", hh_diagrams_onprem_analytics_hive]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/hive.png"
+    - id: ["", hh_diagrams_onprem_analytics_metabase]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/metabase.png"
+    - id: ["", hh_diagrams_onprem_analytics_norikra]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/norikra.png"
+    - id: ["", hh_diagrams_onprem_analytics_powerbi]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/powerbi.png"
+    - id: ["", hh_diagrams_onprem_analytics_presto]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/presto.png"
+    - id: ["", hh_diagrams_onprem_analytics_singer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/singer.png"
+    - id: ["", hh_diagrams_onprem_analytics_spark]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/spark.png"
+    - id: ["", hh_diagrams_onprem_analytics_storm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/storm.png"
+    - id: ["", hh_diagrams_onprem_analytics_superset]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/superset.png"
+    - id: ["", hh_diagrams_onprem_analytics_tableau]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/tableau.png"
+    - id: ["", hh_diagrams_onprem_analytics_trino]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/analytics/trino.png"
+
+    # ONPREM.AUTH
+    - id: ["", hh_diagrams_onprem_auth_boundary]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/auth/boundary.png"
+    - id: ["", hh_diagrams_onprem_auth_buzzfeed_sso]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/auth/buzzfeed-sso.png"
+    - id: ["", hh_diagrams_onprem_auth_oauth2_proxy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/auth/oauth2-proxy.png"
+
+    # ONPREM.CD
+    - id: ["", hh_diagrams_onprem_cd_spinnaker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/cd/spinnaker.png"
+    - id: ["", hh_diagrams_onprem_cd_tekton_cli]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/cd/tekton-cli.png"
+    - id: ["", hh_diagrams_onprem_cd_tekton]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/cd/tekton.png"
+
+    # ONPREM.CERTIFICATES
+    - id: ["", hh_diagrams_onprem_certificates_cert_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/certificates/cert-manager.png"
+    - id: ["", hh_diagrams_onprem_certificates_lets_encrypt]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/certificates/lets-encrypt.png"
+
+    # ONPREM.CI
+    - id: ["", hh_diagrams_onprem_ci_circleci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/circleci.png"
+    - id: ["", hh_diagrams_onprem_ci_concourseci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/concourseci.png"
+    - id: ["", hh_diagrams_onprem_ci_droneci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/droneci.png"
+    - id: ["", hh_diagrams_onprem_ci_github_actions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/github-actions.png"
+    - id: ["", hh_diagrams_onprem_ci_gitlabci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/gitlabci.png"
+    - id: ["", hh_diagrams_onprem_ci_jenkins]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/jenkins.png"
+    - id: ["", hh_diagrams_onprem_ci_teamcity]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/teamcity.png"
+    - id: ["", hh_diagrams_onprem_ci_travisci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/travisci.png"
+    - id: ["", hh_diagrams_onprem_ci_zuulci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/ci/zuulci.png"
+
+    # ONPREM.CLIENT
+    - id: ["", hh_diagrams_onprem_client_client]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/client/client.png"
+    - id: ["", hh_diagrams_onprem_client_user]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/client/user.png"
+    - id: ["", hh_diagrams_onprem_client_users]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/client/users.png"
+
+    # ONPREM.COMPUTE
+    - id: ["", hh_diagrams_onprem_compute_nomad]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/compute/nomad.png"
+    - id: ["", hh_diagrams_onprem_compute_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/compute/server.png"
+
+    # ONPREM.CONTAINER
+    - id: ["", hh_diagrams_onprem_container_containerd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/containerd.png"
+    - id: ["", hh_diagrams_onprem_container_crio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/crio.png"
+    - id: ["", hh_diagrams_onprem_container_docker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/docker.png"
+    - id: ["", hh_diagrams_onprem_container_firecracker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/firecracker.png"
+    - id: ["", hh_diagrams_onprem_container_gvisor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/gvisor.png"
+    - id: ["", hh_diagrams_onprem_container_k3s]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/k3s.png"
+    - id: ["", hh_diagrams_onprem_container_lxc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/lxc.png"
+    - id: ["", hh_diagrams_onprem_container_rkt]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/container/rkt.png"
+
+    # ONPREM.DATABASE
+    - id: ["", hh_diagrams_onprem_database_cassandra]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/cassandra.png"
+    - id: ["", hh_diagrams_onprem_database_clickhouse]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/clickhouse.png"
+    - id: ["", hh_diagrams_onprem_database_cockroachdb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/cockroachdb.png"
+    - id: ["", hh_diagrams_onprem_database_couchbase]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/couchbase.png"
+    - id: ["", hh_diagrams_onprem_database_couchdb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/couchdb.png"
+    - id: ["", hh_diagrams_onprem_database_dgraph]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/dgraph.png"
+    - id: ["", hh_diagrams_onprem_database_druid]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/druid.png"
+    - id: ["", hh_diagrams_onprem_database_duckdb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/duckdb.png"
+    - id: ["", hh_diagrams_onprem_database_hbase]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/hbase.png"
+    - id: ["", hh_diagrams_onprem_database_influxdb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/influxdb.png"
+    - id: ["", hh_diagrams_onprem_database_janusgraph]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/janusgraph.png"
+    - id: ["", hh_diagrams_onprem_database_mariadb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/mariadb.png"
+    - id: ["", hh_diagrams_onprem_database_mongodb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/mongodb.png"
+    - id: ["", hh_diagrams_onprem_database_mssql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/mssql.png"
+    - id: ["", hh_diagrams_onprem_database_mysql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/mysql.png"
+    - id: ["", hh_diagrams_onprem_database_neo4j]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/neo4j.png"
+    - id: ["", hh_diagrams_onprem_database_oracle]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/oracle.png"
+    - id: ["", hh_diagrams_onprem_database_postgresql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/postgresql.png"
+    - id: ["", hh_diagrams_onprem_database_qdrant]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/qdrant.png"
+    - id: ["", hh_diagrams_onprem_database_scylla]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/database/scylla.png"
+
+    # ONPREM.DNS
+    - id: ["", hh_diagrams_onprem_dns_coredns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/dns/coredns.png"
+    - id: ["", hh_diagrams_onprem_dns_powerdns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/dns/powerdns.png"
+
+    # ONPREM.ETL
+    - id: ["", hh_diagrams_onprem_etl_embulk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/etl/embulk.png"
+
+    # ONPREM.GITOPS
+    - id: ["", hh_diagrams_onprem_gitops_argocd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/gitops/argocd.png"
+    - id: ["", hh_diagrams_onprem_gitops_flagger]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/gitops/flagger.png"
+    - id: ["", hh_diagrams_onprem_gitops_flux]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/gitops/flux.png"
+
+    # ONPREM.GROUPWARE
+    - id: ["", hh_diagrams_onprem_groupware_nextcloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/groupware/nextcloud.png"
+
+    # ONPREM.IAC
+    - id: ["", hh_diagrams_onprem_iac_ansible]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/iac/ansible.png"
+    - id: ["", hh_diagrams_onprem_iac_atlantis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/iac/atlantis.png"
+    - id: ["", hh_diagrams_onprem_iac_awx]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/iac/awx.png"
+    - id: ["", hh_diagrams_onprem_iac_pulumi]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/iac/pulumi.png"
+    - id: ["", hh_diagrams_onprem_iac_puppet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/iac/puppet.png"
+    - id: ["", hh_diagrams_onprem_iac_terraform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/iac/terraform.png"
+
+    # ONPREM.IDENTITY
+    - id: ["", hh_diagrams_onprem_identity_dex]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/identity/dex.png"
+
+    # ONPREM.INMEMORY
+    - id: ["", hh_diagrams_onprem_inmemory_aerospike]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/inmemory/aerospike.png"
+    - id: ["", hh_diagrams_onprem_inmemory_hazelcast]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/inmemory/hazelcast.png"
+    - id: ["", hh_diagrams_onprem_inmemory_memcached]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/inmemory/memcached.png"
+    - id: ["", hh_diagrams_onprem_inmemory_redis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/inmemory/redis.png"
+
+    # ONPREM.LOGGING
+    - id: ["", hh_diagrams_onprem_logging_fluentbit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/logging/fluentbit.png"
+    - id: ["", hh_diagrams_onprem_logging_graylog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/logging/graylog.png"
+    - id: ["", hh_diagrams_onprem_logging_loki]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/logging/loki.png"
+    - id: ["", hh_diagrams_onprem_logging_rsyslog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/logging/rsyslog.png"
+    - id: ["", hh_diagrams_onprem_logging_syslog_ng]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/logging/syslog-ng.png"
+
+    # ONPREM.MESSAGING
+    - id: ["", hh_diagrams_onprem_messaging_centrifugo]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/messaging/centrifugo.png"
+
+    # ONPREM.MLOPS
+    - id: ["", hh_diagrams_onprem_mlops_mlflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/mlops/mlflow.png"
+    - id: ["", hh_diagrams_onprem_mlops_polyaxon]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/mlops/polyaxon.png"
+
+    # ONPREM.MONITORING
+    - id: ["", hh_diagrams_onprem_monitoring_cortex]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/cortex.png"
+    - id: ["", hh_diagrams_onprem_monitoring_datadog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/datadog.png"
+    - id: ["", hh_diagrams_onprem_monitoring_dynatrace]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/dynatrace.png"
+    - id: ["", hh_diagrams_onprem_monitoring_grafana]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/grafana.png"
+    - id: ["", hh_diagrams_onprem_monitoring_humio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/humio.png"
+    - id: ["", hh_diagrams_onprem_monitoring_mimir]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/mimir.png"
+    - id: ["", hh_diagrams_onprem_monitoring_nagios]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/nagios.png"
+    - id: ["", hh_diagrams_onprem_monitoring_newrelic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/newrelic.png"
+    - id: ["", hh_diagrams_onprem_monitoring_prometheus_operator]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/prometheus-operator.png"
+    - id: ["", hh_diagrams_onprem_monitoring_prometheus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/prometheus.png"
+    - id: ["", hh_diagrams_onprem_monitoring_sentry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/sentry.png"
+    - id: ["", hh_diagrams_onprem_monitoring_splunk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/splunk.png"
+    - id: ["", hh_diagrams_onprem_monitoring_thanos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/thanos.png"
+    - id: ["", hh_diagrams_onprem_monitoring_zabbix]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/monitoring/zabbix.png"
+
+    # ONPREM.NETWORK
+    - id: ["", hh_diagrams_onprem_network_ambassador]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/ambassador.png"
+    - id: ["", hh_diagrams_onprem_network_apache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/apache.png"
+    - id: ["", hh_diagrams_onprem_network_bind_9]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/bind-9.png"
+    - id: ["", hh_diagrams_onprem_network_caddy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/caddy.png"
+    - id: ["", hh_diagrams_onprem_network_cisco_router]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/cisco-router.png"
+    - id: ["", hh_diagrams_onprem_network_cisco_switch_l2]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/cisco-switch-l2.png"
+    - id: ["", hh_diagrams_onprem_network_cisco_switch_l3]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/cisco-switch-l3.png"
+    - id: ["", hh_diagrams_onprem_network_consul]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/consul.png"
+    - id: ["", hh_diagrams_onprem_network_envoy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/envoy.png"
+    - id: ["", hh_diagrams_onprem_network_etcd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/etcd.png"
+    - id: ["", hh_diagrams_onprem_network_glassfish]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/glassfish.png"
+    - id: ["", hh_diagrams_onprem_network_gunicorn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/gunicorn.png"
+    - id: ["", hh_diagrams_onprem_network_haproxy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/haproxy.png"
+    - id: ["", hh_diagrams_onprem_network_internet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/internet.png"
+    - id: ["", hh_diagrams_onprem_network_istio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/istio.png"
+    - id: ["", hh_diagrams_onprem_network_jbossas]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/jbossas.png"
+    - id: ["", hh_diagrams_onprem_network_jetty]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/jetty.png"
+    - id: ["", hh_diagrams_onprem_network_kong]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/kong.png"
+    - id: ["", hh_diagrams_onprem_network_linkerd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/linkerd.png"
+    - id: ["", hh_diagrams_onprem_network_mikrotik]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/mikrotik.png"
+    - id: ["", hh_diagrams_onprem_network_nginx]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/nginx.png"
+    - id: ["", hh_diagrams_onprem_network_ocelot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/ocelot.png"
+    - id: ["", hh_diagrams_onprem_network_open_service_mesh]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/open-service-mesh.png"
+    - id: ["", hh_diagrams_onprem_network_opnsense]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/opnsense.png"
+    - id: ["", hh_diagrams_onprem_network_pfsense]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/pfsense.png"
+    - id: ["", hh_diagrams_onprem_network_pomerium]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/pomerium.png"
+    - id: ["", hh_diagrams_onprem_network_powerdns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/powerdns.png"
+    - id: ["", hh_diagrams_onprem_network_tomcat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/tomcat.png"
+    - id: ["", hh_diagrams_onprem_network_traefik]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/traefik.png"
+    - id: ["", hh_diagrams_onprem_network_tyk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/tyk.png"
+    - id: ["", hh_diagrams_onprem_network_vyos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/vyos.png"
+    - id: ["", hh_diagrams_onprem_network_wildfly]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/wildfly.png"
+    - id: ["", hh_diagrams_onprem_network_yarp]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/yarp.png"
+    - id: ["", hh_diagrams_onprem_network_zookeeper]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/network/zookeeper.png"
+
+    # ONPREM.PROXMOX
+    - id: ["", hh_diagrams_onprem_proxmox_pve]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/proxmox/pve.png"
+
+    # ONPREM.QUEUE
+    - id: ["", hh_diagrams_onprem_queue_activemq]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/queue/activemq.png"
+    - id: ["", hh_diagrams_onprem_queue_celery]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/queue/celery.png"
+    - id: ["", hh_diagrams_onprem_queue_emqx]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/queue/emqx.png"
+    - id: ["", hh_diagrams_onprem_queue_kafka]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/queue/kafka.png"
+    - id: ["", hh_diagrams_onprem_queue_nats]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/queue/nats.png"
+    - id: ["", hh_diagrams_onprem_queue_rabbitmq]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/queue/rabbitmq.png"
+    - id: ["", hh_diagrams_onprem_queue_zeromq]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/queue/zeromq.png"
+
+    # ONPREM.REGISTRY
+    - id: ["", hh_diagrams_onprem_registry_harbor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/registry/harbor.png"
+    - id: ["", hh_diagrams_onprem_registry_jfrog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/registry/jfrog.png"
+
+    # ONPREM.ROOT
+    - id: ["", hh_diagrams_onprem_onprem]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/onprem.png"
+
+    # ONPREM.SEARCH
+    - id: ["", hh_diagrams_onprem_search_solr]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/search/solr.png"
+
+    # ONPREM.SECURITY
+    - id: ["", hh_diagrams_onprem_security_bitwarden]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/security/bitwarden.png"
+    - id: ["", hh_diagrams_onprem_security_trivy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/security/trivy.png"
+    - id: ["", hh_diagrams_onprem_security_vault]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/security/vault.png"
+
+    # ONPREM.STORAGE
+    - id: ["", hh_diagrams_onprem_storage_ceph_osd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/storage/ceph-osd.png"
+    - id: ["", hh_diagrams_onprem_storage_ceph]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/storage/ceph.png"
+    - id: ["", hh_diagrams_onprem_storage_glusterfs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/storage/glusterfs.png"
+    - id: ["", hh_diagrams_onprem_storage_portworx]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/storage/portworx.png"
+
+    # ONPREM.TRACING
+    - id: ["", hh_diagrams_onprem_tracing_jaeger]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/tracing/jaeger.png"
+    - id: ["", hh_diagrams_onprem_tracing_tempo]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/tracing/tempo.png"
+
+    # ONPREM.VCS
+    - id: ["", hh_diagrams_onprem_vcs_git]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/vcs/git.png"
+    - id: ["", hh_diagrams_onprem_vcs_gitea]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/vcs/gitea.png"
+    - id: ["", hh_diagrams_onprem_vcs_github]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/vcs/github.png"
+    - id: ["", hh_diagrams_onprem_vcs_gitlab]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/vcs/gitlab.png"
+    - id: ["", hh_diagrams_onprem_vcs_svn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/vcs/svn.png"
+
+    # ONPREM.WORKFLOW
+    - id: ["", hh_diagrams_onprem_workflow_airflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/workflow/airflow.png"
+    - id: ["", hh_diagrams_onprem_workflow_digdag]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/workflow/digdag.png"
+    - id: ["", hh_diagrams_onprem_workflow_kubeflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/workflow/kubeflow.png"
+    - id: ["", hh_diagrams_onprem_workflow_nifi]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "onprem/workflow/nifi.png"

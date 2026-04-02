@@ -1,0 +1,527 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for GCP
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # GCP.ANALYTICS
+    - id: ["", hh_diagrams_gcp_analytics_bigquery]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/bigquery.png"
+    - id: ["", hh_diagrams_gcp_analytics_composer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/composer.png"
+    - id: ["", hh_diagrams_gcp_analytics_data_catalog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/data-catalog.png"
+    - id: ["", hh_diagrams_gcp_analytics_data_fusion]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/data-fusion.png"
+    - id: ["", hh_diagrams_gcp_analytics_dataflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/dataflow.png"
+    - id: ["", hh_diagrams_gcp_analytics_datalab]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/datalab.png"
+    - id: ["", hh_diagrams_gcp_analytics_dataprep]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/dataprep.png"
+    - id: ["", hh_diagrams_gcp_analytics_dataproc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/dataproc.png"
+    - id: ["", hh_diagrams_gcp_analytics_genomics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/genomics.png"
+    - id: ["", hh_diagrams_gcp_analytics_looker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/looker.png"
+    - id: ["", hh_diagrams_gcp_analytics_pubsub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/analytics/pubsub.png"
+
+    # GCP.API
+    - id: ["", hh_diagrams_gcp_api_api_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/api/api-gateway.png"
+    - id: ["", hh_diagrams_gcp_api_apigee]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/api/apigee.png"
+    - id: ["", hh_diagrams_gcp_api_endpoints]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/api/endpoints.png"
+
+    # GCP.COMPUTE
+    - id: ["", hh_diagrams_gcp_compute_app_engine]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/app-engine.png"
+    - id: ["", hh_diagrams_gcp_compute_binary_authorization]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/binary-authorization.png"
+    - id: ["", hh_diagrams_gcp_compute_compute_engine]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/compute-engine.png"
+    - id: ["", hh_diagrams_gcp_compute_container_optimized_os]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/container-optimized-os.png"
+    - id: ["", hh_diagrams_gcp_compute_functions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/functions.png"
+    - id: ["", hh_diagrams_gcp_compute_gke_on_prem]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/gke-on-prem.png"
+    - id: ["", hh_diagrams_gcp_compute_gpu]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/gpu.png"
+    - id: ["", hh_diagrams_gcp_compute_kubernetes_engine]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/kubernetes-engine.png"
+    - id: ["", hh_diagrams_gcp_compute_os_configuration_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/os-configuration-management.png"
+    - id: ["", hh_diagrams_gcp_compute_os_inventory_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/os-inventory-management.png"
+    - id: ["", hh_diagrams_gcp_compute_os_patch_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/os-patch-management.png"
+    - id: ["", hh_diagrams_gcp_compute_run]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/compute/run.png"
+
+    # GCP.DATABASE
+    - id: ["", hh_diagrams_gcp_database_bigtable]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/database/bigtable.png"
+    - id: ["", hh_diagrams_gcp_database_datastore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/database/datastore.png"
+    - id: ["", hh_diagrams_gcp_database_firestore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/database/firestore.png"
+    - id: ["", hh_diagrams_gcp_database_memorystore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/database/memorystore.png"
+    - id: ["", hh_diagrams_gcp_database_spanner]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/database/spanner.png"
+    - id: ["", hh_diagrams_gcp_database_sql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/database/sql.png"
+
+    # GCP.DEVTOOLS
+    - id: ["", hh_diagrams_gcp_devtools_build]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/build.png"
+    - id: ["", hh_diagrams_gcp_devtools_cloud_shell]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/cloud-shell.png"
+    - id: ["", hh_diagrams_gcp_devtools_code_for_intellij]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/code-for-intellij.png"
+    - id: ["", hh_diagrams_gcp_devtools_code]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/code.png"
+    - id: ["", hh_diagrams_gcp_devtools_container_registry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/container-registry.png"
+    - id: ["", hh_diagrams_gcp_devtools_gradle_app_engine_plugin]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/gradle-app-engine-plugin.png"
+    - id: ["", hh_diagrams_gcp_devtools_ide_plugins]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/ide-plugins.png"
+    - id: ["", hh_diagrams_gcp_devtools_maven_app_engine_plugin]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/maven-app-engine-plugin.png"
+    - id: ["", hh_diagrams_gcp_devtools_scheduler]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/scheduler.png"
+    - id: ["", hh_diagrams_gcp_devtools_sdk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/sdk.png"
+    - id: ["", hh_diagrams_gcp_devtools_service_catalog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/service-catalog.png"
+    - id: ["", hh_diagrams_gcp_devtools_source_repositories]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/source-repositories.png"
+    - id: ["", hh_diagrams_gcp_devtools_tasks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/tasks.png"
+    - id: ["", hh_diagrams_gcp_devtools_test_lab]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/test-lab.png"
+    - id: ["", hh_diagrams_gcp_devtools_tools_for_eclipse]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/tools-for-eclipse.png"
+    - id: ["", hh_diagrams_gcp_devtools_tools_for_powershell]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/tools-for-powershell.png"
+    - id: ["", hh_diagrams_gcp_devtools_tools_for_visual_studio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/devtools/tools-for-visual-studio.png"
+
+    # GCP.IOT
+    - id: ["", hh_diagrams_gcp_iot_iot_core]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/iot/iot-core.png"
+
+    # GCP.MANAGEMENT
+    - id: ["", hh_diagrams_gcp_management_billing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/management/billing.png"
+    - id: ["", hh_diagrams_gcp_management_project]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/management/project.png"
+    - id: ["", hh_diagrams_gcp_management_quotas]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/management/quotas.png"
+    - id: ["", hh_diagrams_gcp_management_support]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/management/support.png"
+
+    # GCP.MIGRATION
+    - id: ["", hh_diagrams_gcp_migration_migrate_compute_engine]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/migration/migrate-compute-engine.png"
+    - id: ["", hh_diagrams_gcp_migration_transfer_appliance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/migration/transfer-appliance.png"
+
+    # GCP.ML
+    - id: ["", hh_diagrams_gcp_ml_advanced_solutions_lab]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/advanced-solutions-lab.png"
+    - id: ["", hh_diagrams_gcp_ml_ai_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/ai-hub.png"
+    - id: ["", hh_diagrams_gcp_ml_ai_platform_data_labeling_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/ai-platform-data-labeling-service.png"
+    - id: ["", hh_diagrams_gcp_ml_ai_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/ai-platform.png"
+    - id: ["", hh_diagrams_gcp_ml_automl_natural_language]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/automl-natural-language.png"
+    - id: ["", hh_diagrams_gcp_ml_automl_tables]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/automl-tables.png"
+    - id: ["", hh_diagrams_gcp_ml_automl_translation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/automl-translation.png"
+    - id: ["", hh_diagrams_gcp_ml_automl_video_intelligence]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/automl-video-intelligence.png"
+    - id: ["", hh_diagrams_gcp_ml_automl_vision]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/automl-vision.png"
+    - id: ["", hh_diagrams_gcp_ml_automl]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/automl.png"
+    - id: ["", hh_diagrams_gcp_ml_dialog_flow_enterprise_edition]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/dialog-flow-enterprise-edition.png"
+    - id: ["", hh_diagrams_gcp_ml_inference_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/inference-api.png"
+    - id: ["", hh_diagrams_gcp_ml_jobs_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/jobs-api.png"
+    - id: ["", hh_diagrams_gcp_ml_natural_language_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/natural-language-api.png"
+    - id: ["", hh_diagrams_gcp_ml_recommendations_ai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/recommendations-ai.png"
+    - id: ["", hh_diagrams_gcp_ml_speech_to_text]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/speech-to-text.png"
+    - id: ["", hh_diagrams_gcp_ml_text_to_speech]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/text-to-speech.png"
+    - id: ["", hh_diagrams_gcp_ml_tpu]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/tpu.png"
+    - id: ["", hh_diagrams_gcp_ml_translation_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/translation-api.png"
+    - id: ["", hh_diagrams_gcp_ml_vertex_ai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/vertex-ai.png"
+    - id: ["", hh_diagrams_gcp_ml_video_intelligence_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/video-intelligence-api.png"
+    - id: ["", hh_diagrams_gcp_ml_vision_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/ml/vision-api.png"
+
+    # GCP.NETWORK
+    - id: ["", hh_diagrams_gcp_network_armor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/armor.png"
+    - id: ["", hh_diagrams_gcp_network_cdn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/cdn.png"
+    - id: ["", hh_diagrams_gcp_network_cloud_ids]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/cloud-ids.png"
+    - id: ["", hh_diagrams_gcp_network_dedicated_interconnect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/dedicated-interconnect.png"
+    - id: ["", hh_diagrams_gcp_network_dns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/dns.png"
+    - id: ["", hh_diagrams_gcp_network_external_ip_addresses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/external-ip-addresses.png"
+    - id: ["", hh_diagrams_gcp_network_firewall_rules]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/firewall-rules.png"
+    - id: ["", hh_diagrams_gcp_network_load_balancing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/load-balancing.png"
+    - id: ["", hh_diagrams_gcp_network_nat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/nat.png"
+    - id: ["", hh_diagrams_gcp_network_network_connectivity_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/network-connectivity-center.png"
+    - id: ["", hh_diagrams_gcp_network_network_intelligence_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/network-intelligence-center.png"
+    - id: ["", hh_diagrams_gcp_network_network_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/network-security.png"
+    - id: ["", hh_diagrams_gcp_network_network_tiers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/network-tiers.png"
+    - id: ["", hh_diagrams_gcp_network_network_topology]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/network-topology.png"
+    - id: ["", hh_diagrams_gcp_network_network]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/network.png"
+    - id: ["", hh_diagrams_gcp_network_partner_interconnect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/partner-interconnect.png"
+    - id: ["", hh_diagrams_gcp_network_premium_network_tier]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/premium-network-tier.png"
+    - id: ["", hh_diagrams_gcp_network_private_service_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/private-service-connect.png"
+    - id: ["", hh_diagrams_gcp_network_router]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/router.png"
+    - id: ["", hh_diagrams_gcp_network_routes]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/routes.png"
+    - id: ["", hh_diagrams_gcp_network_service_mesh]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/service-mesh.png"
+    - id: ["", hh_diagrams_gcp_network_standard_network_tier]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/standard-network-tier.png"
+    - id: ["", hh_diagrams_gcp_network_traffic_director]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/traffic-director.png"
+    - id: ["", hh_diagrams_gcp_network_virtual_private_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/virtual-private-cloud.png"
+    - id: ["", hh_diagrams_gcp_network_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/network/vpn.png"
+
+    # GCP.OPERATIONS
+    - id: ["", hh_diagrams_gcp_operations_logging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/operations/logging.png"
+    - id: ["", hh_diagrams_gcp_operations_monitoring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/operations/monitoring.png"
+
+    # GCP.ROOT
+    - id: ["", hh_diagrams_gcp_gcp]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/gcp.png"
+
+    # GCP.SECURITY
+    - id: ["", hh_diagrams_gcp_security_access_context_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/access-context-manager.png"
+    - id: ["", hh_diagrams_gcp_security_assured_workloads]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/assured-workloads.png"
+    - id: ["", hh_diagrams_gcp_security_certificate_authority_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/certificate-authority-service.png"
+    - id: ["", hh_diagrams_gcp_security_certificate_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/certificate-manager.png"
+    - id: ["", hh_diagrams_gcp_security_cloud_asset_inventory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/cloud-asset-inventory.png"
+    - id: ["", hh_diagrams_gcp_security_iam]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/iam.png"
+    - id: ["", hh_diagrams_gcp_security_iap]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/iap.png"
+    - id: ["", hh_diagrams_gcp_security_key_management_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/key-management-service.png"
+    - id: ["", hh_diagrams_gcp_security_resource_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/resource-manager.png"
+    - id: ["", hh_diagrams_gcp_security_secret_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/secret-manager.png"
+    - id: ["", hh_diagrams_gcp_security_security_command_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/security-command-center.png"
+    - id: ["", hh_diagrams_gcp_security_security_health_advisor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/security-health-advisor.png"
+    - id: ["", hh_diagrams_gcp_security_security_scanner]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/security/security-scanner.png"
+
+    # GCP.STORAGE
+    - id: ["", hh_diagrams_gcp_storage_filestore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/storage/filestore.png"
+    - id: ["", hh_diagrams_gcp_storage_local_ssd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/storage/local-ssd.png"
+    - id: ["", hh_diagrams_gcp_storage_persistent_disk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/storage/persistent-disk.png"
+    - id: ["", hh_diagrams_gcp_storage_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gcp/storage/storage.png"

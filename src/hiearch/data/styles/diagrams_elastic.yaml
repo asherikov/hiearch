@@ -1,0 +1,205 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for ELASTIC
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # ELASTIC.AGENT
+    - id: ["", hh_diagrams_elastic_agent_agent]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/agent/agent.png"
+    - id: ["", hh_diagrams_elastic_agent_endpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/agent/endpoint.png"
+    - id: ["", hh_diagrams_elastic_agent_fleet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/agent/fleet.png"
+    - id: ["", hh_diagrams_elastic_agent_integrations]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/agent/integrations.png"
+
+    # ELASTIC.BEATS
+    - id: ["", hh_diagrams_elastic_beats_apm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/apm.png"
+    - id: ["", hh_diagrams_elastic_beats_auditbeat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/auditbeat.png"
+    - id: ["", hh_diagrams_elastic_beats_filebeat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/filebeat.png"
+    - id: ["", hh_diagrams_elastic_beats_functionbeat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/functionbeat.png"
+    - id: ["", hh_diagrams_elastic_beats_heartbeat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/heartbeat.png"
+    - id: ["", hh_diagrams_elastic_beats_metricbeat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/metricbeat.png"
+    - id: ["", hh_diagrams_elastic_beats_packetbeat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/packetbeat.png"
+    - id: ["", hh_diagrams_elastic_beats_winlogbeat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/beats/winlogbeat.png"
+
+    # ELASTIC.ELASTICSEARCH
+    - id: ["", hh_diagrams_elastic_elasticsearch_alerting]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/alerting.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_beats]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/beats.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_elasticsearch]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/elasticsearch.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_kibana]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/kibana.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_logstash_pipeline]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/logstash-pipeline.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_logstash]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/logstash.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_machine_learning]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/machine-learning.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_map_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/map-services.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_maps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/maps.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_monitoring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/monitoring.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_searchable_snapshots]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/searchable-snapshots.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_security_settings]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/security-settings.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_sql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/sql.png"
+    - id: ["", hh_diagrams_elastic_elasticsearch_stack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elasticsearch/stack.png"
+
+    # ELASTIC.ENTERPRISESEARCH
+    - id: ["", hh_diagrams_elastic_enterprisesearch_app_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/enterprisesearch/app-search.png"
+    - id: ["", hh_diagrams_elastic_enterprisesearch_crawler]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/enterprisesearch/crawler.png"
+    - id: ["", hh_diagrams_elastic_enterprisesearch_enterprise_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/enterprisesearch/enterprise-search.png"
+    - id: ["", hh_diagrams_elastic_enterprisesearch_site_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/enterprisesearch/site-search.png"
+    - id: ["", hh_diagrams_elastic_enterprisesearch_workplace_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/enterprisesearch/workplace-search.png"
+
+    # ELASTIC.OBSERVABILITY
+    - id: ["", hh_diagrams_elastic_observability_apm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/observability/apm.png"
+    - id: ["", hh_diagrams_elastic_observability_logs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/observability/logs.png"
+    - id: ["", hh_diagrams_elastic_observability_metrics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/observability/metrics.png"
+    - id: ["", hh_diagrams_elastic_observability_observability]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/observability/observability.png"
+    - id: ["", hh_diagrams_elastic_observability_uptime]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/observability/uptime.png"
+
+    # ELASTIC.ORCHESTRATION
+    - id: ["", hh_diagrams_elastic_orchestration_ece]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/orchestration/ece.png"
+    - id: ["", hh_diagrams_elastic_orchestration_eck]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/orchestration/eck.png"
+
+    # ELASTIC.ROOT
+    - id: ["", hh_diagrams_elastic_elastic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/elastic.png"
+
+    # ELASTIC.SAAS
+    - id: ["", hh_diagrams_elastic_saas_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/saas/cloud.png"
+    - id: ["", hh_diagrams_elastic_saas_elastic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/saas/elastic.png"
+
+    # ELASTIC.SECURITY
+    - id: ["", hh_diagrams_elastic_security_endpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/security/endpoint.png"
+    - id: ["", hh_diagrams_elastic_security_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/security/security.png"
+    - id: ["", hh_diagrams_elastic_security_siem]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/security/siem.png"
+    - id: ["", hh_diagrams_elastic_security_xdr]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "elastic/security/xdr.png"

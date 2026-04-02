@@ -1,0 +1,313 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for PROGRAMMING
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # PROGRAMMING.FLOWCHART
+    - id: ["", hh_diagrams_programming_flowchart_action]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/action.png"
+    - id: ["", hh_diagrams_programming_flowchart_collate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/collate.png"
+    - id: ["", hh_diagrams_programming_flowchart_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/database.png"
+    - id: ["", hh_diagrams_programming_flowchart_decision]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/decision.png"
+    - id: ["", hh_diagrams_programming_flowchart_delay]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/delay.png"
+    - id: ["", hh_diagrams_programming_flowchart_display]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/display.png"
+    - id: ["", hh_diagrams_programming_flowchart_document]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/document.png"
+    - id: ["", hh_diagrams_programming_flowchart_input_output]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/input-output.png"
+    - id: ["", hh_diagrams_programming_flowchart_inspection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/inspection.png"
+    - id: ["", hh_diagrams_programming_flowchart_internal_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/internal-storage.png"
+    - id: ["", hh_diagrams_programming_flowchart_loop_limit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/loop-limit.png"
+    - id: ["", hh_diagrams_programming_flowchart_manual_input]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/manual-input.png"
+    - id: ["", hh_diagrams_programming_flowchart_manual_loop]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/manual-loop.png"
+    - id: ["", hh_diagrams_programming_flowchart_merge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/merge.png"
+    - id: ["", hh_diagrams_programming_flowchart_multiple_documents]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/multiple-documents.png"
+    - id: ["", hh_diagrams_programming_flowchart_off_page_connector_left]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/off-page-connector-left.png"
+    - id: ["", hh_diagrams_programming_flowchart_off_page_connector_right]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/off-page-connector-right.png"
+    - id: ["", hh_diagrams_programming_flowchart_or]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/or.png"
+    - id: ["", hh_diagrams_programming_flowchart_predefined_process]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/predefined-process.png"
+    - id: ["", hh_diagrams_programming_flowchart_preparation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/preparation.png"
+    - id: ["", hh_diagrams_programming_flowchart_sort]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/sort.png"
+    - id: ["", hh_diagrams_programming_flowchart_start_end]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/start-end.png"
+    - id: ["", hh_diagrams_programming_flowchart_stored_data]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/stored-data.png"
+    - id: ["", hh_diagrams_programming_flowchart_summing_junction]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/flowchart/summing-junction.png"
+
+    # PROGRAMMING.FRAMEWORK
+    - id: ["", hh_diagrams_programming_framework_angular]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/angular.png"
+    - id: ["", hh_diagrams_programming_framework_backbone]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/backbone.png"
+    - id: ["", hh_diagrams_programming_framework_camel]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/camel.png"
+    - id: ["", hh_diagrams_programming_framework_django]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/django.png"
+    - id: ["", hh_diagrams_programming_framework_dotnet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/dotnet.png"
+    - id: ["", hh_diagrams_programming_framework_ember]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/ember.png"
+    - id: ["", hh_diagrams_programming_framework_fastapi]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/fastapi.png"
+    - id: ["", hh_diagrams_programming_framework_flask]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/flask.png"
+    - id: ["", hh_diagrams_programming_framework_flutter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/flutter.png"
+    - id: ["", hh_diagrams_programming_framework_graphql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/graphql.png"
+    - id: ["", hh_diagrams_programming_framework_hibernate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/hibernate.png"
+    - id: ["", hh_diagrams_programming_framework_jhipster]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/jhipster.png"
+    - id: ["", hh_diagrams_programming_framework_laravel]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/laravel.png"
+    - id: ["", hh_diagrams_programming_framework_micronaut]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/micronaut.png"
+    - id: ["", hh_diagrams_programming_framework_nextjs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/nextjs.png"
+    - id: ["", hh_diagrams_programming_framework_phoenix]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/phoenix.png"
+    - id: ["", hh_diagrams_programming_framework_quarkus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/quarkus.png"
+    - id: ["", hh_diagrams_programming_framework_rails]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/rails.png"
+    - id: ["", hh_diagrams_programming_framework_react]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/react.png"
+    - id: ["", hh_diagrams_programming_framework_spring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/spring.png"
+    - id: ["", hh_diagrams_programming_framework_sqlpage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/sqlpage.png"
+    - id: ["", hh_diagrams_programming_framework_starlette]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/starlette.png"
+    - id: ["", hh_diagrams_programming_framework_svelte]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/svelte.png"
+    - id: ["", hh_diagrams_programming_framework_vercel]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/vercel.png"
+    - id: ["", hh_diagrams_programming_framework_vue]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/framework/vue.png"
+
+    # PROGRAMMING.LANGUAGE
+    - id: ["", hh_diagrams_programming_language_bash]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/bash.png"
+    - id: ["", hh_diagrams_programming_language_c]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/c.png"
+    - id: ["", hh_diagrams_programming_language_cpp]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/cpp.png"
+    - id: ["", hh_diagrams_programming_language_csharp]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/csharp.png"
+    - id: ["", hh_diagrams_programming_language_dart]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/dart.png"
+    - id: ["", hh_diagrams_programming_language_elixir]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/elixir.png"
+    - id: ["", hh_diagrams_programming_language_erlang]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/erlang.png"
+    - id: ["", hh_diagrams_programming_language_go]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/go.png"
+    - id: ["", hh_diagrams_programming_language_java]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/java.png"
+    - id: ["", hh_diagrams_programming_language_javascript]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/javascript.png"
+    - id: ["", hh_diagrams_programming_language_kotlin]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/kotlin.png"
+    - id: ["", hh_diagrams_programming_language_latex]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/latex.png"
+    - id: ["", hh_diagrams_programming_language_matlab]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/matlab.png"
+    - id: ["", hh_diagrams_programming_language_nodejs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/nodejs.png"
+    - id: ["", hh_diagrams_programming_language_php]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/php.png"
+    - id: ["", hh_diagrams_programming_language_python]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/python.png"
+    - id: ["", hh_diagrams_programming_language_r]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/r.png"
+    - id: ["", hh_diagrams_programming_language_ruby]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/ruby.png"
+    - id: ["", hh_diagrams_programming_language_rust]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/rust.png"
+    - id: ["", hh_diagrams_programming_language_scala]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/scala.png"
+    - id: ["", hh_diagrams_programming_language_sql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/sql.png"
+    - id: ["", hh_diagrams_programming_language_swift]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/swift.png"
+    - id: ["", hh_diagrams_programming_language_typescript]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/language/typescript.png"
+
+    # PROGRAMMING.ROOT
+    - id: ["", hh_diagrams_programming_programming]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/programming.png"
+
+    # PROGRAMMING.RUNTIME
+    - id: ["", hh_diagrams_programming_runtime_dapr]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "programming/runtime/dapr.png"

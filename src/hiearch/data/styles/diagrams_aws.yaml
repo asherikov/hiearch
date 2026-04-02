@@ -1,0 +1,2161 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for AWS
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # AWS.ANALYTICS
+    - id: ["", hh_diagrams_aws_analytics_amazon_opensearch_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/amazon-opensearch-service.png"
+    - id: ["", hh_diagrams_aws_analytics_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/analytics.png"
+    - id: ["", hh_diagrams_aws_analytics_athena]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/athena.png"
+    - id: ["", hh_diagrams_aws_analytics_cloudsearch_search_documents]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/cloudsearch-search-documents.png"
+    - id: ["", hh_diagrams_aws_analytics_cloudsearch]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/cloudsearch.png"
+    - id: ["", hh_diagrams_aws_analytics_data_lake_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/data-lake-resource.png"
+    - id: ["", hh_diagrams_aws_analytics_data_pipeline]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/data-pipeline.png"
+    - id: ["", hh_diagrams_aws_analytics_elasticsearch_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/elasticsearch-service.png"
+    - id: ["", hh_diagrams_aws_analytics_emr_cluster]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/emr-cluster.png"
+    - id: ["", hh_diagrams_aws_analytics_emr_engine_mapr_m3]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/emr-engine-mapr-m3.png"
+    - id: ["", hh_diagrams_aws_analytics_emr_engine_mapr_m5]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/emr-engine-mapr-m5.png"
+    - id: ["", hh_diagrams_aws_analytics_emr_engine_mapr_m7]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/emr-engine-mapr-m7.png"
+    - id: ["", hh_diagrams_aws_analytics_emr_engine]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/emr-engine.png"
+    - id: ["", hh_diagrams_aws_analytics_emr_hdfs_cluster]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/emr-hdfs-cluster.png"
+    - id: ["", hh_diagrams_aws_analytics_emr]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/emr.png"
+    - id: ["", hh_diagrams_aws_analytics_glue_crawlers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/glue-crawlers.png"
+    - id: ["", hh_diagrams_aws_analytics_glue_data_catalog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/glue-data-catalog.png"
+    - id: ["", hh_diagrams_aws_analytics_glue]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/glue.png"
+    - id: ["", hh_diagrams_aws_analytics_kinesis_data_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/kinesis-data-analytics.png"
+    - id: ["", hh_diagrams_aws_analytics_kinesis_data_firehose]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/kinesis-data-firehose.png"
+    - id: ["", hh_diagrams_aws_analytics_kinesis_data_streams]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/kinesis-data-streams.png"
+    - id: ["", hh_diagrams_aws_analytics_kinesis_video_streams]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/kinesis-video-streams.png"
+    - id: ["", hh_diagrams_aws_analytics_kinesis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/kinesis.png"
+    - id: ["", hh_diagrams_aws_analytics_lake_formation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/lake-formation.png"
+    - id: ["", hh_diagrams_aws_analytics_managed_streaming_for_kafka]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/managed-streaming-for-kafka.png"
+    - id: ["", hh_diagrams_aws_analytics_quicksight]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/quicksight.png"
+    - id: ["", hh_diagrams_aws_analytics_redshift_dense_compute_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/redshift-dense-compute-node.png"
+    - id: ["", hh_diagrams_aws_analytics_redshift_dense_storage_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/redshift-dense-storage-node.png"
+    - id: ["", hh_diagrams_aws_analytics_redshift]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/analytics/redshift.png"
+
+    # AWS.AR
+    - id: ["", hh_diagrams_aws_ar_ar_vr]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ar/ar-vr.png"
+    - id: ["", hh_diagrams_aws_ar_sumerian]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ar/sumerian.png"
+
+    # AWS.BLOCKCHAIN
+    - id: ["", hh_diagrams_aws_blockchain_blockchain_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/blockchain/blockchain-resource.png"
+    - id: ["", hh_diagrams_aws_blockchain_blockchain]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/blockchain/blockchain.png"
+    - id: ["", hh_diagrams_aws_blockchain_managed_blockchain]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/blockchain/managed-blockchain.png"
+    - id: ["", hh_diagrams_aws_blockchain_quantum_ledger_database_qldb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/blockchain/quantum-ledger-database-qldb.png"
+
+    # AWS.BUSINESS
+    - id: ["", hh_diagrams_aws_business_alexa_for_business]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/business/alexa-for-business.png"
+    - id: ["", hh_diagrams_aws_business_business_applications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/business/business-applications.png"
+    - id: ["", hh_diagrams_aws_business_chime]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/business/chime.png"
+    - id: ["", hh_diagrams_aws_business_workmail]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/business/workmail.png"
+
+    # AWS.COMPUTE
+    - id: ["", hh_diagrams_aws_compute_app_runner]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/app-runner.png"
+    - id: ["", hh_diagrams_aws_compute_application_auto_scaling_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/application-auto-scaling-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_application_auto_scaling]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/application-auto-scaling.png"
+    - id: ["", hh_diagrams_aws_compute_batch_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/batch-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_batch]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/batch.png"
+    - id: ["", hh_diagrams_aws_compute_compute_optimizer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/compute-optimizer.png"
+    - id: ["", hh_diagrams_aws_compute_compute_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/compute-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_compute]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/compute.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_ami]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-ami.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_auto_scaling]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-auto-scaling.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_container_registry_image]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-container-registry-image.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_container_registry_registry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-container-registry-registry.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_container_registry_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-container-registry-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_container_registry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-container-registry.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_elastic_ip_address]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-elastic-ip-address.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_image_builder]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-image-builder.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-instance.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_instances]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-instances.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_rescue]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-rescue.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_ec2_spot_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2-spot-instance.png"
+    - id: ["", hh_diagrams_aws_compute_ec2]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/ec2.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_beanstalk_application]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-beanstalk-application.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_beanstalk_deployment]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-beanstalk-deployment.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_beanstalk_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-beanstalk-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_beanstalk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-beanstalk.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_container_service_container]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-container-service-container.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_container_service_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-container-service-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_container_service_service_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-container-service-service-connect.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_container_service_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-container-service-service.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_container_service_task]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-container-service-task.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_container_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-container-service.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_kubernetes_service_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-kubernetes-service-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_elastic_kubernetes_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/elastic-kubernetes-service.png"
+    - id: ["", hh_diagrams_aws_compute_fargate_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/fargate-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_fargate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/fargate.png"
+    - id: ["", hh_diagrams_aws_compute_lambda_function]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/lambda-function.png"
+    - id: ["", hh_diagrams_aws_compute_lambda_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/lambda-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_lambda]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/lambda.png"
+    - id: ["", hh_diagrams_aws_compute_lightsail_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/lightsail-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_lightsail]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/lightsail.png"
+    - id: ["", hh_diagrams_aws_compute_local_zones]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/local-zones.png"
+    - id: ["", hh_diagrams_aws_compute_outposts_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/outposts-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_outposts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/outposts.png"
+    - id: ["", hh_diagrams_aws_compute_serverless_application_repository_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/serverless-application-repository-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_serverless_application_repository]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/serverless-application-repository.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_deadline_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-deadline-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_deadline]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-deadline.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_draft_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-draft-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_draft]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-draft.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_frost_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-frost-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_frost]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-frost.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_krakatoa_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-krakatoa-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_krakatoa]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-krakatoa.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_sequoia_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-sequoia-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_sequoia]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-sequoia.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_stoke_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-stoke-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_stoke]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-stoke.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_xmesh_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-xmesh-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_thinkbox_xmesh]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/thinkbox-xmesh.png"
+    - id: ["", hh_diagrams_aws_compute_vmware_cloud_on_aws_rounded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/vmware-cloud-on-aws-rounded.png"
+    - id: ["", hh_diagrams_aws_compute_vmware_cloud_on_aws]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/vmware-cloud-on-aws.png"
+    - id: ["", hh_diagrams_aws_compute_wavelength]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/compute/wavelength.png"
+
+    # AWS.COST
+    - id: ["", hh_diagrams_aws_cost_budgets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/cost/budgets.png"
+    - id: ["", hh_diagrams_aws_cost_cost_and_usage_report]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/cost/cost-and-usage-report.png"
+    - id: ["", hh_diagrams_aws_cost_cost_explorer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/cost/cost-explorer.png"
+    - id: ["", hh_diagrams_aws_cost_cost_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/cost/cost-management.png"
+    - id: ["", hh_diagrams_aws_cost_reserved_instance_reporting]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/cost/reserved-instance-reporting.png"
+    - id: ["", hh_diagrams_aws_cost_savings_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/cost/savings-plans.png"
+
+    # AWS.DATABASE
+    - id: ["", hh_diagrams_aws_database_aurora_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/aurora-instance.png"
+    - id: ["", hh_diagrams_aws_database_aurora]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/aurora.png"
+    - id: ["", hh_diagrams_aws_database_database_migration_service_database_migration_workflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/database-migration-service-database-migration-workflow.png"
+    - id: ["", hh_diagrams_aws_database_database_migration_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/database-migration-service.png"
+    - id: ["", hh_diagrams_aws_database_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/database.png"
+    - id: ["", hh_diagrams_aws_database_documentdb_mongodb_compatibility]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/documentdb-mongodb-compatibility.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_attribute]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-attribute.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_attributes]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-attributes.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_dax]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-dax.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_global_secondary_index]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-global-secondary-index.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_item]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-item.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_items]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-items.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_streams]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-streams.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb_table]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb-table.png"
+    - id: ["", hh_diagrams_aws_database_dynamodb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/dynamodb.png"
+    - id: ["", hh_diagrams_aws_database_elasticache_cache_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/elasticache-cache-node.png"
+    - id: ["", hh_diagrams_aws_database_elasticache_for_memcached]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/elasticache-for-memcached.png"
+    - id: ["", hh_diagrams_aws_database_elasticache_for_redis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/elasticache-for-redis.png"
+    - id: ["", hh_diagrams_aws_database_elasticache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/elasticache.png"
+    - id: ["", hh_diagrams_aws_database_keyspaces_managed_apache_cassandra_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/keyspaces-managed-apache-cassandra-service.png"
+    - id: ["", hh_diagrams_aws_database_neptune]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/neptune.png"
+    - id: ["", hh_diagrams_aws_database_quantum_ledger_database_qldb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/quantum-ledger-database-qldb.png"
+    - id: ["", hh_diagrams_aws_database_rds_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds-instance.png"
+    - id: ["", hh_diagrams_aws_database_rds_mariadb_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds-mariadb-instance.png"
+    - id: ["", hh_diagrams_aws_database_rds_mysql_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds-mysql-instance.png"
+    - id: ["", hh_diagrams_aws_database_rds_on_vmware]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds-on-vmware.png"
+    - id: ["", hh_diagrams_aws_database_rds_oracle_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds-oracle-instance.png"
+    - id: ["", hh_diagrams_aws_database_rds_postgresql_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds-postgresql-instance.png"
+    - id: ["", hh_diagrams_aws_database_rds_sql_server_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds-sql-server-instance.png"
+    - id: ["", hh_diagrams_aws_database_rds]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/rds.png"
+    - id: ["", hh_diagrams_aws_database_redshift_dense_compute_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/redshift-dense-compute-node.png"
+    - id: ["", hh_diagrams_aws_database_redshift_dense_storage_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/redshift-dense-storage-node.png"
+    - id: ["", hh_diagrams_aws_database_redshift]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/redshift.png"
+    - id: ["", hh_diagrams_aws_database_timestream]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/database/timestream.png"
+
+    # AWS.DEVTOOLS
+    - id: ["", hh_diagrams_aws_devtools_cloud_development_kit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/cloud-development-kit.png"
+    - id: ["", hh_diagrams_aws_devtools_cloud9_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/cloud9-resource.png"
+    - id: ["", hh_diagrams_aws_devtools_cloud9]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/cloud9.png"
+    - id: ["", hh_diagrams_aws_devtools_cloudshell]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/cloudshell.png"
+    - id: ["", hh_diagrams_aws_devtools_codeartifact]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/codeartifact.png"
+    - id: ["", hh_diagrams_aws_devtools_codebuild]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/codebuild.png"
+    - id: ["", hh_diagrams_aws_devtools_codecommit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/codecommit.png"
+    - id: ["", hh_diagrams_aws_devtools_codedeploy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/codedeploy.png"
+    - id: ["", hh_diagrams_aws_devtools_codepipeline]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/codepipeline.png"
+    - id: ["", hh_diagrams_aws_devtools_codestar]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/codestar.png"
+    - id: ["", hh_diagrams_aws_devtools_command_line_interface]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/command-line-interface.png"
+    - id: ["", hh_diagrams_aws_devtools_developer_tools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/developer-tools.png"
+    - id: ["", hh_diagrams_aws_devtools_tools_and_sdks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/tools-and-sdks.png"
+    - id: ["", hh_diagrams_aws_devtools_x_ray]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/devtools/x-ray.png"
+
+    # AWS.ENABLEMENT
+    - id: ["", hh_diagrams_aws_enablement_customer_enablement]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enablement/customer-enablement.png"
+    - id: ["", hh_diagrams_aws_enablement_iq]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enablement/iq.png"
+    - id: ["", hh_diagrams_aws_enablement_managed_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enablement/managed-services.png"
+    - id: ["", hh_diagrams_aws_enablement_professional_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enablement/professional-services.png"
+    - id: ["", hh_diagrams_aws_enablement_support]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enablement/support.png"
+
+    # AWS.ENDUSER
+    - id: ["", hh_diagrams_aws_enduser_appstream_2_0]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enduser/appstream-2-0.png"
+    - id: ["", hh_diagrams_aws_enduser_desktop_and_app_streaming]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enduser/desktop-and-app-streaming.png"
+    - id: ["", hh_diagrams_aws_enduser_workdocs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enduser/workdocs.png"
+    - id: ["", hh_diagrams_aws_enduser_worklink]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enduser/worklink.png"
+    - id: ["", hh_diagrams_aws_enduser_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/enduser/workspaces.png"
+
+    # AWS.ENGAGEMENT
+    - id: ["", hh_diagrams_aws_engagement_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/engagement/connect.png"
+    - id: ["", hh_diagrams_aws_engagement_customer_engagement]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/engagement/customer-engagement.png"
+    - id: ["", hh_diagrams_aws_engagement_pinpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/engagement/pinpoint.png"
+    - id: ["", hh_diagrams_aws_engagement_simple_email_service_ses_email]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/engagement/simple-email-service-ses-email.png"
+    - id: ["", hh_diagrams_aws_engagement_simple_email_service_ses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/engagement/simple-email-service-ses.png"
+
+    # AWS.GAME
+    - id: ["", hh_diagrams_aws_game_game_tech]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/game/game-tech.png"
+    - id: ["", hh_diagrams_aws_game_gamelift]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/game/gamelift.png"
+
+    # AWS.GENERAL
+    - id: ["", hh_diagrams_aws_general_client]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/client.png"
+    - id: ["", hh_diagrams_aws_general_disk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/disk.png"
+    - id: ["", hh_diagrams_aws_general_forums]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/forums.png"
+    - id: ["", hh_diagrams_aws_general_general]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/general.png"
+    - id: ["", hh_diagrams_aws_general_generic_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/generic-database.png"
+    - id: ["", hh_diagrams_aws_general_generic_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/generic-firewall.png"
+    - id: ["", hh_diagrams_aws_general_generic_office_building]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/generic-office-building.png"
+    - id: ["", hh_diagrams_aws_general_generic_saml_token]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/generic-saml-token.png"
+    - id: ["", hh_diagrams_aws_general_generic_sdk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/generic-sdk.png"
+    - id: ["", hh_diagrams_aws_general_internet_alt1]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/internet-alt1.png"
+    - id: ["", hh_diagrams_aws_general_internet_alt2]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/internet-alt2.png"
+    - id: ["", hh_diagrams_aws_general_internet_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/internet-gateway.png"
+    - id: ["", hh_diagrams_aws_general_marketplace]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/marketplace.png"
+    - id: ["", hh_diagrams_aws_general_mobile_client]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/mobile-client.png"
+    - id: ["", hh_diagrams_aws_general_multimedia]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/multimedia.png"
+    - id: ["", hh_diagrams_aws_general_office_building]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/office-building.png"
+    - id: ["", hh_diagrams_aws_general_saml_token]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/saml-token.png"
+    - id: ["", hh_diagrams_aws_general_sdk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/sdk.png"
+    - id: ["", hh_diagrams_aws_general_ssl_padlock]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/ssl-padlock.png"
+    - id: ["", hh_diagrams_aws_general_tape_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/tape-storage.png"
+    - id: ["", hh_diagrams_aws_general_toolkit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/toolkit.png"
+    - id: ["", hh_diagrams_aws_general_traditional_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/traditional-server.png"
+    - id: ["", hh_diagrams_aws_general_user]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/user.png"
+    - id: ["", hh_diagrams_aws_general_users]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/general/users.png"
+
+    # AWS.INTEGRATION
+    - id: ["", hh_diagrams_aws_integration_application_integration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/application-integration.png"
+    - id: ["", hh_diagrams_aws_integration_appsync]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/appsync.png"
+    - id: ["", hh_diagrams_aws_integration_console_mobile_application]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/console-mobile-application.png"
+    - id: ["", hh_diagrams_aws_integration_event_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/event-resource.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_custom_event_bus_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-custom-event-bus-resource.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_default_event_bus_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-default-event-bus-resource.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_event]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-event.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_pipes]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-pipes.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_rule]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-rule.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_saas_partner_event_bus_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-saas-partner-event-bus-resource.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_scheduler]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-scheduler.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge_schema]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge-schema.png"
+    - id: ["", hh_diagrams_aws_integration_eventbridge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/eventbridge.png"
+    - id: ["", hh_diagrams_aws_integration_express_workflows]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/express-workflows.png"
+    - id: ["", hh_diagrams_aws_integration_mq]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/mq.png"
+    - id: ["", hh_diagrams_aws_integration_simple_notification_service_sns_email_notification]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/simple-notification-service-sns-email-notification.png"
+    - id: ["", hh_diagrams_aws_integration_simple_notification_service_sns_http_notification]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/simple-notification-service-sns-http-notification.png"
+    - id: ["", hh_diagrams_aws_integration_simple_notification_service_sns_topic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/simple-notification-service-sns-topic.png"
+    - id: ["", hh_diagrams_aws_integration_simple_notification_service_sns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/simple-notification-service-sns.png"
+    - id: ["", hh_diagrams_aws_integration_simple_queue_service_sqs_message]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/simple-queue-service-sqs-message.png"
+    - id: ["", hh_diagrams_aws_integration_simple_queue_service_sqs_queue]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/simple-queue-service-sqs-queue.png"
+    - id: ["", hh_diagrams_aws_integration_simple_queue_service_sqs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/simple-queue-service-sqs.png"
+    - id: ["", hh_diagrams_aws_integration_step_functions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/integration/step-functions.png"
+
+    # AWS.IOT
+    - id: ["", hh_diagrams_aws_iot_freertos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/freertos.png"
+    - id: ["", hh_diagrams_aws_iot_internet_of_things]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/internet-of-things.png"
+    - id: ["", hh_diagrams_aws_iot_iot_1_click]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-1-click.png"
+    - id: ["", hh_diagrams_aws_iot_iot_action]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-action.png"
+    - id: ["", hh_diagrams_aws_iot_iot_actuator]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-actuator.png"
+    - id: ["", hh_diagrams_aws_iot_iot_alexa_echo]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-alexa-echo.png"
+    - id: ["", hh_diagrams_aws_iot_iot_alexa_enabled_device]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-alexa-enabled-device.png"
+    - id: ["", hh_diagrams_aws_iot_iot_alexa_skill]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-alexa-skill.png"
+    - id: ["", hh_diagrams_aws_iot_iot_alexa_voice_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-alexa-voice-service.png"
+    - id: ["", hh_diagrams_aws_iot_iot_analytics_channel]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-analytics-channel.png"
+    - id: ["", hh_diagrams_aws_iot_iot_analytics_data_set]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-analytics-data-set.png"
+    - id: ["", hh_diagrams_aws_iot_iot_analytics_data_store]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-analytics-data-store.png"
+    - id: ["", hh_diagrams_aws_iot_iot_analytics_notebook]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-analytics-notebook.png"
+    - id: ["", hh_diagrams_aws_iot_iot_analytics_pipeline]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-analytics-pipeline.png"
+    - id: ["", hh_diagrams_aws_iot_iot_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-analytics.png"
+    - id: ["", hh_diagrams_aws_iot_iot_bank]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-bank.png"
+    - id: ["", hh_diagrams_aws_iot_iot_bicycle]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-bicycle.png"
+    - id: ["", hh_diagrams_aws_iot_iot_button]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-button.png"
+    - id: ["", hh_diagrams_aws_iot_iot_camera]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-camera.png"
+    - id: ["", hh_diagrams_aws_iot_iot_car]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-car.png"
+    - id: ["", hh_diagrams_aws_iot_iot_cart]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-cart.png"
+    - id: ["", hh_diagrams_aws_iot_iot_certificate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-certificate.png"
+    - id: ["", hh_diagrams_aws_iot_iot_coffee_pot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-coffee-pot.png"
+    - id: ["", hh_diagrams_aws_iot_iot_core]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-core.png"
+    - id: ["", hh_diagrams_aws_iot_iot_desired_state]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-desired-state.png"
+    - id: ["", hh_diagrams_aws_iot_iot_device_defender]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-device-defender.png"
+    - id: ["", hh_diagrams_aws_iot_iot_device_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-device-gateway.png"
+    - id: ["", hh_diagrams_aws_iot_iot_device_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-device-management.png"
+    - id: ["", hh_diagrams_aws_iot_iot_door_lock]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-door-lock.png"
+    - id: ["", hh_diagrams_aws_iot_iot_events]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-events.png"
+    - id: ["", hh_diagrams_aws_iot_iot_factory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-factory.png"
+    - id: ["", hh_diagrams_aws_iot_iot_fire_tv_stick]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-fire-tv-stick.png"
+    - id: ["", hh_diagrams_aws_iot_iot_fire_tv]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-fire-tv.png"
+    - id: ["", hh_diagrams_aws_iot_iot_generic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-generic.png"
+    - id: ["", hh_diagrams_aws_iot_iot_greengrass_connector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-greengrass-connector.png"
+    - id: ["", hh_diagrams_aws_iot_iot_greengrass]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-greengrass.png"
+    - id: ["", hh_diagrams_aws_iot_iot_hardware_board]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-hardware-board.png"
+    - id: ["", hh_diagrams_aws_iot_iot_house]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-house.png"
+    - id: ["", hh_diagrams_aws_iot_iot_http]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-http.png"
+    - id: ["", hh_diagrams_aws_iot_iot_http2]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-http2.png"
+    - id: ["", hh_diagrams_aws_iot_iot_jobs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-jobs.png"
+    - id: ["", hh_diagrams_aws_iot_iot_lambda]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-lambda.png"
+    - id: ["", hh_diagrams_aws_iot_iot_lightbulb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-lightbulb.png"
+    - id: ["", hh_diagrams_aws_iot_iot_medical_emergency]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-medical-emergency.png"
+    - id: ["", hh_diagrams_aws_iot_iot_mqtt]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-mqtt.png"
+    - id: ["", hh_diagrams_aws_iot_iot_over_the_air_update]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-over-the-air-update.png"
+    - id: ["", hh_diagrams_aws_iot_iot_policy_emergency]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-policy-emergency.png"
+    - id: ["", hh_diagrams_aws_iot_iot_policy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-policy.png"
+    - id: ["", hh_diagrams_aws_iot_iot_reported_state]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-reported-state.png"
+    - id: ["", hh_diagrams_aws_iot_iot_rule]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-rule.png"
+    - id: ["", hh_diagrams_aws_iot_iot_sensor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-sensor.png"
+    - id: ["", hh_diagrams_aws_iot_iot_servo]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-servo.png"
+    - id: ["", hh_diagrams_aws_iot_iot_shadow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-shadow.png"
+    - id: ["", hh_diagrams_aws_iot_iot_simulator]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-simulator.png"
+    - id: ["", hh_diagrams_aws_iot_iot_sitewise]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-sitewise.png"
+    - id: ["", hh_diagrams_aws_iot_iot_thermostat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-thermostat.png"
+    - id: ["", hh_diagrams_aws_iot_iot_things_graph]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-things-graph.png"
+    - id: ["", hh_diagrams_aws_iot_iot_topic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-topic.png"
+    - id: ["", hh_diagrams_aws_iot_iot_travel]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-travel.png"
+    - id: ["", hh_diagrams_aws_iot_iot_utility]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-utility.png"
+    - id: ["", hh_diagrams_aws_iot_iot_windfarm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/iot/iot-windfarm.png"
+
+    # AWS.MANAGEMENT
+    - id: ["", hh_diagrams_aws_management_amazon_devops_guru]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/amazon-devops-guru.png"
+    - id: ["", hh_diagrams_aws_management_amazon_managed_grafana]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/amazon-managed-grafana.png"
+    - id: ["", hh_diagrams_aws_management_amazon_managed_prometheus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/amazon-managed-prometheus.png"
+    - id: ["", hh_diagrams_aws_management_amazon_managed_workflows_apache_airflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/amazon-managed-workflows-apache-airflow.png"
+    - id: ["", hh_diagrams_aws_management_auto_scaling]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/auto-scaling.png"
+    - id: ["", hh_diagrams_aws_management_chatbot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/chatbot.png"
+    - id: ["", hh_diagrams_aws_management_cloudformation_change_set]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudformation-change-set.png"
+    - id: ["", hh_diagrams_aws_management_cloudformation_stack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudformation-stack.png"
+    - id: ["", hh_diagrams_aws_management_cloudformation_template]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudformation-template.png"
+    - id: ["", hh_diagrams_aws_management_cloudformation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudformation.png"
+    - id: ["", hh_diagrams_aws_management_cloudtrail]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudtrail.png"
+    - id: ["", hh_diagrams_aws_management_cloudwatch_alarm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudwatch-alarm.png"
+    - id: ["", hh_diagrams_aws_management_cloudwatch_event_event_based]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudwatch-event-event-based.png"
+    - id: ["", hh_diagrams_aws_management_cloudwatch_event_time_based]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudwatch-event-time-based.png"
+    - id: ["", hh_diagrams_aws_management_cloudwatch_logs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudwatch-logs.png"
+    - id: ["", hh_diagrams_aws_management_cloudwatch_rule]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudwatch-rule.png"
+    - id: ["", hh_diagrams_aws_management_cloudwatch]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/cloudwatch.png"
+    - id: ["", hh_diagrams_aws_management_codeguru]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/codeguru.png"
+    - id: ["", hh_diagrams_aws_management_command_line_interface]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/command-line-interface.png"
+    - id: ["", hh_diagrams_aws_management_config]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/config.png"
+    - id: ["", hh_diagrams_aws_management_control_tower]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/control-tower.png"
+    - id: ["", hh_diagrams_aws_management_license_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/license-manager.png"
+    - id: ["", hh_diagrams_aws_management_managed_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/managed-services.png"
+    - id: ["", hh_diagrams_aws_management_management_and_governance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/management-and-governance.png"
+    - id: ["", hh_diagrams_aws_management_management_console]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/management-console.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-apps.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_deployments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-deployments.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_instances]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-instances.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_layers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-layers.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_monitoring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-monitoring.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_permissions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-permissions.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_resources]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-resources.png"
+    - id: ["", hh_diagrams_aws_management_opsworks_stack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks-stack.png"
+    - id: ["", hh_diagrams_aws_management_opsworks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/opsworks.png"
+    - id: ["", hh_diagrams_aws_management_organizations_account]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/organizations-account.png"
+    - id: ["", hh_diagrams_aws_management_organizations_organizational_unit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/organizations-organizational-unit.png"
+    - id: ["", hh_diagrams_aws_management_organizations]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/organizations.png"
+    - id: ["", hh_diagrams_aws_management_personal_health_dashboard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/personal-health-dashboard.png"
+    - id: ["", hh_diagrams_aws_management_proton]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/proton.png"
+    - id: ["", hh_diagrams_aws_management_service_catalog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/service-catalog.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_app_config]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-app-config.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_automation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-automation.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_documents]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-documents.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_inventory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-inventory.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_maintenance_windows]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-maintenance-windows.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_opscenter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-opscenter.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_parameter_store]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-parameter-store.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_patch_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-patch-manager.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_run_command]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-run-command.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager_state_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager-state-manager.png"
+    - id: ["", hh_diagrams_aws_management_systems_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/systems-manager.png"
+    - id: ["", hh_diagrams_aws_management_trusted_advisor_checklist_cost]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/trusted-advisor-checklist-cost.png"
+    - id: ["", hh_diagrams_aws_management_trusted_advisor_checklist_fault_tolerant]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/trusted-advisor-checklist-fault-tolerant.png"
+    - id: ["", hh_diagrams_aws_management_trusted_advisor_checklist_performance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/trusted-advisor-checklist-performance.png"
+    - id: ["", hh_diagrams_aws_management_trusted_advisor_checklist_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/trusted-advisor-checklist-security.png"
+    - id: ["", hh_diagrams_aws_management_trusted_advisor_checklist]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/trusted-advisor-checklist.png"
+    - id: ["", hh_diagrams_aws_management_trusted_advisor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/trusted-advisor.png"
+    - id: ["", hh_diagrams_aws_management_user_notifications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/user-notifications.png"
+    - id: ["", hh_diagrams_aws_management_well_architected_tool]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/management/well-architected-tool.png"
+
+    # AWS.MEDIA
+    - id: ["", hh_diagrams_aws_media_elastic_transcoder]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elastic-transcoder.png"
+    - id: ["", hh_diagrams_aws_media_elemental_conductor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-conductor.png"
+    - id: ["", hh_diagrams_aws_media_elemental_delta]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-delta.png"
+    - id: ["", hh_diagrams_aws_media_elemental_live]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-live.png"
+    - id: ["", hh_diagrams_aws_media_elemental_mediaconnect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-mediaconnect.png"
+    - id: ["", hh_diagrams_aws_media_elemental_mediaconvert]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-mediaconvert.png"
+    - id: ["", hh_diagrams_aws_media_elemental_medialive]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-medialive.png"
+    - id: ["", hh_diagrams_aws_media_elemental_mediapackage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-mediapackage.png"
+    - id: ["", hh_diagrams_aws_media_elemental_mediastore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-mediastore.png"
+    - id: ["", hh_diagrams_aws_media_elemental_mediatailor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-mediatailor.png"
+    - id: ["", hh_diagrams_aws_media_elemental_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/elemental-server.png"
+    - id: ["", hh_diagrams_aws_media_kinesis_video_streams]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/kinesis-video-streams.png"
+    - id: ["", hh_diagrams_aws_media_media_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/media/media-services.png"
+
+    # AWS.MIGRATION
+    - id: ["", hh_diagrams_aws_migration_application_discovery_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/application-discovery-service.png"
+    - id: ["", hh_diagrams_aws_migration_cloudendure_migration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/cloudendure-migration.png"
+    - id: ["", hh_diagrams_aws_migration_database_migration_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/database-migration-service.png"
+    - id: ["", hh_diagrams_aws_migration_datasync_agent]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/datasync-agent.png"
+    - id: ["", hh_diagrams_aws_migration_datasync]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/datasync.png"
+    - id: ["", hh_diagrams_aws_migration_migration_and_transfer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/migration-and-transfer.png"
+    - id: ["", hh_diagrams_aws_migration_migration_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/migration-hub.png"
+    - id: ["", hh_diagrams_aws_migration_server_migration_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/server-migration-service.png"
+    - id: ["", hh_diagrams_aws_migration_snowball_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/snowball-edge.png"
+    - id: ["", hh_diagrams_aws_migration_snowball]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/snowball.png"
+    - id: ["", hh_diagrams_aws_migration_snowmobile]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/snowmobile.png"
+    - id: ["", hh_diagrams_aws_migration_transfer_for_sftp]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/migration/transfer-for-sftp.png"
+
+    # AWS.ML
+    - id: ["", hh_diagrams_aws_ml_apache_mxnet_on_aws]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/apache-mxnet-on-aws.png"
+    - id: ["", hh_diagrams_aws_ml_augmented_ai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/augmented-ai.png"
+    - id: ["", hh_diagrams_aws_ml_bedrock]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/bedrock.png"
+    - id: ["", hh_diagrams_aws_ml_comprehend]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/comprehend.png"
+    - id: ["", hh_diagrams_aws_ml_deep_learning_amis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/deep-learning-amis.png"
+    - id: ["", hh_diagrams_aws_ml_deep_learning_containers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/deep-learning-containers.png"
+    - id: ["", hh_diagrams_aws_ml_deepcomposer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/deepcomposer.png"
+    - id: ["", hh_diagrams_aws_ml_deeplens]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/deeplens.png"
+    - id: ["", hh_diagrams_aws_ml_deepracer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/deepracer.png"
+    - id: ["", hh_diagrams_aws_ml_elastic_inference]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/elastic-inference.png"
+    - id: ["", hh_diagrams_aws_ml_forecast]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/forecast.png"
+    - id: ["", hh_diagrams_aws_ml_fraud_detector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/fraud-detector.png"
+    - id: ["", hh_diagrams_aws_ml_kendra]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/kendra.png"
+    - id: ["", hh_diagrams_aws_ml_lex]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/lex.png"
+    - id: ["", hh_diagrams_aws_ml_machine_learning]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/machine-learning.png"
+    - id: ["", hh_diagrams_aws_ml_personalize]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/personalize.png"
+    - id: ["", hh_diagrams_aws_ml_polly]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/polly.png"
+    - id: ["", hh_diagrams_aws_ml_q]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/q.png"
+    - id: ["", hh_diagrams_aws_ml_rekognition_image]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/rekognition-image.png"
+    - id: ["", hh_diagrams_aws_ml_rekognition_video]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/rekognition-video.png"
+    - id: ["", hh_diagrams_aws_ml_rekognition]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/rekognition.png"
+    - id: ["", hh_diagrams_aws_ml_sagemaker_ground_truth]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/sagemaker-ground-truth.png"
+    - id: ["", hh_diagrams_aws_ml_sagemaker_model]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/sagemaker-model.png"
+    - id: ["", hh_diagrams_aws_ml_sagemaker_notebook]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/sagemaker-notebook.png"
+    - id: ["", hh_diagrams_aws_ml_sagemaker_training_job]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/sagemaker-training-job.png"
+    - id: ["", hh_diagrams_aws_ml_sagemaker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/sagemaker.png"
+    - id: ["", hh_diagrams_aws_ml_tensorflow_on_aws]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/tensorflow-on-aws.png"
+    - id: ["", hh_diagrams_aws_ml_textract]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/textract.png"
+    - id: ["", hh_diagrams_aws_ml_transcribe]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/transcribe.png"
+    - id: ["", hh_diagrams_aws_ml_transform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/transform.png"
+    - id: ["", hh_diagrams_aws_ml_translate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/ml/translate.png"
+
+    # AWS.MOBILE
+    - id: ["", hh_diagrams_aws_mobile_amplify]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/mobile/amplify.png"
+    - id: ["", hh_diagrams_aws_mobile_api_gateway_endpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/mobile/api-gateway-endpoint.png"
+    - id: ["", hh_diagrams_aws_mobile_api_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/mobile/api-gateway.png"
+    - id: ["", hh_diagrams_aws_mobile_appsync]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/mobile/appsync.png"
+    - id: ["", hh_diagrams_aws_mobile_device_farm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/mobile/device-farm.png"
+    - id: ["", hh_diagrams_aws_mobile_mobile]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/mobile/mobile.png"
+    - id: ["", hh_diagrams_aws_mobile_pinpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/mobile/pinpoint.png"
+
+    # AWS.NETWORK
+    - id: ["", hh_diagrams_aws_network_api_gateway_endpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/api-gateway-endpoint.png"
+    - id: ["", hh_diagrams_aws_network_api_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/api-gateway.png"
+    - id: ["", hh_diagrams_aws_network_app_mesh]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/app-mesh.png"
+    - id: ["", hh_diagrams_aws_network_client_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/client-vpn.png"
+    - id: ["", hh_diagrams_aws_network_cloud_map]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/cloud-map.png"
+    - id: ["", hh_diagrams_aws_network_cloudfront_download_distribution]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/cloudfront-download-distribution.png"
+    - id: ["", hh_diagrams_aws_network_cloudfront_edge_location]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/cloudfront-edge-location.png"
+    - id: ["", hh_diagrams_aws_network_cloudfront_streaming_distribution]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/cloudfront-streaming-distribution.png"
+    - id: ["", hh_diagrams_aws_network_cloudfront]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/cloudfront.png"
+    - id: ["", hh_diagrams_aws_network_direct_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/direct-connect.png"
+    - id: ["", hh_diagrams_aws_network_elastic_load_balancing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/elastic-load-balancing.png"
+    - id: ["", hh_diagrams_aws_network_elb_application_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/elb-application-load-balancer.png"
+    - id: ["", hh_diagrams_aws_network_elb_classic_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/elb-classic-load-balancer.png"
+    - id: ["", hh_diagrams_aws_network_elb_network_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/elb-network-load-balancer.png"
+    - id: ["", hh_diagrams_aws_network_endpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/endpoint.png"
+    - id: ["", hh_diagrams_aws_network_global_accelerator]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/global-accelerator.png"
+    - id: ["", hh_diagrams_aws_network_internet_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/internet-gateway.png"
+    - id: ["", hh_diagrams_aws_network_nacl]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/nacl.png"
+    - id: ["", hh_diagrams_aws_network_nat_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/nat-gateway.png"
+    - id: ["", hh_diagrams_aws_network_network_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/network-firewall.png"
+    - id: ["", hh_diagrams_aws_network_networking_and_content_delivery]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/networking-and-content-delivery.png"
+    - id: ["", hh_diagrams_aws_network_private_subnet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/private-subnet.png"
+    - id: ["", hh_diagrams_aws_network_privatelink]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/privatelink.png"
+    - id: ["", hh_diagrams_aws_network_public_subnet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/public-subnet.png"
+    - id: ["", hh_diagrams_aws_network_route_53_hosted_zone]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/route-53-hosted-zone.png"
+    - id: ["", hh_diagrams_aws_network_route_53]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/route-53.png"
+    - id: ["", hh_diagrams_aws_network_route_table]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/route-table.png"
+    - id: ["", hh_diagrams_aws_network_site_to_site_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/site-to-site-vpn.png"
+    - id: ["", hh_diagrams_aws_network_transit_gateway_attachment]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/transit-gateway-attachment.png"
+    - id: ["", hh_diagrams_aws_network_transit_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/transit-gateway.png"
+    - id: ["", hh_diagrams_aws_network_vpc_customer_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc-customer-gateway.png"
+    - id: ["", hh_diagrams_aws_network_vpc_elastic_network_adapter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc-elastic-network-adapter.png"
+    - id: ["", hh_diagrams_aws_network_vpc_elastic_network_interface]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc-elastic-network-interface.png"
+    - id: ["", hh_diagrams_aws_network_vpc_flow_logs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc-flow-logs.png"
+    - id: ["", hh_diagrams_aws_network_vpc_peering]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc-peering.png"
+    - id: ["", hh_diagrams_aws_network_vpc_router]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc-router.png"
+    - id: ["", hh_diagrams_aws_network_vpc_traffic_mirroring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc-traffic-mirroring.png"
+    - id: ["", hh_diagrams_aws_network_vpc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpc.png"
+    - id: ["", hh_diagrams_aws_network_vpn_connection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpn-connection.png"
+    - id: ["", hh_diagrams_aws_network_vpn_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/network/vpn-gateway.png"
+
+    # AWS.QUANTUM
+    - id: ["", hh_diagrams_aws_quantum_braket]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/quantum/braket.png"
+    - id: ["", hh_diagrams_aws_quantum_quantum_technologies]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/quantum/quantum-technologies.png"
+
+    # AWS.ROBOTICS
+    - id: ["", hh_diagrams_aws_robotics_robomaker_cloud_extension_ros]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/robotics/robomaker-cloud-extension-ros.png"
+    - id: ["", hh_diagrams_aws_robotics_robomaker_development_environment]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/robotics/robomaker-development-environment.png"
+    - id: ["", hh_diagrams_aws_robotics_robomaker_fleet_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/robotics/robomaker-fleet-management.png"
+    - id: ["", hh_diagrams_aws_robotics_robomaker_simulator]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/robotics/robomaker-simulator.png"
+    - id: ["", hh_diagrams_aws_robotics_robomaker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/robotics/robomaker.png"
+    - id: ["", hh_diagrams_aws_robotics_robotics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/robotics/robotics.png"
+
+    # AWS.ROOT
+    - id: ["", hh_diagrams_aws_aws]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/aws.png"
+
+    # AWS.SATELLITE
+    - id: ["", hh_diagrams_aws_satellite_ground_station]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/satellite/ground-station.png"
+    - id: ["", hh_diagrams_aws_satellite_satellite]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/satellite/satellite.png"
+
+    # AWS.SECURITY
+    - id: ["", hh_diagrams_aws_security_ad_connector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/ad-connector.png"
+    - id: ["", hh_diagrams_aws_security_artifact]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/artifact.png"
+    - id: ["", hh_diagrams_aws_security_certificate_authority]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/certificate-authority.png"
+    - id: ["", hh_diagrams_aws_security_certificate_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/certificate-manager.png"
+    - id: ["", hh_diagrams_aws_security_cloud_directory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/cloud-directory.png"
+    - id: ["", hh_diagrams_aws_security_cloudhsm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/cloudhsm.png"
+    - id: ["", hh_diagrams_aws_security_cognito]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/cognito.png"
+    - id: ["", hh_diagrams_aws_security_detective]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/detective.png"
+    - id: ["", hh_diagrams_aws_security_directory_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/directory-service.png"
+    - id: ["", hh_diagrams_aws_security_firewall_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/firewall-manager.png"
+    - id: ["", hh_diagrams_aws_security_guardduty]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/guardduty.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_access_analyzer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-access-analyzer.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_add_on]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-add-on.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_aws_sts_alternate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-aws-sts-alternate.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_aws_sts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-aws-sts.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_data_encryption_key]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-data-encryption-key.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_encrypted_data]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-encrypted-data.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_long_term_security_credential]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-long-term-security-credential.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_mfa_token]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-mfa-token.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_permissions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-permissions.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_role]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-role.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam_temporary_security_credential]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam-temporary-security-credential.png"
+    - id: ["", hh_diagrams_aws_security_identity_and_access_management_iam]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/identity-and-access-management-iam.png"
+    - id: ["", hh_diagrams_aws_security_inspector_agent]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/inspector-agent.png"
+    - id: ["", hh_diagrams_aws_security_inspector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/inspector.png"
+    - id: ["", hh_diagrams_aws_security_key_management_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/key-management-service.png"
+    - id: ["", hh_diagrams_aws_security_macie]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/macie.png"
+    - id: ["", hh_diagrams_aws_security_managed_microsoft_ad]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/managed-microsoft-ad.png"
+    - id: ["", hh_diagrams_aws_security_resource_access_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/resource-access-manager.png"
+    - id: ["", hh_diagrams_aws_security_secrets_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/secrets-manager.png"
+    - id: ["", hh_diagrams_aws_security_security_hub_finding]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/security-hub-finding.png"
+    - id: ["", hh_diagrams_aws_security_security_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/security-hub.png"
+    - id: ["", hh_diagrams_aws_security_security_identity_and_compliance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/security-identity-and-compliance.png"
+    - id: ["", hh_diagrams_aws_security_security_lake]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/security-lake.png"
+    - id: ["", hh_diagrams_aws_security_shield_advanced]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/shield-advanced.png"
+    - id: ["", hh_diagrams_aws_security_shield]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/shield.png"
+    - id: ["", hh_diagrams_aws_security_simple_ad]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/simple-ad.png"
+    - id: ["", hh_diagrams_aws_security_single_sign_on]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/single-sign-on.png"
+    - id: ["", hh_diagrams_aws_security_waf_filtering_rule]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/waf-filtering-rule.png"
+    - id: ["", hh_diagrams_aws_security_waf]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/security/waf.png"
+
+    # AWS.STORAGE
+    - id: ["", hh_diagrams_aws_storage_backup]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/backup.png"
+    - id: ["", hh_diagrams_aws_storage_cloudendure_disaster_recovery]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/cloudendure-disaster-recovery.png"
+    - id: ["", hh_diagrams_aws_storage_efs_infrequentaccess_primary_bg]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/efs-infrequentaccess-primary-bg.png"
+    - id: ["", hh_diagrams_aws_storage_efs_standard_primary_bg]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/efs-standard-primary-bg.png"
+    - id: ["", hh_diagrams_aws_storage_elastic_block_store_ebs_snapshot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/elastic-block-store-ebs-snapshot.png"
+    - id: ["", hh_diagrams_aws_storage_elastic_block_store_ebs_volume]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/elastic-block-store-ebs-volume.png"
+    - id: ["", hh_diagrams_aws_storage_elastic_block_store_ebs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/elastic-block-store-ebs.png"
+    - id: ["", hh_diagrams_aws_storage_elastic_file_system_efs_file_system]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/elastic-file-system-efs-file-system.png"
+    - id: ["", hh_diagrams_aws_storage_elastic_file_system_efs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/elastic-file-system-efs.png"
+    - id: ["", hh_diagrams_aws_storage_fsx_for_lustre]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/fsx-for-lustre.png"
+    - id: ["", hh_diagrams_aws_storage_fsx_for_windows_file_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/fsx-for-windows-file-server.png"
+    - id: ["", hh_diagrams_aws_storage_fsx]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/fsx.png"
+    - id: ["", hh_diagrams_aws_storage_multiple_volumes_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/multiple-volumes-resource.png"
+    - id: ["", hh_diagrams_aws_storage_s3_access_points]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/s3-access-points.png"
+    - id: ["", hh_diagrams_aws_storage_s3_glacier_archive]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/s3-glacier-archive.png"
+    - id: ["", hh_diagrams_aws_storage_s3_glacier_vault]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/s3-glacier-vault.png"
+    - id: ["", hh_diagrams_aws_storage_s3_glacier]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/s3-glacier.png"
+    - id: ["", hh_diagrams_aws_storage_s3_object_lambda_access_points]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/s3-object-lambda-access-points.png"
+    - id: ["", hh_diagrams_aws_storage_simple_storage_service_s3_bucket_with_objects]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/simple-storage-service-s3-bucket-with-objects.png"
+    - id: ["", hh_diagrams_aws_storage_simple_storage_service_s3_bucket]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/simple-storage-service-s3-bucket.png"
+    - id: ["", hh_diagrams_aws_storage_simple_storage_service_s3_object]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/simple-storage-service-s3-object.png"
+    - id: ["", hh_diagrams_aws_storage_simple_storage_service_s3]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/simple-storage-service-s3.png"
+    - id: ["", hh_diagrams_aws_storage_snow_family_snowball_import_export]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/snow-family-snowball-import-export.png"
+    - id: ["", hh_diagrams_aws_storage_snowball_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/snowball-edge.png"
+    - id: ["", hh_diagrams_aws_storage_snowball]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/snowball.png"
+    - id: ["", hh_diagrams_aws_storage_snowmobile]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/snowmobile.png"
+    - id: ["", hh_diagrams_aws_storage_storage_gateway_cached_volume]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/storage-gateway-cached-volume.png"
+    - id: ["", hh_diagrams_aws_storage_storage_gateway_non_cached_volume]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/storage-gateway-non-cached-volume.png"
+    - id: ["", hh_diagrams_aws_storage_storage_gateway_virtual_tape_library]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/storage-gateway-virtual-tape-library.png"
+    - id: ["", hh_diagrams_aws_storage_storage_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/storage-gateway.png"
+    - id: ["", hh_diagrams_aws_storage_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "aws/storage/storage.png"

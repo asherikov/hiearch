@@ -49,23 +49,31 @@ def process_auto_colors(attrs, seed_data):
     return attrs
 
 
-def merge_styles(secondary, primary, with_tags=True):
+def merge_dict_by_key(secondary, primary, key):
+    if key in primary:
+        tmp = dict(secondary[key])
+        tmp.update(primary[key])
+        primary[key] = tmp
+    else:
+        primary[key] = secondary[key]
+
+
+def merge_styles(secondary, primary, with_tags=True, is_view=False):
     """Merge style attributes from secondary into primary."""
     if 'graphviz' in secondary:
         if 'substitutions' in secondary:
-            if 'substitutions' in primary:
-                tmp = dict(secondary['substitutions'])
-                tmp.update(primary['substitutions'])
-                primary['substitutions'] = tmp
-            else:
-                primary['substitutions'] = secondary['substitutions']
+            merge_dict_by_key(secondary, primary, 'substitutions')
 
-        if 'graphviz' in primary:
-            tmp = dict(secondary['graphviz'])
-            tmp.update(primary['graphviz'])
-            primary['graphviz'] = tmp
+        if is_view:
+            # there is an extra nested level in views
+            for group in ["graph", "edge", "node"]:
+                if group in secondary['graphviz']:
+                    if 'graphviz' in primary:
+                        merge_dict_by_key(secondary['graphviz'], primary['graphviz'], group)
+                    else:
+                        primary['graphviz'] = secondary['graphviz']
         else:
-            primary['graphviz'] = secondary['graphviz']
+            merge_dict_by_key(secondary, primary, 'graphviz')
 
     result = dict(secondary)
     result.update(primary)
@@ -77,7 +85,7 @@ def merge_styles(secondary, primary, with_tags=True):
     return result
 
 
-def apply_styles(styled_entities, entities):
+def apply_styles(styled_entities, entities, is_view=False):
     """Apply styles from styled entities to the main entities."""
     size = len(styled_entities)
     nodes_style_applied = set()
@@ -98,7 +106,7 @@ def apply_styles(styled_entities, entities):
 
             if is_style_root or father_entity['id'] in nodes_style_applied:
                 key = styled_entities[index]['id']
-                entities[key] = merge_styles(father_entity, styled_entities[index], with_tags)
+                entities[key] = merge_styles(father_entity, styled_entities[index], with_tags, is_view)
                 nodes_style_applied.add(key)
                 styled_entities[index], styled_entities[size - 1] = styled_entities[size - 1], styled_entities[index]
                 size -= 1

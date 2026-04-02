@@ -1,0 +1,297 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for GIS
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # GIS.CLI
+    - id: ["", hh_diagrams_gis_cli_gdal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/cli/gdal.png"
+    - id: ["", hh_diagrams_gis_cli_imposm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/cli/imposm.png"
+    - id: ["", hh_diagrams_gis_cli_lastools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/cli/lastools.png"
+    - id: ["", hh_diagrams_gis_cli_mapnik]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/cli/mapnik.png"
+    - id: ["", hh_diagrams_gis_cli_mdal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/cli/mdal.png"
+    - id: ["", hh_diagrams_gis_cli_pdal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/cli/pdal.png"
+
+    # GIS.DATA
+    - id: ["", hh_diagrams_gis_data_ban]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/data/ban.png"
+    - id: ["", hh_diagrams_gis_data_here]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/data/here.png"
+    - id: ["", hh_diagrams_gis_data_ign]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/data/ign.png"
+    - id: ["", hh_diagrams_gis_data_openstreetmap]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/data/openstreetmap.png"
+    - id: ["", hh_diagrams_gis_data_overturemaps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/data/overturemaps.png"
+
+    # GIS.DATABASE
+    - id: ["", hh_diagrams_gis_database_postgis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/database/postgis.png"
+
+    # GIS.DESKTOP
+    - id: ["", hh_diagrams_gis_desktop_maptunik]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/desktop/maptunik.png"
+    - id: ["", hh_diagrams_gis_desktop_qgis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/desktop/qgis.png"
+
+    # GIS.FORMAT
+    - id: ["", hh_diagrams_gis_format_geopackage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/format/geopackage.png"
+    - id: ["", hh_diagrams_gis_format_geoparquet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/format/geoparquet.png"
+
+    # GIS.GEOCODING
+    - id: ["", hh_diagrams_gis_geocoding_addok]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/geocoding/addok.png"
+    - id: ["", hh_diagrams_gis_geocoding_gisgraphy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/geocoding/gisgraphy.png"
+    - id: ["", hh_diagrams_gis_geocoding_nominatim]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/geocoding/nominatim.png"
+    - id: ["", hh_diagrams_gis_geocoding_pelias]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/geocoding/pelias.png"
+
+    # GIS.JAVA
+    - id: ["", hh_diagrams_gis_java_geotools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/java/geotools.png"
+
+    # GIS.JAVASCRIPT
+    - id: ["", hh_diagrams_gis_javascript_cesium]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/cesium.png"
+    - id: ["", hh_diagrams_gis_javascript_geostyler]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/geostyler.png"
+    - id: ["", hh_diagrams_gis_javascript_keplerjs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/keplerjs.png"
+    - id: ["", hh_diagrams_gis_javascript_leaflet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/leaflet.png"
+    - id: ["", hh_diagrams_gis_javascript_maplibre]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/maplibre.png"
+    - id: ["", hh_diagrams_gis_javascript_ol_ext]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/ol-ext.png"
+    - id: ["", hh_diagrams_gis_javascript_openlayers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/openlayers.png"
+    - id: ["", hh_diagrams_gis_javascript_turfjs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/javascript/turfjs.png"
+
+    # GIS.MOBILE
+    - id: ["", hh_diagrams_gis_mobile_mergin]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/mobile/mergin.png"
+    - id: ["", hh_diagrams_gis_mobile_qfield]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/mobile/qfield.png"
+    - id: ["", hh_diagrams_gis_mobile_smash]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/mobile/smash.png"
+
+    # GIS.OGC
+    - id: ["", hh_diagrams_gis_ogc_ogc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/ogc/ogc.png"
+    - id: ["", hh_diagrams_gis_ogc_wfs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/ogc/wfs.png"
+    - id: ["", hh_diagrams_gis_ogc_wms]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/ogc/wms.png"
+
+    # GIS.ORGANIZATION
+    - id: ["", hh_diagrams_gis_organization_osgeo]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/organization/osgeo.png"
+
+    # GIS.PYTHON
+    - id: ["", hh_diagrams_gis_python_geopandas]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/python/geopandas.png"
+    - id: ["", hh_diagrams_gis_python_pysal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/python/pysal.png"
+
+    # GIS.ROOT
+    - id: ["", hh_diagrams_gis_gis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/gis.png"
+
+    # GIS.ROUTING
+    - id: ["", hh_diagrams_gis_routing_graphhopper]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/routing/graphhopper.png"
+    - id: ["", hh_diagrams_gis_routing_osrm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/routing/osrm.png"
+    - id: ["", hh_diagrams_gis_routing_pgrouting]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/routing/pgrouting.png"
+    - id: ["", hh_diagrams_gis_routing_valhalla]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/routing/valhalla.png"
+
+    # GIS.SERVER
+    - id: ["", hh_diagrams_gis_server_actinia]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/actinia.png"
+    - id: ["", hh_diagrams_gis_server_baremaps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/baremaps.png"
+    - id: ["", hh_diagrams_gis_server_deegree]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/deegree.png"
+    - id: ["", hh_diagrams_gis_server_g3w_suite]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/g3w-suite.png"
+    - id: ["", hh_diagrams_gis_server_geohealthcheck]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/geohealthcheck.png"
+    - id: ["", hh_diagrams_gis_server_geomapfish]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/geomapfish.png"
+    - id: ["", hh_diagrams_gis_server_geomesa]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/geomesa.png"
+    - id: ["", hh_diagrams_gis_server_geonetwork]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/geonetwork.png"
+    - id: ["", hh_diagrams_gis_server_geonode]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/geonode.png"
+    - id: ["", hh_diagrams_gis_server_georchestra]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/georchestra.png"
+    - id: ["", hh_diagrams_gis_server_geoserver]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/geoserver.png"
+    - id: ["", hh_diagrams_gis_server_geowebcache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/geowebcache.png"
+    - id: ["", hh_diagrams_gis_server_kepler]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/kepler.png"
+    - id: ["", hh_diagrams_gis_server_mapproxy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/mapproxy.png"
+    - id: ["", hh_diagrams_gis_server_mapserver]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/mapserver.png"
+    - id: ["", hh_diagrams_gis_server_mapstore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/mapstore.png"
+    - id: ["", hh_diagrams_gis_server_mviewer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/mviewer.png"
+    - id: ["", hh_diagrams_gis_server_pg_tileserv]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/pg_tileserv.png"
+    - id: ["", hh_diagrams_gis_server_pycsw]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/pycsw.png"
+    - id: ["", hh_diagrams_gis_server_pygeoapi]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/pygeoapi.png"
+    - id: ["", hh_diagrams_gis_server_qgis_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/qgis-server.png"
+    - id: ["", hh_diagrams_gis_server_zooproject]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "gis/server/zooproject.png"

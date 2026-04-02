@@ -18,6 +18,8 @@
 - [Predefined styles](#predefined-styles)
   - [State machine](#state-machine)
   - [Use Case](#use-case)
+  - [Diagrams
+    (https://diagrams.mingrammer.com/)](#diagrams-httpsdiagrams.mingrammer.com)
 
 Introduction
 ============
@@ -89,7 +91,7 @@ Examples
 Command line options
 --------------------
 
-    usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] [-t TEMP_DIR] <filename> [<filename> ...]
+    usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] [-t TEMP_DIR] [-r RESOURCE_DIRS] <filename> [<filename> ...]
 
     Generates diagrams
 
@@ -104,6 +106,8 @@ Command line options
                             Output format [SVG]
       -t TEMP_DIR, --temp-dir TEMP_DIR
                             Temporary files output directory (defaults to output directory)
+      -r RESOURCE_DIRS, --resource-dirs RESOURCE_DIRS
+                            Directories to search for graphical resources (can be specified multiple times)
 
 Trivial
 -------
@@ -1028,3 +1032,76 @@ views:
 </td>
 
 </tr>
+
+</table>
+
+Diagrams (<https://diagrams.mingrammer.com/>)
+---------------------------------------------
+
+The `diagrams` style provides access to icons from the
+[diagrams](https://github.com/mingrammer/diagrams) package, allowing you to
+create cloud system architecture diagrams. The `diagrams` package must be
+installed separately to access the icon files. The icons are located in the
+package’s resources directory (typically
+`~/.local/lib/python3.X/site-packages/resources` or similar), which can be
+passed to `hiearch` like this
+
+``` bash
+hiearch -r /path/to/diagrams/resources input.yaml
+```
+
+<pre>
+nodes:
+    - id: ["Mobile User", mobile_user]
+      style_notag: hh_diagrams_generic_device_mobile
+    - id: ["Tablet User", tablet_user]
+      style_notag: hh_diagrams_generic_device_tablet
+&#10;    - id: ["CloudFront\nCDN", cloudfront]
+      style_notag: hh_diagrams_aws_network_cloudfront
+      scope: aws_frontend
+    - id: ["Application\nLoad Balancer", elb]
+      style_notag: hh_diagrams_aws_network_elb_application_load_balancer
+      scope: aws_frontend
+&#10;    - id: ["EC2 Instances", ec2]
+      style_notag: hh_diagrams_aws_compute_ec2
+      scope: aws_compute
+    - id: ["Lambda\nFunctions", lambda_func]
+      style_notag: hh_diagrams_aws_compute_lambda
+      scope: aws_compute
+    - id: ["Elastic\nContainer", ecs]
+      style_notag: hh_diagrams_aws_compute_elastic_container_service
+      scope: aws_compute
+&#10;    - id: ["Prometheus", prometheus]
+      style_notag: hh_diagrams_onprem_monitoring_prometheus
+    - id: ["Grafana", grafana]
+      style_notag: hh_diagrams_onprem_monitoring_grafana
+&#10;    - id: ["AWS\nFrontend", aws_frontend]
+      style_notag: hh_diagrams_scope
+    - id: ["AWS\nCompute", aws_compute]
+      style_notag: hh_diagrams_scope
+&#10;edges:
+    - link: [mobile_user, cloudfront]
+      style: hh_diagrams_link
+    - link: [tablet_user, cloudfront]
+      style: hh_diagrams_link
+    - link: [cloudfront, elb]
+      style: hh_diagrams_link
+&#10;    - link: [elb, ec2]
+      style: hh_diagrams_link
+    - link: [elb, lambda_func]
+      style: hh_diagrams_link
+    - link: [elb, ecs]
+      style: hh_diagrams_link
+&#10;    - link: [prometheus, ec2]
+      style: hh_diagrams_link
+    - link: [prometheus, lambda_func]
+      style: hh_diagrams_link
+    - link: [grafana, prometheus]
+      style: hh_diagrams_link
+&#10;views:
+    - id: cloud_architecture
+      style: hh_diagrams_view
+      tags: ["default"]
+</pre>
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/34_diagrams_style/cloud_architecture.png" alt="cloud_architecture" />

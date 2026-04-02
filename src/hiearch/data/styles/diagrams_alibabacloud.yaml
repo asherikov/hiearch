@@ -1,0 +1,409 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for ALIBABACLOUD
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # ALIBABACLOUD.ANALYTICS
+    - id: ["", hh_diagrams_alibabacloud_analytics_analytic_db]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/analytics/analytic-db.png"
+    - id: ["", hh_diagrams_alibabacloud_analytics_click_house]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/analytics/click-house.png"
+    - id: ["", hh_diagrams_alibabacloud_analytics_data_lake_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/analytics/data-lake-analytics.png"
+    - id: ["", hh_diagrams_alibabacloud_analytics_elatic_map_reduce]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/analytics/elatic-map-reduce.png"
+    - id: ["", hh_diagrams_alibabacloud_analytics_open_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/analytics/open-search.png"
+
+    # ALIBABACLOUD.APPLICATION
+    - id: ["", hh_diagrams_alibabacloud_application_api_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/api-gateway.png"
+    - id: ["", hh_diagrams_alibabacloud_application_bee_bot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/bee-bot.png"
+    - id: ["", hh_diagrams_alibabacloud_application_blockchain_as_a_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/blockchain-as-a-service.png"
+    - id: ["", hh_diagrams_alibabacloud_application_cloud_call_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/cloud-call-center.png"
+    - id: ["", hh_diagrams_alibabacloud_application_code_pipeline]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/code-pipeline.png"
+    - id: ["", hh_diagrams_alibabacloud_application_direct_mail]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/direct-mail.png"
+    - id: ["", hh_diagrams_alibabacloud_application_log_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/log-service.png"
+    - id: ["", hh_diagrams_alibabacloud_application_message_notification_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/message-notification-service.png"
+    - id: ["", hh_diagrams_alibabacloud_application_node_js_performance_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/node-js-performance-platform.png"
+    - id: ["", hh_diagrams_alibabacloud_application_open_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/open-search.png"
+    - id: ["", hh_diagrams_alibabacloud_application_performance_testing_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/performance-testing-service.png"
+    - id: ["", hh_diagrams_alibabacloud_application_rd_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/rd-cloud.png"
+    - id: ["", hh_diagrams_alibabacloud_application_smart_conversation_analysis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/smart-conversation-analysis.png"
+    - id: ["", hh_diagrams_alibabacloud_application_yida]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/application/yida.png"
+
+    # ALIBABACLOUD.COMMUNICATION
+    - id: ["", hh_diagrams_alibabacloud_communication_direct_mail]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/communication/direct-mail.png"
+    - id: ["", hh_diagrams_alibabacloud_communication_mobile_push]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/communication/mobile-push.png"
+
+    # ALIBABACLOUD.COMPUTE
+    - id: ["", hh_diagrams_alibabacloud_compute_auto_scaling]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/auto-scaling.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_batch_compute]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/batch-compute.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_container_registry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/container-registry.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_container_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/container-service.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_elastic_compute_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/elastic-compute-service.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_elastic_container_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/elastic-container-instance.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_elastic_high_performance_computing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/elastic-high-performance-computing.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_elastic_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/elastic-search.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_function_compute]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/function-compute.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_operation_orchestration_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/operation-orchestration-service.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_resource_orchestration_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/resource-orchestration-service.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_server_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/server-load-balancer.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_serverless_app_engine]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/serverless-app-engine.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_simple_application_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/simple-application-server.png"
+    - id: ["", hh_diagrams_alibabacloud_compute_web_app_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/compute/web-app-service.png"
+
+    # ALIBABACLOUD.DATABASE
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_cassandra]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-cassandra.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_hbase]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-hbase.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_memcache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-memcache.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_mongodb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-mongodb.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_oceanbase]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-oceanbase.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_polardb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-polardb.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_postgresql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-postgresql.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_ppas]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-ppas.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_redis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-redis.png"
+    - id: ["", hh_diagrams_alibabacloud_database_apsaradb_sqlserver]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/apsaradb-sqlserver.png"
+    - id: ["", hh_diagrams_alibabacloud_database_data_management_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/data-management-service.png"
+    - id: ["", hh_diagrams_alibabacloud_database_data_transmission_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/data-transmission-service.png"
+    - id: ["", hh_diagrams_alibabacloud_database_database_backup_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/database-backup-service.png"
+    - id: ["", hh_diagrams_alibabacloud_database_disribute_relational_database_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/disribute-relational-database-service.png"
+    - id: ["", hh_diagrams_alibabacloud_database_graph_database_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/graph-database-service.png"
+    - id: ["", hh_diagrams_alibabacloud_database_hybriddb_for_mysql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/hybriddb-for-mysql.png"
+    - id: ["", hh_diagrams_alibabacloud_database_relational_database_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/database/relational-database-service.png"
+
+    # ALIBABACLOUD.IOT
+    - id: ["", hh_diagrams_alibabacloud_iot_iot_internet_device_id]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/iot/iot-internet-device-id.png"
+    - id: ["", hh_diagrams_alibabacloud_iot_iot_link_wan]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/iot/iot-link-wan.png"
+    - id: ["", hh_diagrams_alibabacloud_iot_iot_mobile_connection_package]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/iot/iot-mobile-connection-package.png"
+    - id: ["", hh_diagrams_alibabacloud_iot_iot_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/iot/iot-platform.png"
+
+    # ALIBABACLOUD.NETWORK
+    - id: ["", hh_diagrams_alibabacloud_network_cdn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/cdn.png"
+    - id: ["", hh_diagrams_alibabacloud_network_cloud_enterprise_network]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/cloud-enterprise-network.png"
+    - id: ["", hh_diagrams_alibabacloud_network_elastic_ip_address]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/elastic-ip-address.png"
+    - id: ["", hh_diagrams_alibabacloud_network_express_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/express-connect.png"
+    - id: ["", hh_diagrams_alibabacloud_network_nat_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/nat-gateway.png"
+    - id: ["", hh_diagrams_alibabacloud_network_server_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/server-load-balancer.png"
+    - id: ["", hh_diagrams_alibabacloud_network_smart_access_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/smart-access-gateway.png"
+    - id: ["", hh_diagrams_alibabacloud_network_virtual_private_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/virtual-private-cloud.png"
+    - id: ["", hh_diagrams_alibabacloud_network_vpn_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/network/vpn-gateway.png"
+
+    # ALIBABACLOUD.ROOT
+    - id: ["", hh_diagrams_alibabacloud_alibabacloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/alibabacloud.png"
+
+    # ALIBABACLOUD.SECURITY
+    - id: ["", hh_diagrams_alibabacloud_security_anti_bot_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/anti-bot-service.png"
+    - id: ["", hh_diagrams_alibabacloud_security_anti_ddos_basic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/anti-ddos-basic.png"
+    - id: ["", hh_diagrams_alibabacloud_security_anti_ddos_pro]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/anti-ddos-pro.png"
+    - id: ["", hh_diagrams_alibabacloud_security_antifraud_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/antifraud-service.png"
+    - id: ["", hh_diagrams_alibabacloud_security_bastion_host]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/bastion-host.png"
+    - id: ["", hh_diagrams_alibabacloud_security_cloud_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/cloud-firewall.png"
+    - id: ["", hh_diagrams_alibabacloud_security_cloud_security_scanner]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/cloud-security-scanner.png"
+    - id: ["", hh_diagrams_alibabacloud_security_content_moderation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/content-moderation.png"
+    - id: ["", hh_diagrams_alibabacloud_security_crowdsourced_security_testing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/crowdsourced-security-testing.png"
+    - id: ["", hh_diagrams_alibabacloud_security_data_encryption_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/data-encryption-service.png"
+    - id: ["", hh_diagrams_alibabacloud_security_db_audit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/db-audit.png"
+    - id: ["", hh_diagrams_alibabacloud_security_game_shield]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/game-shield.png"
+    - id: ["", hh_diagrams_alibabacloud_security_id_verification]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/id-verification.png"
+    - id: ["", hh_diagrams_alibabacloud_security_managed_security_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/managed-security-service.png"
+    - id: ["", hh_diagrams_alibabacloud_security_security_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/security-center.png"
+    - id: ["", hh_diagrams_alibabacloud_security_server_guard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/server-guard.png"
+    - id: ["", hh_diagrams_alibabacloud_security_ssl_certificates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/ssl-certificates.png"
+    - id: ["", hh_diagrams_alibabacloud_security_web_application_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/security/web-application-firewall.png"
+
+    # ALIBABACLOUD.STORAGE
+    - id: ["", hh_diagrams_alibabacloud_storage_cloud_storage_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/cloud-storage-gateway.png"
+    - id: ["", hh_diagrams_alibabacloud_storage_file_storage_hdfs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/file-storage-hdfs.png"
+    - id: ["", hh_diagrams_alibabacloud_storage_file_storage_nas]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/file-storage-nas.png"
+    - id: ["", hh_diagrams_alibabacloud_storage_hybrid_backup_recovery]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/hybrid-backup-recovery.png"
+    - id: ["", hh_diagrams_alibabacloud_storage_hybrid_cloud_disaster_recovery]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/hybrid-cloud-disaster-recovery.png"
+    - id: ["", hh_diagrams_alibabacloud_storage_imm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/imm.png"
+    - id: ["", hh_diagrams_alibabacloud_storage_object_storage_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/object-storage-service.png"
+    - id: ["", hh_diagrams_alibabacloud_storage_object_table_store]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/storage/object-table-store.png"
+
+    # ALIBABACLOUD.WEB
+    - id: ["", hh_diagrams_alibabacloud_web_dns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/web/dns.png"
+    - id: ["", hh_diagrams_alibabacloud_web_domain]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "alibabacloud/web/domain.png"

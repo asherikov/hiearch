@@ -1,0 +1,591 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for OCI
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # OCI.COMPUTE
+    - id: ["", hh_diagrams_oci_compute_autoscale_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/autoscale-white.png"
+    - id: ["", hh_diagrams_oci_compute_autoscale]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/autoscale.png"
+    - id: ["", hh_diagrams_oci_compute_bm_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/bm-white.png"
+    - id: ["", hh_diagrams_oci_compute_bm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/bm.png"
+    - id: ["", hh_diagrams_oci_compute_container_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/container-white.png"
+    - id: ["", hh_diagrams_oci_compute_container]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/container.png"
+    - id: ["", hh_diagrams_oci_compute_functions_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/functions-white.png"
+    - id: ["", hh_diagrams_oci_compute_functions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/functions.png"
+    - id: ["", hh_diagrams_oci_compute_instance_pools_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/instance-pools-white.png"
+    - id: ["", hh_diagrams_oci_compute_instance_pools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/instance-pools.png"
+    - id: ["", hh_diagrams_oci_compute_ocir_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/ocir-white.png"
+    - id: ["", hh_diagrams_oci_compute_ocir]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/ocir.png"
+    - id: ["", hh_diagrams_oci_compute_oke_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/oke-white.png"
+    - id: ["", hh_diagrams_oci_compute_oke]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/oke.png"
+    - id: ["", hh_diagrams_oci_compute_vm_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/vm-white.png"
+    - id: ["", hh_diagrams_oci_compute_vm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/compute/vm.png"
+
+    # OCI.CONNECTIVITY
+    - id: ["", hh_diagrams_oci_connectivity_backbone_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/backbone-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_backbone]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/backbone.png"
+    - id: ["", hh_diagrams_oci_connectivity_cdn_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/cdn-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_cdn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/cdn.png"
+    - id: ["", hh_diagrams_oci_connectivity_customer_datacenter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/customer-datacenter.png"
+    - id: ["", hh_diagrams_oci_connectivity_customer_datacntr_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/customer-datacntr-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_customer_premises_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/customer-premises-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_customer_premises]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/customer-premises.png"
+    - id: ["", hh_diagrams_oci_connectivity_disconnected_regions_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/disconnected-regions-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_disconnected_regions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/disconnected-regions.png"
+    - id: ["", hh_diagrams_oci_connectivity_dns_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/dns-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_dns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/dns.png"
+    - id: ["", hh_diagrams_oci_connectivity_fast_connect_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/fast-connect-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_fast_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/fast-connect.png"
+    - id: ["", hh_diagrams_oci_connectivity_nat_gateway_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/nat-gateway-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_nat_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/nat-gateway.png"
+    - id: ["", hh_diagrams_oci_connectivity_vpn_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/vpn-white.png"
+    - id: ["", hh_diagrams_oci_connectivity_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/connectivity/vpn.png"
+
+    # OCI.DATABASE
+    - id: ["", hh_diagrams_oci_database_autonomous_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/autonomous-white.png"
+    - id: ["", hh_diagrams_oci_database_autonomous]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/autonomous.png"
+    - id: ["", hh_diagrams_oci_database_bigdata_service_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/bigdata-service-white.png"
+    - id: ["", hh_diagrams_oci_database_bigdata_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/bigdata-service.png"
+    - id: ["", hh_diagrams_oci_database_database_service_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/database-service-white.png"
+    - id: ["", hh_diagrams_oci_database_database_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/database-service.png"
+    - id: ["", hh_diagrams_oci_database_dataflow_apache_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dataflow-apache-white.png"
+    - id: ["", hh_diagrams_oci_database_dataflow_apache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dataflow-apache.png"
+    - id: ["", hh_diagrams_oci_database_dcat_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dcat-white.png"
+    - id: ["", hh_diagrams_oci_database_dcat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dcat.png"
+    - id: ["", hh_diagrams_oci_database_dis_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dis-white.png"
+    - id: ["", hh_diagrams_oci_database_dis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dis.png"
+    - id: ["", hh_diagrams_oci_database_dms_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dms-white.png"
+    - id: ["", hh_diagrams_oci_database_dms]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/dms.png"
+    - id: ["", hh_diagrams_oci_database_science_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/science-white.png"
+    - id: ["", hh_diagrams_oci_database_science]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/science.png"
+    - id: ["", hh_diagrams_oci_database_stream_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/stream-white.png"
+    - id: ["", hh_diagrams_oci_database_stream]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/database/stream.png"
+
+    # OCI.DEVOPS
+    - id: ["", hh_diagrams_oci_devops_api_gateway_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/devops/api-gateway-white.png"
+    - id: ["", hh_diagrams_oci_devops_api_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/devops/api-gateway.png"
+    - id: ["", hh_diagrams_oci_devops_api_service_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/devops/api-service-white.png"
+    - id: ["", hh_diagrams_oci_devops_api_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/devops/api-service.png"
+    - id: ["", hh_diagrams_oci_devops_resource_mgmt_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/devops/resource-mgmt-white.png"
+    - id: ["", hh_diagrams_oci_devops_resource_mgmt]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/devops/resource-mgmt.png"
+
+    # OCI.GOVERNANCE
+    - id: ["", hh_diagrams_oci_governance_audit_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/audit-white.png"
+    - id: ["", hh_diagrams_oci_governance_audit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/audit.png"
+    - id: ["", hh_diagrams_oci_governance_compartments_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/compartments-white.png"
+    - id: ["", hh_diagrams_oci_governance_compartments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/compartments.png"
+    - id: ["", hh_diagrams_oci_governance_groups_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/groups-white.png"
+    - id: ["", hh_diagrams_oci_governance_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/groups.png"
+    - id: ["", hh_diagrams_oci_governance_logging_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/logging-white.png"
+    - id: ["", hh_diagrams_oci_governance_logging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/logging.png"
+    - id: ["", hh_diagrams_oci_governance_ocid_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/ocid-white.png"
+    - id: ["", hh_diagrams_oci_governance_ocid]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/ocid.png"
+    - id: ["", hh_diagrams_oci_governance_policies_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/policies-white.png"
+    - id: ["", hh_diagrams_oci_governance_policies]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/policies.png"
+    - id: ["", hh_diagrams_oci_governance_tagging_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/tagging-white.png"
+    - id: ["", hh_diagrams_oci_governance_tagging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/governance/tagging.png"
+
+    # OCI.MONITORING
+    - id: ["", hh_diagrams_oci_monitoring_alarm_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/alarm-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_alarm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/alarm.png"
+    - id: ["", hh_diagrams_oci_monitoring_email_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/email-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_email]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/email.png"
+    - id: ["", hh_diagrams_oci_monitoring_events_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/events-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_events]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/events.png"
+    - id: ["", hh_diagrams_oci_monitoring_health_check_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/health-check-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_health_check]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/health-check.png"
+    - id: ["", hh_diagrams_oci_monitoring_notifications_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/notifications-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_notifications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/notifications.png"
+    - id: ["", hh_diagrams_oci_monitoring_queue_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/queue-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_queue]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/queue.png"
+    - id: ["", hh_diagrams_oci_monitoring_search_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/search-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/search.png"
+    - id: ["", hh_diagrams_oci_monitoring_telemetry_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/telemetry-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_telemetry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/telemetry.png"
+    - id: ["", hh_diagrams_oci_monitoring_workflow_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/workflow-white.png"
+    - id: ["", hh_diagrams_oci_monitoring_workflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/monitoring/workflow.png"
+
+    # OCI.NETWORK
+    - id: ["", hh_diagrams_oci_network_drg_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/drg-white.png"
+    - id: ["", hh_diagrams_oci_network_drg]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/drg.png"
+    - id: ["", hh_diagrams_oci_network_firewall_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/firewall-white.png"
+    - id: ["", hh_diagrams_oci_network_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/firewall.png"
+    - id: ["", hh_diagrams_oci_network_internet_gateway_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/internet-gateway-white.png"
+    - id: ["", hh_diagrams_oci_network_internet_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/internet-gateway.png"
+    - id: ["", hh_diagrams_oci_network_load_balancer_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/load-balancer-white.png"
+    - id: ["", hh_diagrams_oci_network_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/load-balancer.png"
+    - id: ["", hh_diagrams_oci_network_route_table_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/route-table-white.png"
+    - id: ["", hh_diagrams_oci_network_route_table]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/route-table.png"
+    - id: ["", hh_diagrams_oci_network_security_lists_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/security-lists-white.png"
+    - id: ["", hh_diagrams_oci_network_security_lists]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/security-lists.png"
+    - id: ["", hh_diagrams_oci_network_service_gateway_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/service-gateway-white.png"
+    - id: ["", hh_diagrams_oci_network_service_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/service-gateway.png"
+    - id: ["", hh_diagrams_oci_network_vcn_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/vcn-white.png"
+    - id: ["", hh_diagrams_oci_network_vcn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/network/vcn.png"
+
+    # OCI.ROOT
+    - id: ["", hh_diagrams_oci_oci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/oci.png"
+
+    # OCI.SECURITY
+    - id: ["", hh_diagrams_oci_security_cloud_guard_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/cloud-guard-white.png"
+    - id: ["", hh_diagrams_oci_security_cloud_guard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/cloud-guard.png"
+    - id: ["", hh_diagrams_oci_security_ddos_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/ddos-white.png"
+    - id: ["", hh_diagrams_oci_security_ddos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/ddos.png"
+    - id: ["", hh_diagrams_oci_security_encryption_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/encryption-white.png"
+    - id: ["", hh_diagrams_oci_security_encryption]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/encryption.png"
+    - id: ["", hh_diagrams_oci_security_id_access_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/id-access-white.png"
+    - id: ["", hh_diagrams_oci_security_id_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/id-access.png"
+    - id: ["", hh_diagrams_oci_security_key_management_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/key-management-white.png"
+    - id: ["", hh_diagrams_oci_security_key_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/key-management.png"
+    - id: ["", hh_diagrams_oci_security_max_security_zone_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/max-security-zone-white.png"
+    - id: ["", hh_diagrams_oci_security_max_security_zone]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/max-security-zone.png"
+    - id: ["", hh_diagrams_oci_security_vault_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/vault-white.png"
+    - id: ["", hh_diagrams_oci_security_vault]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/vault.png"
+    - id: ["", hh_diagrams_oci_security_waf_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/waf-white.png"
+    - id: ["", hh_diagrams_oci_security_waf]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/security/waf.png"
+
+    # OCI.STORAGE
+    - id: ["", hh_diagrams_oci_storage_backup_restore_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/backup-restore-white.png"
+    - id: ["", hh_diagrams_oci_storage_backup_restore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/backup-restore.png"
+    - id: ["", hh_diagrams_oci_storage_block_storage_clone_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/block-storage-clone-white.png"
+    - id: ["", hh_diagrams_oci_storage_block_storage_clone]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/block-storage-clone.png"
+    - id: ["", hh_diagrams_oci_storage_block_storage_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/block-storage-white.png"
+    - id: ["", hh_diagrams_oci_storage_block_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/block-storage.png"
+    - id: ["", hh_diagrams_oci_storage_buckets_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/buckets-white.png"
+    - id: ["", hh_diagrams_oci_storage_buckets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/buckets.png"
+    - id: ["", hh_diagrams_oci_storage_data_transfer_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/data-transfer-white.png"
+    - id: ["", hh_diagrams_oci_storage_data_transfer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/data-transfer.png"
+    - id: ["", hh_diagrams_oci_storage_elastic_performance_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/elastic-performance-white.png"
+    - id: ["", hh_diagrams_oci_storage_elastic_performance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/elastic-performance.png"
+    - id: ["", hh_diagrams_oci_storage_file_storage_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/file-storage-white.png"
+    - id: ["", hh_diagrams_oci_storage_file_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/file-storage.png"
+    - id: ["", hh_diagrams_oci_storage_object_storage_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/object-storage-white.png"
+    - id: ["", hh_diagrams_oci_storage_object_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/object-storage.png"
+    - id: ["", hh_diagrams_oci_storage_storage_gateway_white]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/storage-gateway-white.png"
+    - id: ["", hh_diagrams_oci_storage_storage_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "oci/storage/storage-gateway.png"

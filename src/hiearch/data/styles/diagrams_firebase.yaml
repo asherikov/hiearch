@@ -1,0 +1,111 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for FIREBASE
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # FIREBASE.BASE
+    - id: ["", hh_diagrams_firebase_base_firebase]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/base/firebase.png"
+
+    # FIREBASE.DEVELOP
+    - id: ["", hh_diagrams_firebase_develop_authentication]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/develop/authentication.png"
+    - id: ["", hh_diagrams_firebase_develop_firestore]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/develop/firestore.png"
+    - id: ["", hh_diagrams_firebase_develop_functions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/develop/functions.png"
+    - id: ["", hh_diagrams_firebase_develop_hosting]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/develop/hosting.png"
+    - id: ["", hh_diagrams_firebase_develop_ml_kit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/develop/ml-kit.png"
+    - id: ["", hh_diagrams_firebase_develop_realtime_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/develop/realtime-database.png"
+    - id: ["", hh_diagrams_firebase_develop_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/develop/storage.png"
+
+    # FIREBASE.EXTENTIONS
+    - id: ["", hh_diagrams_firebase_extentions_extensions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/extentions/extensions.png"
+
+    # FIREBASE.GROW
+    - id: ["", hh_diagrams_firebase_grow_ab_testing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/ab-testing.png"
+    - id: ["", hh_diagrams_firebase_grow_app_indexing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/app-indexing.png"
+    - id: ["", hh_diagrams_firebase_grow_dynamic_links]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/dynamic-links.png"
+    - id: ["", hh_diagrams_firebase_grow_in_app_messaging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/in-app-messaging.png"
+    - id: ["", hh_diagrams_firebase_grow_invites]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/invites.png"
+    - id: ["", hh_diagrams_firebase_grow_messaging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/messaging.png"
+    - id: ["", hh_diagrams_firebase_grow_predictions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/predictions.png"
+    - id: ["", hh_diagrams_firebase_grow_remote_config]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/grow/remote-config.png"
+
+    # FIREBASE.QUALITY
+    - id: ["", hh_diagrams_firebase_quality_app_distribution]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/quality/app-distribution.png"
+    - id: ["", hh_diagrams_firebase_quality_crash_reporting]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/quality/crash-reporting.png"
+    - id: ["", hh_diagrams_firebase_quality_crashlytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/quality/crashlytics.png"
+    - id: ["", hh_diagrams_firebase_quality_performance_monitoring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/quality/performance-monitoring.png"
+    - id: ["", hh_diagrams_firebase_quality_test_lab]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/quality/test-lab.png"
+
+    # FIREBASE.ROOT
+    - id: ["", hh_diagrams_firebase_firebase]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "firebase/firebase.png"

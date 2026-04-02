@@ -22,7 +22,7 @@ class ParsedEntities:
         self.styled = []
 
 
-def parse(temp_dir, filenames):
+def parse(temp_dir, filenames, resource_dirs=None):
     nodes = ParsedEntities()
     edges = ParsedEntities()
     views = ParsedEntities()
@@ -57,7 +57,7 @@ def parse(temp_dir, filenames):
     hh_node.postprocess(nodes, edges.entities)
     hh_view.postprocess(views, nodes.entities, edges.entities)
 
-    return nodes.entities, views.entities
+    return nodes.entities, views.entities, resource_dirs
 
 
 def main():
@@ -68,23 +68,26 @@ def main():
     parser.add_argument('-o', '--output', required=False, default='./', help='Output directory [./]')
     parser.add_argument('-f', '--format', required=False, default='svg', help='Output format [SVG]')
     parser.add_argument('-t', '--temp-dir', required=False, default=None, help='Temporary files output directory (defaults to output directory)')
+    parser.add_argument('-r', '--resource-dirs', required=False, default=[], action='append',
+                        help='Directories to search for graphical resources (can be specified multiple times)')
 
     args = parser.parse_args()
 
     # Automatically include installed style files
-    for style_file in ['state_machine.yaml', 'use_case.yaml']:
-        style_path = importlib_resources.files('hiearch.data.styles') / style_file
-        if style_path.exists():
-            args.inputs.append(str(style_path))
+    styles_root = importlib_resources.files('hiearch.data.styles')
+    if styles_root.is_dir():
+        for yaml_file in styles_root.iterdir():
+            if yaml_file.suffix == '.yaml':
+                args.inputs.append(str(yaml_file))
 
     # Use temporary directory if specified, otherwise use output directory
     temp_dir = args.temp_dir if args.temp_dir is not None else args.output
 
-    nodes, views = parse(temp_dir, args.inputs)
+    nodes, views, resource_dirs = parse(temp_dir, args.inputs, args.resource_dirs)
 
     for view in views.values():
         if len(view['nodes']) > 0:
-            graphviz_output.generate(args.output, temp_dir, args.format, view, nodes)
+            graphviz_output.generate(args.output, temp_dir, args.format, view, nodes, resource_dirs)
 
 
 if __name__ == "__main__":

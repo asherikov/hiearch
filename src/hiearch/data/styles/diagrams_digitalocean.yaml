@@ -1,0 +1,121 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for DIGITALOCEAN
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # DIGITALOCEAN.COMPUTE
+    - id: ["", hh_diagrams_digitalocean_compute_containers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/containers.png"
+    - id: ["", hh_diagrams_digitalocean_compute_docker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/docker.png"
+    - id: ["", hh_diagrams_digitalocean_compute_droplet_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/droplet-connect.png"
+    - id: ["", hh_diagrams_digitalocean_compute_droplet_snapshot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/droplet-snapshot.png"
+    - id: ["", hh_diagrams_digitalocean_compute_droplet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/droplet.png"
+    - id: ["", hh_diagrams_digitalocean_compute_k8s_cluster]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/k8s-cluster.png"
+    - id: ["", hh_diagrams_digitalocean_compute_k8s_node_pool]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/k8s-node-pool.png"
+    - id: ["", hh_diagrams_digitalocean_compute_k8s_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/compute/k8s-node.png"
+
+    # DIGITALOCEAN.DATABASE
+    - id: ["", hh_diagrams_digitalocean_database_dbaas_primary_standby_more]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/database/dbaas-primary-standby-more.png"
+    - id: ["", hh_diagrams_digitalocean_database_dbaas_primary]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/database/dbaas-primary.png"
+    - id: ["", hh_diagrams_digitalocean_database_dbaas_read_only]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/database/dbaas-read-only.png"
+    - id: ["", hh_diagrams_digitalocean_database_dbaas_standby]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/database/dbaas-standby.png"
+
+    # DIGITALOCEAN.NETWORK
+    - id: ["", hh_diagrams_digitalocean_network_certificate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/certificate.png"
+    - id: ["", hh_diagrams_digitalocean_network_domain_registration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/domain-registration.png"
+    - id: ["", hh_diagrams_digitalocean_network_domain]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/domain.png"
+    - id: ["", hh_diagrams_digitalocean_network_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/firewall.png"
+    - id: ["", hh_diagrams_digitalocean_network_floating_ip]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/floating-ip.png"
+    - id: ["", hh_diagrams_digitalocean_network_internet_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/internet-gateway.png"
+    - id: ["", hh_diagrams_digitalocean_network_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/load-balancer.png"
+    - id: ["", hh_diagrams_digitalocean_network_managed_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/managed-vpn.png"
+    - id: ["", hh_diagrams_digitalocean_network_vpc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/network/vpc.png"
+
+    # DIGITALOCEAN.ROOT
+    - id: ["", hh_diagrams_digitalocean_digitalocean]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/digitalocean.png"
+
+    # DIGITALOCEAN.STORAGE
+    - id: ["", hh_diagrams_digitalocean_storage_folder]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/storage/folder.png"
+    - id: ["", hh_diagrams_digitalocean_storage_space]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/storage/space.png"
+    - id: ["", hh_diagrams_digitalocean_storage_volume_snapshot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/storage/volume-snapshot.png"
+    - id: ["", hh_diagrams_digitalocean_storage_volume]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "digitalocean/storage/volume.png"

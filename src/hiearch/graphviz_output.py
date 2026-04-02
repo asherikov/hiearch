@@ -10,16 +10,43 @@ from . import hh_node
 from . import util
 
 
-def get_attributes(node, extended_attrs, label_format_key):
+def resolve_resource_path(resource_path, resource_dirs):
+    if os.path.exists(resource_path):
+        return resource_path
+
+    if resource_dirs:
+        for resource_dir in resource_dirs:
+            full_path = os.path.join(resource_dir, resource_path)
+            if os.path.exists(full_path):
+                return full_path
+
+    raise RuntimeError(f'Resource not found: {resource_path}')
+
+
+def get_attributes(node, extended_attrs, label_format_key, resource_dirs=None):
     attrs = dict(extended_attrs)
     attrs.update(copy.deepcopy(node['graphviz']))
 
     substitutions = hh_node.get_substitutions(node)
     if extended_attrs['expanded_from'] is not None:
         substitutions.update({'expanded_from': extended_attrs['expanded_from']})
+
+    # Add image path to substitutions for use in label format strings
+    for subst_key, _ in substitutions.items():
+        if subst_key.startswith("resource_"):
+            substitutions[subst_key] = resolve_resource_path(substitutions[subst_key], resource_dirs)
+
     attrs['label'] = attrs[label_format_key].format(**substitutions)
+
+    # fix new line in html labels
+    if len(attrs['label']) > 2 and attrs['label'][0] == '<' and attrs['label'][-1] == '>':
+        attrs['label'] = attrs['label'].replace("\n", "<br />")
+
     for attr in extended_attrs.keys():
         attrs.pop(attr, None)
+
+    if 'image' in attrs:
+        attrs['image'] = resolve_resource_path(attrs['image'], resource_dirs)
 
     util.process_auto_colors(attrs, [
         node['id'],
@@ -30,8 +57,8 @@ def get_attributes(node, extended_attrs, label_format_key):
     return attrs
 
 
-def get_scope_attributes(node, extended_attrs):
-    attrs = get_attributes(node, extended_attrs, 'scope_label_format')
+def get_scope_attributes(node, extended_attrs, resource_dirs=None):
+    attrs = get_attributes(node, extended_attrs, 'scope_label_format', resource_dirs)
     attrs['cluster'] = 'true'
     return attrs
 
@@ -66,7 +93,7 @@ def get_edge_attributes(edge):
     return attrs
 
 
-def generate_tree(graph, tree, nodes, extended_attrs):
+def generate_tree(graph, tree, nodes, extended_attrs, resource_dirs=None):
     if len(tree) > 0:
         for node_key, node_tuple in tree.items():
             node = nodes[node_key]
@@ -74,16 +101,16 @@ def generate_tree(graph, tree, nodes, extended_attrs):
             if 0 == len(node_tuple['subtree']):
                 graph.add_node(
                         pydot.Node(node_tuple['key_path'],
-                                   **get_attributes(node, extended_attrs, 'node_label_format')))
+                                   **get_attributes(node, extended_attrs, 'node_label_format', resource_dirs)))
             else:
                 subgraph = pydot.Subgraph(
                         graph_name=node_tuple['key_path'],
-                        **get_scope_attributes(node, extended_attrs))
-                generate_tree(subgraph, node_tuple['subtree'], nodes, extended_attrs)
+                        **get_scope_attributes(node, extended_attrs, resource_dirs))
+                generate_tree(subgraph, node_tuple['subtree'], nodes, extended_attrs, resource_dirs)
                 graph.add_subgraph(subgraph)
 
 
-def generate(output_dir, temp_dir, fmt, view, nodes):
+def generate(output_dir, temp_dir, fmt, view, nodes, resource_dirs=None):
     graph = pydot.Dot(graph_name=view['id'], graph_type='digraph')
 
     extended_attrs = {
@@ -104,7 +131,7 @@ def generate(output_dir, temp_dir, fmt, view, nodes):
 
     graph.set('compound', 'true')
 
-    generate_tree(graph, view['tree'], nodes, extended_attrs)
+    generate_tree(graph, view['tree'], nodes, extended_attrs, resource_dirs)
 
     for edge_set in ['edges', 'custom_edges']:
         for edge in view[edge_set].values():

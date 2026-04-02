@@ -1,0 +1,761 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for IBM
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # IBM.ANALYTICS
+    - id: ["", hh_diagrams_ibm_analytics_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/analytics/analytics.png"
+    - id: ["", hh_diagrams_ibm_analytics_data_integration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/analytics/data-integration.png"
+    - id: ["", hh_diagrams_ibm_analytics_data_repositories]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/analytics/data-repositories.png"
+    - id: ["", hh_diagrams_ibm_analytics_device_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/analytics/device-analytics.png"
+    - id: ["", hh_diagrams_ibm_analytics_streaming_computing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/analytics/streaming-computing.png"
+
+    # IBM.APPLICATIONS
+    - id: ["", hh_diagrams_ibm_applications_actionable_insight]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/actionable-insight.png"
+    - id: ["", hh_diagrams_ibm_applications_annotate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/annotate.png"
+    - id: ["", hh_diagrams_ibm_applications_api_developer_portal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/api-developer-portal.png"
+    - id: ["", hh_diagrams_ibm_applications_api_polyglot_runtimes]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/api-polyglot-runtimes.png"
+    - id: ["", hh_diagrams_ibm_applications_app_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/app-server.png"
+    - id: ["", hh_diagrams_ibm_applications_application_logic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/application-logic.png"
+    - id: ["", hh_diagrams_ibm_applications_enterprise_applications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/enterprise-applications.png"
+    - id: ["", hh_diagrams_ibm_applications_index]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/index.png"
+    - id: ["", hh_diagrams_ibm_applications_iot_application]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/iot-application.png"
+    - id: ["", hh_diagrams_ibm_applications_microservice]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/microservice.png"
+    - id: ["", hh_diagrams_ibm_applications_mobile_app]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/mobile-app.png"
+    - id: ["", hh_diagrams_ibm_applications_ontology]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/ontology.png"
+    - id: ["", hh_diagrams_ibm_applications_open_source_tools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/open-source-tools.png"
+    - id: ["", hh_diagrams_ibm_applications_runtime_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/runtime-services.png"
+    - id: ["", hh_diagrams_ibm_applications_saas_applications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/saas-applications.png"
+    - id: ["", hh_diagrams_ibm_applications_service_broker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/service-broker.png"
+    - id: ["", hh_diagrams_ibm_applications_speech_to_text]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/speech-to-text.png"
+    - id: ["", hh_diagrams_ibm_applications_visual_recognition]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/visual-recognition.png"
+    - id: ["", hh_diagrams_ibm_applications_visualization]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/applications/visualization.png"
+
+    # IBM.BLOCKCHAIN
+    - id: ["", hh_diagrams_ibm_blockchain_blockchain_developer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/blockchain-developer.png"
+    - id: ["", hh_diagrams_ibm_blockchain_blockchain]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/blockchain.png"
+    - id: ["", hh_diagrams_ibm_blockchain_certificate_authority]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/certificate-authority.png"
+    - id: ["", hh_diagrams_ibm_blockchain_client_application]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/client-application.png"
+    - id: ["", hh_diagrams_ibm_blockchain_communication]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/communication.png"
+    - id: ["", hh_diagrams_ibm_blockchain_consensus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/consensus.png"
+    - id: ["", hh_diagrams_ibm_blockchain_event_listener]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/event-listener.png"
+    - id: ["", hh_diagrams_ibm_blockchain_event]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/event.png"
+    - id: ["", hh_diagrams_ibm_blockchain_existing_enterprise_systems]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/existing-enterprise-systems.png"
+    - id: ["", hh_diagrams_ibm_blockchain_hyperledger_fabric]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/hyperledger-fabric.png"
+    - id: ["", hh_diagrams_ibm_blockchain_key_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/key-management.png"
+    - id: ["", hh_diagrams_ibm_blockchain_ledger]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/ledger.png"
+    - id: ["", hh_diagrams_ibm_blockchain_membership_services_provider_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/membership-services-provider-api.png"
+    - id: ["", hh_diagrams_ibm_blockchain_membership]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/membership.png"
+    - id: ["", hh_diagrams_ibm_blockchain_message_bus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/message-bus.png"
+    - id: ["", hh_diagrams_ibm_blockchain_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/node.png"
+    - id: ["", hh_diagrams_ibm_blockchain_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/services.png"
+    - id: ["", hh_diagrams_ibm_blockchain_smart_contract]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/smart-contract.png"
+    - id: ["", hh_diagrams_ibm_blockchain_transaction_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/transaction-manager.png"
+    - id: ["", hh_diagrams_ibm_blockchain_wallet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/blockchain/wallet.png"
+
+    # IBM.COMPUTE
+    - id: ["", hh_diagrams_ibm_compute_bare_metal_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/compute/bare-metal-server.png"
+    - id: ["", hh_diagrams_ibm_compute_image_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/compute/image-service.png"
+    - id: ["", hh_diagrams_ibm_compute_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/compute/instance.png"
+    - id: ["", hh_diagrams_ibm_compute_key]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/compute/key.png"
+    - id: ["", hh_diagrams_ibm_compute_power_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/compute/power-instance.png"
+
+    # IBM.DATA
+    - id: ["", hh_diagrams_ibm_data_caches]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/caches.png"
+    - id: ["", hh_diagrams_ibm_data_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/cloud.png"
+    - id: ["", hh_diagrams_ibm_data_conversation_trained_deployed]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/conversation-trained-deployed.png"
+    - id: ["", hh_diagrams_ibm_data_data_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/data-services.png"
+    - id: ["", hh_diagrams_ibm_data_data_sources]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/data-sources.png"
+    - id: ["", hh_diagrams_ibm_data_device_identity_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/device-identity-service.png"
+    - id: ["", hh_diagrams_ibm_data_device_registry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/device-registry.png"
+    - id: ["", hh_diagrams_ibm_data_enterprise_data]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/enterprise-data.png"
+    - id: ["", hh_diagrams_ibm_data_enterprise_user_directory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/enterprise-user-directory.png"
+    - id: ["", hh_diagrams_ibm_data_file_repository]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/file-repository.png"
+    - id: ["", hh_diagrams_ibm_data_ground_truth]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/ground-truth.png"
+    - id: ["", hh_diagrams_ibm_data_model]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/model.png"
+    - id: ["", hh_diagrams_ibm_data_tms_data_interface]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/data/tms-data-interface.png"
+
+    # IBM.DEVOPS
+    - id: ["", hh_diagrams_ibm_devops_artifact_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/artifact-management.png"
+    - id: ["", hh_diagrams_ibm_devops_build_test]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/build-test.png"
+    - id: ["", hh_diagrams_ibm_devops_code_editor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/code-editor.png"
+    - id: ["", hh_diagrams_ibm_devops_collaborative_development]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/collaborative-development.png"
+    - id: ["", hh_diagrams_ibm_devops_configuration_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/configuration-management.png"
+    - id: ["", hh_diagrams_ibm_devops_continuous_deploy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/continuous-deploy.png"
+    - id: ["", hh_diagrams_ibm_devops_continuous_testing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/continuous-testing.png"
+    - id: ["", hh_diagrams_ibm_devops_devops]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/devops.png"
+    - id: ["", hh_diagrams_ibm_devops_provision]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/provision.png"
+    - id: ["", hh_diagrams_ibm_devops_release_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/devops/release-management.png"
+
+    # IBM.GENERAL
+    - id: ["", hh_diagrams_ibm_general_cloud_messaging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/cloud-messaging.png"
+    - id: ["", hh_diagrams_ibm_general_cloud_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/cloud-services.png"
+    - id: ["", hh_diagrams_ibm_general_cloudant]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/cloudant.png"
+    - id: ["", hh_diagrams_ibm_general_cognitive_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/cognitive-services.png"
+    - id: ["", hh_diagrams_ibm_general_data_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/data-security.png"
+    - id: ["", hh_diagrams_ibm_general_enterprise]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/enterprise.png"
+    - id: ["", hh_diagrams_ibm_general_governance_risk_compliance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/governance-risk-compliance.png"
+    - id: ["", hh_diagrams_ibm_general_ibm_containers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/ibm-containers.png"
+    - id: ["", hh_diagrams_ibm_general_ibm_public_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/ibm-public-cloud.png"
+    - id: ["", hh_diagrams_ibm_general_identity_access_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/identity-access-management.png"
+    - id: ["", hh_diagrams_ibm_general_identity_provider]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/identity-provider.png"
+    - id: ["", hh_diagrams_ibm_general_infrastructure_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/infrastructure-security.png"
+    - id: ["", hh_diagrams_ibm_general_internet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/internet.png"
+    - id: ["", hh_diagrams_ibm_general_iot_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/iot-cloud.png"
+    - id: ["", hh_diagrams_ibm_general_microservices_application]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/microservices-application.png"
+    - id: ["", hh_diagrams_ibm_general_microservices_mesh]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/microservices-mesh.png"
+    - id: ["", hh_diagrams_ibm_general_monitoring_logging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/monitoring-logging.png"
+    - id: ["", hh_diagrams_ibm_general_monitoring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/monitoring.png"
+    - id: ["", hh_diagrams_ibm_general_object_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/object-storage.png"
+    - id: ["", hh_diagrams_ibm_general_offline_capabilities]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/offline-capabilities.png"
+    - id: ["", hh_diagrams_ibm_general_openwhisk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/openwhisk.png"
+    - id: ["", hh_diagrams_ibm_general_peer_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/peer-cloud.png"
+    - id: ["", hh_diagrams_ibm_general_retrieve_rank]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/retrieve-rank.png"
+    - id: ["", hh_diagrams_ibm_general_scalable]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/scalable.png"
+    - id: ["", hh_diagrams_ibm_general_service_discovery_configuration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/service-discovery-configuration.png"
+    - id: ["", hh_diagrams_ibm_general_text_to_speech]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/text-to-speech.png"
+    - id: ["", hh_diagrams_ibm_general_transformation_connectivity]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/general/transformation-connectivity.png"
+
+    # IBM.INFRASTRUCTURE
+    - id: ["", hh_diagrams_ibm_infrastructure_channels]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/channels.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_cloud_messaging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/cloud-messaging.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_dashboard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/dashboard.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_diagnostics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/diagnostics.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_edge_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/edge-services.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_enterprise_messaging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/enterprise-messaging.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_event_feed]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/event-feed.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_infrastructure_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/infrastructure-services.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_interservice_communication]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/interservice-communication.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_load_balancing_routing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/load-balancing-routing.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_microservices_mesh]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/microservices-mesh.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_mobile_backend]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/mobile-backend.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_mobile_provider_network]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/mobile-provider-network.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_monitoring_logging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/monitoring-logging.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_monitoring]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/monitoring.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_peer_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/peer-services.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_service_discovery_configuration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/service-discovery-configuration.png"
+    - id: ["", hh_diagrams_ibm_infrastructure_transformation_connectivity]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/infrastructure/transformation-connectivity.png"
+
+    # IBM.MANAGEMENT
+    - id: ["", hh_diagrams_ibm_management_alert_notification]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/alert-notification.png"
+    - id: ["", hh_diagrams_ibm_management_api_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/api-management.png"
+    - id: ["", hh_diagrams_ibm_management_cloud_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/cloud-management.png"
+    - id: ["", hh_diagrams_ibm_management_cluster_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/cluster-management.png"
+    - id: ["", hh_diagrams_ibm_management_content_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/content-management.png"
+    - id: ["", hh_diagrams_ibm_management_data_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/data-services.png"
+    - id: ["", hh_diagrams_ibm_management_device_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/device-management.png"
+    - id: ["", hh_diagrams_ibm_management_information_governance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/information-governance.png"
+    - id: ["", hh_diagrams_ibm_management_it_service_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/it-service-management.png"
+    - id: ["", hh_diagrams_ibm_management_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/management.png"
+    - id: ["", hh_diagrams_ibm_management_monitoring_metrics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/monitoring-metrics.png"
+    - id: ["", hh_diagrams_ibm_management_process_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/process-management.png"
+    - id: ["", hh_diagrams_ibm_management_provider_cloud_portal_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/provider-cloud-portal-service.png"
+    - id: ["", hh_diagrams_ibm_management_push_notifications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/push-notifications.png"
+    - id: ["", hh_diagrams_ibm_management_service_management_tools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/management/service-management-tools.png"
+
+    # IBM.NETWORK
+    - id: ["", hh_diagrams_ibm_network_bridge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/bridge.png"
+    - id: ["", hh_diagrams_ibm_network_direct_link]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/direct-link.png"
+    - id: ["", hh_diagrams_ibm_network_enterprise]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/enterprise.png"
+    - id: ["", hh_diagrams_ibm_network_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/firewall.png"
+    - id: ["", hh_diagrams_ibm_network_floating_ip]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/floating-ip.png"
+    - id: ["", hh_diagrams_ibm_network_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/gateway.png"
+    - id: ["", hh_diagrams_ibm_network_internet_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/internet-services.png"
+    - id: ["", hh_diagrams_ibm_network_load_balancer_listener]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/load-balancer-listener.png"
+    - id: ["", hh_diagrams_ibm_network_load_balancer_pool]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/load-balancer-pool.png"
+    - id: ["", hh_diagrams_ibm_network_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/load-balancer.png"
+    - id: ["", hh_diagrams_ibm_network_load_balancing_routing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/load-balancing-routing.png"
+    - id: ["", hh_diagrams_ibm_network_public_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/public-gateway.png"
+    - id: ["", hh_diagrams_ibm_network_region]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/region.png"
+    - id: ["", hh_diagrams_ibm_network_router]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/router.png"
+    - id: ["", hh_diagrams_ibm_network_rules]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/rules.png"
+    - id: ["", hh_diagrams_ibm_network_subnet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/subnet.png"
+    - id: ["", hh_diagrams_ibm_network_transit_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/transit-gateway.png"
+    - id: ["", hh_diagrams_ibm_network_vpc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/vpc.png"
+    - id: ["", hh_diagrams_ibm_network_vpn_connection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/vpn-connection.png"
+    - id: ["", hh_diagrams_ibm_network_vpn_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/vpn-gateway.png"
+    - id: ["", hh_diagrams_ibm_network_vpn_policy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/network/vpn-policy.png"
+
+    # IBM.ROOT
+    - id: ["", hh_diagrams_ibm_ibm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/ibm.png"
+
+    # IBM.SECURITY
+    - id: ["", hh_diagrams_ibm_security_api_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/api-security.png"
+    - id: ["", hh_diagrams_ibm_security_blockchain_security_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/blockchain-security-service.png"
+    - id: ["", hh_diagrams_ibm_security_data_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/data-security.png"
+    - id: ["", hh_diagrams_ibm_security_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/firewall.png"
+    - id: ["", hh_diagrams_ibm_security_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/gateway.png"
+    - id: ["", hh_diagrams_ibm_security_governance_risk_compliance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/governance-risk-compliance.png"
+    - id: ["", hh_diagrams_ibm_security_identity_access_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/identity-access-management.png"
+    - id: ["", hh_diagrams_ibm_security_identity_provider]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/identity-provider.png"
+    - id: ["", hh_diagrams_ibm_security_infrastructure_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/infrastructure-security.png"
+    - id: ["", hh_diagrams_ibm_security_physical_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/physical-security.png"
+    - id: ["", hh_diagrams_ibm_security_security_monitoring_intelligence]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/security-monitoring-intelligence.png"
+    - id: ["", hh_diagrams_ibm_security_security_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/security-services.png"
+    - id: ["", hh_diagrams_ibm_security_trustend_computing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/trustend-computing.png"
+    - id: ["", hh_diagrams_ibm_security_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/security/vpn.png"
+
+    # IBM.SOCIAL
+    - id: ["", hh_diagrams_ibm_social_communities]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/social/communities.png"
+    - id: ["", hh_diagrams_ibm_social_file_sync]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/social/file-sync.png"
+    - id: ["", hh_diagrams_ibm_social_live_collaboration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/social/live-collaboration.png"
+    - id: ["", hh_diagrams_ibm_social_messaging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/social/messaging.png"
+    - id: ["", hh_diagrams_ibm_social_networking]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/social/networking.png"
+
+    # IBM.STORAGE
+    - id: ["", hh_diagrams_ibm_storage_block_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/storage/block-storage.png"
+    - id: ["", hh_diagrams_ibm_storage_object_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/storage/object-storage.png"
+
+    # IBM.USER
+    - id: ["", hh_diagrams_ibm_user_browser]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/user/browser.png"
+    - id: ["", hh_diagrams_ibm_user_device]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/user/device.png"
+    - id: ["", hh_diagrams_ibm_user_integrated_digital_experiences]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/user/integrated-digital-experiences.png"
+    - id: ["", hh_diagrams_ibm_user_physical_entity]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/user/physical-entity.png"
+    - id: ["", hh_diagrams_ibm_user_sensor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/user/sensor.png"
+    - id: ["", hh_diagrams_ibm_user_user]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "ibm/user/user.png"

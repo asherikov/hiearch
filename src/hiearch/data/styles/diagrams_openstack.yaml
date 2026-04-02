@@ -1,0 +1,251 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for OPENSTACK
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # OPENSTACK.APIPROXIES
+    - id: ["", hh_diagrams_openstack_apiproxies_ec2api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/apiproxies/ec2api.png"
+
+    # OPENSTACK.APPLICATIONLIFECYCLE
+    - id: ["", hh_diagrams_openstack_applicationlifecycle_freezer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/applicationlifecycle/freezer.png"
+    - id: ["", hh_diagrams_openstack_applicationlifecycle_masakari]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/applicationlifecycle/masakari.png"
+    - id: ["", hh_diagrams_openstack_applicationlifecycle_murano]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/applicationlifecycle/murano.png"
+    - id: ["", hh_diagrams_openstack_applicationlifecycle_solum]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/applicationlifecycle/solum.png"
+
+    # OPENSTACK.BAREMETAL
+    - id: ["", hh_diagrams_openstack_baremetal_cyborg]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/baremetal/cyborg.png"
+    - id: ["", hh_diagrams_openstack_baremetal_ironic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/baremetal/ironic.png"
+
+    # OPENSTACK.BILLING
+    - id: ["", hh_diagrams_openstack_billing_cloudkitty]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/billing/cloudkitty.png"
+
+    # OPENSTACK.COMPUTE
+    - id: ["", hh_diagrams_openstack_compute_nova]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/compute/nova.png"
+    - id: ["", hh_diagrams_openstack_compute_qinling]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/compute/qinling.png"
+    - id: ["", hh_diagrams_openstack_compute_zun]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/compute/zun.png"
+
+    # OPENSTACK.CONTAINERSERVICES
+    - id: ["", hh_diagrams_openstack_containerservices_kuryr]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/containerservices/kuryr.png"
+
+    # OPENSTACK.DEPLOYMENT
+    - id: ["", hh_diagrams_openstack_deployment_ansible]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/deployment/ansible.png"
+    - id: ["", hh_diagrams_openstack_deployment_charms]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/deployment/charms.png"
+    - id: ["", hh_diagrams_openstack_deployment_chef]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/deployment/chef.png"
+    - id: ["", hh_diagrams_openstack_deployment_helm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/deployment/helm.png"
+    - id: ["", hh_diagrams_openstack_deployment_kolla]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/deployment/kolla.png"
+    - id: ["", hh_diagrams_openstack_deployment_tripleo]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/deployment/tripleo.png"
+
+    # OPENSTACK.FRONTEND
+    - id: ["", hh_diagrams_openstack_frontend_horizon]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/frontend/horizon.png"
+
+    # OPENSTACK.MONITORING
+    - id: ["", hh_diagrams_openstack_monitoring_monasca]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/monitoring/monasca.png"
+    - id: ["", hh_diagrams_openstack_monitoring_telemetry]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/monitoring/telemetry.png"
+
+    # OPENSTACK.MULTIREGION
+    - id: ["", hh_diagrams_openstack_multiregion_tricircle]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/multiregion/tricircle.png"
+
+    # OPENSTACK.NETWORKING
+    - id: ["", hh_diagrams_openstack_networking_designate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/networking/designate.png"
+    - id: ["", hh_diagrams_openstack_networking_neutron]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/networking/neutron.png"
+    - id: ["", hh_diagrams_openstack_networking_octavia]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/networking/octavia.png"
+
+    # OPENSTACK.NFV
+    - id: ["", hh_diagrams_openstack_nfv_tacker]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/nfv/tacker.png"
+
+    # OPENSTACK.OPTIMIZATION
+    - id: ["", hh_diagrams_openstack_optimization_congress]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/optimization/congress.png"
+    - id: ["", hh_diagrams_openstack_optimization_rally]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/optimization/rally.png"
+    - id: ["", hh_diagrams_openstack_optimization_vitrage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/optimization/vitrage.png"
+    - id: ["", hh_diagrams_openstack_optimization_watcher]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/optimization/watcher.png"
+
+    # OPENSTACK.ORCHESTRATION
+    - id: ["", hh_diagrams_openstack_orchestration_blazar]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/orchestration/blazar.png"
+    - id: ["", hh_diagrams_openstack_orchestration_heat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/orchestration/heat.png"
+    - id: ["", hh_diagrams_openstack_orchestration_mistral]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/orchestration/mistral.png"
+    - id: ["", hh_diagrams_openstack_orchestration_senlin]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/orchestration/senlin.png"
+    - id: ["", hh_diagrams_openstack_orchestration_zaqar]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/orchestration/zaqar.png"
+
+    # OPENSTACK.PACKAGING
+    - id: ["", hh_diagrams_openstack_packaging_loci]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/packaging/loci.png"
+    - id: ["", hh_diagrams_openstack_packaging_puppet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/packaging/puppet.png"
+    - id: ["", hh_diagrams_openstack_packaging_rpm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/packaging/rpm.png"
+
+    # OPENSTACK.ROOT
+    - id: ["", hh_diagrams_openstack_openstack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/openstack.png"
+
+    # OPENSTACK.SHAREDSERVICES
+    - id: ["", hh_diagrams_openstack_sharedservices_barbican]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/sharedservices/barbican.png"
+    - id: ["", hh_diagrams_openstack_sharedservices_glance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/sharedservices/glance.png"
+    - id: ["", hh_diagrams_openstack_sharedservices_karbor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/sharedservices/karbor.png"
+    - id: ["", hh_diagrams_openstack_sharedservices_keystone]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/sharedservices/keystone.png"
+    - id: ["", hh_diagrams_openstack_sharedservices_searchlight]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/sharedservices/searchlight.png"
+
+    # OPENSTACK.STORAGE
+    - id: ["", hh_diagrams_openstack_storage_cinder]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/storage/cinder.png"
+    - id: ["", hh_diagrams_openstack_storage_manila]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/storage/manila.png"
+    - id: ["", hh_diagrams_openstack_storage_swift]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/storage/swift.png"
+
+    # OPENSTACK.USER
+    - id: ["", hh_diagrams_openstack_user_openstackclient]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/user/openstackclient.png"
+
+    # OPENSTACK.WORKLOADPROVISIONING
+    - id: ["", hh_diagrams_openstack_workloadprovisioning_magnum]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/workloadprovisioning/magnum.png"
+    - id: ["", hh_diagrams_openstack_workloadprovisioning_sahara]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/workloadprovisioning/sahara.png"
+    - id: ["", hh_diagrams_openstack_workloadprovisioning_trove]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "openstack/workloadprovisioning/trove.png"

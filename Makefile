@@ -6,17 +6,19 @@ export DEB_PYTHON_INSTALL_LAYOUT=deb_system
 export PYTHONDONTWRITEBYTECODE=1
 
 CURRENT_DIR=$(shell pwd)
+DIAGRAMS_RESOURCES=$(shell find ${HOME} ${PIPX_HOME} ${PIPX_GLOBAL_HOME} -ipath "*/resources/alibabacloud" | head -1 | xargs -I {} dirname {})
 BUILD_DIR?=${CURRENT_DIR}/build
 TEST_DIR?=${CURRENT_DIR}/test
 TEST_NOT=
-FORMAT=svg
+FORMAT?=svg
 
 .DEFAULT:
 	@echo "Testing $@..."
 	mkdir -p ${BUILD_DIR}/$@
 	cp ${TEST_DIR}/$@/icon*.svg ${BUILD_DIR}/$@/ || true
-	cd ${TEST_DIR}/$@/; ${TEST_NOT} (find ./ -iname "*.yaml" -or -iname "*.dot" | xargs hiearch -f ${FORMAT} -o ${BUILD_DIR}/$@)
+	cd ${TEST_DIR}/$@/; ${TEST_NOT} (find ./ -iname "*.yaml" -or -iname "*.dot" | xargs hiearch -f ${FORMAT} -r ${DIAGRAMS_RESOURCES} -o ${BUILD_DIR}/$@)
 	# TODO awkward and fragile
+	find ${BUILD_DIR}/$@/ -iname '*.gv' | xargs --no-run-if-empty sed -i 's|<img src="/.*"/>||' # filter out system dependent absolute paths
 	find ${BUILD_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.build
 	find ${TEST_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.test
 	${TEST_NOT} test -s "${BUILD_DIR}/$@/checksum.build" && cmp ${BUILD_DIR}/$@/checksum.build ${BUILD_DIR}/$@/checksum.test
@@ -37,7 +39,8 @@ venv_test: clean
 	/bin/sh -c ". ${BUILD_DIR}/venv/bin/activate && pip install . && ${MAKE} test"
 
 venv_test_quick:
-	/bin/sh -c ". ${BUILD_DIR}/venv/bin/activate && ${MAKE} ${TEST}"
+	rm -rf build/${TEST}/*
+	/bin/sh -c ". ${BUILD_DIR}/venv/bin/activate && pip install . && ${MAKE} ${TEST}"
 
 test:
 	@${MAKE} \
@@ -48,7 +51,7 @@ test:
 		22_style_notag_tag_inheritance 23_expand \
 		25_dot_input 26_colcon 27_formatted_labels_view 28_colcon_expand \
 		29_recursive_all 30_expand_recursive_all 31_temp_dir 32_subgraph_edge \
-		33_auto_color || (echo "Failure!" && false)
+		33_auto_color 34_diagrams_style || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
 	@echo "Success!"
@@ -98,6 +101,7 @@ spell:
 
 install_deps_apt:
 	${APT_INSTALL} graphviz
+	pipx install diagrams
 
 install_deps_apt_focal:
 	${APT_INSTALL} python3 python3-venv python3-pip

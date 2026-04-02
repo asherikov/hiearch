@@ -1,0 +1,203 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for SAAS
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # SAAS.ALERTING
+    - id: ["", hh_diagrams_saas_alerting_newrelic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/alerting/newrelic.png"
+    - id: ["", hh_diagrams_saas_alerting_opsgenie]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/alerting/opsgenie.png"
+    - id: ["", hh_diagrams_saas_alerting_pagerduty]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/alerting/pagerduty.png"
+    - id: ["", hh_diagrams_saas_alerting_pushover]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/alerting/pushover.png"
+    - id: ["", hh_diagrams_saas_alerting_xmatters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/alerting/xmatters.png"
+
+    # SAAS.ANALYTICS
+    - id: ["", hh_diagrams_saas_analytics_dataform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/analytics/dataform.png"
+    - id: ["", hh_diagrams_saas_analytics_snowflake]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/analytics/snowflake.png"
+    - id: ["", hh_diagrams_saas_analytics_stitch]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/analytics/stitch.png"
+
+    # SAAS.AUTOMATION
+    - id: ["", hh_diagrams_saas_automation_n8n]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/automation/n8n.png"
+
+    # SAAS.CDN
+    - id: ["", hh_diagrams_saas_cdn_akamai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/cdn/akamai.png"
+    - id: ["", hh_diagrams_saas_cdn_cloudflare]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/cdn/cloudflare.png"
+    - id: ["", hh_diagrams_saas_cdn_fastly]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/cdn/fastly.png"
+    - id: ["", hh_diagrams_saas_cdn_imperva]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/cdn/imperva.png"
+
+    # SAAS.CHAT
+    - id: ["", hh_diagrams_saas_chat_discord]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/discord.png"
+    - id: ["", hh_diagrams_saas_chat_line]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/line.png"
+    - id: ["", hh_diagrams_saas_chat_mattermost]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/mattermost.png"
+    - id: ["", hh_diagrams_saas_chat_messenger]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/messenger.png"
+    - id: ["", hh_diagrams_saas_chat_rocket_chat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/rocket-chat.png"
+    - id: ["", hh_diagrams_saas_chat_slack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/slack.png"
+    - id: ["", hh_diagrams_saas_chat_teams]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/teams.png"
+    - id: ["", hh_diagrams_saas_chat_telegram]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/chat/telegram.png"
+
+    # SAAS.COMMUNICATION
+    - id: ["", hh_diagrams_saas_communication_twilio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/communication/twilio.png"
+
+    # SAAS.CRM
+    - id: ["", hh_diagrams_saas_crm_intercom]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/crm/intercom.png"
+    - id: ["", hh_diagrams_saas_crm_zendesk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/crm/zendesk.png"
+
+    # SAAS.FILESHARING
+    - id: ["", hh_diagrams_saas_filesharing_nextcloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/filesharing/nextcloud.png"
+
+    # SAAS.IDENTITY
+    - id: ["", hh_diagrams_saas_identity_auth0]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/identity/auth0.png"
+    - id: ["", hh_diagrams_saas_identity_okta]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/identity/okta.png"
+
+    # SAAS.LOGGING
+    - id: ["", hh_diagrams_saas_logging_datadog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/logging/datadog.png"
+    - id: ["", hh_diagrams_saas_logging_newrelic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/logging/newrelic.png"
+    - id: ["", hh_diagrams_saas_logging_papertrail]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/logging/papertrail.png"
+
+    # SAAS.MEDIA
+    - id: ["", hh_diagrams_saas_media_cloudinary]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/media/cloudinary.png"
+
+    # SAAS.PAYMENT
+    - id: ["", hh_diagrams_saas_payment_adyen]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/payment/adyen.png"
+    - id: ["", hh_diagrams_saas_payment_amazon_pay]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/payment/amazon-pay.png"
+    - id: ["", hh_diagrams_saas_payment_paypal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/payment/paypal.png"
+    - id: ["", hh_diagrams_saas_payment_stripe]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/payment/stripe.png"
+
+    # SAAS.RECOMMENDATION
+    - id: ["", hh_diagrams_saas_recommendation_recombee]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/recommendation/recombee.png"
+
+    # SAAS.ROOT
+    - id: ["", hh_diagrams_saas_saas]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/saas.png"
+
+    # SAAS.SECURITY
+    - id: ["", hh_diagrams_saas_security_crowdstrike]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/security/crowdstrike.png"
+    - id: ["", hh_diagrams_saas_security_sonarqube]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/security/sonarqube.png"
+
+    # SAAS.SOCIAL
+    - id: ["", hh_diagrams_saas_social_facebook]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/social/facebook.png"
+    - id: ["", hh_diagrams_saas_social_twitter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "saas/social/twitter.png"

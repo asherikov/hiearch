@@ -1,0 +1,217 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for K8S
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # K8S.CHAOS
+    - id: ["", hh_diagrams_k8s_chaos_chaos_mesh]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/chaos/chaos-mesh.png"
+    - id: ["", hh_diagrams_k8s_chaos_litmus_chaos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/chaos/litmus-chaos.png"
+
+    # K8S.CLUSTERCONFIG
+    - id: ["", hh_diagrams_k8s_clusterconfig_hpa]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/clusterconfig/hpa.png"
+    - id: ["", hh_diagrams_k8s_clusterconfig_limits]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/clusterconfig/limits.png"
+    - id: ["", hh_diagrams_k8s_clusterconfig_quota]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/clusterconfig/quota.png"
+
+    # K8S.COMPUTE
+    - id: ["", hh_diagrams_k8s_compute_cronjob]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/compute/cronjob.png"
+    - id: ["", hh_diagrams_k8s_compute_deploy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/compute/deploy.png"
+    - id: ["", hh_diagrams_k8s_compute_ds]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/compute/ds.png"
+    - id: ["", hh_diagrams_k8s_compute_job]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/compute/job.png"
+    - id: ["", hh_diagrams_k8s_compute_pod]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/compute/pod.png"
+    - id: ["", hh_diagrams_k8s_compute_rs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/compute/rs.png"
+    - id: ["", hh_diagrams_k8s_compute_sts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/compute/sts.png"
+
+    # K8S.CONTROLPLANE
+    - id: ["", hh_diagrams_k8s_controlplane_api]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/controlplane/api.png"
+    - id: ["", hh_diagrams_k8s_controlplane_c_c_m]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/controlplane/c-c-m.png"
+    - id: ["", hh_diagrams_k8s_controlplane_c_m]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/controlplane/c-m.png"
+    - id: ["", hh_diagrams_k8s_controlplane_k_proxy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/controlplane/k-proxy.png"
+    - id: ["", hh_diagrams_k8s_controlplane_kubelet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/controlplane/kubelet.png"
+    - id: ["", hh_diagrams_k8s_controlplane_sched]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/controlplane/sched.png"
+
+    # K8S.ECOSYSTEM
+    - id: ["", hh_diagrams_k8s_ecosystem_external_dns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/ecosystem/external-dns.png"
+    - id: ["", hh_diagrams_k8s_ecosystem_helm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/ecosystem/helm.png"
+    - id: ["", hh_diagrams_k8s_ecosystem_krew]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/ecosystem/krew.png"
+    - id: ["", hh_diagrams_k8s_ecosystem_kustomize]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/ecosystem/kustomize.png"
+
+    # K8S.GROUP
+    - id: ["", hh_diagrams_k8s_group_ns]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/group/ns.png"
+
+    # K8S.INFRA
+    - id: ["", hh_diagrams_k8s_infra_etcd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/infra/etcd.png"
+    - id: ["", hh_diagrams_k8s_infra_master]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/infra/master.png"
+    - id: ["", hh_diagrams_k8s_infra_node]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/infra/node.png"
+
+    # K8S.NETWORK
+    - id: ["", hh_diagrams_k8s_network_ep]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/network/ep.png"
+    - id: ["", hh_diagrams_k8s_network_ing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/network/ing.png"
+    - id: ["", hh_diagrams_k8s_network_netpol]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/network/netpol.png"
+    - id: ["", hh_diagrams_k8s_network_svc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/network/svc.png"
+
+    # K8S.OTHERS
+    - id: ["", hh_diagrams_k8s_others_crd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/others/crd.png"
+    - id: ["", hh_diagrams_k8s_others_psp]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/others/psp.png"
+
+    # K8S.PODCONFIG
+    - id: ["", hh_diagrams_k8s_podconfig_cm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/podconfig/cm.png"
+    - id: ["", hh_diagrams_k8s_podconfig_secret]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/podconfig/secret.png"
+
+    # K8S.RBAC
+    - id: ["", hh_diagrams_k8s_rbac_c_role]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/rbac/c-role.png"
+    - id: ["", hh_diagrams_k8s_rbac_crb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/rbac/crb.png"
+    - id: ["", hh_diagrams_k8s_rbac_group]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/rbac/group.png"
+    - id: ["", hh_diagrams_k8s_rbac_rb]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/rbac/rb.png"
+    - id: ["", hh_diagrams_k8s_rbac_role]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/rbac/role.png"
+    - id: ["", hh_diagrams_k8s_rbac_sa]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/rbac/sa.png"
+    - id: ["", hh_diagrams_k8s_rbac_user]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/rbac/user.png"
+
+    # K8S.ROOT
+    - id: ["", hh_diagrams_k8s_k8s]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/k8s.png"
+
+    # K8S.STORAGE
+    - id: ["", hh_diagrams_k8s_storage_pv]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/storage/pv.png"
+    - id: ["", hh_diagrams_k8s_storage_pvc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/storage/pvc.png"
+    - id: ["", hh_diagrams_k8s_storage_sc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/storage/sc.png"
+    - id: ["", hh_diagrams_k8s_storage_vol]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "k8s/storage/vol.png"

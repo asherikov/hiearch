@@ -1,0 +1,135 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for GENERIC
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # GENERIC.BLANK
+    - id: ["", hh_diagrams_generic_blank_blank]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/blank/blank.png"
+
+    # GENERIC.COMPUTE
+    - id: ["", hh_diagrams_generic_compute_rack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/compute/rack.png"
+
+    # GENERIC.DATABASE
+    - id: ["", hh_diagrams_generic_database_sql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/database/sql.png"
+
+    # GENERIC.DEVICE
+    - id: ["", hh_diagrams_generic_device_mobile]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/device/mobile.png"
+    - id: ["", hh_diagrams_generic_device_tablet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/device/tablet.png"
+
+    # GENERIC.NETWORK
+    - id: ["", hh_diagrams_generic_network_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/network/firewall.png"
+    - id: ["", hh_diagrams_generic_network_router]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/network/router.png"
+    - id: ["", hh_diagrams_generic_network_subnet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/network/subnet.png"
+    - id: ["", hh_diagrams_generic_network_switch]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/network/switch.png"
+    - id: ["", hh_diagrams_generic_network_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/network/vpn.png"
+
+    # GENERIC.OS
+    - id: ["", hh_diagrams_generic_os_android]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/android.png"
+    - id: ["", hh_diagrams_generic_os_centos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/centos.png"
+    - id: ["", hh_diagrams_generic_os_debian]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/debian.png"
+    - id: ["", hh_diagrams_generic_os_ios]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/ios.png"
+    - id: ["", hh_diagrams_generic_os_linux_general]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/linux-general.png"
+    - id: ["", hh_diagrams_generic_os_raspbian]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/raspbian.png"
+    - id: ["", hh_diagrams_generic_os_red_hat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/red-hat.png"
+    - id: ["", hh_diagrams_generic_os_suse]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/suse.png"
+    - id: ["", hh_diagrams_generic_os_ubuntu]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/ubuntu.png"
+    - id: ["", hh_diagrams_generic_os_windows]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/os/windows.png"
+
+    # GENERIC.PLACE
+    - id: ["", hh_diagrams_generic_place_datacenter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/place/datacenter.png"
+
+    # GENERIC.ROOT
+    - id: ["", hh_diagrams_generic_generic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/generic.png"
+
+    # GENERIC.STORAGE
+    - id: ["", hh_diagrams_generic_storage_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/storage/storage.png"
+
+    # GENERIC.VIRTUALIZATION
+    - id: ["", hh_diagrams_generic_virtualization_qemu]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/virtualization/qemu.png"
+    - id: ["", hh_diagrams_generic_virtualization_virtualbox]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/virtualization/virtualbox.png"
+    - id: ["", hh_diagrams_generic_virtualization_vmware]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/virtualization/vmware.png"
+    - id: ["", hh_diagrams_generic_virtualization_xen]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "generic/virtualization/xen.png"

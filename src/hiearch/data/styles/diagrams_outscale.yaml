@@ -1,0 +1,69 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for OUTSCALE
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # OUTSCALE.COMPUTE
+    - id: ["", hh_diagrams_outscale_compute_compute]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/compute/compute.png"
+    - id: ["", hh_diagrams_outscale_compute_direct_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/compute/direct-connect.png"
+
+    # OUTSCALE.NETWORK
+    - id: ["", hh_diagrams_outscale_network_client_vpn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/network/client-vpn.png"
+    - id: ["", hh_diagrams_outscale_network_internet_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/network/internet-service.png"
+    - id: ["", hh_diagrams_outscale_network_load_balancer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/network/load-balancer.png"
+    - id: ["", hh_diagrams_outscale_network_nat_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/network/nat-service.png"
+    - id: ["", hh_diagrams_outscale_network_net]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/network/net.png"
+    - id: ["", hh_diagrams_outscale_network_site_to_site_vpng]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/network/site-to-site-vpng.png"
+
+    # OUTSCALE.ROOT
+    - id: ["", hh_diagrams_outscale_outscale]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/outscale.png"
+
+    # OUTSCALE.SECURITY
+    - id: ["", hh_diagrams_outscale_security_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/security/firewall.png"
+    - id: ["", hh_diagrams_outscale_security_identity_and_access_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/security/identity-and-access-management.png"
+
+    # OUTSCALE.STORAGE
+    - id: ["", hh_diagrams_outscale_storage_simple_storage_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/storage/simple-storage-service.png"
+    - id: ["", hh_diagrams_outscale_storage_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "outscale/storage/storage.png"

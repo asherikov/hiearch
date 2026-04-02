@@ -187,7 +187,7 @@ def build_tree(view, nodes):
 def postprocess(views, nodes, edges):
     """Post-process views after parsing."""
     util.check_key_existence(views.must_exist, views.entities, 'view')
-    util.apply_styles(views.styled, views.entities)
+    util.apply_styles(views.styled, views.entities, is_view=True)
 
     # resolve nodes
     empty_views_counter = 0
@@ -300,7 +300,7 @@ def parse(yaml_views, views, must_exist_nodes):
 
             views.entities[key] = view
         else:
-            views.entities[key] = util.merge_styles(default, view)
+            views.entities[key] = util.merge_styles(default, view, is_view=True)
 
         if 'nodes' in view:
             for node in view['nodes']:

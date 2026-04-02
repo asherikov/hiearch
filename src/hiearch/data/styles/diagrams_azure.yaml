@@ -1,0 +1,3305 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Node styles for AZURE
+# All nodes inherit from hh_diagrams_base (including tags)
+nodes:
+
+    # AZURE.AIMACHINELEARNING
+    - id: ["", hh_diagrams_azure_aimachinelearning_ai_studio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/ai-studio.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_anomaly_detector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/anomaly-detector.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_azure_applied_ai_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/azure-applied-ai-services.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_azure_experimentation_studio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/azure-experimentation-studio.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_azure_object_understanding]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/azure-object-understanding.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_azure_openai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/azure-openai.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_batch_ai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/batch-ai.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_bonsai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/bonsai.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_bot_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/bot-services.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_cognitive_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/cognitive-search.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_cognitive_services_decisions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/cognitive-services-decisions.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_cognitive_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/cognitive-services.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_computer_vision]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/computer-vision.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_content_moderators]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/content-moderators.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_custom_vision]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/custom-vision.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_face_apis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/face-apis.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_form_recognizers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/form-recognizers.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_genomics_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/genomics-accounts.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_genomics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/genomics.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_immersive_readers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/immersive-readers.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_language_understanding]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/language-understanding.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_language]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/language.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_machine_learning_studio_classic_web_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/machine-learning-studio-classic-web-services.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_machine_learning_studio_web_service_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/machine-learning-studio-web-service-plans.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_machine_learning_studio_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/machine-learning-studio-workspaces.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_machine_learning]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/machine-learning.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_metrics_advisor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/metrics-advisor.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_personalizers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/personalizers.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_qna_makers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/qna-makers.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_serverless_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/serverless-search.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_speech_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/speech-services.png"
+    - id: ["", hh_diagrams_azure_aimachinelearning_translator_text]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/aimachinelearning/translator-text.png"
+
+    # AZURE.ANALYTICS
+    - id: ["", hh_diagrams_azure_analytics_analysis_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/analysis-services.png"
+    - id: ["", hh_diagrams_azure_analytics_azure_data_explorer_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/azure-data-explorer-clusters.png"
+    - id: ["", hh_diagrams_azure_analytics_azure_databricks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/azure-databricks.png"
+    - id: ["", hh_diagrams_azure_analytics_azure_synapse_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/azure-synapse-analytics.png"
+    - id: ["", hh_diagrams_azure_analytics_azure_workbooks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/azure-workbooks.png"
+    - id: ["", hh_diagrams_azure_analytics_data_explorer_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/data-explorer-clusters.png"
+    - id: ["", hh_diagrams_azure_analytics_data_factories]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/data-factories.png"
+    - id: ["", hh_diagrams_azure_analytics_data_lake_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/data-lake-analytics.png"
+    - id: ["", hh_diagrams_azure_analytics_data_lake_store_gen1]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/data-lake-store-gen1.png"
+    - id: ["", hh_diagrams_azure_analytics_databricks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/databricks.png"
+    - id: ["", hh_diagrams_azure_analytics_endpoint_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/endpoint-analytics.png"
+    - id: ["", hh_diagrams_azure_analytics_event_hub_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/event-hub-clusters.png"
+    - id: ["", hh_diagrams_azure_analytics_event_hubs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/event-hubs.png"
+    - id: ["", hh_diagrams_azure_analytics_hd_insight_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/hd-insight-clusters.png"
+    - id: ["", hh_diagrams_azure_analytics_log_analytics_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/log-analytics-workspaces.png"
+    - id: ["", hh_diagrams_azure_analytics_power_bi_embedded]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/power-bi-embedded.png"
+    - id: ["", hh_diagrams_azure_analytics_power_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/power-platform.png"
+    - id: ["", hh_diagrams_azure_analytics_private_link_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/private-link-services.png"
+    - id: ["", hh_diagrams_azure_analytics_stream_analytics_jobs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/stream-analytics-jobs.png"
+    - id: ["", hh_diagrams_azure_analytics_synapse_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/analytics/synapse-analytics.png"
+
+    # AZURE.APPSERVICES
+    - id: ["", hh_diagrams_azure_appservices_app_service_certificates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/app-service-certificates.png"
+    - id: ["", hh_diagrams_azure_appservices_app_service_domains]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/app-service-domains.png"
+    - id: ["", hh_diagrams_azure_appservices_app_service_environments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/app-service-environments.png"
+    - id: ["", hh_diagrams_azure_appservices_app_service_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/app-service-plans.png"
+    - id: ["", hh_diagrams_azure_appservices_app_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/app-services.png"
+    - id: ["", hh_diagrams_azure_appservices_cdn_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/cdn-profiles.png"
+    - id: ["", hh_diagrams_azure_appservices_cognitive_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/cognitive-search.png"
+    - id: ["", hh_diagrams_azure_appservices_notification_hubs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/appservices/notification-hubs.png"
+
+    # AZURE.AZUREECOSYSTEM
+    - id: ["", hh_diagrams_azure_azureecosystem_applens]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azureecosystem/applens.png"
+    - id: ["", hh_diagrams_azure_azureecosystem_azure_hybrid_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azureecosystem/azure-hybrid-center.png"
+    - id: ["", hh_diagrams_azure_azureecosystem_collaborative_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azureecosystem/collaborative-service.png"
+
+    # AZURE.AZURESTACK
+    - id: ["", hh_diagrams_azure_azurestack_capacity]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azurestack/capacity.png"
+    - id: ["", hh_diagrams_azure_azurestack_infrastructure_backup]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azurestack/infrastructure-backup.png"
+    - id: ["", hh_diagrams_azure_azurestack_multi_tenancy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azurestack/multi-tenancy.png"
+    - id: ["", hh_diagrams_azure_azurestack_offers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azurestack/offers.png"
+    - id: ["", hh_diagrams_azure_azurestack_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azurestack/plans.png"
+    - id: ["", hh_diagrams_azure_azurestack_updates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azurestack/updates.png"
+    - id: ["", hh_diagrams_azure_azurestack_user_subscriptions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azurestack/user-subscriptions.png"
+
+    # AZURE.BLOCKCHAIN
+    - id: ["", hh_diagrams_azure_blockchain_abs_member]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/blockchain/abs-member.png"
+    - id: ["", hh_diagrams_azure_blockchain_azure_blockchain_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/blockchain/azure-blockchain-service.png"
+    - id: ["", hh_diagrams_azure_blockchain_azure_token_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/blockchain/azure-token-service.png"
+    - id: ["", hh_diagrams_azure_blockchain_blockchain_applications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/blockchain/blockchain-applications.png"
+    - id: ["", hh_diagrams_azure_blockchain_consortium]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/blockchain/consortium.png"
+    - id: ["", hh_diagrams_azure_blockchain_outbound_connection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/blockchain/outbound-connection.png"
+
+    # AZURE.COMPUTE
+    - id: ["", hh_diagrams_azure_compute_app_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/app-services.png"
+    - id: ["", hh_diagrams_azure_compute_application_group]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/application-group.png"
+    - id: ["", hh_diagrams_azure_compute_automanaged_vm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/automanaged-vm.png"
+    - id: ["", hh_diagrams_azure_compute_availability_sets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/availability-sets.png"
+    - id: ["", hh_diagrams_azure_compute_azure_compute_galleries]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/azure-compute-galleries.png"
+    - id: ["", hh_diagrams_azure_compute_azure_spring_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/azure-spring-apps.png"
+    - id: ["", hh_diagrams_azure_compute_batch_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/batch-accounts.png"
+    - id: ["", hh_diagrams_azure_compute_citrix_virtual_desktops_essentials]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/citrix-virtual-desktops-essentials.png"
+    - id: ["", hh_diagrams_azure_compute_cloud_services_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/cloud-services-classic.png"
+    - id: ["", hh_diagrams_azure_compute_cloud_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/cloud-services.png"
+    - id: ["", hh_diagrams_azure_compute_cloudsimple_virtual_machines]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/cloudsimple-virtual-machines.png"
+    - id: ["", hh_diagrams_azure_compute_container_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/container-apps.png"
+    - id: ["", hh_diagrams_azure_compute_container_instances]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/container-instances.png"
+    - id: ["", hh_diagrams_azure_compute_container_registries]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/container-registries.png"
+    - id: ["", hh_diagrams_azure_compute_container_services_deprecated]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/container-services-deprecated.png"
+    - id: ["", hh_diagrams_azure_compute_disk_encryption_sets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/disk-encryption-sets.png"
+    - id: ["", hh_diagrams_azure_compute_disk_snapshots]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/disk-snapshots.png"
+    - id: ["", hh_diagrams_azure_compute_disks_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/disks-classic.png"
+    - id: ["", hh_diagrams_azure_compute_disks_snapshots]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/disks-snapshots.png"
+    - id: ["", hh_diagrams_azure_compute_disks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/disks.png"
+    - id: ["", hh_diagrams_azure_compute_function_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/function-apps.png"
+    - id: ["", hh_diagrams_azure_compute_host_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/host-groups.png"
+    - id: ["", hh_diagrams_azure_compute_host_pools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/host-pools.png"
+    - id: ["", hh_diagrams_azure_compute_hosts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/hosts.png"
+    - id: ["", hh_diagrams_azure_compute_image_definitions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/image-definitions.png"
+    - id: ["", hh_diagrams_azure_compute_image_templates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/image-templates.png"
+    - id: ["", hh_diagrams_azure_compute_image_versions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/image-versions.png"
+    - id: ["", hh_diagrams_azure_compute_images]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/images.png"
+    - id: ["", hh_diagrams_azure_compute_kubernetes_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/kubernetes-services.png"
+    - id: ["", hh_diagrams_azure_compute_maintenance_configuration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/maintenance-configuration.png"
+    - id: ["", hh_diagrams_azure_compute_managed_service_fabric]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/managed-service-fabric.png"
+    - id: ["", hh_diagrams_azure_compute_mesh_applications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/mesh-applications.png"
+    - id: ["", hh_diagrams_azure_compute_metrics_advisor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/metrics-advisor.png"
+    - id: ["", hh_diagrams_azure_compute_os_images_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/os-images-classic.png"
+    - id: ["", hh_diagrams_azure_compute_os_images]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/os-images.png"
+    - id: ["", hh_diagrams_azure_compute_restore_points_collections]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/restore-points-collections.png"
+    - id: ["", hh_diagrams_azure_compute_restore_points]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/restore-points.png"
+    - id: ["", hh_diagrams_azure_compute_sap_hana_on_azure]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/sap-hana-on-azure.png"
+    - id: ["", hh_diagrams_azure_compute_service_fabric_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/service-fabric-clusters.png"
+    - id: ["", hh_diagrams_azure_compute_shared_image_galleries]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/shared-image-galleries.png"
+    - id: ["", hh_diagrams_azure_compute_spring_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/spring-cloud.png"
+    - id: ["", hh_diagrams_azure_compute_virtual_machine]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/virtual-machine.png"
+    - id: ["", hh_diagrams_azure_compute_virtual_machines_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/virtual-machines-classic.png"
+    - id: ["", hh_diagrams_azure_compute_vm_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm-classic.png"
+    - id: ["", hh_diagrams_azure_compute_vm_images_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm-images-classic.png"
+    - id: ["", hh_diagrams_azure_compute_vm_images]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm-images.png"
+    - id: ["", hh_diagrams_azure_compute_vm_linux]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm-linux.png"
+    - id: ["", hh_diagrams_azure_compute_vm_scale_set]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm-scale-set.png"
+    - id: ["", hh_diagrams_azure_compute_vm_scale_sets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm-scale-sets.png"
+    - id: ["", hh_diagrams_azure_compute_vm_windows]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm-windows.png"
+    - id: ["", hh_diagrams_azure_compute_vm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/vm.png"
+    - id: ["", hh_diagrams_azure_compute_workspaces_2]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/workspaces-2.png"
+    - id: ["", hh_diagrams_azure_compute_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/compute/workspaces.png"
+
+    # AZURE.CONTAINERS
+    - id: ["", hh_diagrams_azure_containers_app_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/containers/app-services.png"
+    - id: ["", hh_diagrams_azure_containers_azure_red_hat_openshift]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/containers/azure-red-hat-openshift.png"
+    - id: ["", hh_diagrams_azure_containers_batch_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/containers/batch-accounts.png"
+    - id: ["", hh_diagrams_azure_containers_container_instances]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/containers/container-instances.png"
+    - id: ["", hh_diagrams_azure_containers_container_registries]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/containers/container-registries.png"
+    - id: ["", hh_diagrams_azure_containers_kubernetes_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/containers/kubernetes-services.png"
+    - id: ["", hh_diagrams_azure_containers_service_fabric_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/containers/service-fabric-clusters.png"
+
+    # AZURE.DATABASE
+    - id: ["", hh_diagrams_azure_database_blob_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/blob-storage.png"
+    - id: ["", hh_diagrams_azure_database_cache_for_redis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/cache-for-redis.png"
+    - id: ["", hh_diagrams_azure_database_cosmos_db]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/cosmos-db.png"
+    - id: ["", hh_diagrams_azure_database_data_explorer_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/data-explorer-clusters.png"
+    - id: ["", hh_diagrams_azure_database_data_factory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/data-factory.png"
+    - id: ["", hh_diagrams_azure_database_data_lake]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/data-lake.png"
+    - id: ["", hh_diagrams_azure_database_database_for_mariadb_servers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/database-for-mariadb-servers.png"
+    - id: ["", hh_diagrams_azure_database_database_for_mysql_servers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/database-for-mysql-servers.png"
+    - id: ["", hh_diagrams_azure_database_database_for_postgresql_servers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/database-for-postgresql-servers.png"
+    - id: ["", hh_diagrams_azure_database_elastic_database_pools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/elastic-database-pools.png"
+    - id: ["", hh_diagrams_azure_database_elastic_job_agents]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/elastic-job-agents.png"
+    - id: ["", hh_diagrams_azure_database_instance_pools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/instance-pools.png"
+    - id: ["", hh_diagrams_azure_database_managed_databases]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/managed-databases.png"
+    - id: ["", hh_diagrams_azure_database_sql_databases]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/sql-databases.png"
+    - id: ["", hh_diagrams_azure_database_sql_datawarehouse]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/sql-datawarehouse.png"
+    - id: ["", hh_diagrams_azure_database_sql_managed_instances]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/sql-managed-instances.png"
+    - id: ["", hh_diagrams_azure_database_sql_server_stretch_databases]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/sql-server-stretch-databases.png"
+    - id: ["", hh_diagrams_azure_database_sql_servers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/sql-servers.png"
+    - id: ["", hh_diagrams_azure_database_sql_vm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/sql-vm.png"
+    - id: ["", hh_diagrams_azure_database_sql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/sql.png"
+    - id: ["", hh_diagrams_azure_database_ssis_lift_and_shift_ir]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/ssis-lift-and-shift-ir.png"
+    - id: ["", hh_diagrams_azure_database_synapse_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/synapse-analytics.png"
+    - id: ["", hh_diagrams_azure_database_virtual_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/virtual-clusters.png"
+    - id: ["", hh_diagrams_azure_database_virtual_datacenter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/database/virtual-datacenter.png"
+
+    # AZURE.DATABASES
+    - id: ["", hh_diagrams_azure_databases_azure_cosmos_db]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-cosmos-db.png"
+    - id: ["", hh_diagrams_azure_databases_azure_data_explorer_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-data-explorer-clusters.png"
+    - id: ["", hh_diagrams_azure_databases_azure_database_mariadb_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-database-mariadb-server.png"
+    - id: ["", hh_diagrams_azure_databases_azure_database_migration_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-database-migration-services.png"
+    - id: ["", hh_diagrams_azure_databases_azure_database_mysql_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-database-mysql-server.png"
+    - id: ["", hh_diagrams_azure_databases_azure_database_postgresql_server_group]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-database-postgresql-server-group.png"
+    - id: ["", hh_diagrams_azure_databases_azure_database_postgresql_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-database-postgresql-server.png"
+    - id: ["", hh_diagrams_azure_databases_azure_purview_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-purview-accounts.png"
+    - id: ["", hh_diagrams_azure_databases_azure_sql_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-sql-edge.png"
+    - id: ["", hh_diagrams_azure_databases_azure_sql_server_stretch_databases]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-sql-server-stretch-databases.png"
+    - id: ["", hh_diagrams_azure_databases_azure_sql_vm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-sql-vm.png"
+    - id: ["", hh_diagrams_azure_databases_azure_sql]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-sql.png"
+    - id: ["", hh_diagrams_azure_databases_azure_synapse_analytics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/azure-synapse-analytics.png"
+    - id: ["", hh_diagrams_azure_databases_cache_redis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/cache-redis.png"
+    - id: ["", hh_diagrams_azure_databases_data_factories]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/data-factories.png"
+    - id: ["", hh_diagrams_azure_databases_elastic_job_agents]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/elastic-job-agents.png"
+    - id: ["", hh_diagrams_azure_databases_instance_pools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/instance-pools.png"
+    - id: ["", hh_diagrams_azure_databases_managed_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/managed-database.png"
+    - id: ["", hh_diagrams_azure_databases_oracle_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/oracle-database.png"
+    - id: ["", hh_diagrams_azure_databases_sql_data_warehouses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/sql-data-warehouses.png"
+    - id: ["", hh_diagrams_azure_databases_sql_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/sql-database.png"
+    - id: ["", hh_diagrams_azure_databases_sql_elastic_pools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/sql-elastic-pools.png"
+    - id: ["", hh_diagrams_azure_databases_sql_managed_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/sql-managed-instance.png"
+    - id: ["", hh_diagrams_azure_databases_sql_server_registries]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/sql-server-registries.png"
+    - id: ["", hh_diagrams_azure_databases_sql_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/sql-server.png"
+    - id: ["", hh_diagrams_azure_databases_ssis_lift_and_shift_ir]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/ssis-lift-and-shift-ir.png"
+    - id: ["", hh_diagrams_azure_databases_virtual_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/databases/virtual-clusters.png"
+
+    # AZURE.DEVOPS
+    - id: ["", hh_diagrams_azure_devops_api_connections]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/api-connections.png"
+    - id: ["", hh_diagrams_azure_devops_api_management_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/api-management-services.png"
+    - id: ["", hh_diagrams_azure_devops_application_insights]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/application-insights.png"
+    - id: ["", hh_diagrams_azure_devops_artifacts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/artifacts.png"
+    - id: ["", hh_diagrams_azure_devops_azure_devops]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/azure-devops.png"
+    - id: ["", hh_diagrams_azure_devops_boards]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/boards.png"
+    - id: ["", hh_diagrams_azure_devops_change_analysis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/change-analysis.png"
+    - id: ["", hh_diagrams_azure_devops_cloudtest]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/cloudtest.png"
+    - id: ["", hh_diagrams_azure_devops_code_optimization]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/code-optimization.png"
+    - id: ["", hh_diagrams_azure_devops_devops_starter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/devops-starter.png"
+    - id: ["", hh_diagrams_azure_devops_devops]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/devops.png"
+    - id: ["", hh_diagrams_azure_devops_devtest_labs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/devtest-labs.png"
+    - id: ["", hh_diagrams_azure_devops_lab_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/lab-accounts.png"
+    - id: ["", hh_diagrams_azure_devops_lab_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/lab-services.png"
+    - id: ["", hh_diagrams_azure_devops_load_testing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/load-testing.png"
+    - id: ["", hh_diagrams_azure_devops_pipelines]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/pipelines.png"
+    - id: ["", hh_diagrams_azure_devops_repos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/repos.png"
+    - id: ["", hh_diagrams_azure_devops_test_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/devops/test-plans.png"
+
+    # AZURE.GENERAL
+    - id: ["", hh_diagrams_azure_general_all_resources]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/all-resources.png"
+    - id: ["", hh_diagrams_azure_general_allresources]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/allresources.png"
+    - id: ["", hh_diagrams_azure_general_azurehome]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/azurehome.png"
+    - id: ["", hh_diagrams_azure_general_backlog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/backlog.png"
+    - id: ["", hh_diagrams_azure_general_biz_talk]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/biz-talk.png"
+    - id: ["", hh_diagrams_azure_general_blob_block]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/blob-block.png"
+    - id: ["", hh_diagrams_azure_general_blob_page]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/blob-page.png"
+    - id: ["", hh_diagrams_azure_general_branch]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/branch.png"
+    - id: ["", hh_diagrams_azure_general_browser]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/browser.png"
+    - id: ["", hh_diagrams_azure_general_bug]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/bug.png"
+    - id: ["", hh_diagrams_azure_general_builds]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/builds.png"
+    - id: ["", hh_diagrams_azure_general_cache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/cache.png"
+    - id: ["", hh_diagrams_azure_general_code]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/code.png"
+    - id: ["", hh_diagrams_azure_general_commit]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/commit.png"
+    - id: ["", hh_diagrams_azure_general_controls_horizontal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/controls-horizontal.png"
+    - id: ["", hh_diagrams_azure_general_controls]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/controls.png"
+    - id: ["", hh_diagrams_azure_general_cost_alerts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/cost-alerts.png"
+    - id: ["", hh_diagrams_azure_general_cost_analysis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/cost-analysis.png"
+    - id: ["", hh_diagrams_azure_general_cost_budgets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/cost-budgets.png"
+    - id: ["", hh_diagrams_azure_general_cost_management_and_billing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/cost-management-and-billing.png"
+    - id: ["", hh_diagrams_azure_general_cost_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/cost-management.png"
+    - id: ["", hh_diagrams_azure_general_counter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/counter.png"
+    - id: ["", hh_diagrams_azure_general_cubes]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/cubes.png"
+    - id: ["", hh_diagrams_azure_general_dashboard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/dashboard.png"
+    - id: ["", hh_diagrams_azure_general_dev_console]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/dev-console.png"
+    - id: ["", hh_diagrams_azure_general_developertools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/developertools.png"
+    - id: ["", hh_diagrams_azure_general_download]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/download.png"
+    - id: ["", hh_diagrams_azure_general_error]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/error.png"
+    - id: ["", hh_diagrams_azure_general_extensions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/extensions.png"
+    - id: ["", hh_diagrams_azure_general_feature_previews]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/feature-previews.png"
+    - id: ["", hh_diagrams_azure_general_file]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/file.png"
+    - id: ["", hh_diagrams_azure_general_files]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/files.png"
+    - id: ["", hh_diagrams_azure_general_folder_blank]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/folder-blank.png"
+    - id: ["", hh_diagrams_azure_general_folder_website]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/folder-website.png"
+    - id: ["", hh_diagrams_azure_general_free_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/free-services.png"
+    - id: ["", hh_diagrams_azure_general_ftp]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/ftp.png"
+    - id: ["", hh_diagrams_azure_general_gear]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/gear.png"
+    - id: ["", hh_diagrams_azure_general_globe_error]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/globe-error.png"
+    - id: ["", hh_diagrams_azure_general_globe_success]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/globe-success.png"
+    - id: ["", hh_diagrams_azure_general_globe_warning]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/globe-warning.png"
+    - id: ["", hh_diagrams_azure_general_guide]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/guide.png"
+    - id: ["", hh_diagrams_azure_general_heart]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/heart.png"
+    - id: ["", hh_diagrams_azure_general_help_and_support]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/help-and-support.png"
+    - id: ["", hh_diagrams_azure_general_helpsupport]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/helpsupport.png"
+    - id: ["", hh_diagrams_azure_general_image]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/image.png"
+    - id: ["", hh_diagrams_azure_general_information]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/information.png"
+    - id: ["", hh_diagrams_azure_general_input_output]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/input-output.png"
+    - id: ["", hh_diagrams_azure_general_journey_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/journey-hub.png"
+    - id: ["", hh_diagrams_azure_general_launch_portal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/launch-portal.png"
+    - id: ["", hh_diagrams_azure_general_learn]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/learn.png"
+    - id: ["", hh_diagrams_azure_general_load_test]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/load-test.png"
+    - id: ["", hh_diagrams_azure_general_location]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/location.png"
+    - id: ["", hh_diagrams_azure_general_log_streaming]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/log-streaming.png"
+    - id: ["", hh_diagrams_azure_general_management_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/management-groups.png"
+    - id: ["", hh_diagrams_azure_general_management_portal]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/management-portal.png"
+    - id: ["", hh_diagrams_azure_general_managementgroups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/managementgroups.png"
+    - id: ["", hh_diagrams_azure_general_marketplace_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/marketplace-management.png"
+    - id: ["", hh_diagrams_azure_general_marketplace]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/marketplace.png"
+    - id: ["", hh_diagrams_azure_general_media_file]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/media-file.png"
+    - id: ["", hh_diagrams_azure_general_media]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/media.png"
+    - id: ["", hh_diagrams_azure_general_mobile_engagement]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/mobile-engagement.png"
+    - id: ["", hh_diagrams_azure_general_mobile]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/mobile.png"
+    - id: ["", hh_diagrams_azure_general_module]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/module.png"
+    - id: ["", hh_diagrams_azure_general_power_up]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/power-up.png"
+    - id: ["", hh_diagrams_azure_general_power]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/power.png"
+    - id: ["", hh_diagrams_azure_general_powershell]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/powershell.png"
+    - id: ["", hh_diagrams_azure_general_preview_features]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/preview-features.png"
+    - id: ["", hh_diagrams_azure_general_process_explorer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/process-explorer.png"
+    - id: ["", hh_diagrams_azure_general_production_ready_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/production-ready-database.png"
+    - id: ["", hh_diagrams_azure_general_quickstart_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/quickstart-center.png"
+    - id: ["", hh_diagrams_azure_general_quickstartcenter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/quickstartcenter.png"
+    - id: ["", hh_diagrams_azure_general_recent]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/recent.png"
+    - id: ["", hh_diagrams_azure_general_region_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/region-management.png"
+    - id: ["", hh_diagrams_azure_general_reservations]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/reservations.png"
+    - id: ["", hh_diagrams_azure_general_resource_explorer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/resource-explorer.png"
+    - id: ["", hh_diagrams_azure_general_resource_group_list]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/resource-group-list.png"
+    - id: ["", hh_diagrams_azure_general_resource_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/resource-groups.png"
+    - id: ["", hh_diagrams_azure_general_resource_linked]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/resource-linked.png"
+    - id: ["", hh_diagrams_azure_general_resource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/resource.png"
+    - id: ["", hh_diagrams_azure_general_resourcegroups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/resourcegroups.png"
+    - id: ["", hh_diagrams_azure_general_scheduler]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/scheduler.png"
+    - id: ["", hh_diagrams_azure_general_search_grid]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/search-grid.png"
+    - id: ["", hh_diagrams_azure_general_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/search.png"
+    - id: ["", hh_diagrams_azure_general_server_farm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/server-farm.png"
+    - id: ["", hh_diagrams_azure_general_service_health]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/service-health.png"
+    - id: ["", hh_diagrams_azure_general_servicehealth]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/servicehealth.png"
+    - id: ["", hh_diagrams_azure_general_shareddashboard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/shareddashboard.png"
+    - id: ["", hh_diagrams_azure_general_ssd]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/ssd.png"
+    - id: ["", hh_diagrams_azure_general_storage_azure_files]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/storage-azure-files.png"
+    - id: ["", hh_diagrams_azure_general_storage_container]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/storage-container.png"
+    - id: ["", hh_diagrams_azure_general_storage_queue]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/storage-queue.png"
+    - id: ["", hh_diagrams_azure_general_subscriptions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/subscriptions.png"
+    - id: ["", hh_diagrams_azure_general_support]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/support.png"
+    - id: ["", hh_diagrams_azure_general_supportrequests]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/supportrequests.png"
+    - id: ["", hh_diagrams_azure_general_table]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/table.png"
+    - id: ["", hh_diagrams_azure_general_tag]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/tag.png"
+    - id: ["", hh_diagrams_azure_general_tags]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/tags.png"
+    - id: ["", hh_diagrams_azure_general_templates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/templates.png"
+    - id: ["", hh_diagrams_azure_general_tfs_vc_repository]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/tfs-vc-repository.png"
+    - id: ["", hh_diagrams_azure_general_toolbox]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/toolbox.png"
+    - id: ["", hh_diagrams_azure_general_troubleshoot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/troubleshoot.png"
+    - id: ["", hh_diagrams_azure_general_twousericon]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/twousericon.png"
+    - id: ["", hh_diagrams_azure_general_userhealthicon]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/userhealthicon.png"
+    - id: ["", hh_diagrams_azure_general_usericon]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/usericon.png"
+    - id: ["", hh_diagrams_azure_general_userprivacy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/userprivacy.png"
+    - id: ["", hh_diagrams_azure_general_userresource]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/userresource.png"
+    - id: ["", hh_diagrams_azure_general_versions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/versions.png"
+    - id: ["", hh_diagrams_azure_general_web_slots]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/web-slots.png"
+    - id: ["", hh_diagrams_azure_general_web_test]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/web-test.png"
+    - id: ["", hh_diagrams_azure_general_website_power]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/website-power.png"
+    - id: ["", hh_diagrams_azure_general_website_staging]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/website-staging.png"
+    - id: ["", hh_diagrams_azure_general_whatsnew]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/whatsnew.png"
+    - id: ["", hh_diagrams_azure_general_workbooks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/workbooks.png"
+    - id: ["", hh_diagrams_azure_general_workflow]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/general/workflow.png"
+
+    # AZURE.HYBRIDMULTICLOUD
+    - id: ["", hh_diagrams_azure_hybridmulticloud_azure_operator_5g_core]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/hybridmulticloud/azure-operator-5g-core.png"
+    - id: ["", hh_diagrams_azure_hybridmulticloud_azure_operator_insights]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/hybridmulticloud/azure-operator-insights.png"
+    - id: ["", hh_diagrams_azure_hybridmulticloud_azure_operator_nexus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/hybridmulticloud/azure-operator-nexus.png"
+    - id: ["", hh_diagrams_azure_hybridmulticloud_azure_operator_service_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/hybridmulticloud/azure-operator-service-manager.png"
+    - id: ["", hh_diagrams_azure_hybridmulticloud_azure_programmable_connectivity]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/hybridmulticloud/azure-programmable-connectivity.png"
+
+    # AZURE.IDENTITY
+    - id: ["", hh_diagrams_azure_identity_aad_licenses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/aad-licenses.png"
+    - id: ["", hh_diagrams_azure_identity_access_review]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/access-review.png"
+    - id: ["", hh_diagrams_azure_identity_active_directory_connect_health]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/active-directory-connect-health.png"
+    - id: ["", hh_diagrams_azure_identity_active_directory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/active-directory.png"
+    - id: ["", hh_diagrams_azure_identity_ad_b2c]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/ad-b2c.png"
+    - id: ["", hh_diagrams_azure_identity_ad_domain_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/ad-domain-services.png"
+    - id: ["", hh_diagrams_azure_identity_ad_identity_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/ad-identity-protection.png"
+    - id: ["", hh_diagrams_azure_identity_ad_privileged_identity_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/ad-privileged-identity-management.png"
+    - id: ["", hh_diagrams_azure_identity_administrative_units]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/administrative-units.png"
+    - id: ["", hh_diagrams_azure_identity_api_proxy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/api-proxy.png"
+    - id: ["", hh_diagrams_azure_identity_app_registrations]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/app-registrations.png"
+    - id: ["", hh_diagrams_azure_identity_azure_active_directory]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-active-directory.png"
+    - id: ["", hh_diagrams_azure_identity_azure_ad_b2c]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-ad-b2c.png"
+    - id: ["", hh_diagrams_azure_identity_azure_ad_domain_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-ad-domain-services.png"
+    - id: ["", hh_diagrams_azure_identity_azure_ad_identity_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-ad-identity-protection.png"
+    - id: ["", hh_diagrams_azure_identity_azure_ad_privilege_identity_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-ad-privilege-identity-management.png"
+    - id: ["", hh_diagrams_azure_identity_azure_ad_privleged_identity_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-ad-privleged-identity-management.png"
+    - id: ["", hh_diagrams_azure_identity_azure_ad_roles_and_administrators]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-ad-roles-and-administrators.png"
+    - id: ["", hh_diagrams_azure_identity_azure_information_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/azure-information-protection.png"
+    - id: ["", hh_diagrams_azure_identity_conditional_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/conditional-access.png"
+    - id: ["", hh_diagrams_azure_identity_custom_azure_ad_roles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/custom-azure-ad-roles.png"
+    - id: ["", hh_diagrams_azure_identity_enterprise_applications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/enterprise-applications.png"
+    - id: ["", hh_diagrams_azure_identity_entra_connect]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/entra-connect.png"
+    - id: ["", hh_diagrams_azure_identity_entra_domain_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/entra-domain-services.png"
+    - id: ["", hh_diagrams_azure_identity_entra_id_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/entra-id-protection.png"
+    - id: ["", hh_diagrams_azure_identity_entra_managed_identities]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/entra-managed-identities.png"
+    - id: ["", hh_diagrams_azure_identity_entra_privleged_identity_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/entra-privleged-identity-management.png"
+    - id: ["", hh_diagrams_azure_identity_entra_verified_id]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/entra-verified-id.png"
+    - id: ["", hh_diagrams_azure_identity_external_identities]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/external-identities.png"
+    - id: ["", hh_diagrams_azure_identity_global_secure_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/global-secure-access.png"
+    - id: ["", hh_diagrams_azure_identity_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/groups.png"
+    - id: ["", hh_diagrams_azure_identity_identity_governance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/identity-governance.png"
+    - id: ["", hh_diagrams_azure_identity_information_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/information-protection.png"
+    - id: ["", hh_diagrams_azure_identity_internet_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/internet-access.png"
+    - id: ["", hh_diagrams_azure_identity_managed_identities]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/managed-identities.png"
+    - id: ["", hh_diagrams_azure_identity_private_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/private-access.png"
+    - id: ["", hh_diagrams_azure_identity_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/security.png"
+    - id: ["", hh_diagrams_azure_identity_tenant_properties]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/tenant-properties.png"
+    - id: ["", hh_diagrams_azure_identity_user_settings]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/user-settings.png"
+    - id: ["", hh_diagrams_azure_identity_users]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/users.png"
+    - id: ["", hh_diagrams_azure_identity_verifiable_credentials]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/identity/verifiable-credentials.png"
+
+    # AZURE.INTEGRATION
+    - id: ["", hh_diagrams_azure_integration_api_connections]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/api-connections.png"
+    - id: ["", hh_diagrams_azure_integration_api_for_fhir]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/api-for-fhir.png"
+    - id: ["", hh_diagrams_azure_integration_api_management_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/api-management-services.png"
+    - id: ["", hh_diagrams_azure_integration_api_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/api-management.png"
+    - id: ["", hh_diagrams_azure_integration_app_configuration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/app-configuration.png"
+    - id: ["", hh_diagrams_azure_integration_azure_api_for_fhir]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/azure-api-for-fhir.png"
+    - id: ["", hh_diagrams_azure_integration_azure_data_catalog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/azure-data-catalog.png"
+    - id: ["", hh_diagrams_azure_integration_azure_databox_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/azure-databox-gateway.png"
+    - id: ["", hh_diagrams_azure_integration_azure_service_bus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/azure-service-bus.png"
+    - id: ["", hh_diagrams_azure_integration_azure_sql_server_stretch_databases]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/azure-sql-server-stretch-databases.png"
+    - id: ["", hh_diagrams_azure_integration_azure_stack_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/azure-stack-edge.png"
+    - id: ["", hh_diagrams_azure_integration_data_catalog]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/data-catalog.png"
+    - id: ["", hh_diagrams_azure_integration_data_factories]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/data-factories.png"
+    - id: ["", hh_diagrams_azure_integration_event_grid_domains]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/event-grid-domains.png"
+    - id: ["", hh_diagrams_azure_integration_event_grid_subscriptions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/event-grid-subscriptions.png"
+    - id: ["", hh_diagrams_azure_integration_event_grid_topics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/event-grid-topics.png"
+    - id: ["", hh_diagrams_azure_integration_integration_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/integration-accounts.png"
+    - id: ["", hh_diagrams_azure_integration_integration_environments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/integration-environments.png"
+    - id: ["", hh_diagrams_azure_integration_integration_service_environments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/integration-service-environments.png"
+    - id: ["", hh_diagrams_azure_integration_logic_apps_custom_connector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/logic-apps-custom-connector.png"
+    - id: ["", hh_diagrams_azure_integration_logic_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/logic-apps.png"
+    - id: ["", hh_diagrams_azure_integration_partner_namespace]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/partner-namespace.png"
+    - id: ["", hh_diagrams_azure_integration_partner_registration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/partner-registration.png"
+    - id: ["", hh_diagrams_azure_integration_partner_topic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/partner-topic.png"
+    - id: ["", hh_diagrams_azure_integration_power_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/power-platform.png"
+    - id: ["", hh_diagrams_azure_integration_relays]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/relays.png"
+    - id: ["", hh_diagrams_azure_integration_sendgrid_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/sendgrid-accounts.png"
+    - id: ["", hh_diagrams_azure_integration_service_bus_relays]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/service-bus-relays.png"
+    - id: ["", hh_diagrams_azure_integration_service_bus]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/service-bus.png"
+    - id: ["", hh_diagrams_azure_integration_service_catalog_managed_application_definitions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/service-catalog-managed-application-definitions.png"
+    - id: ["", hh_diagrams_azure_integration_software_as_a_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/software-as-a-service.png"
+    - id: ["", hh_diagrams_azure_integration_sql_data_warehouses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/sql-data-warehouses.png"
+    - id: ["", hh_diagrams_azure_integration_storsimple_device_managers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/storsimple-device-managers.png"
+    - id: ["", hh_diagrams_azure_integration_system_topic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/integration/system-topic.png"
+
+    # AZURE.INTUNE
+    - id: ["", hh_diagrams_azure_intune_azure_ad_roles_and_administrators]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/azure-ad-roles-and-administrators.png"
+    - id: ["", hh_diagrams_azure_intune_client_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/client-apps.png"
+    - id: ["", hh_diagrams_azure_intune_device_compliance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/device-compliance.png"
+    - id: ["", hh_diagrams_azure_intune_device_configuration]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/device-configuration.png"
+    - id: ["", hh_diagrams_azure_intune_device_enrollment]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/device-enrollment.png"
+    - id: ["", hh_diagrams_azure_intune_device_security_apple]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/device-security-apple.png"
+    - id: ["", hh_diagrams_azure_intune_device_security_google]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/device-security-google.png"
+    - id: ["", hh_diagrams_azure_intune_device_security_windows]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/device-security-windows.png"
+    - id: ["", hh_diagrams_azure_intune_devices]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/devices.png"
+    - id: ["", hh_diagrams_azure_intune_ebooks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/ebooks.png"
+    - id: ["", hh_diagrams_azure_intune_exchange_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/exchange-access.png"
+    - id: ["", hh_diagrams_azure_intune_intune_app_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/intune-app-protection.png"
+    - id: ["", hh_diagrams_azure_intune_intune_for_education]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/intune-for-education.png"
+    - id: ["", hh_diagrams_azure_intune_intune]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/intune.png"
+    - id: ["", hh_diagrams_azure_intune_mindaro]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/mindaro.png"
+    - id: ["", hh_diagrams_azure_intune_security_baselines]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/security-baselines.png"
+    - id: ["", hh_diagrams_azure_intune_software_updates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/software-updates.png"
+    - id: ["", hh_diagrams_azure_intune_tenant_status]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/intune/tenant-status.png"
+
+    # AZURE.IOT
+    - id: ["", hh_diagrams_azure_iot_azure_cosmos_db]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/azure-cosmos-db.png"
+    - id: ["", hh_diagrams_azure_iot_azure_databox_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/azure-databox-gateway.png"
+    - id: ["", hh_diagrams_azure_iot_azure_iot_operations]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/azure-iot-operations.png"
+    - id: ["", hh_diagrams_azure_iot_azure_maps_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/azure-maps-accounts.png"
+    - id: ["", hh_diagrams_azure_iot_azure_stack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/azure-stack.png"
+    - id: ["", hh_diagrams_azure_iot_device_provisioning_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/device-provisioning-services.png"
+    - id: ["", hh_diagrams_azure_iot_digital_twins]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/digital-twins.png"
+    - id: ["", hh_diagrams_azure_iot_event_grid_subscriptions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/event-grid-subscriptions.png"
+    - id: ["", hh_diagrams_azure_iot_event_hub_clusters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/event-hub-clusters.png"
+    - id: ["", hh_diagrams_azure_iot_event_hubs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/event-hubs.png"
+    - id: ["", hh_diagrams_azure_iot_function_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/function-apps.png"
+    - id: ["", hh_diagrams_azure_iot_industrial_iot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/industrial-iot.png"
+    - id: ["", hh_diagrams_azure_iot_iot_central_applications]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/iot-central-applications.png"
+    - id: ["", hh_diagrams_azure_iot_iot_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/iot-edge.png"
+    - id: ["", hh_diagrams_azure_iot_iot_hub_security]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/iot-hub-security.png"
+    - id: ["", hh_diagrams_azure_iot_iot_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/iot-hub.png"
+    - id: ["", hh_diagrams_azure_iot_logic_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/logic-apps.png"
+    - id: ["", hh_diagrams_azure_iot_machine_learning_studio_classic_web_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/machine-learning-studio-classic-web-services.png"
+    - id: ["", hh_diagrams_azure_iot_machine_learning_studio_web_service_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/machine-learning-studio-web-service-plans.png"
+    - id: ["", hh_diagrams_azure_iot_machine_learning_studio_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/machine-learning-studio-workspaces.png"
+    - id: ["", hh_diagrams_azure_iot_maps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/maps.png"
+    - id: ["", hh_diagrams_azure_iot_notification_hub_namespaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/notification-hub-namespaces.png"
+    - id: ["", hh_diagrams_azure_iot_notification_hubs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/notification-hubs.png"
+    - id: ["", hh_diagrams_azure_iot_sphere]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/sphere.png"
+    - id: ["", hh_diagrams_azure_iot_stack_hci_premium]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/stack-hci-premium.png"
+    - id: ["", hh_diagrams_azure_iot_stream_analytics_jobs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/stream-analytics-jobs.png"
+    - id: ["", hh_diagrams_azure_iot_time_series_data_sets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/time-series-data-sets.png"
+    - id: ["", hh_diagrams_azure_iot_time_series_insights_access_policies]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/time-series-insights-access-policies.png"
+    - id: ["", hh_diagrams_azure_iot_time_series_insights_environments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/time-series-insights-environments.png"
+    - id: ["", hh_diagrams_azure_iot_time_series_insights_event_sources]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/time-series-insights-event-sources.png"
+    - id: ["", hh_diagrams_azure_iot_time_series_insights_events_sources]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/time-series-insights-events-sources.png"
+    - id: ["", hh_diagrams_azure_iot_windows_10_iot_core_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/windows-10-iot-core-services.png"
+    - id: ["", hh_diagrams_azure_iot_windows10_core_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/iot/windows10-core-services.png"
+
+    # AZURE.MANAGEMENTGOVERNANCE
+    - id: ["", hh_diagrams_azure_managementgovernance_activity_log]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/activity-log.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_advisor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/advisor.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_alerts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/alerts.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_application_insights]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/application-insights.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_arc_machines]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/arc-machines.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_automation_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/automation-accounts.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_azure_arc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/azure-arc.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_azure_lighthouse]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/azure-lighthouse.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_blueprints]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/blueprints.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_compliance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/compliance.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_cost_management_and_billing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/cost-management-and-billing.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_customer_lockbox_for_microsoft_azure]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/customer-lockbox-for-microsoft-azure.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_diagnostics_settings]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/diagnostics-settings.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_education]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/education.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_intune_trends]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/intune-trends.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_log_analytics_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/log-analytics-workspaces.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_machinesazurearc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/machinesazurearc.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_managed_applications_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/managed-applications-center.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_managed_desktop]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/managed-desktop.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_metrics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/metrics.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_monitor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/monitor.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_my_customers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/my-customers.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_operation_log_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/operation-log-classic.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_policy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/policy.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_recovery_services_vaults]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/recovery-services-vaults.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_resource_graph_explorer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/resource-graph-explorer.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_resources_provider]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/resources-provider.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_scheduler_job_collections]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/scheduler-job-collections.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_service_catalog_mad]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/service-catalog-mad.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_service_providers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/service-providers.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_solutions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/solutions.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_universal_print]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/universal-print.png"
+    - id: ["", hh_diagrams_azure_managementgovernance_user_privacy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/managementgovernance/user-privacy.png"
+
+    # AZURE.MENU
+    - id: ["", hh_diagrams_azure_menu_keys]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/menu/keys.png"
+
+    # AZURE.MIGRATE
+    - id: ["", hh_diagrams_azure_migrate_azure_databox_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migrate/azure-databox-gateway.png"
+    - id: ["", hh_diagrams_azure_migrate_azure_migrate]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migrate/azure-migrate.png"
+    - id: ["", hh_diagrams_azure_migrate_azure_stack_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migrate/azure-stack-edge.png"
+    - id: ["", hh_diagrams_azure_migrate_cost_management_and_billing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migrate/cost-management-and-billing.png"
+    - id: ["", hh_diagrams_azure_migrate_data_box]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migrate/data-box.png"
+    - id: ["", hh_diagrams_azure_migrate_recovery_services_vaults]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migrate/recovery-services-vaults.png"
+
+    # AZURE.MIGRATION
+    - id: ["", hh_diagrams_azure_migration_azure_database_migration_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migration/azure-database-migration-services.png"
+    - id: ["", hh_diagrams_azure_migration_data_box_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migration/data-box-edge.png"
+    - id: ["", hh_diagrams_azure_migration_data_box]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migration/data-box.png"
+    - id: ["", hh_diagrams_azure_migration_database_migration_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migration/database-migration-services.png"
+    - id: ["", hh_diagrams_azure_migration_migration_projects]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migration/migration-projects.png"
+    - id: ["", hh_diagrams_azure_migration_recovery_services_vaults]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/migration/recovery-services-vaults.png"
+
+    # AZURE.MIXEDREALITY
+    - id: ["", hh_diagrams_azure_mixedreality_remote_rendering]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/mixedreality/remote-rendering.png"
+    - id: ["", hh_diagrams_azure_mixedreality_spatial_anchor_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/mixedreality/spatial-anchor-accounts.png"
+
+    # AZURE.ML
+    - id: ["", hh_diagrams_azure_ml_azure_open_ai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/azure-open-ai.png"
+    - id: ["", hh_diagrams_azure_ml_azure_speech_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/azure-speech-service.png"
+    - id: ["", hh_diagrams_azure_ml_batch_ai]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/batch-ai.png"
+    - id: ["", hh_diagrams_azure_ml_bot_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/bot-services.png"
+    - id: ["", hh_diagrams_azure_ml_cognitive_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/cognitive-services.png"
+    - id: ["", hh_diagrams_azure_ml_genomics_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/genomics-accounts.png"
+    - id: ["", hh_diagrams_azure_ml_machine_learning_service_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/machine-learning-service-workspaces.png"
+    - id: ["", hh_diagrams_azure_ml_machine_learning_studio_web_service_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/machine-learning-studio-web-service-plans.png"
+    - id: ["", hh_diagrams_azure_ml_machine_learning_studio_web_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/machine-learning-studio-web-services.png"
+    - id: ["", hh_diagrams_azure_ml_machine_learning_studio_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/ml/machine-learning-studio-workspaces.png"
+
+    # AZURE.MOBILE
+    - id: ["", hh_diagrams_azure_mobile_app_service_mobile]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/mobile/app-service-mobile.png"
+    - id: ["", hh_diagrams_azure_mobile_app_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/mobile/app-services.png"
+    - id: ["", hh_diagrams_azure_mobile_mobile_engagement]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/mobile/mobile-engagement.png"
+    - id: ["", hh_diagrams_azure_mobile_notification_hubs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/mobile/notification-hubs.png"
+    - id: ["", hh_diagrams_azure_mobile_power_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/mobile/power-platform.png"
+
+    # AZURE.MONITOR
+    - id: ["", hh_diagrams_azure_monitor_activity_log]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/activity-log.png"
+    - id: ["", hh_diagrams_azure_monitor_application_insights]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/application-insights.png"
+    - id: ["", hh_diagrams_azure_monitor_auto_scale]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/auto-scale.png"
+    - id: ["", hh_diagrams_azure_monitor_azure_monitors_for_sap_solutions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/azure-monitors-for-sap-solutions.png"
+    - id: ["", hh_diagrams_azure_monitor_azure_workbooks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/azure-workbooks.png"
+    - id: ["", hh_diagrams_azure_monitor_change_analysis]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/change-analysis.png"
+    - id: ["", hh_diagrams_azure_monitor_diagnostics_settings]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/diagnostics-settings.png"
+    - id: ["", hh_diagrams_azure_monitor_log_analytics_workspaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/log-analytics-workspaces.png"
+    - id: ["", hh_diagrams_azure_monitor_logs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/logs.png"
+    - id: ["", hh_diagrams_azure_monitor_metrics]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/metrics.png"
+    - id: ["", hh_diagrams_azure_monitor_monitor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/monitor.png"
+    - id: ["", hh_diagrams_azure_monitor_network_watcher]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/monitor/network-watcher.png"
+
+    # AZURE.NETWORK
+    - id: ["", hh_diagrams_azure_network_application_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/application-gateway.png"
+    - id: ["", hh_diagrams_azure_network_application_security_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/application-security-groups.png"
+    - id: ["", hh_diagrams_azure_network_cdn_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/cdn-profiles.png"
+    - id: ["", hh_diagrams_azure_network_connections]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/connections.png"
+    - id: ["", hh_diagrams_azure_network_ddos_protection_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/ddos-protection-plans.png"
+    - id: ["", hh_diagrams_azure_network_dns_private_zones]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/dns-private-zones.png"
+    - id: ["", hh_diagrams_azure_network_dns_zones]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/dns-zones.png"
+    - id: ["", hh_diagrams_azure_network_expressroute_circuits]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/expressroute-circuits.png"
+    - id: ["", hh_diagrams_azure_network_firewall]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/firewall.png"
+    - id: ["", hh_diagrams_azure_network_front_doors]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/front-doors.png"
+    - id: ["", hh_diagrams_azure_network_load_balancers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/load-balancers.png"
+    - id: ["", hh_diagrams_azure_network_local_network_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/local-network-gateways.png"
+    - id: ["", hh_diagrams_azure_network_network_interfaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/network-interfaces.png"
+    - id: ["", hh_diagrams_azure_network_network_security_groups_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/network-security-groups-classic.png"
+    - id: ["", hh_diagrams_azure_network_network_watcher]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/network-watcher.png"
+    - id: ["", hh_diagrams_azure_network_on_premises_data_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/on-premises-data-gateways.png"
+    - id: ["", hh_diagrams_azure_network_private_endpoint]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/private-endpoint.png"
+    - id: ["", hh_diagrams_azure_network_public_ip_addresses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/public-ip-addresses.png"
+    - id: ["", hh_diagrams_azure_network_reserved_ip_addresses_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/reserved-ip-addresses-classic.png"
+    - id: ["", hh_diagrams_azure_network_route_filters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/route-filters.png"
+    - id: ["", hh_diagrams_azure_network_route_tables]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/route-tables.png"
+    - id: ["", hh_diagrams_azure_network_service_endpoint_policies]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/service-endpoint-policies.png"
+    - id: ["", hh_diagrams_azure_network_subnets]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/subnets.png"
+    - id: ["", hh_diagrams_azure_network_traffic_manager_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/traffic-manager-profiles.png"
+    - id: ["", hh_diagrams_azure_network_virtual_network_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/virtual-network-classic.png"
+    - id: ["", hh_diagrams_azure_network_virtual_network_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/virtual-network-gateways.png"
+    - id: ["", hh_diagrams_azure_network_virtual_networks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/virtual-networks.png"
+    - id: ["", hh_diagrams_azure_network_virtual_wans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/network/virtual-wans.png"
+
+    # AZURE.NETWORKING
+    - id: ["", hh_diagrams_azure_networking_application_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/application-gateways.png"
+    - id: ["", hh_diagrams_azure_networking_atm_multistack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/atm-multistack.png"
+    - id: ["", hh_diagrams_azure_networking_azure_communications_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/azure-communications-gateway.png"
+    - id: ["", hh_diagrams_azure_networking_azure_firewall_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/azure-firewall-manager.png"
+    - id: ["", hh_diagrams_azure_networking_azure_firewall_policy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/azure-firewall-policy.png"
+    - id: ["", hh_diagrams_azure_networking_bastions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/bastions.png"
+    - id: ["", hh_diagrams_azure_networking_cdn_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/cdn-profiles.png"
+    - id: ["", hh_diagrams_azure_networking_connected_cache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/connected-cache.png"
+    - id: ["", hh_diagrams_azure_networking_connections]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/connections.png"
+    - id: ["", hh_diagrams_azure_networking_ddos_protection_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/ddos-protection-plans.png"
+    - id: ["", hh_diagrams_azure_networking_dns_multistack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/dns-multistack.png"
+    - id: ["", hh_diagrams_azure_networking_dns_private_resolver]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/dns-private-resolver.png"
+    - id: ["", hh_diagrams_azure_networking_dns_security_policy]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/dns-security-policy.png"
+    - id: ["", hh_diagrams_azure_networking_dns_zones]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/dns-zones.png"
+    - id: ["", hh_diagrams_azure_networking_expressroute_circuits]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/expressroute-circuits.png"
+    - id: ["", hh_diagrams_azure_networking_firewalls]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/firewalls.png"
+    - id: ["", hh_diagrams_azure_networking_front_door_and_cdn_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/front-door-and-cdn-profiles.png"
+    - id: ["", hh_diagrams_azure_networking_ip_address_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/ip-address-manager.png"
+    - id: ["", hh_diagrams_azure_networking_ip_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/ip-groups.png"
+    - id: ["", hh_diagrams_azure_networking_load_balancer_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/load-balancer-hub.png"
+    - id: ["", hh_diagrams_azure_networking_load_balancers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/load-balancers.png"
+    - id: ["", hh_diagrams_azure_networking_local_network_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/local-network-gateways.png"
+    - id: ["", hh_diagrams_azure_networking_nat]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/nat.png"
+    - id: ["", hh_diagrams_azure_networking_network_interfaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/network-interfaces.png"
+    - id: ["", hh_diagrams_azure_networking_network_security_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/network-security-groups.png"
+    - id: ["", hh_diagrams_azure_networking_network_watcher]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/network-watcher.png"
+    - id: ["", hh_diagrams_azure_networking_on_premises_data_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/on-premises-data-gateways.png"
+    - id: ["", hh_diagrams_azure_networking_private_link_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/private-link-service.png"
+    - id: ["", hh_diagrams_azure_networking_private_link_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/private-link-services.png"
+    - id: ["", hh_diagrams_azure_networking_private_link]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/private-link.png"
+    - id: ["", hh_diagrams_azure_networking_proximity_placement_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/proximity-placement-groups.png"
+    - id: ["", hh_diagrams_azure_networking_public_ip_addresses_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/public-ip-addresses-classic.png"
+    - id: ["", hh_diagrams_azure_networking_public_ip_addresses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/public-ip-addresses.png"
+    - id: ["", hh_diagrams_azure_networking_public_ip_prefixes]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/public-ip-prefixes.png"
+    - id: ["", hh_diagrams_azure_networking_reserved_ip_addresses_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/reserved-ip-addresses-classic.png"
+    - id: ["", hh_diagrams_azure_networking_resource_management_private_link]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/resource-management-private-link.png"
+    - id: ["", hh_diagrams_azure_networking_route_filters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/route-filters.png"
+    - id: ["", hh_diagrams_azure_networking_route_tables]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/route-tables.png"
+    - id: ["", hh_diagrams_azure_networking_service_endpoint_policies]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/service-endpoint-policies.png"
+    - id: ["", hh_diagrams_azure_networking_spot_vm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/spot-vm.png"
+    - id: ["", hh_diagrams_azure_networking_spot_vmss]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/spot-vmss.png"
+    - id: ["", hh_diagrams_azure_networking_subnet]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/subnet.png"
+    - id: ["", hh_diagrams_azure_networking_traffic_controller]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/traffic-controller.png"
+    - id: ["", hh_diagrams_azure_networking_traffic_manager_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/traffic-manager-profiles.png"
+    - id: ["", hh_diagrams_azure_networking_virtual_network_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/virtual-network-gateways.png"
+    - id: ["", hh_diagrams_azure_networking_virtual_networks_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/virtual-networks-classic.png"
+    - id: ["", hh_diagrams_azure_networking_virtual_networks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/virtual-networks.png"
+    - id: ["", hh_diagrams_azure_networking_virtual_router]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/virtual-router.png"
+    - id: ["", hh_diagrams_azure_networking_virtual_wan_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/virtual-wan-hub.png"
+    - id: ["", hh_diagrams_azure_networking_virtual_wans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/virtual-wans.png"
+    - id: ["", hh_diagrams_azure_networking_web_application_firewall_policieswaf]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/networking/web-application-firewall-policieswaf.png"
+
+    # AZURE.NEWICONS
+    - id: ["", hh_diagrams_azure_newicons_azure_sustainability]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/newicons/azure-sustainability.png"
+    - id: ["", hh_diagrams_azure_newicons_connected_vehicle_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/newicons/connected-vehicle-platform.png"
+    - id: ["", hh_diagrams_azure_newicons_entra_connect_health]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/newicons/entra-connect-health.png"
+    - id: ["", hh_diagrams_azure_newicons_entra_connect_sync]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/newicons/entra-connect-sync.png"
+    - id: ["", hh_diagrams_azure_newicons_icm_troubleshooting]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/newicons/icm-troubleshooting.png"
+    - id: ["", hh_diagrams_azure_newicons_osconfig]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/newicons/osconfig.png"
+    - id: ["", hh_diagrams_azure_newicons_storage_actions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/newicons/storage-actions.png"
+
+    # AZURE.OTHER
+    - id: ["", hh_diagrams_azure_other_aad_licenses]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/aad-licenses.png"
+    - id: ["", hh_diagrams_azure_other_aks_istio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/aks-istio.png"
+    - id: ["", hh_diagrams_azure_other_app_compliance_automation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/app-compliance-automation.png"
+    - id: ["", hh_diagrams_azure_other_app_registrations]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/app-registrations.png"
+    - id: ["", hh_diagrams_azure_other_aquila]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/aquila.png"
+    - id: ["", hh_diagrams_azure_other_arc_data_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/arc-data-services.png"
+    - id: ["", hh_diagrams_azure_other_arc_kubernetes]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/arc-kubernetes.png"
+    - id: ["", hh_diagrams_azure_other_arc_postgresql_]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/arc-postgresql-.png"
+    - id: ["", hh_diagrams_azure_other_arc_sql_managed_instance]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/arc-sql-managed-instance.png"
+    - id: ["", hh_diagrams_azure_other_arc_sql_server]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/arc-sql-server.png"
+    - id: ["", hh_diagrams_azure_other_avs_vm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/avs-vm.png"
+    - id: ["", hh_diagrams_azure_other_azure_a]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-a.png"
+    - id: ["", hh_diagrams_azure_other_azure_backup_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-backup-center.png"
+    - id: ["", hh_diagrams_azure_other_azure_center_for_sap]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-center-for-sap.png"
+    - id: ["", hh_diagrams_azure_other_azure_chaos_studio]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-chaos-studio.png"
+    - id: ["", hh_diagrams_azure_other_azure_cloud_shell]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-cloud-shell.png"
+    - id: ["", hh_diagrams_azure_other_azure_communication_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-communication-services.png"
+    - id: ["", hh_diagrams_azure_other_azure_compute_galleries]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-compute-galleries.png"
+    - id: ["", hh_diagrams_azure_other_azure_deployment_environments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-deployment-environments.png"
+    - id: ["", hh_diagrams_azure_other_azure_dev_tunnels]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-dev-tunnels.png"
+    - id: ["", hh_diagrams_azure_other_azure_edge_hardware_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-edge-hardware-center.png"
+    - id: ["", hh_diagrams_azure_other_azure_hpc_workbenches]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-hpc-workbenches.png"
+    - id: ["", hh_diagrams_azure_other_azure_load_testing]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-load-testing.png"
+    - id: ["", hh_diagrams_azure_other_azure_managed_grafana]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-managed-grafana.png"
+    - id: ["", hh_diagrams_azure_other_azure_monitor_dashboard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-monitor-dashboard.png"
+    - id: ["", hh_diagrams_azure_other_azure_network_function_manager_functions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-network-function-manager-functions.png"
+    - id: ["", hh_diagrams_azure_other_azure_network_function_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-network-function-manager.png"
+    - id: ["", hh_diagrams_azure_other_azure_orbital]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-orbital.png"
+    - id: ["", hh_diagrams_azure_other_azure_quotas]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-quotas.png"
+    - id: ["", hh_diagrams_azure_other_azure_sphere]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-sphere.png"
+    - id: ["", hh_diagrams_azure_other_azure_storage_mover]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-storage-mover.png"
+    - id: ["", hh_diagrams_azure_other_azure_support_center_blue]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-support-center-blue.png"
+    - id: ["", hh_diagrams_azure_other_azure_video_indexer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-video-indexer.png"
+    - id: ["", hh_diagrams_azure_other_azure_virtual_desktop]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-virtual-desktop.png"
+    - id: ["", hh_diagrams_azure_other_azure_vmware_solution]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azure-vmware-solution.png"
+    - id: ["", hh_diagrams_azure_other_azureattestation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azureattestation.png"
+    - id: ["", hh_diagrams_azure_other_azurite]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/azurite.png"
+    - id: ["", hh_diagrams_azure_other_backup_vault]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/backup-vault.png"
+    - id: ["", hh_diagrams_azure_other_bare_metal_infrastructure]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/bare-metal-infrastructure.png"
+    - id: ["", hh_diagrams_azure_other_capacity_reservation_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/capacity-reservation-groups.png"
+    - id: ["", hh_diagrams_azure_other_central_service_instance_for_sap]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/central-service-instance-for-sap.png"
+    - id: ["", hh_diagrams_azure_other_ceres]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/ceres.png"
+    - id: ["", hh_diagrams_azure_other_cloud_services_extended_support]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/cloud-services-extended-support.png"
+    - id: ["", hh_diagrams_azure_other_community_images]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/community-images.png"
+    - id: ["", hh_diagrams_azure_other_compliance_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/compliance-center.png"
+    - id: ["", hh_diagrams_azure_other_confidential_ledgers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/confidential-ledgers.png"
+    - id: ["", hh_diagrams_azure_other_container_apps_environments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/container-apps-environments.png"
+    - id: ["", hh_diagrams_azure_other_cost_export]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/cost-export.png"
+    - id: ["", hh_diagrams_azure_other_custom_ip_prefix]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/custom-ip-prefix.png"
+    - id: ["", hh_diagrams_azure_other_dashboard_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/dashboard-hub.png"
+    - id: ["", hh_diagrams_azure_other_data_collection_rules]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/data-collection-rules.png"
+    - id: ["", hh_diagrams_azure_other_database_instance_for_sap]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/database-instance-for-sap.png"
+    - id: ["", hh_diagrams_azure_other_dedicated_hsm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/dedicated-hsm.png"
+    - id: ["", hh_diagrams_azure_other_defender_cm_local_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-cm-local-manager.png"
+    - id: ["", hh_diagrams_azure_other_defender_dcs_controller]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-dcs-controller.png"
+    - id: ["", hh_diagrams_azure_other_defender_distributer_control_system]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-distributer-control-system.png"
+    - id: ["", hh_diagrams_azure_other_defender_engineering_station]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-engineering-station.png"
+    - id: ["", hh_diagrams_azure_other_defender_external_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-external-management.png"
+    - id: ["", hh_diagrams_azure_other_defender_freezer_monitor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-freezer-monitor.png"
+    - id: ["", hh_diagrams_azure_other_defender_historian]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-historian.png"
+    - id: ["", hh_diagrams_azure_other_defender_hmi]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-hmi.png"
+    - id: ["", hh_diagrams_azure_other_defender_industrial_packaging_system]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-industrial-packaging-system.png"
+    - id: ["", hh_diagrams_azure_other_defender_industrial_printer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-industrial-printer.png"
+    - id: ["", hh_diagrams_azure_other_defender_industrial_robot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-industrial-robot.png"
+    - id: ["", hh_diagrams_azure_other_defender_industrial_scale_system]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-industrial-scale-system.png"
+    - id: ["", hh_diagrams_azure_other_defender_marquee]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-marquee.png"
+    - id: ["", hh_diagrams_azure_other_defender_meter]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-meter.png"
+    - id: ["", hh_diagrams_azure_other_defender_plc]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-plc.png"
+    - id: ["", hh_diagrams_azure_other_defender_pneumatic_device]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-pneumatic-device.png"
+    - id: ["", hh_diagrams_azure_other_defender_programable_board]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-programable-board.png"
+    - id: ["", hh_diagrams_azure_other_defender_relay]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-relay.png"
+    - id: ["", hh_diagrams_azure_other_defender_robot_controller]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-robot-controller.png"
+    - id: ["", hh_diagrams_azure_other_defender_rtu]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-rtu.png"
+    - id: ["", hh_diagrams_azure_other_defender_sensor]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-sensor.png"
+    - id: ["", hh_diagrams_azure_other_defender_slot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-slot.png"
+    - id: ["", hh_diagrams_azure_other_defender_web_guiding_system]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/defender-web-guiding-system.png"
+    - id: ["", hh_diagrams_azure_other_device_update_iot_hub]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/device-update-iot-hub.png"
+    - id: ["", hh_diagrams_azure_other_disk_pool]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/disk-pool.png"
+    - id: ["", hh_diagrams_azure_other_edge_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/edge-management.png"
+    - id: ["", hh_diagrams_azure_other_elastic_san]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/elastic-san.png"
+    - id: ["", hh_diagrams_azure_other_exchange_on_premises_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/exchange-on-premises-access.png"
+    - id: ["", hh_diagrams_azure_other_express_route_traffic_collector]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/express-route-traffic-collector.png"
+    - id: ["", hh_diagrams_azure_other_expressroute_direct]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/expressroute-direct.png"
+    - id: ["", hh_diagrams_azure_other_fhir_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/fhir-service.png"
+    - id: ["", hh_diagrams_azure_other_fiji]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/fiji.png"
+    - id: ["", hh_diagrams_azure_other_hdi_aks_cluster]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/hdi-aks-cluster.png"
+    - id: ["", hh_diagrams_azure_other_instance_pools]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/instance-pools.png"
+    - id: ["", hh_diagrams_azure_other_internet_analyzer_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/internet-analyzer-profiles.png"
+    - id: ["", hh_diagrams_azure_other_kubernetes_fleet_manager]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/kubernetes-fleet-manager.png"
+    - id: ["", hh_diagrams_azure_other_local_network_gateways]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/local-network-gateways.png"
+    - id: ["", hh_diagrams_azure_other_log_analytics_query_pack]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/log-analytics-query-pack.png"
+    - id: ["", hh_diagrams_azure_other_managed_instance_apache_cassandra]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/managed-instance-apache-cassandra.png"
+    - id: ["", hh_diagrams_azure_other_medtech_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/medtech-service.png"
+    - id: ["", hh_diagrams_azure_other_microsoft_dev_box]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/microsoft-dev-box.png"
+    - id: ["", hh_diagrams_azure_other_mission_landing_zone]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/mission-landing-zone.png"
+    - id: ["", hh_diagrams_azure_other_mobile_networks]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/mobile-networks.png"
+    - id: ["", hh_diagrams_azure_other_modular_data_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/modular-data-center.png"
+    - id: ["", hh_diagrams_azure_other_network_managers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/network-managers.png"
+    - id: ["", hh_diagrams_azure_other_network_security_perimeters]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/network-security-perimeters.png"
+    - id: ["", hh_diagrams_azure_other_open_supply_chain_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/open-supply-chain-platform.png"
+    - id: ["", hh_diagrams_azure_other_peering_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/peering-service.png"
+    - id: ["", hh_diagrams_azure_other_peerings]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/peerings.png"
+    - id: ["", hh_diagrams_azure_other_private_endpoints]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/private-endpoints.png"
+    - id: ["", hh_diagrams_azure_other_reserved_capacity]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/reserved-capacity.png"
+    - id: ["", hh_diagrams_azure_other_resource_guard]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/resource-guard.png"
+    - id: ["", hh_diagrams_azure_other_resource_mover]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/resource-mover.png"
+    - id: ["", hh_diagrams_azure_other_rtos]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/rtos.png"
+    - id: ["", hh_diagrams_azure_other_savings_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/savings-plans.png"
+    - id: ["", hh_diagrams_azure_other_scvmm_management_servers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/scvmm-management-servers.png"
+    - id: ["", hh_diagrams_azure_other_sonic_dash]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/sonic-dash.png"
+    - id: ["", hh_diagrams_azure_other_ssh_keys]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/ssh-keys.png"
+    - id: ["", hh_diagrams_azure_other_storage_functions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/storage-functions.png"
+    - id: ["", hh_diagrams_azure_other_targets_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/targets-management.png"
+    - id: ["", hh_diagrams_azure_other_template_specs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/template-specs.png"
+    - id: ["", hh_diagrams_azure_other_test_base]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/test-base.png"
+    - id: ["", hh_diagrams_azure_other_update_management_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/update-management-center.png"
+    - id: ["", hh_diagrams_azure_other_video_analyzers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/video-analyzers.png"
+    - id: ["", hh_diagrams_azure_other_virtual_enclaves]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/virtual-enclaves.png"
+    - id: ["", hh_diagrams_azure_other_virtual_instance_for_sap]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/virtual-instance-for-sap.png"
+    - id: ["", hh_diagrams_azure_other_virtual_visits_builder]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/virtual-visits-builder.png"
+    - id: ["", hh_diagrams_azure_other_vm_app_definitions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/vm-app-definitions.png"
+    - id: ["", hh_diagrams_azure_other_vm_app_versions]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/vm-app-versions.png"
+    - id: ["", hh_diagrams_azure_other_vm_image_version]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/vm-image-version.png"
+    - id: ["", hh_diagrams_azure_other_wac]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/wac.png"
+    - id: ["", hh_diagrams_azure_other_web_app_database]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/web-app-database.png"
+    - id: ["", hh_diagrams_azure_other_web_jobs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/web-jobs.png"
+    - id: ["", hh_diagrams_azure_other_windows_notification_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/windows-notification-services.png"
+    - id: ["", hh_diagrams_azure_other_worker_container_app]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/other/worker-container-app.png"
+
+    # AZURE.ROOT
+    - id: ["", hh_diagrams_azure_azure]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/azure.png"
+
+    # AZURE.SECURITY
+    - id: ["", hh_diagrams_azure_security_application_security_groups]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/application-security-groups.png"
+    - id: ["", hh_diagrams_azure_security_azure_ad_authentication_methods]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/azure-ad-authentication-methods.png"
+    - id: ["", hh_diagrams_azure_security_azure_ad_identity_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/azure-ad-identity-protection.png"
+    - id: ["", hh_diagrams_azure_security_azure_ad_privleged_identity_management]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/azure-ad-privleged-identity-management.png"
+    - id: ["", hh_diagrams_azure_security_azure_ad_risky_signins]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/azure-ad-risky-signins.png"
+    - id: ["", hh_diagrams_azure_security_azure_ad_risky_users]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/azure-ad-risky-users.png"
+    - id: ["", hh_diagrams_azure_security_azure_information_protection]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/azure-information-protection.png"
+    - id: ["", hh_diagrams_azure_security_azure_sentinel]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/azure-sentinel.png"
+    - id: ["", hh_diagrams_azure_security_conditional_access]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/conditional-access.png"
+    - id: ["", hh_diagrams_azure_security_defender]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/defender.png"
+    - id: ["", hh_diagrams_azure_security_detonation]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/detonation.png"
+    - id: ["", hh_diagrams_azure_security_extended_security_updates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/extended-security-updates.png"
+    - id: ["", hh_diagrams_azure_security_extendedsecurityupdates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/extendedsecurityupdates.png"
+    - id: ["", hh_diagrams_azure_security_identity_secure_score]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/identity-secure-score.png"
+    - id: ["", hh_diagrams_azure_security_key_vaults]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/key-vaults.png"
+    - id: ["", hh_diagrams_azure_security_microsoft_defender_easm]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/microsoft-defender-easm.png"
+    - id: ["", hh_diagrams_azure_security_microsoft_defender_for_cloud]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/microsoft-defender-for-cloud.png"
+    - id: ["", hh_diagrams_azure_security_microsoft_defender_for_iot]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/microsoft-defender-for-iot.png"
+    - id: ["", hh_diagrams_azure_security_multifactor_authentication]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/multifactor-authentication.png"
+    - id: ["", hh_diagrams_azure_security_security_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/security-center.png"
+    - id: ["", hh_diagrams_azure_security_sentinel]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/sentinel.png"
+    - id: ["", hh_diagrams_azure_security_user_settings]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/security/user-settings.png"
+
+    # AZURE.STORAGE
+    - id: ["", hh_diagrams_azure_storage_archive_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/archive-storage.png"
+    - id: ["", hh_diagrams_azure_storage_azure_databox_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/azure-databox-gateway.png"
+    - id: ["", hh_diagrams_azure_storage_azure_fileshares]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/azure-fileshares.png"
+    - id: ["", hh_diagrams_azure_storage_azure_hcp_cache]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/azure-hcp-cache.png"
+    - id: ["", hh_diagrams_azure_storage_azure_netapp_files]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/azure-netapp-files.png"
+    - id: ["", hh_diagrams_azure_storage_azure_stack_edge]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/azure-stack-edge.png"
+    - id: ["", hh_diagrams_azure_storage_azurefxtedgefiler]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/azurefxtedgefiler.png"
+    - id: ["", hh_diagrams_azure_storage_blob_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/blob-storage.png"
+    - id: ["", hh_diagrams_azure_storage_data_box_edge_data_box_gateway]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/data-box-edge-data-box-gateway.png"
+    - id: ["", hh_diagrams_azure_storage_data_box]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/data-box.png"
+    - id: ["", hh_diagrams_azure_storage_data_lake_storage_gen1]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/data-lake-storage-gen1.png"
+    - id: ["", hh_diagrams_azure_storage_data_lake_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/data-lake-storage.png"
+    - id: ["", hh_diagrams_azure_storage_data_share_invitations]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/data-share-invitations.png"
+    - id: ["", hh_diagrams_azure_storage_data_shares]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/data-shares.png"
+    - id: ["", hh_diagrams_azure_storage_general_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/general-storage.png"
+    - id: ["", hh_diagrams_azure_storage_import_export_jobs]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/import-export-jobs.png"
+    - id: ["", hh_diagrams_azure_storage_netapp_files]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/netapp-files.png"
+    - id: ["", hh_diagrams_azure_storage_queues_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/queues-storage.png"
+    - id: ["", hh_diagrams_azure_storage_recovery_services_vaults]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/recovery-services-vaults.png"
+    - id: ["", hh_diagrams_azure_storage_storage_accounts_classic]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/storage-accounts-classic.png"
+    - id: ["", hh_diagrams_azure_storage_storage_accounts]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/storage-accounts.png"
+    - id: ["", hh_diagrams_azure_storage_storage_explorer]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/storage-explorer.png"
+    - id: ["", hh_diagrams_azure_storage_storage_sync_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/storage-sync-services.png"
+    - id: ["", hh_diagrams_azure_storage_storsimple_data_managers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/storsimple-data-managers.png"
+    - id: ["", hh_diagrams_azure_storage_storsimple_device_managers]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/storsimple-device-managers.png"
+    - id: ["", hh_diagrams_azure_storage_table_storage]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/storage/table-storage.png"
+
+    # AZURE.WEB
+    - id: ["", hh_diagrams_azure_web_api_center]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/api-center.png"
+    - id: ["", hh_diagrams_azure_web_api_connections]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/api-connections.png"
+    - id: ["", hh_diagrams_azure_web_api_management_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/api-management-services.png"
+    - id: ["", hh_diagrams_azure_web_app_service_certificates]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/app-service-certificates.png"
+    - id: ["", hh_diagrams_azure_web_app_service_domains]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/app-service-domains.png"
+    - id: ["", hh_diagrams_azure_web_app_service_environments]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/app-service-environments.png"
+    - id: ["", hh_diagrams_azure_web_app_service_plans]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/app-service-plans.png"
+    - id: ["", hh_diagrams_azure_web_app_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/app-services.png"
+    - id: ["", hh_diagrams_azure_web_app_space]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/app-space.png"
+    - id: ["", hh_diagrams_azure_web_azure_media_service]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/azure-media-service.png"
+    - id: ["", hh_diagrams_azure_web_azure_spring_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/azure-spring-apps.png"
+    - id: ["", hh_diagrams_azure_web_cognitive_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/cognitive-search.png"
+    - id: ["", hh_diagrams_azure_web_cognitive_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/cognitive-services.png"
+    - id: ["", hh_diagrams_azure_web_front_door_and_cdn_profiles]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/front-door-and-cdn-profiles.png"
+    - id: ["", hh_diagrams_azure_web_media_services]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/media-services.png"
+    - id: ["", hh_diagrams_azure_web_notification_hub_namespaces]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/notification-hub-namespaces.png"
+    - id: ["", hh_diagrams_azure_web_power_platform]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/power-platform.png"
+    - id: ["", hh_diagrams_azure_web_search]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/search.png"
+    - id: ["", hh_diagrams_azure_web_signalr]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/signalr.png"
+    - id: ["", hh_diagrams_azure_web_static_apps]
+      style: hh_diagrams_base
+      substitutions:
+          resource_image: "azure/web/static-apps.png"
