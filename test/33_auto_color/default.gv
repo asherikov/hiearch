@@ -1,0 +1,8 @@
+digraph default {
+compound=true;
+node1 [shape=rectangle, style=filled, fillcolor="#6c4d9b", label=A];
+node3 [shape=ellipse, style=filled, fillcolor="#507481", color="#38e0ea", fontcolor="#ac052a", label=C];
+node2 [shape=rectangle, style=filled, fillcolor="#2ba516", label=B];
+node1 -> node2 [color="#9c11a0", style=solid];
+node2 -> node3 [color="#d6891b", style=solid];
+}

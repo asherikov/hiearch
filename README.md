@@ -12,6 +12,7 @@
   - [View styles](#view-styles)
   - [Edge labels](#edge-labels)
   - [Edge styles](#edge-styles)
+  - [Automatic color selection](#automatic-color-selection)
   - [Formatted labels](#formatted-labels)
   - [Multiscoping](#multiscoping)
 - [Predefined styles](#predefined-styles)
@@ -108,8 +109,11 @@ Trivial
 -------
 
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -120,20 +124,28 @@ views:
     - id: view1              # unique id / output filename
       nodes: [test1]         # nodes to include
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/07_trivial/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 </table>
 
 Node relations
 --------------
 
 <table>
+
 <tr>
+
 <td rowspan="3">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -158,32 +170,48 @@ views:
     - id: view3
       nodes: [test1, test2]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/08_node_realations/view3.svg" alt="view3" />
 <br /> view3
 </td>
+
 </tr>
+
 </table>
 
 Node selection using tags
 -------------------------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -200,22 +228,35 @@ views:
     - id: view2
       tags: ["default"]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/09_tags/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 </table>
+
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -223,20 +264,28 @@ nodes:
 # if no views are specified explicitly, a default one is
 # added with 'tags: ["default"]'
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/10_minimal/default.svg" alt="default" />
 <br /> default
 </td>
+
 </tr>
+
 </table>
 
 Style inheritance without tags
 ------------------------------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -256,34 +305,47 @@ views:
     - id: view_custom           # includes nodes A and B
       tags: ["custom_tag"]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/22_style_notag_tag_inheritance/view_default.svg" alt="view_default" />
 <br /> view_default
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/22_style_notag_tag_inheritance/view_custom.svg" alt="view_custom" />
 <br /> view_custom
 </td>
+
 </tr>
+
 </table>
 
 Neighbour node selection
 ------------------------
 
 There are several types on automated node selection:
-- `explicit` -- only explicitly specified nodes are selected;
-- `direct` -- explicitly specified and their direct connections;
-- `parent` -- similar to `direct`, but instead of directly connected nodes
-  their top-most parents (scopes) are selected;
-- `recursive_in`, `recursive_out`, `recursive_all` -- recursively expand
+
+- `explicit` – only explicitly specified nodes are selected;
+- `direct` – explicitly specified and their direct connections;
+- `parent` – similar to `direct`, but instead of directly connected nodes their
+  top-most parents (scopes) are selected;
+- `recursive_in`, `recursive_out`, `recursive_all` – recursively expand
   connections of explicitly selected nodes.
 
 <table>
+
 <tr>
+
 <td rowspan="6">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -323,50 +385,78 @@ views:
       # node_a, node_c
       neighbours: recursive_in
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/explicit.svg" alt="explicit" />
 <br /> explicit
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/direct.svg" alt="direct" />
 <br /> direct
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/parent.svg" alt="parent" />
 <br /> parent
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_in.svg" alt="recursive_in" />
 <br /> recursive_in
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_out.svg" alt="recursive_out" />
 <br /> recursive_out
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_in_c.svg" alt="recursive_out" />
 <br /> recursive_in_c
 </td>
+
 </tr>
+
 </table>
 
 View expansion
 --------------
 
 <table>
+
 <tr>
+
 <td rowspan="3">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -387,7 +477,6 @@ edges:
     - link: [node_e, node_f]
     - link: [node_f, node_h]
     - link: [node_a, node_b]
-
 views:
     - id: tag_based_recursive_out
       tags: [group1]
@@ -402,33 +491,48 @@ views:
       #    original.
       expand: [recursive_out]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out.svg" alt="tag_based_recursive_out" />
 <br /> original
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_a_recursive_out.svg" alt="tag_based_recursive_out_node_a_recursive_out" />
 <br /> node A expansion
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/23_expand/tag_based_recursive_out_node_b_recursive_out.svg" alt="tag_based_recursive_out_node_b_recursive_out" />
 <br /> node B expansion
 </td>
-</tr>
-</table>
 
+</tr>
+
+</table>
 
 View styles
 -----------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -454,26 +558,38 @@ views:
     - id: plain
       nodes: [test1]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/styled.svg" alt="styled" />
 <br /> styled
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/12_view_style/plain.svg" alt="plain" />
 <br /> plain
 </td>
+
 </tr>
+
 </table>
 
 Edge labels
 -----------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -490,26 +606,38 @@ views:
     - id: view2
       nodes: [test2]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/13_edge_labels/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 </table>
 
 Edge styles
 -----------
 
 <table>
+
 <tr>
+
 <td rowspan="3">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -550,24 +678,94 @@ views:
     - id: view3
       nodes: [test3]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view1.svg" alt="view1" />
 <br /> view1
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view2.svg" alt="view2" />
 <br /> view2
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/14_edge_style/view3.svg" alt="view3" />
 <br /> view3
 </td>
+
 </tr>
+
+</table>
+
+Automatic color selection
+-------------------------
+
+The keyword `auto` can be used as a color value for any graphviz color attribute
+(e.g., `color`, `fillcolor`, `fontcolor`, `edgecolor`, `linecolor`). When
+specified, a deterministic random color is generated based on a hash of the node
+or edge attributes.
+
+<table>
+
+<tr>
+
+<td>
+
+<pre>
+-----------------------------------------------------------
+nodes:
+    - id: [A, node1]
+      graphviz:
+        shape: rectangle
+        style: filled
+        fillcolor: auto
+    - id: [B, node2]
+      graphviz:
+        shape: rectangle
+        style: filled
+        fillcolor: auto
+    - id: [C, node3]
+      graphviz:
+        shape: ellipse
+        style: filled
+        fillcolor: auto
+        color: auto
+        fontcolor: auto
+edges:
+    - link: [node1, node2]
+      graphviz:
+        color: auto
+        style: solid
+    - link: [node2, node3]
+      graphviz:
+        color: auto
+        style: solid
+</pre>
+
+</td>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/33_auto_color/default.svg" alt="default" />
+<br /> default
+</td>
+
+</tr>
+
 </table>
 
 Formatted labels
@@ -606,28 +804,40 @@ PNG using graphviz won’t work. Also, the included images must be present in th
 output directory.
 
 <table>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view1.png" alt="view1" />
 <br /> view1
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view2.png" alt="view2" />
 <br /> view2
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/15_formatted_labels/view3.png" alt="view3" />
 <br /> view3
 </td>
+
 </tr>
+
 </table>
 
 Multiscoping
 ------------
 
 <table>
+
 <tr>
+
 <td rowspan="2">
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -654,18 +864,27 @@ views:
     - id: autoranking
       nodes: [test1, test2, test3]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/autoranking.svg" alt="autoranking" />
 <br /> autoranking
 </td>
+
 </tr>
+
 <tr>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/06_multiscope/default.svg" alt="default" />
 <br /> default
 </td>
+
 </tr>
+
 </table>
 
 Predefined styles
@@ -679,8 +898,11 @@ State machine
 -------------
 
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -726,20 +948,28 @@ views:
       # override empty selection inherited from style view
       tags: ["default"]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/16_state_machine/state_machine_example.svg" alt="state_machine_example" />
 <br /> state machine example
 </td>
+
 </tr>
+
 </table>
 
 Use Case
 --------
 
 <table>
+
 <tr>
+
 <td>
+
 <pre>
 -----------------------------------------------------------
 nodes:
@@ -788,9 +1018,13 @@ views:
       # override empty selection inherited from style view
       tags: ["default"]
 </pre>
+
 </td>
+
 <td align="center">
+
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/17_use_case/use_case_example.svg" alt="use_case_example" />
 <br /> use case example
 </td>
+
 </tr>

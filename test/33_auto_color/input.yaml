@@ -1,0 +1,27 @@
+nodes:
+    - id: [A, node1]
+      graphviz:
+        shape: rectangle
+        style: filled
+        fillcolor: auto
+    - id: [B, node2]
+      graphviz:
+        shape: rectangle
+        style: filled
+        fillcolor: auto
+    - id: [C, node3]
+      graphviz:
+        shape: ellipse
+        style: filled
+        fillcolor: auto
+        color: auto
+        fontcolor: auto
+edges:
+    - link: [node1, node2]
+      graphviz:
+        color: auto
+        style: solid
+    - link: [node2, node3]
+      graphviz:
+        color: auto
+        style: solid

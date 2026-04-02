@@ -1,6 +1,52 @@
 """Utility functions for hiearch package."""
 
 import copy
+import hashlib
+
+
+def generate_auto_color(seed_string):
+    """Generate a deterministic random color based on a seed string.
+
+    Args:
+        seed_string: String to use as seed for color generation
+
+    Returns:
+        Hex color string in format '#rrggbb'
+    """
+    hash_object = hashlib.md5(seed_string.encode())
+    hash_hex = hash_object.hexdigest()
+    r = int(hash_hex[0:2], 16)
+    g = int(hash_hex[2:4], 16)
+    b = int(hash_hex[4:6], 16)
+    return f'#{r:02x}{g:02x}{b:02x}'
+
+
+def process_auto_colors(attrs, seed_data):
+    """Replace 'auto' color values with deterministic generated colors.
+
+    Args:
+        attrs: Dictionary of attributes that may contain 'auto' colors
+        seed_data: Data to use for generating deterministic seed strings
+
+    Returns:
+        Modified attrs dictionary with 'auto' replaced by generated colors
+    """
+    color_attrs = ['color', 'fillcolor', 'fontcolor', 'edgecolor', 'linecolor']
+
+    for attr in color_attrs:
+        if attr in attrs and attrs[attr] == 'auto':
+            seed_string = attr
+            for seed in seed_data:
+                if seed is None:
+                    continue
+                if isinstance(seed, list):
+                    for item in seed:
+                        seed_string += item
+                    continue
+                seed_string += seed
+            attrs[attr] = generate_auto_color(seed_string)
+
+    return attrs
 
 
 def merge_styles(secondary, primary, with_tags=True):

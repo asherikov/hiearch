@@ -7,6 +7,7 @@ import subprocess
 import pydot
 
 from . import hh_node
+from . import util
 
 
 def get_attributes(node, extended_attrs, label_format_key):
@@ -19,6 +20,12 @@ def get_attributes(node, extended_attrs, label_format_key):
     attrs['label'] = attrs[label_format_key].format(**substitutions)
     for attr in extended_attrs.keys():
         attrs.pop(attr, None)
+
+    util.process_auto_colors(attrs, [
+        node['id'],
+        node['style'],
+        node['label']
+    ])
 
     return attrs
 
@@ -48,6 +55,13 @@ def get_edge_attributes(edge):
 
     if 'label_format' in attrs:
         attrs.pop('label_format')
+
+    util.process_auto_colors(attrs, [
+        edge['orig_in'],
+        edge['orig_out'],
+        edge['style'],
+        edge['label']
+    ])
 
     return attrs
 

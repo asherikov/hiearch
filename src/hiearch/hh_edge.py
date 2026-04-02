@@ -18,16 +18,21 @@ def parse(yaml_edges, edges, must_exist_nodes):
         'graphviz': {},
         'label': [],
         'substitutions': {},
+        # should never change after initialization
+        'orig_in': None,
+        'orig_out': None,
         # overriden
         'id': None,
         'in': None,
-        'out': None
+        'out': None,
     }
 
 
     for edge in yaml_edges:
-        edge['out'] = edge['link'][0]
         edge['in'] = edge['link'][1]
+        edge['out'] = edge['link'][0]
+        edge['orig_in'] = edge['in']
+        edge['orig_out'] = edge['out']
         if len(edge['link']) > 2:
             edge['id'] = edge['link'][2]
         else:
