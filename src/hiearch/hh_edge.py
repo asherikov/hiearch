@@ -21,9 +21,7 @@ def parse(yaml_edges, edges, must_exist_nodes):
         # overriden
         'id': None,
         'in': None,
-        'out': None,
-        'scope_in': None,
-        'scope_out': None
+        'out': None
     }
 
 

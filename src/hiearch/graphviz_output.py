@@ -39,8 +39,6 @@ def get_edge_attributes(edge):
             'id': edge['id'],
             'node_in': edge['in'],
             'node_out': edge['out'],
-            'scope_in': edge['scope_in'],
-            'scope_out': edge['scope_out'],
             'style': edge['style']
         })
 
