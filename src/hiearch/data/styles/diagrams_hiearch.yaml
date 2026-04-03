@@ -12,7 +12,7 @@ nodes:
           shape: "none"
           style: "rounded"
           fontname: "Sans-Serif"
-          fontsize: "20"
+          fontsize: "24"
           fontcolor: "#2D3436"
           margin: "0"
           # HTML table label format: top row = icon, bottom row = label
@@ -31,7 +31,7 @@ nodes:
           color: "#CCCCCC"
           margin: "10"
           fontname: "Sans-Serif"
-          fontsize: "20"
+          fontsize: "24"
 edges:
     - link: [hh_diagrams_base, hh_diagrams_base, hh_diagrams_link]
       graphviz:
@@ -54,5 +54,5 @@ views:
               nodesep: "1.50"
               ranksep: "1.50"
               fontname: "Sans-Serif"
-              fontsize: "15"
+              fontsize: "24"
               fontcolor: "#2D3436"
