@@ -8,6 +8,8 @@ fontname="Sans-Serif";
 fontsize=15;
 fontcolor="#2D3436";
 compound=true;
+mobile_user [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="mobile.png"/></td></tr><tr><td>Mobile User</td></tr></table>>];
+grafana [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="grafana.png"/></td></tr><tr><td>Grafana</td></tr></table>>];
 subgraph aws_compute {
 shape=rectangle;
 style="rounded,filled";
@@ -19,12 +21,11 @@ fontname="Sans-Serif";
 fontsize=20;
 label="AWS\nCompute";
 cluster=true;
-"aws_compute.ecs" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>Elastic<br />Container</td></tr></table>>];
-"aws_compute.ec2" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>EC2 Instances</td></tr></table>>];
-"aws_compute.lambda_func" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>Lambda<br />Functions</td></tr></table>>];
+"aws_compute.ecs" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="elastic-container-service.png"/></td></tr><tr><td>Elastic<br />Container</td></tr></table>>];
+"aws_compute.ec2" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="ec2.png"/></td></tr><tr><td>EC2 Instances</td></tr></table>>];
+"aws_compute.lambda_func" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="lambda.png"/></td></tr><tr><td>Lambda<br />Functions</td></tr></table>>];
 }
-mobile_user [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>Mobile User</td></tr></table>>];
-grafana [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>Grafana</td></tr></table>>];
+prometheus [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="prometheus.png"/></td></tr><tr><td>Prometheus</td></tr></table>>];
 subgraph aws_frontend {
 shape=rectangle;
 style="rounded,filled";
@@ -36,18 +37,17 @@ fontname="Sans-Serif";
 fontsize=20;
 label="AWS\nFrontend";
 cluster=true;
-"aws_frontend.elb" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>Application<br />Load Balancer</td></tr></table>>];
-"aws_frontend.cloudfront" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>CloudFront<br />CDN</td></tr></table>>];
+"aws_frontend.cloudfront" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="cloudfront.png"/></td></tr><tr><td>CloudFront<br />CDN</td></tr></table>>];
+"aws_frontend.elb" [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="elb-application-load-balancer.png"/></td></tr><tr><td>Application<br />Load Balancer</td></tr></table>>];
 }
-prometheus [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>Prometheus</td></tr></table>>];
-tablet_user [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td></td></tr><tr><td>Tablet User</td></tr></table>>];
-"aws_frontend.elb" -> "aws_compute.ecs" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
-"aws_frontend.elb" -> "aws_compute.ec2" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
-prometheus -> "aws_compute.ec2" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
+tablet_user [shape=none, style=rounded, fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", margin=0, label=<<table fixedsize="true" width="200" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="tablet.png"/></td></tr><tr><td>Tablet User</td></tr></table>>];
 mobile_user -> "aws_frontend.cloudfront" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
 grafana -> prometheus [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
+"aws_frontend.elb" -> "aws_compute.ecs" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
+prometheus -> "aws_compute.ec2" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
+prometheus -> "aws_compute.lambda_func" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
+"aws_frontend.elb" -> "aws_compute.ec2" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
+tablet_user -> "aws_frontend.cloudfront" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
 "aws_frontend.cloudfront" -> "aws_frontend.elb" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
 "aws_frontend.elb" -> "aws_compute.lambda_func" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
-prometheus -> "aws_compute.lambda_func" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
-tablet_user -> "aws_frontend.cloudfront" [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=2];
 }

@@ -2,6 +2,16 @@
 
 import copy
 import hashlib
+import os
+import shutil
+
+
+def copy_resource(resource_path, dest_dir):
+    relative_path = os.path.basename(resource_path)
+    dest_path = os.path.join(dest_dir, relative_path)
+    os.makedirs(dest_dir, exist_ok=True)
+    shutil.copy2(resource_path, dest_path)
+    return relative_path
 
 
 def generate_auto_color(seed_string):

@@ -10,31 +10,13 @@ from . import hh_node
 from . import util
 
 
-def resolve_resource_path(resource_path, resource_dirs):
-    if os.path.exists(resource_path):
-        return resource_path
-
-    if resource_dirs:
-        for resource_dir in resource_dirs:
-            full_path = os.path.join(resource_dir, resource_path)
-            if os.path.exists(full_path):
-                return full_path
-
-    raise RuntimeError(f'Resource not found: {resource_path}')
-
-
-def get_attributes(node, extended_attrs, label_format_key, resource_dirs=None):
+def get_attributes(node, extended_attrs, label_format_key):
     attrs = dict(extended_attrs)
     attrs.update(copy.deepcopy(node['graphviz']))
 
     substitutions = hh_node.get_substitutions(node)
     if extended_attrs['expanded_from'] is not None:
         substitutions.update({'expanded_from': extended_attrs['expanded_from']})
-
-    # Add image path to substitutions for use in label format strings
-    for subst_key, _ in substitutions.items():
-        if subst_key.startswith("resource_"):
-            substitutions[subst_key] = resolve_resource_path(substitutions[subst_key], resource_dirs)
 
     attrs['label'] = attrs[label_format_key].format(**substitutions)
 
@@ -45,9 +27,6 @@ def get_attributes(node, extended_attrs, label_format_key, resource_dirs=None):
     for attr in extended_attrs.keys():
         attrs.pop(attr, None)
 
-    if 'image' in attrs:
-        attrs['image'] = resolve_resource_path(attrs['image'], resource_dirs)
-
     util.process_auto_colors(attrs, [
         node['id'],
         node['style'],
@@ -57,8 +36,8 @@ def get_attributes(node, extended_attrs, label_format_key, resource_dirs=None):
     return attrs
 
 
-def get_scope_attributes(node, extended_attrs, resource_dirs=None):
-    attrs = get_attributes(node, extended_attrs, 'scope_label_format', resource_dirs)
+def get_scope_attributes(node, extended_attrs):
+    attrs = get_attributes(node, extended_attrs, 'scope_label_format')
     attrs['cluster'] = 'true'
     return attrs
 
@@ -93,7 +72,7 @@ def get_edge_attributes(edge):
     return attrs
 
 
-def generate_tree(graph, tree, nodes, extended_attrs, resource_dirs=None):
+def generate_tree(graph, tree, nodes, extended_attrs):
     if len(tree) > 0:
         for node_key, node_tuple in tree.items():
             node = nodes[node_key]
@@ -101,16 +80,16 @@ def generate_tree(graph, tree, nodes, extended_attrs, resource_dirs=None):
             if 0 == len(node_tuple['subtree']):
                 graph.add_node(
                         pydot.Node(node_tuple['key_path'],
-                                   **get_attributes(node, extended_attrs, 'node_label_format', resource_dirs)))
+                                   **get_attributes(node, extended_attrs, 'node_label_format')))
             else:
                 subgraph = pydot.Subgraph(
                         graph_name=node_tuple['key_path'],
-                        **get_scope_attributes(node, extended_attrs, resource_dirs))
-                generate_tree(subgraph, node_tuple['subtree'], nodes, extended_attrs, resource_dirs)
+                        **get_scope_attributes(node, extended_attrs))
+                generate_tree(subgraph, node_tuple['subtree'], nodes, extended_attrs)
                 graph.add_subgraph(subgraph)
 
 
-def generate(output_dir, temp_dir, fmt, view, nodes, resource_dirs=None):
+def generate(output_dir, temp_dir, fmt, view, nodes, copied_resources):
     graph = pydot.Dot(graph_name=view['id'], graph_type='digraph')
 
     extended_attrs = {
@@ -131,7 +110,7 @@ def generate(output_dir, temp_dir, fmt, view, nodes, resource_dirs=None):
 
     graph.set('compound', 'true')
 
-    generate_tree(graph, view['tree'], nodes, extended_attrs, resource_dirs)
+    generate_tree(graph, view['tree'], nodes, extended_attrs)
 
     for edge_set in ['edges', 'custom_edges']:
         for edge in view[edge_set].values():
@@ -174,9 +153,16 @@ def generate(output_dir, temp_dir, fmt, view, nodes, resource_dirs=None):
     dot_file_path = f'{temp_dir}/{view["id"]}.gv'
     graph.write(dot_file_path)
 
-    # Call dot directly (pydot uses temporary dirs that dont play nice with inclusions)
-    output_file_path = f'{output_dir}/{view["id"]}.{fmt}'
+    # Copy resources to output directory for SVG format if output dir differs from temp dir
+    if fmt == 'svg' and os.path.realpath(output_dir) != os.path.realpath(temp_dir):
+        for resource in copied_resources:
+            util.copy_resource(os.path.join(temp_dir, resource), output_dir)
+    for resource in copied_resources:
+        print(f'Copied resource: "{resource}"')
 
-    cmd = ['dot', '-T' + fmt, '-o', output_file_path, dot_file_path]
-    subprocess.run(cmd, check=True, capture_output=True)
+    # Call dot directly (pydot uses temporary dirs that dont play nice with inclusions)
+    abs_output_file_path = os.path.abspath(f'{output_dir}/{view["id"]}.{fmt}')
+
+    cmd = ['dot', '-T' + fmt, '-o', abs_output_file_path, f'{view["id"]}.gv']
+    subprocess.run(cmd, check=True, capture_output=True, cwd=temp_dir)
 

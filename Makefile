@@ -18,7 +18,6 @@ FORMAT?=svg
 	cp ${TEST_DIR}/$@/icon*.svg ${BUILD_DIR}/$@/ || true
 	cd ${TEST_DIR}/$@/; ${TEST_NOT} (find ./ -iname "*.yaml" -or -iname "*.dot" | xargs hiearch -f ${FORMAT} -r ${DIAGRAMS_RESOURCES} -o ${BUILD_DIR}/$@)
 	# TODO awkward and fragile
-	find ${BUILD_DIR}/$@/ -iname '*.gv' | xargs --no-run-if-empty sed -i 's|<img src="/.*"/>||' # filter out system dependent absolute paths
 	find ${BUILD_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.build
 	find ${TEST_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.test
 	${TEST_NOT} test -s "${BUILD_DIR}/$@/checksum.build" && cmp ${BUILD_DIR}/$@/checksum.build ${BUILD_DIR}/$@/checksum.test

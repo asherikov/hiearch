@@ -11,6 +11,7 @@ from . import graphviz_output
 from . import hh_edge
 from . import hh_node
 from . import hh_view
+from . import output
 
 
 class ParsedEntities:
@@ -85,9 +86,13 @@ def main():
 
     nodes, views, resource_dirs = parse(temp_dir, args.inputs, args.resource_dirs)
 
+    copied_resources = set()
     for view in views.values():
         if len(view['nodes']) > 0:
-            graphviz_output.generate(args.output, temp_dir, args.format, view, nodes, resource_dirs)
+            # Resolve and copy resources from selected nodes before generating views
+            copied_resources = output.resolve_resources(view['nodes'], nodes, temp_dir, resource_dirs, copied_resources)
+
+            graphviz_output.generate(args.output, temp_dir, args.format, view, nodes, copied_resources)
 
 
 if __name__ == "__main__":
