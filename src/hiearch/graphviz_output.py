@@ -154,14 +154,16 @@ def generate(output_dir, temp_dir, fmt, view, nodes, copied_resources):
     graph.write(dot_file_path)
 
     # Copy resources to output directory for SVG format if output dir differs from temp dir
-    if fmt == 'svg' and os.path.realpath(output_dir) != os.path.realpath(temp_dir):
+    # svg:cairo embeds graphics instead of linking, so copy is not necessary
+    if fmt.startswith("svg") and fmt != "svg:cairo":
+        if os.path.realpath(output_dir) != os.path.realpath(temp_dir):
+            for resource in copied_resources:
+                util.copy_resource(os.path.join(temp_dir, resource), output_dir)
         for resource in copied_resources:
-            util.copy_resource(os.path.join(temp_dir, resource), output_dir)
-    for resource in copied_resources:
-        print(f'Copied resource: "{resource}"')
+            print(f'Copied resource: "{resource}"')
 
     # Call dot directly (pydot uses temporary dirs that dont play nice with inclusions)
-    abs_output_file_path = os.path.abspath(f'{output_dir}/{view["id"]}.{fmt}')
+    abs_output_file_path = os.path.abspath(f'{output_dir}/{view["id"]}.{fmt.split(":")[0].split("_")[0]}')
 
     cmd = ['dot', '-T' + fmt, '-o', abs_output_file_path, f'{view["id"]}.gv']
     subprocess.run(cmd, check=True, capture_output=True, cwd=temp_dir)
