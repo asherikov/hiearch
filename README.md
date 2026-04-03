@@ -18,8 +18,7 @@
 - [Predefined styles](#predefined-styles)
   - [State machine](#state-machine)
   - [Use Case](#use-case)
-  - [Diagrams
-    (https://diagrams.mingrammer.com/)](#diagrams-httpsdiagrams.mingrammer.com)
+  - [Python diagrams](#python-diagrams)
 
 Introduction
 ============
@@ -1035,20 +1034,23 @@ views:
 
 </table>
 
-Diagrams (<https://diagrams.mingrammer.com/>)
----------------------------------------------
+Python diagrams
+---------------
 
 The `diagrams` style provides access to icons from the
-[diagrams](https://github.com/mingrammer/diagrams) package, allowing you to
-create cloud system architecture diagrams. The `diagrams` package must be
-installed separately to access the icon files. The icons are located in the
-package’s resources directory (typically
+<https://github.com/mingrammer/diagrams> package
+(<http://diagrams.mingrammer.com>), allowing you to create cloud system
+architecture diagrams. The `diagrams` package is not a hiearch dependency and
+must be installed separately to access the icon files. The icons are located in
+the package’s resources directory (typically
 `~/.local/lib/python3.X/site-packages/resources` or similar), which can be
 passed to `hiearch` like this
 
 ``` bash
 hiearch -r /path/to/diagrams/resources input.yaml
 ```
+
+### Example
 
 <pre>
 nodes:
