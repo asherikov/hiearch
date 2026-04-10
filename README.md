@@ -90,7 +90,9 @@ Examples
 Command line options
 --------------------
 
-    usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] [-t TEMP_DIR] [-r RESOURCE_DIRS] <filename> [<filename> ...]
+    usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] [-t TEMP_DIR] [-r RESOURCE_DIRS]
+                   [-i [INSTALL_SKILL]]
+                   <filename> [<filename> ...]
 
     Generates diagrams
 
@@ -107,6 +109,8 @@ Command line options
                             Temporary files output directory (defaults to output directory)
       -r RESOURCE_DIRS, --resource-dirs RESOURCE_DIRS
                             Directories to search for graphical resources (can be specified multiple times)
+      -i [INSTALL_SKILL], --install-skill [INSTALL_SKILL]
+                            Install hiearch skill to coding agent skill directory
 
 Trivial
 -------

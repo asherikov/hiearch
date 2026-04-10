@@ -3,6 +3,8 @@
 
 import argparse
 import os
+import sys
+import shutil
 import importlib_resources
 import yaml
 
@@ -61,18 +63,60 @@ def parse(temp_dir, filenames, resource_dirs=None):
     return nodes.entities, views.entities, resource_dirs
 
 
+def install_skill(skill_dir):
+    """Install hiearch skill file to coding agent skill directory."""
+    skill_source = importlib_resources.files('hiearch.data.skill')
+
+    if not skill_source.is_dir():
+        print('Error: Skill source directory not found in package', file=sys.stderr)
+        sys.exit(1)
+
+    hiearch_skill_dir = f'{skill_dir}/hiearch'
+
+    if os.path.exists(hiearch_skill_dir):
+        print(f'Warning: Skill directory already exists: {hiearch_skill_dir}. Overwriting.', file=sys.stderr)
+        shutil.rmtree(hiearch_skill_dir)
+
+    os.makedirs(hiearch_skill_dir, exist_ok=True)
+
+    for item in skill_source.iterdir():
+        if item.is_file():
+            dest_file = os.path.join(hiearch_skill_dir, item.name)
+            with item.open('rb') as src_file:
+                content = src_file.read()
+            with open(dest_file, 'wb') as dst_file:
+                dst_file.write(content)
+
+    print(f'Skill installed to {hiearch_skill_dir}')
+
+
 def main():
     """Main entry point for hiearch application."""
     parser = argparse.ArgumentParser(prog='hiearch', description='Generates diagrams')
 
-    parser.add_argument('inputs', metavar='<filename>', type=str, nargs='+', help='Input files')
+    parser.add_argument('inputs', metavar='<filename>', type=str, nargs='*', help='Input files')
     parser.add_argument('-o', '--output', required=False, default='./', help='Output directory [./]')
     parser.add_argument('-f', '--format', required=False, default='svg', help='Output format [SVG]')
     parser.add_argument('-t', '--temp-dir', required=False, default=None, help='Temporary files output directory (defaults to output directory)')
     parser.add_argument('-r', '--resource-dirs', required=False, default=[], action='append',
                         help='Directories to search for graphical resources (can be specified multiple times)')
+    parser.add_argument('-i', '--install-skill', required=False, nargs='?', const=True, default=False,
+                        help='Install hiearch skill to coding agent skill directory')
 
     args = parser.parse_args()
+
+    # Handle --install-skill option
+    if args.install_skill is not False:
+        if args.inputs:
+            print('Error: --install-skill cannot be used with input files', file=sys.stderr)
+            sys.exit(1)
+        skill_dir = args.install_skill if isinstance(args.install_skill, str) else os.path.expanduser('~/.qwen/skills/hiearch')
+        install_skill(skill_dir)
+        return
+
+    # Require input files for normal operation
+    if not args.inputs:
+        parser.error('the following arguments are required: <filename>')
 
     # Automatically include installed style files
     styles_root = importlib_resources.files('hiearch.data.styles')

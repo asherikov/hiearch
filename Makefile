@@ -30,6 +30,13 @@ FORMAT?=svg
 	test -f "${BUILD_DIR}/$@/temp/simple_view.gv"
 	test ! -f "${BUILD_DIR}/$@/simple_view.gv"
 
+35_skill_install:
+	mkdir -p ${BUILD_DIR}/$@
+	rm -rf ${BUILD_DIR}/$@/
+	hiearch --install-skill ${BUILD_DIR}/$@/
+	test -d "${BUILD_DIR}/$@/hiearch"
+	test -f "${BUILD_DIR}/$@/hiearch/SKILL.md"
+
 venv: builddir
 	python3 -m venv ${BUILD_DIR}/venv
 
@@ -53,6 +60,7 @@ test:
 		33_auto_color 34_diagrams_style || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
+	@${MAKE} 35_skill_install || (echo "Failure!" && false)
 	@echo "Success!"
 
 clean:
