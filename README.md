@@ -901,13 +901,20 @@ views:
 Predefined styles
 =================
 
-- All predefined styles are automatically added to input files on invocation of
-  `hiearch`.
-- The `-s`/`--styles` option allows selecting specific styles by name or
-  pattern, instead of including all styles. Multiple styles can be specified
-  using multiple `-s` options or comma-separated lists. Wildcards are supported:
+- By default, only one variant of each base style is loaded. Styles with names
+  containing a dash (`-`) are treated as variants of a base style (e.g.,
+  `hiearch_diagrams-0_vertical` and `hiearch_diagrams-1_horizontal` are variants
+  of base style `hiearch_diagrams`). The first variant in sorted order is
+  selected by default.
+- The `-s`/`--styles` option allows selecting specific styles or variants by
+  name or pattern. Multiple styles can be specified using multiple `-s` options
+  or comma-separated lists. Wildcards are supported:
   `hiearch -s "diagrams_aws*" input.yaml` or
   `hiearch -s state_machine -s use_case input.yaml`.
+- Selecting multiple variants of the same base style simultaneously results in
+  an error (e.g.,
+  `hiearch -s "hiearch_diagrams-0_vertical,hiearch_diagrams-1_horizontal"` will
+  fail).
 - The `-l`/`--list-styles` option lists all available style names.
 - Generally it is necessary to override tags inherited from style nodes.
 
@@ -1062,6 +1069,16 @@ passed to `hiearch` like this
 
 ``` bash
 hiearch -r /path/to/diagrams/resources input.yaml
+```
+
+The `hiearch_diagrams` style comes in two variants: -
+`hiearch_diagrams-0_vertical` (default) - icon above text -
+`hiearch_diagrams-1_horizontal` - icon beside text
+
+To use the horizontal variant:
+
+``` bash
+hiearch -s hiearch_diagrams-1_horizontal input.yaml
 ```
 
 ### Example

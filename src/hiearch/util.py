@@ -123,7 +123,7 @@ def apply_styles(styled_entities, entities, is_view=False):
             else:
                 index += 1
         if size_copy == size:
-            raise RuntimeError(f'Style cycle detected: {styled_entities}')
+            raise RuntimeError(f'Style cycle detected: {styled_entities[0:size]}')
 
 
 def check_key_existence(keys, dictionary, data_type):

@@ -1,0 +1,13 @@
+# Test horizontal variant of diagrams style
+nodes:
+    - id: ["Mobile User", mobile_user]
+      style_notag: hh_diagrams_generic_device_mobile
+    - id: ["CloudFront\nCDN", cloudfront]
+      style_notag: hh_diagrams_aws_network_cloudfront
+edges:
+    - link: [mobile_user, cloudfront]
+      style: hh_diagrams_link
+views:
+    - id: horizontal_test
+      style: hh_diagrams_view
+      tags: ["default"]

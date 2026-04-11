@@ -11,17 +11,21 @@ BUILD_DIR?=${CURRENT_DIR}/build
 TEST_DIR?=${CURRENT_DIR}/test
 TEST_NOT=
 FORMAT?=svg
+ARGS?=
 
 .DEFAULT:
-	@echo "Testing $@..."
-	mkdir -p ${BUILD_DIR}/$@
-	cp ${TEST_DIR}/$@/icon*.svg ${BUILD_DIR}/$@/ || true
-	cd ${TEST_DIR}/$@/; ${TEST_NOT} (find ./ -iname "*.yaml" -or -iname "*.dot" | xargs hiearch -f ${FORMAT} -r ${DIAGRAMS_RESOURCES} -o ${BUILD_DIR}/$@)
+	${MAKE} test_generic TEST=$@
+
+test_generic:
+	@echo "Testing ${TEST}..."
+	mkdir -p ${BUILD_DIR}/${TEST}
+	cp ${TEST_DIR}/${TEST}/icon*.svg ${BUILD_DIR}/${TEST}/ || true
+	cd ${TEST_DIR}/${TEST}/; ${TEST_NOT} (find ./ -iname "*.yaml" -or -iname "*.dot" | xargs hiearch ${ARGS} -f ${FORMAT} -r ${DIAGRAMS_RESOURCES} -o ${BUILD_DIR}/${TEST})
 	# TODO awkward and fragile
-	find ${BUILD_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.build
-	find ${TEST_DIR}/$@/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/$@/checksum.test
-	${TEST_NOT} test -s "${BUILD_DIR}/$@/checksum.build" && cmp ${BUILD_DIR}/$@/checksum.build ${BUILD_DIR}/$@/checksum.test
-	${TEST_NOT} (cd ${BUILD_DIR}/$@/ && ls *.${FORMAT} && ls *.gv | sed 's/\.gv//' | xargs --no-run-if-empty -I {} test -f {}.${FORMAT})
+	find ${BUILD_DIR}/${TEST}/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/${TEST}/checksum.build
+	find ${TEST_DIR}/${TEST}/ -iname '*.gv' | sort | xargs --no-run-if-empty -I {} sh -c "sort {} | md5sum && basename '{}'" >> ${BUILD_DIR}/${TEST}/checksum.test
+	${TEST_NOT} test -s "${BUILD_DIR}/${TEST}/checksum.build" && cmp ${BUILD_DIR}/${TEST}/checksum.build ${BUILD_DIR}/${TEST}/checksum.test
+	${TEST_NOT} (cd ${BUILD_DIR}/${TEST}/ && ls *.${FORMAT} && ls *.gv | sed 's/\.gv//' | xargs --no-run-if-empty -I {} test -f {}.${FORMAT})
 
 31_temp_dir:
 	mkdir -p ${BUILD_DIR}/$@ ${BUILD_DIR}/$@/temp
@@ -43,7 +47,7 @@ FORMAT?=svg
 	test $$(wc -l < ${BUILD_DIR}/$@/output.txt) -ge 20
 
 37_styles_selection:
-	mkdir -p ${BUILD_DIR}/$@/state_machine ${BUILD_DIR}/$@/use_case ${BUILD_DIR}/$@/fail
+	mkdir -p ${BUILD_DIR}/$@/state_machine ${BUILD_DIR}/$@/use_case ${BUILD_DIR}/$@/fail ${BUILD_DIR}/$@/variant
 	# Test state_machine style selection using existing test input
 	cd ${TEST_DIR}/16_state_machine/; hiearch -s state_machine -o ${BUILD_DIR}/$@/state_machine example.yaml
 	test -f "${BUILD_DIR}/$@/state_machine/state_machine_example.svg"
@@ -54,6 +58,14 @@ FORMAT?=svg
 	test -f "${BUILD_DIR}/$@/use_case/use_case_style_nodes.svg"
 	# Test that diagram generation fails if required style is not selected
 	! (cd ${TEST_DIR}/16_state_machine/; hiearch -s diagrams_* -o ${BUILD_DIR}/$@/fail example.yaml)
+	# Test variant selection - selecting specific variant with required styles should work
+	cd ${TEST_DIR}/34_diagrams_style/; hiearch -s "hiearch_diagrams-0_vertical,diagrams_aws,diagrams_generic,diagrams_onprem" -r ${DIAGRAMS_RESOURCES} -o ${BUILD_DIR}/$@/variant input.yaml
+	test -f "${BUILD_DIR}/$@/variant/cloud_architecture.svg"
+	# Test that selecting conflicting variants fails
+	! (cd ${TEST_DIR}/34_diagrams_style/; hiearch -s "hiearch_diagrams-0_vertical,hiearch_diagrams-1_horizontal" -o ${BUILD_DIR}/$@/variant_fail input.yaml)
+
+38_diagrams_horizontal:
+	${MAKE} test_generic TEST=$@ ARGS="-s "hiearch_diagrams-1_horizontal,diagrams_aws,diagrams_generic""
 
 venv: builddir
 	python3 -m venv ${BUILD_DIR}/venv
@@ -78,7 +90,7 @@ test:
 		33_auto_color 34_diagrams_style || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
-	@${MAKE} 35_skill_install 36_list_styles 37_styles_selection || (echo "Failure!" && false)
+	@${MAKE} 35_skill_install 36_list_styles 37_styles_selection 38_diagrams_horizontal || (echo "Failure!" && false)
 	@echo "Success!"
 
 clean:

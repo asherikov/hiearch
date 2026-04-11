@@ -110,44 +110,63 @@ def main():
 
     args = parser.parse_args()
 
-    # Handle --list-styles option
-    if args.list_styles:
-        styles_root = importlib_resources.files('hiearch.data.styles')
-        if styles_root.is_dir():
-            for yaml_file in sorted(styles_root.iterdir()):
-                if yaml_file.suffix == '.yaml':
-                    print(yaml_file.name[:-5])
-        return
 
     # Handle --install-skill option
     if args.install_skill is not False:
-        if args.inputs:
-            print('Error: --install-skill cannot be used with input files', file=sys.stderr)
-            sys.exit(1)
         skill_dir = args.install_skill if isinstance(args.install_skill, str) else os.path.expanduser('~/.qwen/skills/hiearch')
         install_skill(skill_dir)
+        return
+
+    styles_root = importlib_resources.files('hiearch.data.styles')
+
+    # Handle --list-styles option
+    if args.list_styles:
+        for yaml_file in sorted(styles_root.iterdir()):
+            if yaml_file.suffix == '.yaml':
+                print(yaml_file.name[:-5])
         return
 
     # Require input files for normal operation
     if not args.inputs:
         parser.error('the following arguments are required: <filename>')
 
-    # Automatically include installed style files
-    styles_root = importlib_resources.files('hiearch.data.styles')
-    if styles_root.is_dir():
-        if args.styles:
-            # Use provided style patterns
-            patterns = [p for pattern_list in args.styles for p in pattern_list.split(',')]
-            for yaml_file in sorted(styles_root.iterdir()):
-                if yaml_file.suffix == '.yaml':
-                    style_name = yaml_file.name[:-5]
-                    if any(fnmatch.fnmatch(style_name, pattern) for pattern in patterns):
-                        args.inputs.append(str(yaml_file))
-        else:
-            # Include all styles by default
-            for yaml_file in styles_root.iterdir():
-                if yaml_file.suffix == '.yaml':
-                    args.inputs.append(str(yaml_file))
+    # Build a map of base styles to their variants
+    style_variants = {}
+    for yaml_file in sorted(styles_root.iterdir()):
+        if yaml_file.suffix == '.yaml':
+            style_name = yaml_file.name[:-5]
+            if '-' in style_name:
+                # Style has base-variant format
+                base_name = style_name.split('-', 1)[0]
+                if base_name not in style_variants:
+                    style_variants[base_name] = []
+                style_variants[base_name].append((style_name, str(yaml_file)))
+            else:
+                # Style without variant (no dash)
+                style_variants[style_name] = [(style_name, str(yaml_file))]
+
+    if args.styles:
+        # Use provided style patterns
+        patterns = [p for pattern_list in args.styles for p in pattern_list.split(',')]
+        selected_variants = set()
+        for yaml_file in sorted(styles_root.iterdir()):
+            if yaml_file.suffix != '.yaml':
+                continue
+            style_name = yaml_file.name[:-5]
+            if any(fnmatch.fnmatch(style_name, pattern) for pattern in patterns):
+                if '-' in style_name:
+                    base_name = style_name.split('-', 1)[0]
+                    if base_name in selected_variants:
+                        print(f'Error: Conflicting style variants selected for base style "{base_name}"', file=sys.stderr)
+                        sys.exit(1)
+                    selected_variants.add(base_name)
+                args.inputs.append(str(yaml_file))
+    else:
+        # Include first variant of each base style by default
+        for base_name in sorted(style_variants.keys()):
+            variants = style_variants[base_name]
+            # First variant in sorted list
+            args.inputs.append(variants[0][1])
 
     # Use temporary directory if specified, otherwise use output directory
     temp_dir = args.temp_dir if args.temp_dir is not None else args.output

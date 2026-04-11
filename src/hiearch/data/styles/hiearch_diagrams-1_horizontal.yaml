@@ -1,0 +1,58 @@
+# Diagrams package style for hiearch
+# This style provides node definitions that use icons from the diagrams package
+# https://github.com/mingrammer/diagrams
+
+# Base style node with common attributes for all diagrams icons
+# Provider-specific nodes inherit from this using 'style' (to inherit tags)
+# User nodes inherit from provider nodes using 'style_notag' (to NOT inherit tags)
+nodes:
+    - id: ["", hh_diagrams_base]
+      tags: ["hh_diagrams_style"]
+      graphviz:
+          shape: "none"
+          style: "rounded"
+          fontname: "Sans-Serif"
+          fontsize: "24"
+          fontcolor: "#2D3436"
+          margin: "0"
+          # HTML table label format: left column = icon, right column = label
+          node_label_format: '<<table fixedsize="true" width="300" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="{resource_image}"/></td><td>{label}</td></tr></table>>'
+          scope_label_format: '<<table fixedsize="true" width="300" align="center" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="{resource_image}"/></td><td>{label}</td></tr></table>>'
+
+    # Scope/Cluster node for grouping elements (like diagrams.Cluster)
+    # Use this as a parent node to group related elements visually
+    - id: ["", hh_diagrams_scope]
+      tags: ["hh_diagrams_style"]
+      graphviz:
+          shape: "rectangle"
+          style: "rounded,filled"
+          fillcolor: "#E5F5FD"
+          penwidth: "2"
+          color: "#CCCCCC"
+          margin: "10"
+          fontname: "Sans-Serif"
+          fontsize: "24"
+edges:
+    - link: [hh_diagrams_base, hh_diagrams_base, hh_diagrams_link]
+      graphviz:
+          color: "#7B8894"
+          fontname: "Sans-Serif"
+          fontsize: "20"
+          fontcolor: "#2D3436"
+          arrowsize: "1.5"
+          penwidth: "2"
+
+# View style for diagrams-based visualizations
+views:
+    - id: hh_diagrams_view
+      nodes: []
+      graphviz:
+          graph:
+              style: "filled"
+              pad: "0.3"
+              splines: "ortho"
+              nodesep: "1.50"
+              ranksep: "1.50"
+              fontname: "Sans-Serif"
+              fontsize: "24"
+              fontcolor: "#2D3436"
