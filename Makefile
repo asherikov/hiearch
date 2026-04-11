@@ -37,6 +37,11 @@ FORMAT?=svg
 	test -d "${BUILD_DIR}/$@/hiearch"
 	test -f "${BUILD_DIR}/$@/hiearch/SKILL.md"
 
+36_list_styles:
+	mkdir -p ${BUILD_DIR}/$@
+	hiearch --list-styles > ${BUILD_DIR}/$@/output.txt
+	test $$(wc -l < ${BUILD_DIR}/$@/output.txt) -ge 20
+
 venv: builddir
 	python3 -m venv ${BUILD_DIR}/venv
 
@@ -60,7 +65,7 @@ test:
 		33_auto_color 34_diagrams_style || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
-	@${MAKE} 35_skill_install || (echo "Failure!" && false)
+	@${MAKE} 35_skill_install 36_list_styles || (echo "Failure!" && false)
 	@echo "Success!"
 
 clean:

@@ -102,8 +102,19 @@ def main():
                         help='Directories to search for graphical resources (can be specified multiple times)')
     parser.add_argument('-i', '--install-skill', required=False, nargs='?', const=True, default=False,
                         help='Install hiearch skill to coding agent skill directory')
+    parser.add_argument('-l', '--list-styles', required=False, action='store_true', default=False,
+                        help='List installed styles')
 
     args = parser.parse_args()
+
+    # Handle --list-styles option
+    if args.list_styles:
+        styles_root = importlib_resources.files('hiearch.data.styles')
+        if styles_root.is_dir():
+            for yaml_file in sorted(styles_root.iterdir()):
+                if yaml_file.suffix == '.yaml':
+                    print(yaml_file.name[:-5])
+        return
 
     # Handle --install-skill option
     if args.install_skill is not False:

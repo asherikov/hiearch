@@ -91,7 +91,7 @@ Command line options
 --------------------
 
     usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] [-t TEMP_DIR] [-r RESOURCE_DIRS]
-                   [-i [INSTALL_SKILL]]
+                   [-i [INSTALL_SKILL]] [-l [LIST_STYLES]]
                    <filename> [<filename> ...]
 
     Generates diagrams
@@ -111,6 +111,8 @@ Command line options
                             Directories to search for graphical resources (can be specified multiple times)
       -i [INSTALL_SKILL], --install-skill [INSTALL_SKILL]
                             Install hiearch skill to coding agent skill directory
+      -l [LIST_STYLES], --list-styles [LIST_STYLES]
+                            List installed styles
 
 Trivial
 -------
