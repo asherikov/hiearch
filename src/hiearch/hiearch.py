@@ -2,6 +2,7 @@
 """Main hiearch module for generating diagrams from textual descriptions."""
 
 import argparse
+import fnmatch
 import os
 import sys
 import shutil
@@ -104,6 +105,8 @@ def main():
                         help='Install hiearch skill to coding agent skill directory')
     parser.add_argument('-l', '--list-styles', required=False, action='store_true', default=False,
                         help='List installed styles')
+    parser.add_argument('-s', '--styles', required=False, default=[], action='append',
+                        help='Style names or patterns to include (can be specified multiple times, supports wildcards)')
 
     args = parser.parse_args()
 
@@ -132,9 +135,19 @@ def main():
     # Automatically include installed style files
     styles_root = importlib_resources.files('hiearch.data.styles')
     if styles_root.is_dir():
-        for yaml_file in styles_root.iterdir():
-            if yaml_file.suffix == '.yaml':
-                args.inputs.append(str(yaml_file))
+        if args.styles:
+            # Use provided style patterns
+            patterns = [p for pattern_list in args.styles for p in pattern_list.split(',')]
+            for yaml_file in sorted(styles_root.iterdir()):
+                if yaml_file.suffix == '.yaml':
+                    style_name = yaml_file.name[:-5]
+                    if any(fnmatch.fnmatch(style_name, pattern) for pattern in patterns):
+                        args.inputs.append(str(yaml_file))
+        else:
+            # Include all styles by default
+            for yaml_file in styles_root.iterdir():
+                if yaml_file.suffix == '.yaml':
+                    args.inputs.append(str(yaml_file))
 
     # Use temporary directory if specified, otherwise use output directory
     temp_dir = args.temp_dir if args.temp_dir is not None else args.output

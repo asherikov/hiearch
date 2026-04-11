@@ -91,7 +91,7 @@ Command line options
 --------------------
 
     usage: hiearch [-h] [-o OUTPUT] [-f FORMAT] [-t TEMP_DIR] [-r RESOURCE_DIRS]
-                   [-i [INSTALL_SKILL]] [-l [LIST_STYLES]]
+                   [-i [INSTALL_SKILL]] [-l] [-s STYLES]
                    <filename> [<filename> ...]
 
     Generates diagrams
@@ -111,8 +111,10 @@ Command line options
                             Directories to search for graphical resources (can be specified multiple times)
       -i [INSTALL_SKILL], --install-skill [INSTALL_SKILL]
                             Install hiearch skill to coding agent skill directory
-      -l [LIST_STYLES], --list-styles [LIST_STYLES]
-                            List installed styles
+      -l, --list-styles     List installed styles
+      -s STYLES, --styles STYLES
+                            Style names or patterns to include (can be specified
+                            multiple times, supports wildcards)
 
 Trivial
 -------
@@ -901,6 +903,12 @@ Predefined styles
 
 - All predefined styles are automatically added to input files on invocation of
   `hiearch`.
+- The `-s`/`--styles` option allows selecting specific styles by name or
+  pattern, instead of including all styles. Multiple styles can be specified
+  using multiple `-s` options or comma-separated lists. Wildcards are supported:
+  `hiearch -s "diagrams_aws*" input.yaml` or
+  `hiearch -s state_machine -s use_case input.yaml`.
+- The `-l`/`--list-styles` option lists all available style names.
 - Generally it is necessary to override tags inherited from style nodes.
 
 State machine

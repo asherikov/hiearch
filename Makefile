@@ -42,6 +42,19 @@ FORMAT?=svg
 	hiearch --list-styles > ${BUILD_DIR}/$@/output.txt
 	test $$(wc -l < ${BUILD_DIR}/$@/output.txt) -ge 20
 
+37_styles_selection:
+	mkdir -p ${BUILD_DIR}/$@/state_machine ${BUILD_DIR}/$@/use_case ${BUILD_DIR}/$@/fail
+	# Test state_machine style selection using existing test input
+	cd ${TEST_DIR}/16_state_machine/; hiearch -s state_machine -o ${BUILD_DIR}/$@/state_machine example.yaml
+	test -f "${BUILD_DIR}/$@/state_machine/state_machine_example.svg"
+	test -f "${BUILD_DIR}/$@/state_machine/state_machine_style_nodes.svg"
+	# Test use_case style selection using existing test input
+	cd ${TEST_DIR}/17_use_case/; hiearch -s use_case -o ${BUILD_DIR}/$@/use_case example.yaml
+	test -f "${BUILD_DIR}/$@/use_case/use_case_example.svg"
+	test -f "${BUILD_DIR}/$@/use_case/use_case_style_nodes.svg"
+	# Test that diagram generation fails if required style is not selected
+	! (cd ${TEST_DIR}/16_state_machine/; hiearch -s diagrams_* -o ${BUILD_DIR}/$@/fail example.yaml)
+
 venv: builddir
 	python3 -m venv ${BUILD_DIR}/venv
 
@@ -65,7 +78,7 @@ test:
 		33_auto_color 34_diagrams_style || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
-	@${MAKE} 35_skill_install 36_list_styles || (echo "Failure!" && false)
+	@${MAKE} 35_skill_install 36_list_styles 37_styles_selection || (echo "Failure!" && false)
 	@echo "Success!"
 
 clean:
