@@ -1,11 +1,12 @@
 digraph use_case_example {
-compound=true;
 rankdir=TB;
 style="rounded, filled";
 fillcolor="#fafafa";
-user [shape=star, style=filled, fillcolor="#e6f3ff", peripheries=0, width=0.8, height=0.8, fixedsize=true, label=User];
-admin [shape=star, style=filled, fillcolor="#e6f3ff", peripheries=0, width=0.8, height=0.8, fixedsize=true, label=Admin];
+compound=true;
 subgraph system_boundary {
+fontsize=12;
+fontname=Helvetica;
+margin=0.1;
 shape=rectangle;
 style="rounded,filled";
 fillcolor="#fafafa";
@@ -14,20 +15,20 @@ width=3.0;
 height=2.0;
 label="Login System";
 cluster=true;
-"system_boundary.two_factor_auth" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="2FA Authentication"];
-"system_boundary.logout" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Logout];
-"system_boundary.register" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Register];
-"system_boundary.reset_password" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="Reset Password"];
-"system_boundary.login" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Login];
-"system_boundary.validate_credentials" [shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="Validate Credentials"];
+"system_boundary.reset_password" [fontsize=12, fontname=Helvetica, margin=0.1, shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="Reset Password"];
+"system_boundary.validate_credentials" [fontsize=12, fontname=Helvetica, margin=0.1, shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="Validate Credentials"];
+"system_boundary.register" [fontsize=12, fontname=Helvetica, margin=0.1, shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Register];
+"system_boundary.logout" [fontsize=12, fontname=Helvetica, margin=0.1, shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Logout];
+"system_boundary.login" [fontsize=12, fontname=Helvetica, margin=0.1, shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label=Login];
+"system_boundary.two_factor_auth" [fontsize=12, fontname=Helvetica, margin=0.1, shape=ellipse, style="filled,rounded", fillcolor="#f0f8ff", peripheries=1, width=1.8, height=0.9, fixedsize=false, label="2FA Authentication"];
 }
-node [fontsize=12, fontname=Helvetica, margin=0.1];
-edge [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica];
-user -> "system_boundary.logout" [style=solid, color=black, dir=none];
-user -> "system_boundary.register" [style=solid, color=black, dir=none];
-user -> "system_boundary.reset_password" [style=solid, color=black, dir=none];
-user -> "system_boundary.login" [style=solid, color=black, dir=none];
-admin -> "system_boundary.reset_password" [style=solid, color=black, dir=none];
-"system_boundary.two_factor_auth" -> "system_boundary.login" [style=dashed, color=black, dir=forward, arrowhead=open, label="«extend»"];
-"system_boundary.login" -> "system_boundary.validate_credentials" [style=dashed, color=black, dir=forward, arrowhead=open, label="«include»"];
+user [fontsize=12, fontname=Helvetica, margin=0.1, shape=star, style=filled, fillcolor="#e6f3ff", peripheries=0, width=0.8, height=0.8, fixedsize=true, label=User];
+admin [fontsize=12, fontname=Helvetica, margin=0.1, shape=star, style=filled, fillcolor="#e6f3ff", peripheries=0, width=0.8, height=0.8, fixedsize=true, label=Admin];
+admin -> "system_boundary.reset_password" [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, style=solid, color=black, dir=none];
+user -> "system_boundary.reset_password" [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, style=solid, color=black, dir=none];
+user -> "system_boundary.login" [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, style=solid, color=black, dir=none];
+user -> "system_boundary.logout" [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, style=solid, color=black, dir=none];
+user -> "system_boundary.register" [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, style=solid, color=black, dir=none];
+"system_boundary.login" -> "system_boundary.validate_credentials" [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, style=dashed, color=black, dir=forward, arrowhead=open, label="«include»"];
+"system_boundary.two_factor_auth" -> "system_boundary.login" [fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, style=dashed, color=black, dir=forward, arrowhead=open, label="«extend»"];
 }

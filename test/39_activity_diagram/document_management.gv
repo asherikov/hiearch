@@ -1,0 +1,66 @@
+digraph document_management {
+rankdir=TB;
+style="rounded, filled";
+fillcolor="#fafafa";
+newrank=true;
+clusterrank=global;
+compound=true;
+start [fontsize=12, fontname=Helvetica, margin=0.1, shape=circle, style=filled, fillcolor=black, width=0.3, height=0.3, fixedsize=true, label=""];
+subgraph reviewer_lane {
+fontsize=12;
+fontname=Helvetica;
+margin=12;
+shape=rectangle;
+style=filled;
+fillcolor=white;
+label=<<table border="0" cellborder="0" cellspacing="0" cellpadding="4"><tr><td border="1" sides="b" align="left"><b>Reviewer</b></td></tr></table>>;
+cluster=true;
+"reviewer_lane.review_doc" [fontsize=12, fontname=Helvetica, margin=0.1, shape=rectangle, style="rounded,filled", fillcolor="#f0f8ff", peripheries=1, label="Review Document"];
+}
+subgraph author_lane {
+fontsize=12;
+fontname=Helvetica;
+margin=12;
+shape=rectangle;
+style=filled;
+fillcolor=white;
+label=<<table border="0" cellborder="0" cellspacing="0" cellpadding="4"><tr><td border="1" sides="b" align="left"><b>Author</b></td></tr></table>>;
+cluster=true;
+"author_lane.update_doc" [fontsize=12, fontname=Helvetica, margin=0.1, shape=rectangle, style="rounded,filled", fillcolor="#f0f8ff", peripheries=1, label="Update Document"];
+"author_lane.create_doc" [fontsize=12, fontname=Helvetica, margin=0.1, shape=rectangle, style="rounded,filled", fillcolor="#f0f8ff", peripheries=1, label="Create Document"];
+}
+subgraph approver_lane {
+fontsize=12;
+fontname=Helvetica;
+margin=12;
+shape=rectangle;
+style=filled;
+fillcolor=white;
+label=<<table border="0" cellborder="0" cellspacing="0" cellpadding="4"><tr><td border="1" sides="b" align="left"><b>Approver</b></td></tr></table>>;
+cluster=true;
+"approver_lane.approve_decision" [fontsize=12, fontname=Helvetica, margin=0.1, shape=diamond, style=filled, fillcolor=white, color=black, width=0.5, height=0.5, fixedsize=true, label=""];
+}
+review_deadline [fontsize=12, fontname=Helvetica, margin=0.1, shape=invtriangle, color=black, width=0.4, height=0.4, fixedsize=true, label=""];
+subgraph owner_lane {
+fontsize=12;
+fontname=Helvetica;
+margin=12;
+shape=rectangle;
+style=filled;
+fillcolor=white;
+label=<<table border="0" cellborder="0" cellspacing="0" cellpadding="4"><tr><td border="1" sides="b" align="left"><b>Owner</b></td></tr></table>>;
+cluster=true;
+"owner_lane.archive_doc" [fontsize=12, fontname=Helvetica, margin=0.1, shape=rectangle, style="rounded,filled", fillcolor="#f0f8ff", peripheries=1, label="Archive Document"];
+}
+end1 [fontsize=12, fontname=Helvetica, margin=0.1, shape=doublecircle, style=filled, fillcolor=black, color=black, fontcolor=black, width=0.25, height=0.25, fixedsize=true, label=""];
+deadline_note [fontsize=12, fontname=Helvetica, margin=0.1, shape=note, style=rounded, fillcolor="#ffffd0", peripheries=1, width=1.0, height=0.8, label="Review must complete within 48h"];
+start -> "author_lane.create_doc" [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica];
+"reviewer_lane.review_doc" -> "approver_lane.approve_decision" [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, label=reviewed];
+"author_lane.update_doc" -> "reviewer_lane.review_doc" [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, label=resubmit];
+"approver_lane.approve_decision" -> "owner_lane.archive_doc" [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, label=approved];
+"approver_lane.approve_decision" -> "author_lane.update_doc" [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, label=rejected];
+review_deadline -> "reviewer_lane.review_doc" [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, label="T=48h"];
+"owner_lane.archive_doc" -> end1 [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica];
+deadline_note -> "reviewer_lane.review_doc";
+"author_lane.create_doc" -> "reviewer_lane.review_doc" [style=solid, color=black, dir=forward, arrowhead=normal, fontsize=10, fontname=Helvetica, arrowsize=0.8, labelfontsize=9, labelfontname=Helvetica, label=submit];
+}

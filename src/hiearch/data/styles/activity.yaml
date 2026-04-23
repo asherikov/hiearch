@@ -1,0 +1,149 @@
+# UML Activity Diagram Styles for hiearch
+
+nodes:
+    - id: ["", hh_activity_node]
+      tags: ["hh_activity"]
+      graphviz:
+        fontsize: "12"
+        fontname: "Helvetica"
+        margin: "0.1"
+    - id: ["", hh_activity_initial]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: circle
+        style: filled
+        fillcolor: black
+        width: "0.3"
+        height: "0.3"
+        fixedsize: "true"
+        label: ""
+    - id: ["", hh_activity_final]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: doublecircle
+        style: filled
+        fillcolor: black
+        color: black
+        fontcolor: black
+        width: "0.25"
+        height: "0.25"
+        fixedsize: "true"
+        label: ""
+    - id: ["", hh_activity_fork]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: rectangle
+        style: filled
+        fillcolor: black
+        width: "1.0"
+        height: "0.1"
+        fixedsize: "true"
+        label: ""
+    - id: ["", hh_activity_join]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: rectangle
+        style: filled
+        fillcolor: black
+        width: "1.0"
+        height: "0.1"
+        fixedsize: "true"
+        label: ""
+    - id: ["", hh_activity_decision]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: diamond
+        style: filled
+        fillcolor: white
+        color: black
+        width: "0.5"
+        height: "0.5"
+        fixedsize: "true"
+        label: ""
+    - id: ["", hh_activity_merge]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: diamond
+        style: filled
+        fillcolor: white
+        color: black
+        width: "0.5"
+        height: "0.5"
+        fixedsize: "true"
+        label: ""
+    - id: ["", hh_activity_action]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: rectangle
+        style: "rounded,filled"
+        fillcolor: "#f0f8ff"
+        peripheries: "1"
+    - id: ["", hh_activity_note]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: note
+        style: rounded
+        fillcolor: "#ffffd0"
+        peripheries: "1"
+        width: "1.0"
+        height: "0.8"
+    - id: ["", hh_activity_time_event]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: invtriangle
+        color: black
+        width: "0.4"
+        height: "0.4"
+        fixedsize: "true"
+        label: ""
+    - id: ["", hh_activity_swimlane]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: rectangle
+        style: filled
+        fillcolor: white
+        margin: "12"
+        scope_label_format: '<<table border="0" cellborder="0" cellspacing="0" cellpadding="4"><tr><td border="1" sides="b" align="left"><b>{label}</b></td></tr></table>>'
+    - id: ["", hh_activity_decision_helper]
+      tags: ["hh_activity"]
+      style: hh_activity_node
+      graphviz:
+        shape: point
+        width: "0.01"
+        height: "0.01"
+        fixedsize: "true"
+
+edges:
+    - link: [hh_activity_decision_helper, hh_activity_decision_helper, hh_activity_edge]
+      tags: ["hh_activity"]
+      graphviz:
+        style: solid
+        color: black
+        dir: forward
+        arrowhead: normal
+        fontsize: "10"
+        fontname: "Helvetica"
+        arrowsize: "0.8"
+        labelfontsize: "9"
+        labelfontname: "Helvetica"
+
+views:
+    - id: hh_activity_view
+      nodes: []
+      graphviz:
+        graph:
+            rankdir: TB
+            style: "rounded, filled"
+            fillcolor: "#fafafa"
+            newrank: "true"
+            clusterrank: "global"

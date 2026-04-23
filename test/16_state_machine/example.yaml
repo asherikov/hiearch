@@ -17,29 +17,36 @@ nodes:
       style_notag: hh_state_machine_final
 edges:
     - link: [start, choice1]
+      style: hh_state_machine_edge
       label: "from start\nto choice"
     - link: [choice1, fork1]
+      style: hh_state_machine_edge
       label: "from choice\nto fork"
     - link: [choice1, join2]
+      style: hh_state_machine_edge
       label: "from choice\nto join"
     - link: [choice1, end2]
+      style: hh_state_machine_edge
       label: "from choice\nto end"
     - link: [fork1, state1]
+      style: hh_state_machine_edge
       label: "from fork\nto state"
     - link: [fork1, state2]
+      style: hh_state_machine_edge
       label: "from fork\nto state"
     - link: [state2, join2]
+      style: hh_state_machine_edge
       label: "from state\nto join"
     - link: [state1, end1]
+      style: hh_state_machine_edge
       label: "from state\nto end"
     - link: [join2, end1]
+      style: hh_state_machine_edge
       label: "from join\nto end"
 views:
-    # Example
     - id: state_machine_example
       style: hh_state_machine_view
       tags: ["default"]
-    # Node list
     - id: state_machine_style_nodes
       tags: ["hh_state_machine"]
       style: hh_state_machine_view

@@ -1,0 +1,84 @@
+# Document Management Process - UML Activity Diagram with Swimlanes
+# Based on https://www.uml-diagrams.org/activity-diagrams-examples.html
+# Swimlanes are implemented as scopes (cluster subgraphs in Graphviz)
+
+nodes:
+    - id: ["", start]
+      style_notag: hh_activity_initial
+
+    # Author swimlane
+    - id: ["Author", author_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["Create Document", create_doc]
+      style_notag: hh_activity_action
+      scope: author_lane
+    - id: ["Update Document", update_doc]
+      style_notag: hh_activity_action
+      scope: author_lane
+
+    # Reviewer swimlane
+    - id: ["Reviewer", reviewer_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["Review Document", review_doc]
+      style_notag: hh_activity_action
+      scope: reviewer_lane
+
+    # Approver swimlane
+    - id: ["Approver", approver_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["", approve_decision]
+      style_notag: hh_activity_decision
+      scope: approver_lane
+
+    # Owner swimlane
+    - id: ["Owner", owner_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["Archive Document", archive_doc]
+      style_notag: hh_activity_action
+      scope: owner_lane
+
+    # Time event: review deadline
+    - id: ["", review_deadline]
+      style_notag: hh_activity_time_event
+
+    - id: ["", end1]
+      style_notag: hh_activity_final
+
+    # Note
+    - id: ["Review must complete within 48h", deadline_note]
+      style_notag: hh_activity_note
+
+edges:
+    - link: [start, create_doc]
+      style: hh_activity_edge
+    - link: [create_doc, review_doc]
+      style: hh_activity_edge
+      label: "submit"
+    - link: [review_doc, approve_decision]
+      style: hh_activity_edge
+      label: "reviewed"
+    - link: [approve_decision, update_doc, approve_reject]
+      style: hh_activity_edge
+      label: "rejected"
+    - link: [update_doc, review_doc]
+      style: hh_activity_edge
+      label: "resubmit"
+    - link: [approve_decision, archive_doc, approve_accept]
+      style: hh_activity_edge
+      label: "approved"
+    - link: [archive_doc, end1]
+      style: hh_activity_edge
+    - link: [review_deadline, review_doc, deadline_trigger]
+      style: hh_activity_edge
+      label: "T=48h"
+    - link: [deadline_note, review_doc, note_link]
+
+views:
+    - id: document_management
+      style: hh_activity_view
+      tags: ["default"]
+      neighbours: recursive_all
+
+    - id: activity_style_nodes
+      tags: ["hh_activity"]
+      style: hh_activity_view

@@ -1,10 +1,15 @@
 # UML State Machine Diagram Styles for hiearch
 
-# Define nodes for different UML state machine elements
 nodes:
-    # Initial state: solid black circle
+    - id: ["", hh_state_machine_node]
+      tags: ["hh_state_machine"]
+      graphviz:
+        fontsize: "12"
+        fontname: "Helvetica"
+        margin: "0.1"
     - id: ["", hh_state_machine_initial]
       tags: ["hh_state_machine"]
+      style: hh_state_machine_node
       graphviz:
         shape: circle
         style: filled
@@ -13,9 +18,9 @@ nodes:
         height: "0.3"
         fixedsize: "true"
         label: ""
-    # Final state: representing circle within circle
     - id: ["", hh_state_machine_final]
       tags: ["hh_state_machine"]
+      style: hh_state_machine_node
       graphviz:
         shape: doublecircle
         style: filled
@@ -26,9 +31,9 @@ nodes:
         height: "0.2"
         fixedsize: "true"
         label: ""
-    # Junction state: solid black bar
     - id: ["", hh_state_machine_junction]
       tags: ["hh_state_machine"]
+      style: hh_state_machine_node
       graphviz:
         shape: rectangle
         style: filled
@@ -37,26 +42,33 @@ nodes:
         height: "0.05"
         fixedsize: "true"
         label: ""
-    # Regular state: rectangle with rounded corners
     - id: ["", hh_state_machine_regular]
       tags: ["hh_state_machine"]
+      style: hh_state_machine_node
       graphviz:
         shape: rectangle
         style: "rounded,filled"
         fillcolor: "#f0f8ff"
         peripheries: "1"
-    # Choice state: diamond shape
     - id: ["", hh_state_machine_choice]
       tags: ["hh_state_machine"]
+      style: hh_state_machine_node
       graphviz:
         shape: diamond
         style: filled
         fillcolor: black
         width: "0.3"
         height: "0.3"
-# Define view styles
+
+edges:
+    - link: [hh_state_machine_node, hh_state_machine_node, hh_state_machine_edge]
+      tags: ["hh_state_machine"]
+      graphviz:
+        fontsize: "10"
+        fontname: "Helvetica"
+        arrowsize: "0.8"
+
 views:
-    # Default view style for state machine diagrams
     - id: hh_state_machine_view
       nodes: []
       graphviz:
@@ -64,11 +76,3 @@ views:
             rankdir: TB
             style: "rounded, filled"
             fillcolor: "#fafafa"
-        node:
-            fontsize: "12"
-            fontname: "Helvetica"
-            margin: "0.1"
-        edge:
-            fontsize: "10"
-            fontname: "Helvetica"
-            arrowsize: "0.8"

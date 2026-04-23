@@ -87,7 +87,7 @@ test:
 		22_style_notag_tag_inheritance 23_expand \
 		25_dot_input 26_colcon 27_formatted_labels_view 28_colcon_expand \
 		29_recursive_all 30_expand_recursive_all 31_temp_dir 32_subgraph_edge \
-		33_auto_color 34_diagrams_style || (echo "Failure!" && false)
+		33_auto_color 34_diagrams_style 39_activity_diagram || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
 	@${MAKE} 35_skill_install 36_list_styles 37_styles_selection 38_diagrams_horizontal || (echo "Failure!" && false)

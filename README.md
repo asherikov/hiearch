@@ -18,6 +18,7 @@
 - [Predefined styles](#predefined-styles)
   - [State machine](#state-machine)
   - [Use Case](#use-case)
+  - [Activity diagram](#activity-diagram)
   - [Python diagrams](#python-diagrams)
 
 Introduction
@@ -948,25 +949,33 @@ nodes:
       style_notag: hh_state_machine_final
 edges:
     - link: [start, choice1]
+      style: hh_state_machine_edge
       label: "from start\nto choice"
     - link: [choice1, fork1]
+      style: hh_state_machine_edge
       label: "from choice\nto fork"
     - link: [choice1, join2]
+      style: hh_state_machine_edge
       label: "from choice\nto join"
     - link: [choice1, end2]
+      style: hh_state_machine_edge
       label: "from choice\nto end"
     - link: [fork1, state1]
+      style: hh_state_machine_edge
       label: "from fork\nto state"
     - link: [fork1, state2]
+      style: hh_state_machine_edge
       label: "from fork\nto state"
     - link: [state2, join2]
+      style: hh_state_machine_edge
       label: "from state\nto join"
     - link: [state1, end1]
+      style: hh_state_machine_edge
       label: "from state\nto end"
     - link: [join2, end1]
+      style: hh_state_machine_edge
       label: "from join\nto end"
 views:
-    # Example
     - id: state_machine_example
       style: hh_state_machine_view
       # override empty selection inherited from style view
@@ -1049,6 +1058,95 @@ views:
 
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/17_use_case/use_case_example.svg" alt="use_case_example" />
 <br /> use case example
+</td>
+
+</tr>
+
+</table>
+
+Activity diagram
+----------------
+
+Activity diagrams visualize the flow of activities, actions, and operations
+within a system. They show the sequence of steps, decision points, and parallel
+flows.
+
+<table>
+
+<tr>
+
+<td>
+
+<pre>
+-----------------------------------------------------------
+nodes:
+    - id: ["", start]
+      style_notag: hh_activity_initial
+    - id: ["Author", author_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["Create Document", create_doc]
+      style_notag: hh_activity_action
+      scope: author_lane
+    - id: ["Update Document", update_doc]
+      style_notag: hh_activity_action
+      scope: author_lane
+    - id: ["Reviewer", reviewer_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["Review Document", review_doc]
+      style_notag: hh_activity_action
+      scope: reviewer_lane
+    - id: ["Approver", approver_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["", approve_decision]
+      style_notag: hh_activity_decision
+      scope: approver_lane
+    - id: ["Owner", owner_lane]
+      style_notag: hh_activity_swimlane
+    - id: ["Archive Document", archive_doc]
+      style_notag: hh_activity_action
+      scope: owner_lane
+    - id: ["", review_deadline]
+      style_notag: hh_activity_time_event
+    - id: ["", end1]
+      style_notag: hh_activity_final
+    - id: ["Review must complete within 48h", deadline_note]
+      style_notag: hh_activity_note
+edges:
+    - link: [start, create_doc]
+      style: hh_activity_edge
+    - link: [create_doc, review_doc]
+      style: hh_activity_edge
+      label: "submit"
+    - link: [review_doc, approve_decision]
+      style: hh_activity_edge
+      label: "reviewed"
+    - link: [approve_decision, update_doc, approve_reject]
+      style: hh_activity_edge
+      label: "rejected"
+    - link: [update_doc, review_doc]
+      style: hh_activity_edge
+      label: "resubmit"
+    - link: [approve_decision, archive_doc, approve_accept]
+      style: hh_activity_edge
+      label: "approved"
+    - link: [archive_doc, end1]
+      style: hh_activity_edge
+    - link: [review_deadline, review_doc, deadline_trigger]
+      style: hh_activity_edge
+      label: "T=48h"
+    - link: [deadline_note, review_doc, note_link]
+views:
+    - id: document_management
+      style: hh_activity_view
+      tags: ["default"]
+</pre>
+
+</td>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/39_activity_diagram/document_management.svg" alt="document_management" />
+<br /> activity diagram example
 </td>
 
 </tr>
