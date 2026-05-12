@@ -1,0 +1,13 @@
+nodes:
+    - id: ["Test 1", test1]
+      tags: ["tag"]
+    - id: ["Test 2", test2]
+      scope: test1
+    - id: ["Test 3", test3]
+      tags: ["tag"]
+      scope: test2
+views:
+    - id: view1
+      nodes: ["test1", "test3"]
+    - id: view2
+      tags: ["tag"]

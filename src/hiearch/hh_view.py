@@ -218,8 +218,9 @@ def postprocess(views, nodes, edges):
 
     # select neighbours
     for view in views.entities.values():
-        select_neighbours_for_view(view, nodes, edges)
-        build_tree(view, nodes)
+        if len(view['nodes']) > 0:
+            select_neighbours_for_view(view, nodes, edges)
+            build_tree(view, nodes)
 
 
     # Process views and create expanded views if needed (before neighbour processing)

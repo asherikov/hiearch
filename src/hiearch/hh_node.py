@@ -92,12 +92,14 @@ def build_tree(nodes, nodes_view):
 
     branches = defaultdict(lambda: [])
     branch = [None]
+    # node scope is a set due to multiscoping
     scope_stack = [set(nodes_view)]
 
     nonleaf = set()
 
     while len(scope_stack) > 0:
-        branch.pop()
+        if len(branch) > 0:
+            branch.pop()
         updated_branch = False
         while scope_stack[-1] is not None and len(scope_stack[-1]) > 0:
             scope = scope_stack[-1].pop()
@@ -105,19 +107,18 @@ def build_tree(nodes, nodes_view):
             if scope in branch:
                 raise RuntimeError(f'Detected cycle in branch: {branch} | {scope}')
             if scope in nodes_view:
-                rank['scope'] += 1
+                rank[scope] += 1
                 updated_branch = True
                 branch.append(scope)
                 if len(branch) > 1:
                     nonleaf.add(scope)
 
-                scope_stack.append(copy.deepcopy(nodes[scope]['scope']))
+            scope_stack.append(copy.deepcopy(nodes[scope]['scope']))
 
         if updated_branch:
             branches[branch[0]].append(copy.deepcopy(branch))
 
         scope_stack.pop()
-
 
     scopes = {}
     node_tree = {}

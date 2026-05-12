@@ -1,0 +1,8 @@
+digraph view2 {
+compound=true;
+subgraph test1 {
+label="Test 1";
+cluster=true;
+"test1.test3" [label="Test 3"];
+}
+}
