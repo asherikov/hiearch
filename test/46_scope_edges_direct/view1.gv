@@ -1,0 +1,6 @@
+digraph view1 {
+compound=true;
+parentA [label="Parent A"];
+parentB [label="Parent B"];
+parentA -> parentB [color=red];
+}

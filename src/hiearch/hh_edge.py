@@ -1,6 +1,22 @@
 from . import util
 
 
+default = {
+    'link': ['', ''],
+    'style': None,
+    'graphviz': {},
+    'label': [],
+    'substitutions': {},
+    # should never change after initialization
+    'orig_in': None,
+    'orig_out': None,
+    # overriden
+    'id': None,
+    'in': None,
+    'out': None,
+}
+
+
 def generate_id(edge):
     edge['id'] = f'{edge["out"]}.{edge["in"]}'
 
@@ -12,22 +28,6 @@ def get_style_key(style):
 
 
 def parse(yaml_edges, edges, must_exist_nodes):
-    default = {
-        'link': ['', ''],
-        'style': None,
-        'graphviz': {},
-        'label': [],
-        'substitutions': {},
-        # should never change after initialization
-        'orig_in': None,
-        'orig_out': None,
-        # overriden
-        'id': None,
-        'in': None,
-        'out': None,
-    }
-
-
     for edge in yaml_edges:
         edge['in'] = edge['link'][1]
         edge['out'] = edge['link'][0]

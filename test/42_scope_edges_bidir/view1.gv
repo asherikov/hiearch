@@ -1,0 +1,7 @@
+digraph view1 {
+compound=true;
+db [label=DB];
+app [label=App];
+db -> app;
+app -> db;
+}

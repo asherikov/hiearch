@@ -1,0 +1,19 @@
+nodes:
+    - id: ["Parent A", parentA]
+    - id: ["Child A", childA]
+      scope: parentA
+    - id: ["Parent B", parentB]
+    - id: ["Child B", childB]
+      scope: parentB
+
+edges:
+    - link: [parentA, parentB]
+      graphviz:
+        color: red
+    - link: [childA, childB]
+      graphviz:
+        color: blue
+
+views:
+    - id: view1
+      nodes: ["parentA", "parentB"]

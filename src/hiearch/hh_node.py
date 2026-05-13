@@ -18,8 +18,7 @@ default: dict = {
     'label': '',
     'in': [],
     'out': [],
-    'child_in': [],
-    'child_out': [],
+    'child': [],
 }
 
 
@@ -42,8 +41,7 @@ def postprocess(nodes, edges):
     for node in nodes.entities.values():
         node['out'] = set()
         node['in'] = set()
-        node['child_out'] = set()
-        node['child_in'] = set()
+        node['child'] = set()
 
         original_scope = node['scope']
         if original_scope is not None:
@@ -58,6 +56,11 @@ def postprocess(nodes, edges):
     for key, edge in edges.items():
         for dir_key in ['in', 'out']:
             nodes.entities[edge[dir_key]][dir_key].add(key)
+
+    for key, node in nodes.entities.items():
+        if node['scope'] is not None:
+            for parent in node['scope']:
+                nodes.entities[parent]['child'].add(key)
 
 
 def add_branch_to_tree(branch, tree, node_key_paths, scopes, index=0):

@@ -1,6 +1,7 @@
 """Module for handling hiearch views and their processing."""
 
 import copy
+from collections import deque
 
 from . import hh_edge
 from . import hh_node
@@ -27,8 +28,8 @@ default: dict = {
     'graphviz': {},
     'style': None,
     'tags': [],
-    'edges': [],
-    'custom_edges': [],
+    'edges': {},
+    'custom_edges': {},
     'tree': {},
     'expand': [],
     'nodes_subset': {},
@@ -180,7 +181,83 @@ def select_neighbours_for_view(view, nodes, edges):
         view['nodes'] = view['nodes'].union(add_nodes)
 
 
-def build_tree(view, nodes):
+def _get_descendants(view_nodes, nodes):
+    """Compute descendant ID sets and closest-scope mapping."""
+    descendants = {}
+    closest_scope = {}
+    for node_key in sorted(view_nodes):
+        closest_scope[node_key] = node_key
+        descendants[node_key] = set()
+        queue = deque([node_key])
+        visited = {node_key}
+        while queue:
+            curr = queue.popleft()
+            for child in nodes[curr]['child']:
+                if child not in visited:
+                    visited.add(child)
+                    descendants[node_key].add(child)
+                    queue.append(child)
+        for child in descendants[node_key]:
+            if child not in view_nodes and child not in closest_scope:
+                closest_scope[child] = node_key
+    return descendants, closest_scope
+
+
+def build_tree(view, nodes, edges):
+    """Build tree structure and promote edges between scope nodes.
+
+    When a view contains scope nodes (parents) but not their children, edges
+    between those children are automatically promoted to the scope level,
+    producing edges between the scope nodes themselves.
+    """
+    view_nodes = view['nodes']
+
+    descendants, closest_scope = _get_descendants(view_nodes, nodes)
+
+    existing_connections = set()
+    for edge in view['edges'].values():
+        existing_connections.add((edge['out'], edge['in']))
+    for edge in view['custom_edges'].values():
+        existing_connections.add((edge['out'], edge['in']))
+
+    for a_node in view_nodes:
+        for b_node in view_nodes:
+            if a_node == b_node:
+                continue
+            if b_node in descendants[a_node] or a_node in descendants[b_node]:
+                continue
+            if (a_node, b_node) in existing_connections:
+                continue
+
+            promoted_edges = []
+            for child_a in descendants[a_node]:
+                if child_a in view_nodes:
+                    continue
+                for edge_key in nodes[child_a]['out']:
+                    edge_data = edges[edge_key]
+                    far_node = edge_data['in']
+                    if far_node == b_node:
+                        promoted_edges.append(edge_key)
+                    elif far_node not in view_nodes and far_node in closest_scope and closest_scope[far_node] == b_node:
+                        promoted_edges.append(edge_key)
+            edge_count = len(promoted_edges)
+
+            if edge_count == 0:
+                continue
+
+            if edge_count == 1:
+                new_edge = copy.deepcopy(edges[promoted_edges[0]])
+            else:
+                new_edge = copy.deepcopy(hh_edge.default)
+                new_edge['label'] = ['', f'({edge_count})', '']
+                new_edge['graphviz']['label_format'] = ['{label}', '{label}', '{label}']
+
+            new_edge['out'] = a_node
+            new_edge['in'] = b_node
+            hh_edge.generate_id(new_edge)
+            view['custom_edges'][new_edge['id']] = new_edge
+            existing_connections.add((a_node, b_node))
+
     view['tree'], view['node_key_paths'], view['scopes'] = hh_node.build_tree(nodes, view['nodes'])
 
 
@@ -220,7 +297,7 @@ def postprocess(views, nodes, edges):
     for view in views.entities.values():
         if len(view['nodes']) > 0:
             select_neighbours_for_view(view, nodes, edges)
-            build_tree(view, nodes)
+            build_tree(view, nodes, edges)
 
 
     # Process views and create expanded views if needed (before neighbour processing)
@@ -262,8 +339,6 @@ def postprocess(views, nodes, edges):
                             },
                             'in': set(),
                             'out': set(),
-                            'child_in': set(),
-                            'child_out': set(),
                             'scope': nodes[node_id]['scope']
                         })
                 nodes_subset[highlight_scope_id] = nodes[highlight_scope_id]
@@ -277,7 +352,7 @@ def postprocess(views, nodes, edges):
                 original_scope = nodes[node_id]['scope']
                 nodes[node_id]['scope'] = set([highlight_scope_id])
                 select_neighbours_for_view(new_view, nodes_subset, edges)
-                build_tree(new_view, nodes)
+                build_tree(new_view, nodes, edges)
                 nodes[node_id]['scope'] = original_scope
 
                 additional_views[new_view_id] = new_view

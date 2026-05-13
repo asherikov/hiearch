@@ -1,0 +1,6 @@
+digraph view1 {
+compound=true;
+rootB [label="Root B"];
+rootA [label="Root A"];
+rootA -> rootB;
+}

@@ -8,6 +8,7 @@
   - [Node selection using tags](#node-selection-using-tags)
   - [Style inheritance without tags](#style-inheritance-without-tags)
   - [Neighbour node selection](#neighbour-node-selection)
+  - [Edge promotion](#edge-promotion)
   - [View expansion](#view-expansion)
   - [View styles](#view-styles)
   - [Edge labels](#edge-labels)
@@ -454,6 +455,58 @@ views:
 
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_in_c.svg" alt="recursive_out" />
 <br /> recursive_in_c
+</td>
+
+</tr>
+
+</table>
+
+Edge promotion
+--------------
+
+When a view shows scope nodes (parent nodes) but not their children, edges
+between those (grand)children are automatically promoted to the scope level.
+When multiple edges are promoted between two scopes, they merge into a single
+edge labeled with the count, e.g., `(2)`. Promotion is performed separately for
+“in” and “out” edges.
+
+<table>
+
+<tr>
+
+<td>
+
+<pre>
+-----------------------------------------------------------
+nodes:
+    - id: ["A", a]
+    - id: ["A1", a1]
+      scope: a
+    - id: ["A2", a2]
+      scope: a
+    - id: ["B", b]
+    - id: ["B1", b1]
+      scope: b
+    - id: ["B2", b2]
+      scope: b
+edges:
+    - link: [a1, a2]
+    - link: [b1, a1]
+    - link: [b2, a1]
+    - link: [a2, b2]
+views:
+    - id: view1
+      # not connected directly, edges between childred
+      # get promoted
+      nodes: ["a", "b"]
+</pre>
+
+</td>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/45_scope_edges_mixed/view1.svg" alt="view1" />
+<br /> edge promotion
 </td>
 
 </tr>

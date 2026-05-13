@@ -1,0 +1,7 @@
+digraph view1 {
+compound=true;
+a [label=A];
+b [label=B];
+a -> b;
+b -> a [label="(2)"];
+}

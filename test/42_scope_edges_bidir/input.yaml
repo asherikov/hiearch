@@ -1,0 +1,17 @@
+nodes:
+    - id: ["App", app]
+    - id: ["Logger", logger]
+      scope: app
+    - id: ["DB", db]
+    - id: ["Writer", writer]
+      scope: db
+    - id: ["Reader", reader]
+      scope: db
+
+edges:
+    - link: [logger, writer]
+    - link: [reader, logger]
+
+views:
+    - id: view1
+      nodes: ["app", "db"]

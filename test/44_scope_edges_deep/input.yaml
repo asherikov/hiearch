@@ -1,0 +1,18 @@
+nodes:
+    - id: ["Root A", rootA]
+    - id: ["Mid A", midA]
+      scope: rootA
+    - id: ["Leaf A", leafA]
+      scope: midA
+    - id: ["Root B", rootB]
+    - id: ["Mid B", midB]
+      scope: rootB
+    - id: ["Leaf B", leafB]
+      scope: midB
+
+edges:
+    - link: [leafA, leafB]
+
+views:
+    - id: view1
+      nodes: ["rootA", "rootB"]
