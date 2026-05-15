@@ -122,7 +122,7 @@ def generate(output_dir, temp_dir, fmt, view, nodes, copied_resources):
                 sorted_childs.sort()
                 edge_out = sorted_childs[0]
             if edge['out'] != edge_out:
-                edge['graphviz']['ltail'] = edge['out']
+                edge['graphviz']['ltail'] = min(view['node_key_paths'][edge['out']])
                 edge['graphviz']['tailclip'] = 'false'  # workaround for bad angle of the arrow head
 
             edge_in = edge['in']
@@ -131,7 +131,7 @@ def generate(output_dir, temp_dir, fmt, view, nodes, copied_resources):
                 sorted_childs.sort()
                 edge_in = sorted_childs[0]
             if edge['in'] != edge_in:
-                edge['graphviz']['lhead'] = edge['in']
+                edge['graphviz']['lhead'] = min(view['node_key_paths'][edge['in']])
                 edge['graphviz']['headclip'] = 'false'  # workaround for bad angle of the arrow head
 
 

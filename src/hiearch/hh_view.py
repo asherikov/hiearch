@@ -185,7 +185,7 @@ def _get_descendants(view_nodes, nodes):
     """Compute descendant ID sets and closest-scope mapping."""
     descendants = {}
     closest_scope = {}
-    for node_key in sorted(view_nodes):
+    for node_key in view_nodes:
         closest_scope[node_key] = node_key
         descendants[node_key] = set()
         queue = deque([node_key])
@@ -197,6 +197,9 @@ def _get_descendants(view_nodes, nodes):
                     visited.add(child)
                     descendants[node_key].add(child)
                     queue.append(child)
+
+    sorted_view_nodes = sorted(view_nodes, key=lambda k: len(descendants[k]))
+    for node_key in sorted_view_nodes:
         for child in descendants[node_key]:
             if child not in view_nodes and child not in closest_scope:
                 closest_scope[child] = node_key
@@ -221,6 +224,7 @@ def build_tree(view, nodes, edges):
         existing_connections.add((edge['out'], edge['in']))
 
     for a_node in view_nodes:
+        source_nodes = [a_node] + [c for c in descendants[a_node] if c not in view_nodes]
         for b_node in view_nodes:
             if a_node == b_node:
                 continue
@@ -230,10 +234,8 @@ def build_tree(view, nodes, edges):
                 continue
 
             promoted_edges = []
-            for child_a in descendants[a_node]:
-                if child_a in view_nodes:
-                    continue
-                for edge_key in nodes[child_a]['out']:
+            for source in source_nodes:
+                for edge_key in nodes[source]['out']:
                     edge_data = edges[edge_key]
                     far_node = edge_data['in']
                     if far_node == b_node:
