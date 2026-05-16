@@ -105,11 +105,11 @@ builddir:
 	mkdir -p ${BUILD_DIR}
 
 install:
-	pipx install ./
+	pipx install --force ./
 	#${MAKE} clean
 
 install_edit:
-	pipx install --editable ./
+	pipx install --force --editable ./
 	${MAKE} clean
 
 # https://packaging.python.org/en/latest/tutorials/packaging-projects/

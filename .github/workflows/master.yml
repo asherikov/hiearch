@@ -27,7 +27,7 @@ jobs:
             - uses: actions/checkout@v5
             - run: make install_deps_apt
             - run: make install
-            - run: make test
+            - run: env "PATH=${HOME}/.local/bin:${PATH}" make test
 
     static_checks:
         uses: asherikov/ccws/.github/workflows/reusable_test.yaml@master
