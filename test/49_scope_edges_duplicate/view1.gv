@@ -1,0 +1,10 @@
+digraph view1 {
+compound=true;
+A [label=A];
+subgraph B {
+label=B;
+cluster=true;
+"B.C" [label=C];
+}
+"B.C" -> A;
+}

@@ -224,7 +224,7 @@ def build_tree(view, nodes, edges):
         existing_connections.add((edge['out'], edge['in']))
 
     for a_node in view_nodes:
-        source_nodes = [a_node] + [c for c in descendants[a_node] if c not in view_nodes]
+        source_nodes = [a_node] + [c for c in descendants[a_node] if c not in view_nodes and closest_scope.get(c) == a_node]
         for b_node in view_nodes:
             if a_node == b_node:
                 continue

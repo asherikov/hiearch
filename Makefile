@@ -89,7 +89,8 @@ test:
 		29_recursive_all 30_expand_recursive_all 31_temp_dir 32_subgraph_edge \
 		33_auto_color 34_diagrams_style 39_activity_diagram 40_scopes \
 		42_scope_edges_bidir 44_scope_edges_deep 45_scope_edges_mixed \
-		46_scope_edges_direct 47_scope_edges_partial 48_scope_edges_nesting || (echo "Failure!" && false)
+		46_scope_edges_direct 47_scope_edges_partial 48_scope_edges_nesting \
+		49_scope_edges_duplicate || (echo "Failure!" && false)
 	@${MAKE} TEST_NOT=! 04_node_cycle 05_style_cycle 19_style_notag_cycle \
 		20_mixed_style_cycle 24_expand_validation || (echo "Failure!" && false)
 	@${MAKE} 35_skill_install 36_list_styles 37_styles_selection 38_diagrams_horizontal || (echo "Failure!" && false)
