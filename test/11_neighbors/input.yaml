@@ -41,3 +41,8 @@ views:
       nodes: [node_c]
       # node_a, node_c
       neighbours: recursive_in
+
+    - id: direct_with_parents
+      nodes: [node_a]
+      # node_a, node_c (directly connected) + node_b (parent of node_c)
+      neighbours: direct_with_parents

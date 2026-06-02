@@ -1,0 +1,10 @@
+digraph direct_with_parents {
+compound=true;
+subgraph node_b {
+label="Node B";
+cluster=true;
+"node_b.node_c" [label="Node C"];
+}
+node_a [label="Node A"];
+node_a -> "node_b.node_c";
+}

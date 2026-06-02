@@ -348,6 +348,8 @@ There are several types on automated node selection:
 
 - `explicit` – only explicitly specified nodes are selected;
 - `direct` – explicitly specified and their direct connections;
+- `direct_with_parents` – similar to `direct`, but also includes all parent
+  scopes of directly connected nodes;
 - `parent` – similar to `direct`, but instead of directly connected nodes their
   top-most parents (scopes) are selected;
 - `recursive_in`, `recursive_out`, `recursive_all` – recursively expand
@@ -357,7 +359,7 @@ There are several types on automated node selection:
 
 <tr>
 
-<td rowspan="6">
+<td rowspan="7">
 
 <pre>
 -----------------------------------------------------------
@@ -397,6 +399,10 @@ views:
       nodes: [node_c]
       # node_a, node_c
       neighbours: recursive_in
+    - id: direct_with_parents
+      nodes: [node_a]
+      # node_a, node_c (direct) + node_b (parent)
+      neighbours: direct_with_parents
 </pre>
 
 </td>
@@ -455,6 +461,16 @@ views:
 
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/recursive_in_c.svg" alt="recursive_out" />
 <br /> recursive_in_c
+</td>
+
+</tr>
+
+<tr>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/11_neighbors/direct_with_parents.svg" alt="direct_with_parents" />
+<br /> direct_with_parents
 </td>
 
 </tr>

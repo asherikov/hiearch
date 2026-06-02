@@ -11,13 +11,14 @@ from . import util
 class Neighbours():
     """Class defining the different types of neighbor selection for views."""
     DIRECT = 'direct'
+    DIRECT_WITH_PARENTS = 'direct_with_parents'
     EXPLICIT = 'explicit'
     PARENT = 'parent'
     RECURSIVE_IN = 'recursive_in'
     RECURSIVE_OUT = 'recursive_out'
     RECURSIVE_ALL = 'recursive_all'
 
-    types = [DIRECT, EXPLICIT, PARENT, RECURSIVE_IN, RECURSIVE_OUT, RECURSIVE_ALL]
+    types = [DIRECT, DIRECT_WITH_PARENTS, EXPLICIT, PARENT, RECURSIVE_IN, RECURSIVE_OUT, RECURSIVE_ALL]
 
 
 
@@ -64,6 +65,29 @@ def select_direct(view, nodes, edges, add_nodes):
     for edge_key in view['edges']:
         for dir_key in ['in', 'out']:
             add_nodes.add(edges[edge_key][dir_key])
+
+
+def select_direct_with_parents(view, nodes, edges, add_nodes):
+    """Select directly connected nodes and all their parent scopes."""
+    select_direct(view, nodes, edges, add_nodes)
+
+    to_process = set(add_nodes)
+    while to_process:
+        node_key = to_process.pop()
+        node = nodes[node_key]
+        while node['scope'] is not None:
+            next_scope = None
+            for scope_id in node['scope']:
+                if scope_id in nodes and scope_id not in add_nodes:
+                    add_nodes.add(scope_id)
+                    if next_scope is None:
+                        next_scope = scope_id
+                    else:
+                        to_process.add(scope_id)
+            if next_scope is not None:
+                node = nodes[next_scope]
+            else:
+                break
 
 
 def select_parent(view, nodes, edges, add_nodes):
@@ -160,6 +184,9 @@ def select_neighbours_for_view(view, nodes, edges):
 
     elif Neighbours.DIRECT == view['neighbours']:
         select_direct(view, nodes, edges, add_nodes)
+
+    elif Neighbours.DIRECT_WITH_PARENTS == view['neighbours']:
+        select_direct_with_parents(view, nodes, edges, add_nodes)
 
     elif Neighbours.PARENT == view['neighbours']:
         select_parent(view, nodes, edges, add_nodes)
