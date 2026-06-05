@@ -1,0 +1,11 @@
+digraph view_all {
+compound=true;
+b [label=B];
+c [label=C];
+d [label=D];
+a [label=A];
+a -> b [color=red];
+b -> c [color=red];
+c -> d [color=red];
+a -> d [color=red];
+}

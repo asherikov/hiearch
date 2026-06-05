@@ -52,6 +52,28 @@ views:
       tags: [core]
 ```
 
+### Edge Selection
+
+#### Tags
+Edges can be tagged similarly to nodes. Views use `edge_tags` to select only
+edges with matching tags. Edges are filtered before neighbour selection, so
+neighbour discovery only follows tagged edges.
+```yaml
+edges:
+    - link: [a, b]
+      tags: [control]
+    - link: [a, c]
+      tags: [data]
+
+views:
+    - id: control_view
+      edge_tags: [control]
+      neighbours: direct
+```
+
+When `edge_tags` is not specified, edges with the `default` tag are included
+(matching node `tags` behavior). Multiple tags use OR/union semantics.
+
 #### Explicit Node IDs
 List specific node IDs in the view:
 ```yaml
@@ -183,6 +205,26 @@ edges:
           color: blue
           style: bold
 ```
+
+#### Style Inheritance Without Tags (`style_notag`)
+
+Both nodes and edges support `style_notag`, which inherits visual properties
+from another entity without inheriting its tags. This is useful for referencing
+style definitions that have specialized tags without pulling those tags into
+the referencing entity.
+
+```yaml
+edges:
+    - link: [a, b, style_edge]
+      tags: [control]
+      graphviz:
+          color: red
+    - link: [b, c]
+      style_notag: style_edge
+```
+
+The `b → c` edge inherits `color: red` from `style_edge` but does not inherit
+the `control` tag. An entity cannot have both `style` and `style_notag`.
 
 ## Installation
 

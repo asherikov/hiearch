@@ -1,0 +1,11 @@
+digraph expand_tag1_c_recursive_out {
+compound=true;
+subgraph expand_tag1_c_recursive_out_highlight_scope {
+shape=rectangle;
+color=red;
+penwidth=2;
+label="";
+cluster=true;
+"expand_tag1_c_recursive_out_highlight_scope.c" [label=C];
+}
+}

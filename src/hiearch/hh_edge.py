@@ -4,9 +4,11 @@ from . import util
 default = {
     'link': ['', ''],
     'style': None,
+    'style_notag': None,
     'graphviz': {},
     'label': [],
     'substitutions': {},
+    'tags': ['default'],
     # should never change after initialization
     'orig_in': None,
     'orig_out': None,
@@ -46,11 +48,21 @@ def parse(yaml_edges, edges, must_exist_nodes):
         must_exist_nodes.add(edge['in'])
         must_exist_nodes.add(edge['out'])
 
-        if 'style' in edge:
+        has_style = 'style' in edge
+        has_style_notag = 'style_notag' in edge
+
+        if has_style and has_style_notag:
+            raise RuntimeError(f'Edge {key} cannot have both style and style_notag attributes')
+
+        if has_style:
             edge['style'] = get_style_key(edge['style'])
             edges.must_exist.add(edge['style'])
             edges.styled.append(edge)
-
+            edges.entities[key] = edge
+        elif has_style_notag:
+            edge['style_notag'] = get_style_key(edge['style_notag'])
+            edges.must_exist.add(edge['style_notag'])
+            edges.styled.append(edge)
             edges.entities[key] = edge
         else:
             edges.entities[key] = util.merge_styles(default, edge)
@@ -62,6 +74,8 @@ def postprocess(edges):
 
 
     for edge in edges.entities.values():
+        if not isinstance(edge['tags'], list):
+            edge['tags'] = [edge['tags']]
         if isinstance(edge['label'], str):
             edge['label'] = ['', edge['label'], '']
         if 'label_format' in edge['graphviz']:
@@ -71,3 +85,12 @@ def postprocess(edges):
                 edge['label'] = ['', '', '']
         else:
             edge['graphviz']['label_format'] = ['{label}', '{label}', '{label}']
+
+
+def get_edges_by_tags(edges, tags):
+    tag_set = set(tags)
+    selection = {}
+    for key, edge in edges.items():
+        if tag_set.intersection(edge['tags']):
+            selection[key] = edge
+    return selection

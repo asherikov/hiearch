@@ -1,0 +1,59 @@
+nodes:
+    - id: ["A", a]
+    - id: ["B", b]
+    - id: ["C", c]
+    - id: ["D", d]
+edges:
+    - link: [a, b]
+      tags: ["tag1"]
+    - link: [a, c]
+      tags: ["tag2"]
+    - link: [b, c]
+    - link: [a, d]
+      tags: ["tag1", "tag2"]
+    - link: [c, d]
+      # scalar tags value (not a list)
+      tags: "tag2"
+views:
+    - id: tag1_view
+      edge_tags: ["tag1"]
+      neighbours: direct
+    - id: tag2_view
+      edge_tags: ["tag2"]
+      neighbours: direct
+    - id: default_edges_view
+      # no edge_tags -- include edges with default tag only
+      neighbours: direct
+    - id: all_edges_view
+      edge_tags: ["tag1", "tag2", "default"]
+      neighbours: direct
+    - id: tag1_recursive
+      edge_tags: ["tag1"]
+      neighbours: recursive_out
+    - id: tag2_recursive
+      edge_tags: ["tag2"]
+      neighbours: recursive_out
+    - id: default_edges_recursive
+      # no edge_tags -- include edges with default tag only
+      neighbours: recursive_out
+    - id: multi_tag_view
+      edge_tags: ["tag1", "tag2"]
+      neighbours: direct
+    - id: expand_tag1
+      edge_tags: ["tag1"]
+      expand: [recursive_out]
+    - id: explicit_tag1
+      nodes: [a, b]
+      edge_tags: ["tag1"]
+      neighbours: explicit
+    - id: parent_tag1
+      edge_tags: ["tag1"]
+      neighbours: parent
+    - id: scalar_edge_tag
+      # scalar edge_tags value (not a list)
+      edge_tags: "tag1"
+      neighbours: direct
+    - id: scalar_default_edge_tags
+      # scalar edge_tags value matching default tag
+      edge_tags: "default"
+      neighbours: direct

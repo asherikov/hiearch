@@ -1,0 +1,9 @@
+digraph parent_tag1 {
+compound=true;
+c [label=C];
+d [label=D];
+a [label=A];
+b [label=B];
+a -> d;
+a -> b;
+}

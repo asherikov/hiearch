@@ -29,6 +29,7 @@ default: dict = {
     'graphviz': {},
     'style': None,
     'tags': [],
+    'edge_tags': [],
     'edges': {},
     'custom_edges': {},
     'tree': {},
@@ -49,6 +50,8 @@ def select_explicit(view, nodes, edges):
     for node_key in view['nodes']:
         for dir_key in ['in', 'out']:
             for edge_key in nodes[node_key][dir_key]:
+                if edge_key not in edges:
+                    continue
                 if edges[edge_key][opposite[dir_key]] in view['nodes']:
                     view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
 
@@ -59,6 +62,8 @@ def select_direct(view, nodes, edges, add_nodes):
         for dir_key in ['in', 'out']:
             opp_dir_key = opposite[dir_key]
             for edge_key in nodes[node_key][dir_key]:
+                if edge_key not in edges:
+                    continue
                 if edges[edge_key][opp_dir_key] in nodes:
                     view['edges'][edge_key] = copy.deepcopy(edges[edge_key])
 
@@ -96,6 +101,8 @@ def select_parent(view, nodes, edges, add_nodes):
         for dir_key in ['in', 'out']:
             opp_dir_key = opposite[dir_key]
             for edge_key in nodes[node_key][dir_key]:
+                if edge_key not in edges:
+                    continue
                 nodes_to_explore = set([edges[edge_key][opp_dir_key]])
 
                 while len(nodes_to_explore) > 0:
@@ -134,6 +141,8 @@ def select_recursive(view, nodes, edges, add_nodes, direction):
     while index < len(add_nodes_list):
         edge_keys = nodes[add_nodes_list[index]][direction]
         for edge_key in edge_keys:
+            if edge_key not in edges:
+                continue
             if direction == 'in':
                 connected_node = edges[edge_key]['out']
             else:
@@ -263,6 +272,8 @@ def build_tree(view, nodes, edges):
             promoted_edges = []
             for source in source_nodes:
                 for edge_key in nodes[source]['out']:
+                    if edge_key not in edges:
+                        continue
                     edge_data = edges[edge_key]
                     far_node = edge_data['in']
                     if far_node == b_node:
@@ -277,7 +288,11 @@ def build_tree(view, nodes, edges):
             if edge_count == 1:
                 new_edge = copy.deepcopy(edges[promoted_edges[0]])
             else:
+                promoted_tags = set()
+                for promoted_key in promoted_edges:
+                    promoted_tags.update(edges[promoted_key]['tags'])
                 new_edge = copy.deepcopy(hh_edge.default)
+                new_edge['tags'] = sorted(promoted_tags)
                 new_edge['label'] = ['', f'({edge_count})', '']
                 new_edge['graphviz']['label_format'] = ['{label}', '{label}', '{label}']
 
@@ -308,6 +323,12 @@ def postprocess(views, nodes, edges):
             if len(view['nodes']) != num_nodes:
                 raise RuntimeError(f'Duplicate node ids in view: {view["id"]} | nodes: {view["nodes"]}')
 
+        if not isinstance(view['edge_tags'], list):
+            view['edge_tags'] = [view['edge_tags']]
+
+        if 0 == len(view['edge_tags']):
+            view['edge_tags'] = ['default']
+
         for tag in view['tags']:
             view['nodes'] = view['nodes'].union(hh_node.get_nodes_by_tag(nodes, tag))
 
@@ -319,14 +340,16 @@ def postprocess(views, nodes, edges):
         views.entities['default'] = default
         views.entities['default']['tags'] = ['default']
         views.entities['default']['nodes'] = hh_node.get_nodes_by_tag(nodes, 'default')
+        views.entities['default']['edge_tags'] = ['default']
         if 0 == len(views.entities['default']['nodes']):
             raise RuntimeError(f'All views are empty: {views.entities.keys()}')
 
     # select neighbours
     for view in views.entities.values():
         if len(view['nodes']) > 0:
-            select_neighbours_for_view(view, nodes, edges)
-            build_tree(view, nodes, edges)
+            view_edges = hh_edge.get_edges_by_tags(edges, view['edge_tags'])
+            select_neighbours_for_view(view, nodes, view_edges)
+            build_tree(view, nodes, view_edges)
 
 
     # Process views and create expanded views if needed (before neighbour processing)
@@ -349,6 +372,7 @@ def postprocess(views, nodes, edges):
             if expand_type not in ['recursive_in', 'recursive_out', 'recursive_all']:
                 raise RuntimeError(f'Unsupported expand type: "{expand_type}" in view "{view_id}".')
 
+            expand_edges = hh_edge.get_edges_by_tags(edges, view['edge_tags'])
             for node_id in view['nodes']:
                 new_view_id = f"{view_id}_{node_id}_{expand_type}"
                 highlight_scope_id = f"{new_view_id}_highlight_scope"
@@ -380,8 +404,8 @@ def postprocess(views, nodes, edges):
                 # temporarily modify node scope to generate tree with injected highlight scope
                 original_scope = nodes[node_id]['scope']
                 nodes[node_id]['scope'] = set([highlight_scope_id])
-                select_neighbours_for_view(new_view, nodes_subset, edges)
-                build_tree(new_view, nodes, edges)
+                select_neighbours_for_view(new_view, nodes_subset, expand_edges)
+                build_tree(new_view, nodes, expand_edges)
                 nodes[node_id]['scope'] = original_scope
 
                 additional_views[new_view_id] = new_view

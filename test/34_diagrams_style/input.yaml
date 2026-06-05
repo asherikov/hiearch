@@ -36,25 +36,25 @@ nodes:
 
 edges:
     - link: [mobile_user, cloudfront]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
     - link: [tablet_user, cloudfront]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
     - link: [cloudfront, elb]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
 
     - link: [elb, ec2]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
     - link: [elb, lambda_func]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
     - link: [elb, ecs]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
 
     - link: [prometheus, ec2]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
     - link: [prometheus, lambda_func]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
     - link: [grafana, prometheus]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
 
 views:
     - id: cloud_architecture

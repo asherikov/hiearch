@@ -1,0 +1,10 @@
+digraph tag2_view {
+compound=true;
+c [label=C];
+d [label=D];
+a [label=A];
+b [label=B];
+a -> c;
+c -> d;
+a -> d;
+}

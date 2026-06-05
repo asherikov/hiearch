@@ -6,7 +6,7 @@ nodes:
       style_notag: hh_diagrams_aws_network_cloudfront
 edges:
     - link: [mobile_user, cloudfront]
-      style: hh_diagrams_link
+      style_notag: hh_diagrams_link
 views:
     - id: horizontal_test
       style: hh_diagrams_view

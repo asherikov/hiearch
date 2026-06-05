@@ -1,0 +1,6 @@
+digraph explicit_tag1 {
+compound=true;
+a [label=A];
+b [label=B];
+a -> b;
+}

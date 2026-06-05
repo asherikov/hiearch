@@ -50,26 +50,26 @@ nodes:
 
 edges:
     - link: [start, create_doc]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
     - link: [create_doc, review_doc]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
       label: "submit"
     - link: [review_doc, approve_decision]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
       label: "reviewed"
     - link: [approve_decision, update_doc, approve_reject]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
       label: "rejected"
     - link: [update_doc, review_doc]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
       label: "resubmit"
     - link: [approve_decision, archive_doc, approve_accept]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
       label: "approved"
     - link: [archive_doc, end1]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
     - link: [review_deadline, review_doc, deadline_trigger]
-      style: hh_activity_edge
+      style_notag: hh_activity_edge
       label: "T=48h"
     - link: [deadline_note, review_doc, note_link]
 
@@ -81,4 +81,5 @@ views:
 
     - id: activity_style_nodes
       tags: ["hh_activity"]
+      edge_tags: ["hh_activity"]
       style: hh_activity_view

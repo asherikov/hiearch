@@ -1,0 +1,28 @@
+nodes:
+    - id: ["A", a]
+    - id: ["B", b]
+    - id: ["C", c]
+    - id: ["D", d]
+edges:
+    - link: [a, b, style_edge]
+      tags: ["tag1"]
+      graphviz:
+        color: red
+    - link: [b, c]
+      style_notag: style_edge
+    - link: [c, d]
+      style: style_edge
+    - link: [a, d]
+      style_notag: style_edge
+      tags: ["tag2"]
+views:
+    - id: view_default
+      # no edge_tags -- include edges with default tag only
+    - id: view_all
+      edge_tags: ["tag1", "tag2", "default"]
+    - id: view_tag1
+      edge_tags: ["tag1"]
+      neighbours: direct
+    - id: view_tag2
+      edge_tags: ["tag2"]
+      neighbours: direct

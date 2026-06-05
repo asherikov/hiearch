@@ -1,0 +1,8 @@
+digraph view_tag2 {
+compound=true;
+b [label=B];
+c [label=C];
+d [label=D];
+a [label=A];
+a -> d [color=red];
+}

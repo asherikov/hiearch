@@ -1,0 +1,10 @@
+digraph tag2_recursive {
+compound=true;
+c [label=C];
+d [label=D];
+a [label=A];
+b [label=B];
+c -> d;
+a -> c;
+a -> d;
+}

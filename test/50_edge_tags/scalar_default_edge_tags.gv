@@ -1,0 +1,8 @@
+digraph scalar_default_edge_tags {
+compound=true;
+c [label=C];
+d [label=D];
+a [label=A];
+b [label=B];
+b -> c;
+}

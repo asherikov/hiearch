@@ -30,22 +30,22 @@ nodes:
 edges:
     # Actor associations with use cases
     - link: [user, login]
-      style: hh_use_case_association
+      style_notag: hh_use_case_association
     - link: [user, logout]
-      style: hh_use_case_association
+      style_notag: hh_use_case_association
     - link: [user, reset_password]
-      style: hh_use_case_association
+      style_notag: hh_use_case_association
     - link: [user, register]
-      style: hh_use_case_association
+      style_notag: hh_use_case_association
     # Admin associations
     - link: [admin, reset_password]
-      style: hh_use_case_association
+      style_notag: hh_use_case_association
     # Include relationships
     - link: [login, validate_credentials]
-      style: hh_use_case_include
+      style_notag: hh_use_case_include
     # Extend relationships
     - link: [two_factor_auth, login]
-      style: hh_use_case_extend
+      style_notag: hh_use_case_extend
 views:
     # Main use case diagram
     - id: use_case_example
@@ -54,4 +54,5 @@ views:
     # Show all use case style nodes
     - id: use_case_style_nodes
       tags: ["hh_use_case"]
+      edge_tags: ["hh_use_case"]
       style: hh_use_case_view
