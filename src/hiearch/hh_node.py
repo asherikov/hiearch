@@ -116,10 +116,14 @@ def build_tree(nodes, nodes_view):
 
     branches = defaultdict(lambda: [])
     branch = [None]
-    # node scope is a set due to multiscoping
-    scope_stack = [set(nodes_view)]
+    scope_stack = [sorted(nodes_view)]
 
     nonleaf = set()
+
+    def sorted_scope(scope_set):
+        result = sorted(scope_set)
+        result.sort(key=lambda s: s in nodes_view)
+        return result
 
     while len(scope_stack) > 0:
         if len(branch) > 0:
@@ -137,7 +141,11 @@ def build_tree(nodes, nodes_view):
                 if len(branch) > 1:
                     nonleaf.add(scope)
 
-            scope_stack.append(copy.deepcopy(nodes[scope]['scope']))
+            child_scope = nodes[scope].get('scope')
+            if child_scope is not None:
+                scope_stack.append(sorted_scope(child_scope))
+            else:
+                scope_stack.append(None)
 
         if updated_branch:
             branches[branch[0]].append(copy.deepcopy(branch))
@@ -154,6 +162,7 @@ def build_tree(nodes, nodes_view):
         if key in nonleaf:
             continue
 
+        branch_list.sort(key=len, reverse=True)
         branch = branch_list[0]
         for branch_merge in branch_list[1:]:
             index = 0
@@ -163,7 +172,7 @@ def build_tree(nodes, nodes_view):
                 if index == len(branch) or node != branch[index]:
                     while index < len(branch) and rank[node] > rank[branch[index]]:
                         index += 1
-                    if rank[node] == rank[branch[index]] and node > branch[index]:
+                    if index < len(branch) and rank[node] == rank[branch[index]] and node > branch[index]:
                         index += 1
                     branch.insert(index, node)
                 index += 1
