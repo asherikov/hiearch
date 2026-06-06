@@ -1,0 +1,5 @@
+digraph scope_child {
+compound=true;
+b [label=B];
+e [label=E];
+}

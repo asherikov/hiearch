@@ -1,0 +1,5 @@
+digraph style_derived {
+compound=true;
+d [shape=box, style=filled, fillcolor=lightblue, label=D];
+c [shape=box, style=filled, fillcolor=lightblue, label=C];
+}

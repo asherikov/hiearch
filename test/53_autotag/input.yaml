@@ -1,0 +1,52 @@
+nodes:
+    - id: ["A", a]
+      scope: g
+    - id: ["B", b]
+      scope: a
+    - id: ["C", c]
+      style: i
+    - id: ["D", d]
+      scope: g
+      style: i
+    - id: ["E", e]
+      scope: [a, g]
+    - id: ["F", f]
+      style_notag: i
+    - id: ["G", g]
+    - id: ["H", h]
+      graphviz:
+          shape: box
+    - id: ["I", i]
+      style: h
+      graphviz:
+          style: filled
+          fillcolor: lightblue
+
+edges:
+    - link: [a, b]
+    - link: [a, c, j]
+      graphviz:
+          color: red
+    - link: [b, c]
+      style: j
+
+views:
+    - id: scope_parent
+      tags: ["hh:scope:g"]
+
+    - id: scope_child
+      tags: ["hh:scope:a"]
+
+    - id: style_base
+      tags: ["hh:style:h"]
+
+    - id: style_derived
+      tags: ["hh:style:i"]
+
+    - id: style_notag
+      tags: ["hh:style:h"]
+
+    - id: combined
+      tags: ["hh:scope:g", "hh:style:h"]
+      edge_tags: ["hh:style:j"]
+      neighbours: direct

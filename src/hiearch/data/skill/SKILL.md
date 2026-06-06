@@ -52,6 +52,78 @@ views:
       tags: [core]
 ```
 
+#### Autotagging
+Nodes and edges are automatically tagged based on their structural relationships:
+- Nodes with a scope get `hh:scope:<scope_id>` tags for each scope parent, including ancestors up the scope chain
+- Nodes with a style reference get `hh:style:<style_id>` tag, plus tags for all parent styles up the style chain
+- Edges with a style reference get `hh:style:<style_id>` tag, plus tags for all parent styles up the style chain
+- Entities with `style_notag` inherit visual properties but do NOT get `hh:style:*` tags
+
+Tags propagate through the hierarchy: a node with scope `a` gets `hh:scope:a`, and if `a` itself has scope `g`, the node also gets `hh:scope:g`. The same applies to style chains. `style_notag` entities are excluded from style tag propagation.
+
+These auto-generated tags can be used in views for selection:
+```yaml
+nodes:
+    - id: ["A", a]
+      # gets hh:scope:g
+      scope: g
+    - id: ["B", b]
+      # gets hh:scope:a and hh:scope:g
+      scope: a
+    - id: ["C", c]
+      # gets hh:style:i and hh:style:h
+      style: i
+    - id: ["D", d]
+      # combined: hh:scope:g + hh:style:i + hh:style:h
+      scope: g
+      style: i
+    - id: ["E", e]
+      # multiscoping: hh:scope:a + hh:scope:g
+      scope: [a, g]
+    - id: ["F", f]
+      # inherits style but NO hh:style:* tags
+      style_notag: i
+    - id: ["G", g]
+    - id: ["H", h]
+      graphviz:
+          shape: box
+    - id: ["I", i]
+      style: h
+      graphviz:
+          style: filled
+          fillcolor: lightblue
+
+edges:
+    - link: [a, b]
+    - link: [a, c, j]
+      graphviz:
+          color: red
+    - link: [b, c]
+      style: j
+
+views:
+    - id: scope_parent
+      # A, B, D, E
+      tags: ["hh:scope:g"]
+    - id: scope_child
+      # B and E
+      tags: ["hh:scope:a"]
+    - id: style_base
+      # C, D, I (all inherit hh:style:h; F excluded by style_notag)
+      tags: ["hh:style:h"]
+    - id: style_derived
+      # C and D
+      tags: ["hh:style:i"]
+    - id: style_notag
+      # same as style_base -- F excluded from hh:style:* tags
+      tags: ["hh:style:h"]
+    - id: combined
+      # D only (has both hh:scope:g and hh:style:h), with styled edges
+      tags: ["hh:scope:g", "hh:style:h"]
+      edge_tags: ["hh:style:j"]
+      neighbours: direct
+```
+
 ### Edge Selection
 
 #### Tags

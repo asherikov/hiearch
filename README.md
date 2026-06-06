@@ -381,6 +381,102 @@ views:
 
 </table>
 
+Nodes and edges are automatically tagged based on their structural
+relationships.
+
+<table>
+
+<tr>
+
+<td rowspan="3">
+
+<pre>
+-----------------------------------------------------------
+nodes:
+    - id: ["A", a]
+      # gets hh:scope:g
+      scope: g
+    - id: ["B", b]
+      # gets hh:scope:a and hh:scope:g
+      scope: a
+    - id: ["C", c]
+      # gets hh:style:i and hh:style:h
+      style: i
+    - id: ["D", d]
+      # combined: hh:scope:g
+      # and hh:style:i + hh:style:h
+      scope: g
+      style: i
+    - id: ["E", e]
+      # multiscoping:
+      # hh:scope:a + hh:scope:g
+      scope: [a, g]
+    - id: ["F", f]
+      # inherits style but no tags
+      style_notag: i
+    - id: ["G", g]
+    - id: ["H", h]
+      graphviz:
+          shape: box
+    - id: ["I", i]
+      style: h
+      graphviz:
+          style: filled
+          fillcolor: lightblue
+edges:
+    - link: [a, b]
+    - link: [a, c, j]
+      graphviz:
+          color: red
+    - link: [b, c]
+      style: j
+views:
+    - id: scope_parent
+      # A, B, D, E
+      tags: ["hh:scope:g"]
+    - id: style_derived
+      # C and D
+      tags: ["hh:style:i"]
+    - id: combined
+      # D only (scope + style)
+      # with styled edges
+      tags: ["hh:scope:g", "hh:style:h"]
+      edge_tags: ["hh:style:j"]
+      neighbours: direct
+</pre>
+
+</td>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/53_autotag/scope_parent.svg" alt="scope_parent" />
+<br /> scope_parent
+</td>
+
+</tr>
+
+<tr>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/53_autotag/style_derived.svg" alt="style_derived" />
+<br /> style_derived
+</td>
+
+</tr>
+
+<tr>
+
+<td align="center">
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/53_autotag/combined.svg" alt="combined" />
+<br /> combined
+</td>
+
+</tr>
+
+</table>
+
 Edge labels
 -----------
 

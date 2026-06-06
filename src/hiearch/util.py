@@ -88,9 +88,12 @@ def merge_styles(secondary, primary, with_tags=True, is_view=False):
     result = dict(secondary)
     result.update(primary)
 
+    if 'tags' in result:
+        result['tags'] = ensure_set(result['tags'])
+
     if not with_tags and 'tags' not in primary:
         # do not inherit tags and tags are not explicitly overriden -- reset to default
-        result['tags'] = ['default']
+        result['tags'] = {'default'}
 
     return result
 
@@ -131,4 +134,24 @@ def check_key_existence(keys, dictionary, data_type):
     for key in keys:
         if key not in dictionary.keys():
             raise RuntimeError(f'Missing {data_type} id: {key}')
+
+
+def ensure_set(value):
+    if isinstance(value, set):
+        return set(value)
+    if isinstance(value, list):
+        return set(value)
+    return {value}
+
+
+def collect_style_ancestors(style, entities):
+    visited = set()
+    current = style
+    while current is not None and current not in visited:
+        visited.add(current)
+        if current in entities:
+            current = entities[current].get('style')
+        else:
+            current = None
+    return visited
 

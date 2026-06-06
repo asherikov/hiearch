@@ -1,0 +1,6 @@
+digraph style_notag {
+compound=true;
+d [shape=box, style=filled, fillcolor=lightblue, label=D];
+i [shape=box, style=filled, fillcolor=lightblue, label=I];
+c [shape=box, style=filled, fillcolor=lightblue, label=C];
+}

@@ -1,0 +1,11 @@
+digraph scope_parent {
+compound=true;
+d [shape=box, style=filled, fillcolor=lightblue, label=D];
+subgraph a {
+label=A;
+cluster=true;
+"a.b" [label=B];
+"a.e" [label=E];
+}
+"a.b" -> "a.b" [ltail=a, tailclip=false];
+}

@@ -8,7 +8,7 @@ default = {
     'graphviz': {},
     'label': [],
     'substitutions': {},
-    'tags': ['default'],
+    'tags': {'default'},
     # should never change after initialization
     'orig_in': None,
     'orig_out': None,
@@ -74,8 +74,8 @@ def postprocess(edges):
 
 
     for edge in edges.entities.values():
-        if not isinstance(edge['tags'], list):
-            edge['tags'] = [edge['tags']]
+        if not isinstance(edge['tags'], set):
+            edge['tags'] = util.ensure_set(edge['tags'])
         if isinstance(edge['label'], str):
             edge['label'] = ['', edge['label'], '']
         if 'label_format' in edge['graphviz']:
@@ -86,11 +86,15 @@ def postprocess(edges):
         else:
             edge['graphviz']['label_format'] = ['{label}', '{label}', '{label}']
 
+        if edge.get('style') is not None and edge.get('style_notag') is None:
+            for ancestor in util.collect_style_ancestors(
+                    edge['style'], edges.entities):
+                edge['tags'].add(f'hh:style:{ancestor}')
+
 
 def get_edges_by_tags(edges, tags):
-    tag_set = set(tags)
     selection = {}
     for key, edge in edges.items():
-        if tag_set.intersection(edge['tags']):
+        if tags.intersection(edge['tags']):
             selection[key] = edge
     return selection

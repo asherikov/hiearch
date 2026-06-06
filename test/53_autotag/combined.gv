@@ -1,0 +1,13 @@
+digraph combined {
+compound=true;
+d [shape=box, style=filled, fillcolor=lightblue, label=D];
+i [shape=box, style=filled, fillcolor=lightblue, label=I];
+c [shape=box, style=filled, fillcolor=lightblue, label=C];
+subgraph a {
+label=A;
+cluster=true;
+"a.b" [label=B];
+"a.e" [label=E];
+}
+"a.b" -> c [color=red];
+}

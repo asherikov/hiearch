@@ -12,7 +12,7 @@ default: dict = {
     'style': None,
     'style_notag': None,
     'graphviz': {},
-    'tags': ['default'],
+    'tags': {'default'},
     'substitutions': {},
     # overriden
     'label': '',
@@ -61,6 +61,27 @@ def postprocess(nodes, edges):
         if node['scope'] is not None:
             for parent in node['scope']:
                 nodes.entities[parent]['child'].add(key)
+
+    for node in nodes.entities.values():
+        if not isinstance(node['tags'], set):
+            node['tags'] = util.ensure_set(node['tags'])
+        if node['scope'] is not None:
+            to_visit = set(node['scope'])
+            visited = set()
+            while to_visit:
+                scope_id = to_visit.pop()
+                if scope_id in visited:
+                    continue
+                visited.add(scope_id)
+                node['tags'].add(f'hh:scope:{scope_id}')
+                if scope_id in nodes.entities:
+                    parent = nodes.entities[scope_id]
+                    if parent.get('scope') is not None:
+                        to_visit.update(parent['scope'] - visited)
+        if node.get('style') is not None and node.get('style_notag') is None:
+            for ancestor in util.collect_style_ancestors(
+                    node['style'], nodes.entities):
+                node['tags'].add(f'hh:style:{ancestor}')
 
 
 def add_branch_to_tree(branch, tree, node_key_paths, scopes, index=0):

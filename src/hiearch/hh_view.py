@@ -28,8 +28,8 @@ default: dict = {
     'neighbours': Neighbours.EXPLICIT,
     'graphviz': {},
     'style': None,
-    'tags': [],
-    'edge_tags': [],
+    'tags': set(),
+    'edge_tags': set(),
     'edges': {},
     'custom_edges': {},
     'tree': {},
@@ -292,7 +292,7 @@ def build_tree(view, nodes, edges):
                 for promoted_key in promoted_edges:
                     promoted_tags.update(edges[promoted_key]['tags'])
                 new_edge = copy.deepcopy(hh_edge.default)
-                new_edge['tags'] = sorted(promoted_tags)
+                new_edge['tags'] = promoted_tags
                 new_edge['label'] = ['', f'({edge_count})', '']
                 new_edge['graphviz']['label_format'] = ['{label}', '{label}', '{label}']
 
@@ -305,29 +305,27 @@ def build_tree(view, nodes, edges):
     view['tree'], view['node_key_paths'], view['scopes'] = hh_node.build_tree(nodes, view['nodes'])
 
 
-def postprocess(views, nodes, edges):
-    """Post-process views after parsing."""
-    util.check_key_existence(views.must_exist, views.entities, 'view')
-    util.apply_styles(views.styled, views.entities, is_view=True)
-
-    # resolve nodes
+def _resolve_view_nodes(views, nodes):
     empty_views_counter = 0
     for view in views.entities.values():
         if view['nodes'] is None:
             view['nodes'] = set()
             if 0 == len(view['tags']):
-                view['tags'] = ['default']
+                view['tags'] = {'default'}
         else:
             num_nodes = len(view['nodes'])
             view['nodes'] = set(view['nodes'])  # set converted to list by | operator in apply_styles()
             if len(view['nodes']) != num_nodes:
                 raise RuntimeError(f'Duplicate node ids in view: {view["id"]} | nodes: {view["nodes"]}')
 
-        if not isinstance(view['edge_tags'], list):
-            view['edge_tags'] = [view['edge_tags']]
+        if not isinstance(view['edge_tags'], set):
+            view['edge_tags'] = util.ensure_set(view['edge_tags'])
+
+        if not isinstance(view['tags'], set):
+            view['tags'] = util.ensure_set(view['tags'])
 
         if 0 == len(view['edge_tags']):
-            view['edge_tags'] = ['default']
+            view['edge_tags'] = {'default'}
 
         for tag in view['tags']:
             view['nodes'] = view['nodes'].union(hh_node.get_nodes_by_tag(nodes, tag))
@@ -338,21 +336,14 @@ def postprocess(views, nodes, edges):
 
     if empty_views_counter == len(views.entities):
         views.entities['default'] = default
-        views.entities['default']['tags'] = ['default']
+        views.entities['default']['tags'] = {'default'}
         views.entities['default']['nodes'] = hh_node.get_nodes_by_tag(nodes, 'default')
-        views.entities['default']['edge_tags'] = ['default']
+        views.entities['default']['edge_tags'] = {'default'}
         if 0 == len(views.entities['default']['nodes']):
             raise RuntimeError(f'All views are empty: {views.entities.keys()}')
 
-    # select neighbours
-    for view in views.entities.values():
-        if len(view['nodes']) > 0:
-            view_edges = hh_edge.get_edges_by_tags(edges, view['edge_tags'])
-            select_neighbours_for_view(view, nodes, view_edges)
-            build_tree(view, nodes, view_edges)
 
-
-    # Process views and create expanded views if needed (before neighbour processing)
+def _expand_views(views, nodes, edges):
     additional_views = {}
 
     for view_id, view in views.entities.items():
@@ -377,8 +368,6 @@ def postprocess(views, nodes, edges):
                 new_view_id = f"{view_id}_{node_id}_{expand_type}"
                 highlight_scope_id = f"{new_view_id}_highlight_scope"
 
-                # inject highlight scope node in the global node list, it has
-                # to stay there for visualization
                 nodes[highlight_scope_id] = util.merge_styles(
                         hh_node.default,
                         {
@@ -401,7 +390,6 @@ def postprocess(views, nodes, edges):
                 new_view['nodes'] = set([node_id, highlight_scope_id])
                 new_view['neighbours'] = getattr(Neighbours, expand_type.upper())
 
-                # temporarily modify node scope to generate tree with injected highlight scope
                 original_scope = nodes[node_id]['scope']
                 nodes[node_id]['scope'] = set([highlight_scope_id])
                 select_neighbours_for_view(new_view, nodes_subset, expand_edges)
@@ -410,9 +398,23 @@ def postprocess(views, nodes, edges):
 
                 additional_views[new_view_id] = new_view
 
-
-    # Add all the generated expanded views to the main views dictionary
     views.entities.update(additional_views)
+
+
+def postprocess(views, nodes, edges):
+    """Post-process views after parsing."""
+    util.check_key_existence(views.must_exist, views.entities, 'view')
+    util.apply_styles(views.styled, views.entities, is_view=True)
+
+    _resolve_view_nodes(views, nodes)
+
+    for view in views.entities.values():
+        if len(view['nodes']) > 0:
+            view_edges = hh_edge.get_edges_by_tags(edges, view['edge_tags'])
+            select_neighbours_for_view(view, nodes, view_edges)
+            build_tree(view, nodes, view_edges)
+
+    _expand_views(views, nodes, edges)
 
 
 def parse(yaml_views, views, must_exist_nodes):
