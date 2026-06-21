@@ -26,6 +26,8 @@
   - [Use Case](#use-case)
   - [Activity diagram](#activity-diagram)
   - [Python diagrams](#python-diagrams)
+- [Generators](#generators)
+  - [`hiearch_dinit`](#hiearch_dinit)
 
 Introduction
 ============
@@ -1564,3 +1566,27 @@ views:
 </pre>
 
 <img src="https://raw.githubusercontent.com/asherikov/hiearch/master/test/34_diagrams_style/cloud_architecture.png" alt="cloud_architecture" />
+
+Generators
+==========
+
+Generators are companion tools that produce `hiearch` YAML output from external
+sources.
+
+`hiearch_dinit`
+---------------
+
+`hiearch_dinit` parses `dinit` (<https://github.com/davmac314/dinit>) service
+files and generates a dependency graph in `hiearch` YAML format. Service files
+are collected from a set of input directories.
+
+Install with `pipx install dinit-graph`
+
+See `generators/hiearch_dinit/README.md` for more information.
+
+### Example output
+
+<figure>
+
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/generators/hiearch_dinit/examples/dinit_service_example.svg" alt="example" />
+</figure>

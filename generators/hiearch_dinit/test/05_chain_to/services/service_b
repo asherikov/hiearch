@@ -1,0 +1,3 @@
+type = process
+command = /bin/sleep 200
+chain-to = service_a

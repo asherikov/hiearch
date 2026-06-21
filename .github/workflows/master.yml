@@ -19,6 +19,7 @@ jobs:
             - run: make install_deps_apt
             - run: make install
             - run: make test
+            - run: cd generators/hiearch_dinit && make install_deps_apt && make install && make test
 
     noble_test:
         runs-on: ubuntu-24.04
@@ -28,11 +29,22 @@ jobs:
             - run: make install_deps_apt
             - run: make install
             - run: env "PATH=${HOME}/.local/bin:${PATH}" make test
+            - run: cd generators/hiearch_dinit && make install_deps_apt && make install && env "PATH=${HOME}/.local/bin:${PATH}" make test
+
+    resolute_test:
+        runs-on: ubuntu-26.04
+
+        steps:
+            - uses: actions/checkout@v5
+            - run: make install_deps_apt
+            - run: make install
+            - run: env "PATH=${HOME}/.local/bin:${PATH}" make test
+            - run: cd generators/hiearch_dinit && make install_deps_apt && make install && env "PATH=${HOME}/.local/bin:${PATH}" make test
 
     static_checks:
         uses: asherikov/ccws/.github/workflows/reusable_test.yaml@master
         with:
-            distro: noble
+            distro: resolute
             workspace_version: ""
             package_github_repo: ${{ github.repository }}
             package_version: ${{ github.sha }}

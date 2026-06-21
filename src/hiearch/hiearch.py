@@ -179,7 +179,9 @@ def main():
             # Resolve and copy resources from selected nodes before generating views
             copied_resources = output.resolve_resources(view['nodes'], nodes, temp_dir, resource_dirs, copied_resources)
 
-            graphviz_output.generate(args.output, temp_dir, args.format, view, nodes, copied_resources)
+            graphviz_output.generate(
+                graphviz_output.OutputConfig(args.output, temp_dir, args.format),
+                view, nodes, copied_resources)
 
 
 if __name__ == "__main__":

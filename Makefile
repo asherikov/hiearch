@@ -138,6 +138,7 @@ reinstall:
 
 spell:
 	hunspell README.md
+	hunspell generators/hiearch_dinit/README.md
 
 install_deps_apt:
 	${APT_INSTALL} graphviz
@@ -150,10 +151,14 @@ svg2png:
 	find ${DIR} -iname "*.svg" | sed -e "s/\.svg$$//" | xargs -I {} sh -c "rsvg-convert {}.svg --format=png --output={}.png"
 
 fmt:
-	cp README.md README.md.back
-	sed '/^Introduction$$/,$$!d' README.md.back > README.md
-	pandoc --standalone --columns=80 --markdown-headings=setext --tab-stop=2 --to=gfm --toc --toc-depth=2 README.md -o README.fmt.md
-	mv README.fmt.md README.md
+	${MAKE} fmt_md FILE=README.md
+	${MAKE} fmt_md FILE=generators/hiearch_dinit/README.md
+
+fmt_md:
+	cp ${FILE} ${FILE}.back
+	sed '/^Introduction$$/,$$!d' ${FILE}.back > ${FILE}
+	pandoc --standalone --columns=80 --markdown-headings=setext --tab-stop=2 --to=gfm --toc --toc-depth=2 ${FILE} -o ${FILE}.fmt
+	mv ${FILE}.fmt ${FILE}
 
 
 .PHONY: test

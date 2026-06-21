@@ -1,0 +1,138 @@
+# Dinit Service Dependency Diagram Styles for hiearch
+
+# Define nodes for different dinit service types
+nodes:
+    # Process service: light blue rectangle with rounded corners
+    - id: ["", dinit_process]
+      tags: ["dinit_service"]
+      graphviz:
+        shape: box
+        style: "rounded,filled"
+        fillcolor: lightblue
+        peripheries: "1"
+    # Background process service: light green rectangle with rounded corners
+    - id: ["", dinit_bgprocess]
+      tags: ["dinit_service"]
+      graphviz:
+        shape: box
+        style: "rounded,filled"
+        fillcolor: lightgreen
+        peripheries: "1"
+    # Scripted service: light yellow rectangle with rounded corners
+    - id: ["", dinit_scripted]
+      tags: ["dinit_service"]
+      graphviz:
+        shape: box
+        style: "rounded,filled"
+        fillcolor: lightyellow
+        peripheries: "1"
+    # Internal service: light gray rectangle with rounded corners
+    - id: ["", dinit_internal]
+      tags: ["dinit_service"]
+      graphviz:
+        shape: box
+        style: "rounded,filled"
+        fillcolor: lightgray
+        peripheries: "1"
+    # Triggered service: light pink rectangle with rounded corners
+    - id: ["", dinit_triggered]
+      tags: ["dinit_service"]
+      graphviz:
+        shape: box
+        style: "rounded,filled"
+        fillcolor: lightpink
+        peripheries: "1"
+    # Unknown/missing service: white rectangle with rounded corners
+    - id: ["", dinit_unknown]
+      tags: ["dinit_service"]
+      graphviz:
+        shape: box
+        style: "rounded,filled"
+        fillcolor: white
+        peripheries: "1"
+
+# Define edge styles for different dependency types
+edges:
+    # Standard dependency: solid arrow, red (requires service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_depends_on]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: normal
+        style: solid
+        color: red
+    # Milestone dependency: solid arrow with dot, black (doesn't require service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_depends_ms]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: dot
+        style: solid
+        color: black
+    # Waits-for dependency: arrow with diamond head, red (requires service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_waits_for]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: diamond
+        style: solid
+        color: red
+    # After dependency (ordering): arrow with tee head, black (doesn't require service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_after]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: tee
+        style: solid
+        color: black
+    # Chain-to dependency: standard arrow head, blue (doesn't require service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_chain_to]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: normal
+        style: solid
+        color: blue
+    # Parametrized dependency: dashed arrow, red (requires service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_parametrized_depends_on]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: normal
+        style: dashed
+        color: red
+    # Parametrized milestone dependency: dashed arrow with dot, black (doesn't require service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_parametrized_depends_ms]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: dot
+        style: dashed
+        color: black
+    # Parametrized waits-for dependency: dashed arrow with diamond head, red (requires service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_parametrized_waits_for]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: diamond
+        style: dashed
+        color: red
+    # Parametrized after dependency (ordering): dashed arrow with tee head, black (doesn't require service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_parametrized_after]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: tee
+        style: dashed
+        color: black
+    # Parametrized chain-to dependency: dashed arrow with standard head, blue (doesn't require service to run)
+    - link: [dinit_unknown, dinit_unknown, dinit_parametrized_chain_to]
+      tags: ["dinit_service"]
+      graphviz:
+        arrowhead: normal
+        style: dashed
+        color: blue
+
+# Define view styles
+views:
+    # Default view style for dinit service diagrams
+    - id: dinit_service_view
+      nodes: []
+
+    - id: dinit_service_expanded_view
+      nodes: []
+      expand: [recursive_in, recursive_out]
+      graphviz:
+          node:
+              node_label_format: '<<table border="0" cellspacing="1" cellpadding="0" title="{id}"><tr><td colspan="3">{label}</td></tr><tr><td href="{expanded_from}_{id}_recursive_in.svg"><font point-size="8">in</font></td><td href="{expanded_from}.svg"><font point-size="8">top</font></td><td href="{expanded_from}_{id}_recursive_out.svg"><font point-size="8">out</font></td></tr></table>>'

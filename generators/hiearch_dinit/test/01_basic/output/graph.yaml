@@ -1,0 +1,24 @@
+edges:
+- link:
+  - service2
+  - service1
+  style: dinit_depends_on
+nodes:
+- id:
+  - test/01_basic/services
+  - scope_test/01_basic/services
+- id:
+  - service1
+  - service1
+  scope: scope_test/01_basic/services
+  style_notag: dinit_process
+- id:
+  - service2
+  - service2
+  scope: scope_test/01_basic/services
+  style_notag: dinit_process
+views:
+- id: dinit_service_all
+  style: dinit_service_view
+  tags:
+  - default

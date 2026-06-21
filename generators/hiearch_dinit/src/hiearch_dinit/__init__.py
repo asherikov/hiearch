@@ -1,0 +1,2 @@
+"""Dinit Graph package initialization."""
+

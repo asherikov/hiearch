@@ -89,7 +89,18 @@ def generate_tree(graph, tree, nodes, extended_attrs):
                 graph.add_subgraph(subgraph)
 
 
-def generate(output_dir, temp_dir, fmt, view, nodes, copied_resources):
+class OutputConfig:
+    def __init__(self, output_dir, temp_dir, fmt):
+        self.output_dir = output_dir
+        self.temp_dir = temp_dir
+        self.fmt = fmt
+
+
+def generate(output_config, view, nodes, copied_resources=None):
+    output_dir = output_config.output_dir
+    temp_dir = output_config.temp_dir
+    fmt = output_config.fmt
+
     graph = pydot.Dot(graph_name=view['id'], graph_type='digraph')
 
     extended_attrs = {

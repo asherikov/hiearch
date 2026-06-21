@@ -1,10 +1,9 @@
-name: Publish to PyPI
+name: Publish hiearch-dinit to PyPI
 
 on:
     push:
         tags:
-            - '[0-9]*'
-            - '!dinit-*'
+            - 'dinit-*'
 
 jobs:
     publish:
@@ -12,8 +11,8 @@ jobs:
 
         steps:
             - uses: actions/checkout@v5
-            - run: make install_release_deps
+            - run: cd generators/hiearch_dinit && make install_release_deps
             - env:
                 TWINE_USERNAME: __token__
                 TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-              run: make upload_pypi
+              run: cd generators/hiearch_dinit && make upload_pypi

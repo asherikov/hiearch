@@ -1,0 +1,36 @@
+edges:
+- link:
+  - scripted_service
+  - base_service
+  style: dinit_after
+- link:
+  - scripted_service
+  - base_service
+  style: dinit_depends_ms
+- link:
+  - scripted_service
+  - base_service
+  style: dinit_depends_on
+- link:
+  - scripted_service
+  - base_service
+  style: dinit_waits_for
+nodes:
+- id:
+  - test/02_complex_deps/services
+  - scope_test/02_complex_deps/services
+- id:
+  - base_service
+  - base_service
+  scope: scope_test/02_complex_deps/services
+  style_notag: dinit_process
+- id:
+  - scripted_service
+  - scripted_service
+  scope: scope_test/02_complex_deps/services
+  style_notag: dinit_scripted
+views:
+- id: dinit_service_all
+  style: dinit_service_view
+  tags:
+  - default

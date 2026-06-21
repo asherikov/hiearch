@@ -1,0 +1,6 @@
+type = scripted
+command = /bin/bash script.sh
+depends-on = base_service
+depends-ms = base_service
+waits-for = base_service
+after = base_service
