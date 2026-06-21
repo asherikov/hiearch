@@ -1587,6 +1587,5 @@ See `generators/hiearch_dinit/README.md` for more information.
 ### Example output
 
 <figure>
-
-<img src="https://raw.githubusercontent.com/asherikov/hiearch/master/generators/hiearch_dinit/examples/dinit_service_example.svg" alt="example" />
+<img src="https://raw.githubusercontent.com/asherikov/hiearch/refs/heads/master/generators/hiearch_dinit/examples/dinit_service_example.svg" alt="example" />
 </figure>
