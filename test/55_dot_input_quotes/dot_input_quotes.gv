@@ -1,0 +1,8 @@
+digraph dot_input_quotes {
+label=Root;
+rankdir=LR;
+compound=true;
+svc [shape=box, fontsize=10, label=<<b>svc</b>>, image="icon.svg"];
+db [shape=box, fontsize=10, label=db, image="icon.svg"];
+svc -> db [color=gray, label=uses];
+}

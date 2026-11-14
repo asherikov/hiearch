@@ -1,0 +1,5 @@
+digraph view_intermediate_style {
+compound=true;
+c [label=C];
+b [shape=box, color=blue, label=B];
+}

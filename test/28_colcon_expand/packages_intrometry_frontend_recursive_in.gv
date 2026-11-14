@@ -2,7 +2,7 @@ digraph packages_intrometry_frontend_recursive_in {
 compound=true;
 
 subgraph cluster_0 {
-label="intrometry";
+label=intrometry;
 cluster=true;
 subgraph "cluster_0.packages_intrometry_frontend_recursive_in_highlight_scope" {
 shape=rectangle;

@@ -1,0 +1,8 @@
+digraph dot_input_quotes {
+    graph [label="Root", rankdir=LR];
+    node [shape=box, fontsize=10];
+    edge [color=gray];
+    svc [label="<<b>svc</b>>", image="icon.svg"];
+    db [label="db", image="icon.svg"];
+    svc -> db [label="uses"];
+}

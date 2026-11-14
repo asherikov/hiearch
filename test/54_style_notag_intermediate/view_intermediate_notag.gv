@@ -1,0 +1,5 @@
+digraph view_intermediate_notag {
+compound=true;
+c [label=C];
+a [shape=box, color=red, label=A];
+}

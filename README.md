@@ -632,7 +632,8 @@ nodes:
       style: node_a
     - id: ["Node C", node_c]
       # no need to explicitly override inherited tags,
-      # which is useful for dealing with pure style nodes.
+      # which is useful for dealing with pure style nodes,
+      # does not apply to automatically added tags.
       style_notag: node_a
 views:
     - id: view_default          # includes node C

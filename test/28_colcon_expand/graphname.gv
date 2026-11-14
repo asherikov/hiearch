@@ -1,7 +1,7 @@
 digraph graphname {
 compound=true;
 subgraph cluster_0 {
-label="intrometry";
+label=intrometry;
 cluster=true;
 "cluster_0.intrometry_pjmsg_mcap" [label="intrometry_pjmsg_mcap"];
 "cluster_0.intrometry_frontend" [label="intrometry_frontend"];
@@ -9,7 +9,7 @@ cluster=true;
 "cluster_0.intrometry_tests" [label="intrometry_tests"];
 }
 subgraph cluster_3 {
-label="ariles";
+label=ariles;
 cluster=true;
 "cluster_3.ariles2_rapidjson_ws" [label="ariles2_rapidjson_ws"];
 "cluster_3.ariles2_core_ws" [label="ariles2_core_ws"];
@@ -23,7 +23,7 @@ cluster=true;
 graphite_to_mcap [label="graphite_to_mcap"];
 thread_supervisor [label="thread_supervisor"];
 subgraph cluster_2 {
-label="cdinit";
+label=cdinit;
 cluster=true;
 "cluster_2.cdinit" [label=cdinit];
 "cluster_2.cdinit_ros2" [label="cdinit_ros2"];

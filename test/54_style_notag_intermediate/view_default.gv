@@ -1,0 +1,8 @@
+digraph view_default {
+compound=true;
+intermediate_style [shape=box, color=blue, label=""];
+intermediate_notag [shape=box, color=red, label=""];
+base [shape=box, label=""];
+b [shape=box, color=blue, label=B];
+a [shape=box, color=red, label=A];
+}

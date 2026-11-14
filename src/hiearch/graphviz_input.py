@@ -4,6 +4,23 @@
 import pydot
 
 
+def _unquote(value):
+    """Remove the surrounding quotes and unescape the quotes of a DOT value.
+
+    pydot keeps the quotes of the DOT source verbatim in the attribute values,
+    unescaping them is required to avoid double escaping when the value is
+    written back.
+    """
+    if len(value) > 1 and value.startswith('"') and value.endswith('"'):
+        return value[1:-1].replace('\\"', '"')
+    return value
+
+
+def _unquote_attributes(attributes):
+    """Remove the quotes of every attribute value."""
+    return {key: _unquote(value) for key, value in attributes.items()}
+
+
 def _extract_default_attributes(defaults_list):
     """Generic function to extract default attributes from a list of default objects."""
     result = {}
@@ -13,7 +30,7 @@ def _extract_default_attributes(defaults_list):
                 result.update(default_obj)
             elif hasattr(default_obj, 'get_attributes'):
                 result.update(default_obj.get_attributes())
-    return result
+    return _unquote_attributes(result)
 
 
 class AttributeContainer:
@@ -86,7 +103,7 @@ def _process_contents(graph, hiearch_data, graph_status, parent_attr_container, 
 
     for node in graph.get_nodes():
         final_attrs = dict(attr_container.node_attrs)
-        final_attrs.update(node.get_attributes())
+        final_attrs.update(_unquote_attributes(node.get_attributes()))
         node_name = node.get_name().strip('"')
         if node_name not in ['node', 'edge', 'graph']:
             graph_status.add_node(node_name, hiearch_data, final_attrs, scope_id)
@@ -101,7 +118,7 @@ def _process_contents(graph, hiearch_data, graph_status, parent_attr_container, 
             'link': [edge_nodes[0], edge_nodes[1]],
             'graphviz': dict(attr_container.edge_attrs)
         }
-        edge_info['graphviz'].update(edge.get_attributes())
+        edge_info['graphviz'].update(_unquote_attributes(edge.get_attributes()))
 
         hiearch_data['edges'].append(edge_info)
 
@@ -110,7 +127,7 @@ def _process_subgraph_recursive(subgraph, hiearch_data, graph_status, attr_conta
     """Recursively process a subgraph and its contents."""
     node_id = subgraph.get_name().strip('"')
     subgraph_attrs = dict(attr_container.graph_attrs)
-    subgraph_attrs.update(subgraph.get_attributes())
+    subgraph_attrs.update(_unquote_attributes(subgraph.get_attributes()))
     subgraph_attrs.update(_extract_default_attributes(subgraph.get_node("graph")))
 
     graph_status.add_node(node_id, hiearch_data, subgraph_attrs, parent_scope_id)
@@ -148,7 +165,7 @@ def dot_to_hiearch(file_id, dot_content):
             'id': graph_status.view_id,
             'tags': [graph_status.view_id],
             'graphviz': {
-                'graph': dict(graph.get_attributes())
+                'graph': _unquote_attributes(graph.get_attributes())
             }
         }
         style_view['graphviz']['graph'].update(_extract_default_attributes(graph.get_node("graph")))

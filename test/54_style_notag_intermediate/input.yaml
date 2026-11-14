@@ -1,0 +1,34 @@
+nodes:
+    - id: ["", base]
+      graphviz:
+          shape: box
+    # an intermediate style inheriting the attributes of base without its tags
+    - id: ["", intermediate_notag]
+      style_notag: base
+      graphviz:
+          color: red
+    # an intermediate style inheriting the attributes and the tags of base
+    - id: ["", intermediate_style]
+      style: base
+      graphviz:
+          color: blue
+    # the style_notag of the intermediate style is not propagated, A keeps the
+    # hh:style tags of the whole chain
+    - id: ["A", a]
+      style: intermediate_notag
+    - id: ["B", b]
+      style: intermediate_style
+    - id: ["C", c]
+      tags: ["selected"]
+views:
+    - id: view_default
+    # A is selected, the style_notag of the intermediate style is not
+    # propagated to the nodes referencing it
+    - id: view_intermediate_notag
+      tags: ["selected", "hh:style:intermediate_notag"]
+    # B and the intermediate style itself are selected
+    - id: view_intermediate_style
+      tags: ["selected", "hh:style:intermediate_style"]
+    # A is selected, it inherits the attributes of base
+    - id: view_base
+      tags: ["selected", "hh:style:base"]

@@ -2,7 +2,7 @@ digraph packages_cdinit_recursive_in {
 compound=true;
 
 subgraph cluster_2 {
-label="cdinit";
+label=cdinit;
 cluster=true;
 subgraph "cluster_2.packages_cdinit_recursive_in_highlight_scope" {
 shape=rectangle;

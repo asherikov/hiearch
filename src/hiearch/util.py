@@ -88,6 +88,17 @@ def merge_styles(secondary, primary, with_tags=True, is_view=False):
     result = dict(secondary)
     result.update(primary)
 
+    # the style and the style_notag keys of the secondary describe its own
+    # inheritance, they must not be propagated, otherwise an entity
+    # referencing a style declared with style_notag inherits that key and
+    # loses all of its hh:style autotags
+    if 'style_notag' in primary and 'style' not in primary:
+        # the attributes of the father are inherited, the style ancestors of
+        # the entity continue through it
+        result['style'] = primary['style_notag']
+    else:
+        result.pop('style_notag', None)
+
     if 'tags' in result:
         result['tags'] = ensure_set(result['tags'])
 
