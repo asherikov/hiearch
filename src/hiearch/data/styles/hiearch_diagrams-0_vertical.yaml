@@ -24,8 +24,8 @@ nodes:
           height: 4
           color: black
           # HTML table label format: top row = icon, bottom row = label
-          node_label_format: '<<table fixedsize="true" width="200" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="{resource_image}"/></td></tr><tr><td>{label}</td></tr></table>>'
-          scope_label_format: '<<table fixedsize="true" width="200" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="{resource_image}"/></td></tr><tr><td>{label}</td></tr></table>>'
+          node_label_format: '<<table fixedsize="true" width="200" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="{resource_image}" scale="true"/></td></tr><tr><td>{label}</td></tr></table>>'
+          scope_label_format: '<<table fixedsize="true" width="200" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="{resource_image}" scale="true"/></td></tr><tr><td>{label}</td></tr></table>>'
 
     # Scope/Cluster node for grouping elements (like diagrams.Cluster)
     # Use this as a parent node to group related elements visually

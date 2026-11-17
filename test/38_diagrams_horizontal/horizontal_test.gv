@@ -4,7 +4,7 @@ splines=ortho;
 nodesep=0.5;
 ranksep=2.0;
 compound=true;
-cloudfront [shape=box, style="rounded,dashed", fontname="Sans-Serif", fontsize=24, fontcolor="#2D3436", penwidth=0.5, margin=0, height=3.2, color=black, label=<<table fixedsize="true" width="300" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="cloudfront.png"/></td><td>CloudFront<br />CDN</td></tr></table>>];
-mobile_user [shape=box, style="rounded,dashed", fontname="Sans-Serif", fontsize=24, fontcolor="#2D3436", penwidth=0.5, margin=0, height=3.2, color=black, label=<<table fixedsize="true" width="300" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="mobile.png"/></td><td>Mobile User</td></tr></table>>];
+cloudfront [shape=box, style="rounded,dashed", fontname="Sans-Serif", fontsize=24, fontcolor="#2D3436", penwidth=0.5, margin=0, height=3.2, color=black, label=<<table fixedsize="true" width="300" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="cloudfront.png" scale="true"/></td><td>CloudFront<br />CDN</td></tr></table>>];
+mobile_user [shape=box, style="rounded,dashed", fontname="Sans-Serif", fontsize=24, fontcolor="#2D3436", penwidth=0.5, margin=0, height=3.2, color=black, label=<<table fixedsize="true" width="300" border="0" cellborder="0" cellspacing="0" cellpadding="0"><tr><td><img src="mobile.png" scale="true"/></td><td>Mobile User</td></tr></table>>];
 mobile_user -> cloudfront [color="#7B8894", fontname="Sans-Serif", fontsize=20, fontcolor="#2D3436", arrowsize=1.5, penwidth=3];
 }
