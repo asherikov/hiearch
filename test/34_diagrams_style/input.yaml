@@ -23,6 +23,9 @@ nodes:
     - id: ["Elastic\nContainer", ecs]
       style_notag: hh_diagrams_aws_compute_elastic_container_service
       scope: aws_compute
+    - id: ["S3 Buckets", s3]
+      style_notag: hh_diagrams_aws_storage_simple_storage_service_s3
+      scope: aws_storage
 
     - id: ["Prometheus", prometheus]
       style_notag: hh_diagrams_onprem_monitoring_prometheus
@@ -33,6 +36,10 @@ nodes:
       style_notag: hh_diagrams_scope
     - id: ["AWS\nCompute", aws_compute]
       style_notag: hh_diagrams_scope
+    - id: ["AWS\nStorage", aws_storage]
+      style_notag: hh_diagrams_scope_icon
+      substitutions:
+          resource_image: "aws/storage/simple-storage-service-s3.png"
 
 edges:
     - link: [mobile_user, cloudfront]
@@ -47,6 +54,8 @@ edges:
     - link: [elb, lambda_func]
       style_notag: hh_diagrams_link
     - link: [elb, ecs]
+      style_notag: hh_diagrams_link
+    - link: [ec2, s3]
       style_notag: hh_diagrams_link
 
     - link: [prometheus, ec2]
