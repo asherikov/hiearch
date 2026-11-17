@@ -177,5 +177,5 @@ def generate(output_config, view, nodes, copied_resources=None):
     abs_output_file_path = os.path.abspath(f'{output_dir}/{view["id"]}.{fmt.split(":")[0].split("_")[0]}')
 
     cmd = ['dot', '-T' + fmt, '-o', abs_output_file_path, f'{view["id"]}.gv']
-    subprocess.run(cmd, check=True, capture_output=True, cwd=temp_dir)
+    subprocess.run(cmd, check=True, cwd=temp_dir)
 
