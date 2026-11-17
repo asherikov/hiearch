@@ -1,6 +1,6 @@
 digraph horizontal_test {
 pad=0;
-splines=ortho;
+splines=polyline;
 nodesep=0.5;
 ranksep=2.0;
 compound=true;

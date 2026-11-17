@@ -55,6 +55,6 @@ views:
       graphviz:
           graph:
               pad: "0"
-              splines: "ortho"
+              splines: "polyline"
               nodesep: "0.5"
               ranksep: "2.0"
